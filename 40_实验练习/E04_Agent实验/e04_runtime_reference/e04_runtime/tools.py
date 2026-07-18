@@ -16,6 +16,7 @@ from .errors import (
     InvalidToolOutput,
     MissingIdempotencyKey,
     PermissionDenied,
+    RuntimeReferenceError,
     ToolTimeout,
     UnknownTool,
 )
@@ -32,6 +33,7 @@ from .models import (
     ToolObservation,
     ToolProposal,
 )
+from .security import EgressPolicy, PathPolicy
 
 
 def canonical_json(value: object) -> str:
@@ -76,6 +78,7 @@ class ResourcePolicy:
 ToolHandler = Callable[[BaseModel, ExecutionContext], dict[str, object]]
 ResourceResolver = Callable[[BaseModel], str]
 SourceResolver = Callable[[BaseModel], tuple[str, ...]]
+TargetResolver = Callable[[BaseModel], str]
 
 
 @dataclass(frozen=True, slots=True)
@@ -91,6 +94,8 @@ class ToolSpec:
     has_side_effect: bool = False
     requested_sources: SourceResolver | None = None
     output_sources: SourceResolver | None = None
+    url_resolver: TargetResolver | None = None
+    path_resolver: TargetResolver | None = None
 
 
 class ToolRegistry:
@@ -111,9 +116,18 @@ class ToolRegistry:
 
 
 class ToolGateway:
-    def __init__(self, registry: ToolRegistry, policy: ResourcePolicy) -> None:
+    def __init__(
+        self,
+        registry: ToolRegistry,
+        policy: ResourcePolicy,
+        *,
+        egress_policy: EgressPolicy | None = None,
+        path_policy: PathPolicy | None = None,
+    ) -> None:
         self.registry = registry
         self.policy = policy
+        self.egress_policy = egress_policy or EgressPolicy()
+        self.path_policy = path_policy or PathPolicy()
 
     def execute(
         self,
@@ -151,17 +165,37 @@ class ToolGateway:
         if spec.has_side_effect and not idempotency_key:
             raise MissingIdempotencyKey(spec.name)
 
+        normalized_url = (
+            self.egress_policy.validate(spec.url_resolver(args))
+            if spec.url_resolver is not None
+            else None
+        )
+        normalized_path = (
+            self.path_policy.validate(spec.path_resolver(args))
+            if spec.path_resolver is not None
+            else None
+        )
         context = ExecutionContext(
             authorization=authorization,
             idempotency_key=idempotency_key,
+            normalized_url=normalized_url,
+            normalized_path=normalized_path,
         )
-        raw_output = spec.handler(args, context)
+        try:
+            raw_output = spec.handler(args, context)
+        except RuntimeReferenceError:
+            raise
+        except Exception as exc:
+            raise InvalidToolOutput(f"{spec.name} handler failed") from exc
         try:
             output = spec.output_model.model_validate(raw_output)
         except ValidationError as exc:
             raise InvalidToolOutput(spec.name) from exc
 
-        source_ids = spec.output_sources(output) if spec.output_sources is not None else ()
+        try:
+            source_ids = spec.output_sources(output) if spec.output_sources is not None else ()
+        except (TypeError, ValueError, ValidationError) as exc:
+            raise InvalidToolOutput(f"{spec.name} source metadata is invalid") from exc
         if not set(source_ids).issubset(set(authorization.authorized_source_ids)):
             raise InvalidToolOutput("tool returned unauthorized source IDs")
 

@@ -11,6 +11,8 @@ $root = (Resolve-Path $RepositoryRoot).Path
 $pythonLauncher = (Get-Command py.exe -ErrorAction Stop).Source
 
 $projects = @(
+    @{ Name = "e00"; DirectoryName = "os_network_reference" },
+    @{ Name = "e01"; DirectoryName = "concurrency_reference" },
     @{ Name = "p01"; DirectoryName = "mini_scheduler" },
     @{ Name = "e02"; DirectoryName = "e02_service" },
     @{ Name = "e03"; DirectoryName = "e03_rag_reference" },
@@ -25,6 +27,10 @@ $lockFiles = @(
     Get-ChildItem -LiteralPath $root -Recurse -File -Filter "requirements-dev.lock" |
         Where-Object { $_.FullName -notmatch "[\\/](?:\.venv|\.tools)[\\/]" }
 )
+
+if ($lockFiles.Count -ne $projects.Count) {
+    throw "expected $($projects.Count) reference lock files, found $($lockFiles.Count)"
+}
 
 & $pythonLauncher -3.13 -c `
     "import sys; assert sys.version_info[:2] == (3, 13), sys.version"
@@ -50,11 +56,20 @@ foreach ($project in $projects) {
         }
     }
 
+    $pythonVersion = (& $python -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')").Trim()
+    if ($LASTEXITCODE -ne 0 -or $pythonVersion -ne "3.13") {
+        throw "$($project.Name) virtual environment uses Python $pythonVersion; expected 3.13"
+    }
+
     & $python -m pip install `
         --disable-pip-version-check `
         --requirement $lockFile
     if ($LASTEXITCODE -ne 0) {
         throw "$($project.Name) dependency installation failed"
+    }
+    & $python -m pip check
+    if ($LASTEXITCODE -ne 0) {
+        throw "$($project.Name) dependency consistency check failed"
     }
     Write-Output "reference_env_ready=$($project.Name)"
 }

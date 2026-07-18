@@ -1,7 +1,7 @@
 # 官方技术学习文档格式检查证据
 
 > 历史快照：本目录保留 2026-07-12 至 2026-07-13 的 202 章原始结果，不回写为当前数字。
-> 现行 203 章结果见 `../content_quality_audit_2026-07-18/official_docs_structure.json` 与
+> 现行 210 章结果见 `../content_quality_audit_2026-07-18/official_docs_structure.json` 与
 > `../content_quality_audit_2026-07-18/official_docs_chapter_matrix.csv`。
 >
 > 首次生成：2026-07-12；最近刷新：2026-07-13

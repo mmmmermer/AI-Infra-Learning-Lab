@@ -24,6 +24,12 @@ class TaskCreate(BaseModel):
     estimated_duration_ms: int = Field(ge=0, le=86_400_000)
 
 
+class TaskPatch(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    priority: int = Field(ge=1, le=10)
+
+
 class TaskRecord(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -33,8 +39,37 @@ class TaskRecord(BaseModel):
     estimated_duration_ms: int
     status: TaskStatus
     created_at: datetime
+    version: int = Field(ge=1)
 
 
 class MetricsResponse(BaseModel):
     task_count: int
     status_counts: dict[TaskStatus, int]
+
+
+class TaskPage(BaseModel):
+    items: list[TaskRecord]
+    next_cursor: str | None
+
+
+class HealthResponse(BaseModel):
+    status: str
+    dependency: str
+
+
+class InvalidParameter(BaseModel):
+    location: list[str | int]
+    reason: str
+
+
+class ProblemDetails(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    type: str
+    title: str
+    status: int
+    detail: str
+    code: str
+    request_id: str
+    retry_after_ms: int | None = None
+    invalid_params: list[InvalidParameter] | None = None

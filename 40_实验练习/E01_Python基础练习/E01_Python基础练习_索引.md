@@ -11,13 +11,15 @@
 - [[40_实验练习/E01_Python基础练习/E01-01 任务排序脚本|E01-01 任务排序脚本]]：先用 dict/list 实现 FIFO、Priority、SJF 排序
 - [[40_实验练习/E01_Python基础练习/E01-02 Python 类实现 Task 和 Worker|E01-02 Python 类实现 Task 和 Worker]]：用 dataclass 建模任务和 worker
 - [[40_实验练习/E01_Python基础练习/E01-03 pytest 测试调度器|E01-03 pytest 测试调度器]]：用 pytest 固定调度规则
+- [[40_实验练习/E01_Python基础练习/E01-04 并发选择与取消|E01-04 并发选择与取消]]：区分 thread/process/asyncio，并验证阻塞、取消、超时和资源释放
 
 ## 建议顺序
 
 1. 先完成 E01-01，确认排序规则能跑通
 2. 再完成 E01-02，把数据从 dict 升级成 dataclass
 3. 再完成 E01-03，给调度规则补测试
-4. 最后回到 P01 项目页，整理代码结构和实验记录
+4. 完成 E01-04，为 M02 的 async 服务、deadline 和取消建立心智模型
+5. 最后回到 P01 项目页，整理代码结构和实验记录
 
 ## 对应模块
 
@@ -30,6 +32,7 @@
 
 - 一份可运行的 `mini_scheduler` 代码骨架
 - 至少 5 个 pytest
+- E01-04 的 6 项标准库契约测试与一份并发选择说明
 - 一条或多条问题记录
 - 一篇 P01 项目实验记录
 

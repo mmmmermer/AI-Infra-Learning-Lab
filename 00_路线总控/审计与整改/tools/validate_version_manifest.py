@@ -20,6 +20,7 @@ REQUIRED_COMPONENT_IDS = {
     "redis-py",
     "redis-server",
     "postgresql",
+    "psycopg",
     "kind",
     "kubernetes",
     "vllm",

@@ -29,6 +29,8 @@ Python 是两个月快速上手阶段的主语言，用于后端服务、RAG/Age
 - logging：记录关键运行过程，用于调试和复盘
 - pytest：验证排序策略、边界情况和错误输入
 - argparse / 简单配置：只在需要命令行参数时查最小用法
+- thread / process / asyncio：根据等待与计算性质选择，并验证 event-loop blocking
+- cancellation / timeout：等待 task 结束并用 `finally` 证明资源释放
 - HTTPX：作为后续 API 请求的选读入口，不作为 M01 主线
 - 项目目录结构：把脚本整理成 P01 Mini Scheduler 的最小工程
 
@@ -49,6 +51,8 @@ Python 是两个月快速上手阶段的主语言，用于后端服务、RAG/Age
 - [Python typing](https://docs.python.org/3/library/typing.html)
 - [Python pathlib](https://docs.python.org/3/library/pathlib.html)
 - [Python json](https://docs.python.org/3/library/json.html)
+- [Python asyncio](https://docs.python.org/3.13/library/asyncio.html)
+- [Python concurrent.futures](https://docs.python.org/3.13/library/concurrent.futures.html)
 - [pytest 官方文档](https://docs.pytest.org/)
 - [Pydantic 官方文档](https://docs.pydantic.dev/)
 - [[50_项目产出/P01_Mini_Scheduler/P01_Mini_Scheduler 项目主页|P01 项目主页]]
@@ -69,6 +73,7 @@ Python 是两个月快速上手阶段的主语言，用于后端服务、RAG/Age
 - [[E01-01 任务排序脚本]]
 - [[E01-02 Python 类实现 Task 和 Worker]]
 - [[E01-03 pytest 测试调度器]]
+- [[E01-04 并发选择与取消]]
 
 ## 对应项目
 
@@ -83,10 +88,12 @@ Python 是两个月快速上手阶段的主语言，用于后端服务、RAG/Age
 - [ ] 能用 logging 记录输入数量、策略名称、输出顺序或异常信息
 - [ ] 能读懂 AI 生成代码并指出边界混乱、函数过大、测试缺失等问题
 - [ ] 能把一次实验结果写回 P01 项目记录
+- [ ] 能为阻塞 I/O、CPU 计算、原生 async I/O 分别选择模型并说明拒绝其他模型的理由
+- [ ] E01-04 的 6 项测试通过，取消与 timeout 后资源获取/释放计数相等
 
 ## 暂时不深入
 
-- 不在 M01 深入异步 Python、元编程、描述符、复杂泛型和包发布。
+- 不在 M01 深入 event-loop/线程调度器源码、无锁算法、元编程、描述符、复杂泛型和包发布。
 - 不把爬虫、GUI、数据分析全家桶作为当前主线。
 - 不提前学习大型框架源码；FastAPI、Celery、Ray、Kubernetes 放到后续模块和项目阶段。
 - 不追求一次写出完美架构，先把 `Task`、`Worker`、排序策略、测试和指标做清楚。

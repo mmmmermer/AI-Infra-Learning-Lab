@@ -11,11 +11,24 @@ E04 用于训练可控 Agent 工作流、状态机、能力式工具门禁、失
 
 `e04_runtime_reference/` 已实现确定性内存版的 server-owned principal、capability/resource
 授权、检索前 ACL、状态/步骤分离、审批目标绑定与 CAS、resume outbox/claim fencing、幂等副作用、
-session 隔离和脱敏审计。2026-07-18 在 Python 3.13 项目 `.venv` 运行结果为 `38 passed`。
+显式取消生命周期、默认拒绝的 URL/path validator、不可信输出边界、session 隔离和递归脱敏审计。
+2026-07-18 在 Python 3.13 项目 `.venv` 运行结果为 `76 passed`、`0 skipped`。
 
 该结果属于 `reference-verified`，不等于学习者已完成；它也不证明数据库事务、真实队列、模型
 抗注入、生产策略引擎或 P03 `/agent/*` 集成。命令和边界见
 [[40_实验练习/E04_Agent实验/e04_runtime_reference/README|reference README]]。
+
+新增闭环的证据入口：
+
+| 验收方向 | 测试文件 | 关键断言 |
+|---|---|---|
+| cancel 生命周期 | `tests/test_cancellation_and_injection.py` | CAS、`cancelled` 终态、pending approval/outbox 关闭、worker 不改写为 failed |
+| 副作用栅栏 | `tests/test_cancellation_and_injection.py` | 共享 `effect_started` 原子栅栏决定跨 runtime 取消/handler 顺序，开始后拒绝假取消并可幂等 finalize |
+| 重投与租户 claim | `tests/test_approval_workflow.py` | waiting approval 重投幂等，其他阶段无损拒绝；worker tenant scope 在领取前过滤并在执行时复核 |
+| egress / SSRF | `tests/test_target_security.py` | 无 allowlist 默认拒绝；loopback、私网、link-local、metadata、userinfo、缺端口均不调用 handler |
+| path | `tests/test_target_security.py` | `..`、单双重编码、绝对路径、盘符/UNC、解析后符号链接逃逸均不调用 handler |
+| 不可信工具输出 | `tests/test_cancellation_and_injection.py` | 恶意 chunk 不改变 capability、proposal、审批与副作用次数 |
+| trace | `tests/test_sessions_and_audit.py` | 嵌套 credential、URL、私有路径、完整 tool output 与后缀伪装字段不出现在序列化记录 |
 
 ## 实验闭环
 
@@ -80,6 +93,9 @@ E04-04 到 E04-07 服务 P03 post-v0.3.1 / vNext planned Agent Runtime：把 age
 | tenant_id / owner_user_id | server principal 的任务/session 归属快照，不来自业务请求 |
 | version / workflow_version | CAS、旧页面/旧 worker 拒绝与恢复兼容性 |
 | approval target / expires_at | 绑定草稿、动作和时限，防止批准后替换目标 |
+| expected_version / cancellation event | 显式取消 CAS 与迟到 worker 栅栏；理由只记是否存在和长度 |
+| egress origin / normalized path | 模型外执行目标策略；默认无策略即拒绝能力 |
+| trust_label / redaction result | 不可信输出与递归 trace 脱敏证明 |
 
 `status` 只表示任务生命周期（如 `running/waiting_approval/failed`），`current_step` 只表示业务
 步骤（如 `retrieve_docs/human_approval/finalize_report`），不能创建 `retrieving/finalizing` 之类
@@ -134,4 +150,7 @@ policy、扩大 capability、关闭审批或触发副作用。
 - [ ] 能证明伪造身份、跨 tenant/owner、未授权工具、恶意 RAG/tool output 不会产生越权读取或副作用。
 - [ ] 能用审批目标绑定、CAS、`expires_at` 和事务内 outbox 处理批准、拒绝、重复点击与过期竞态。
 - [ ] 能用 tenant/owner/session/version 条件保证 session 隔离与并发更新不丢失。
+- [ ] 能用 CAS 取消任务并同步关闭 pending approval/outbox；已知副作用执行后不能伪装取消成功。
+- [ ] 能证明 SSRF/path 攻击在 handler 前被拒绝，恶意 tool output 不能升级为指令或扩大权限。
+- [ ] 能证明 trace 不包含嵌套 credential、原始 URL、私有路径和完整工具输出。
 - [ ] 能识别并避免 AutoGPT、多 Agent、强化学习 Agent、复杂规划算法等发散方向。

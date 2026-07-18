@@ -72,6 +72,25 @@ class PedagogyContentTypeTests(unittest.TestCase):
         )
         self.assertEqual(document["content_type_issues"], [])
 
+    def test_letter_suffixed_inserted_chapter_is_detected(self) -> None:
+        document = self.analyze(
+            """# 测试教材
+
+<!-- textbook-content: default=instructional -->
+
+## 第 6A 章：插入的先修单元
+
+### 学习目标
+
+能解释插入单元。
+"""
+        )
+
+        self.assertEqual(document["chapter_count"], 1)
+        self.assertEqual(
+            document["chapters"][0]["title"], "第 6A 章：插入的先修单元"
+        )
+
     def test_unknown_chapter_marker_does_not_hide_behind_default(self) -> None:
         document = self.analyze(
             """# 测试教材

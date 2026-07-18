@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import sqrt
 from time import perf_counter_ns
+from typing import Literal
 import re
 
 from rank_bm25 import BM25Okapi
@@ -18,6 +20,9 @@ class Chunk:
     text: str
     tenant_id: str
     collection_id: str
+    source_id: str = "unknown"
+    source_version: str = "unknown"
+    document_sha256: str = "unknown"
 
 
 @dataclass(frozen=True)
@@ -26,6 +31,31 @@ class RetrievalResult:
     retrieval_ms: float
     authorized_search_space_size: int
     scored_chunk_ids: tuple[str, ...]
+    ranked_chunks: tuple["RankedChunk", ...] = ()
+
+
+RetrievalMethod = Literal["lexical", "vector", "hybrid"]
+
+
+# Auditable fixture features make paraphrase behavior deterministic. They are not a
+# learned embedding and must not be used as a production semantic model.
+SEMANTIC_FEATURES: tuple[tuple[str, ...], ...] = (
+    ("来源", "引用", "证据", "无证", "断言", "cite", "source", "evidence"),
+    ("rag", "chunk", "切分", "上下文", "检索"),
+    ("sjf", "长任务", "副作用", "等待", "p95", "p99", "尾部"),
+    ("卖方", "目的地", "出口", "合规", "贸易", "变更"),
+    ("金融", "公告", "宏观", "供应链", "风险", "不确定性"),
+)
+
+
+@dataclass(frozen=True)
+class RankedChunk:
+    chunk: Chunk
+    final_score: float
+    lexical_score: float
+    vector_score: float
+    lexical_rank: int
+    vector_rank: int
 
 
 @dataclass(frozen=True)
@@ -65,6 +95,9 @@ def chunk_document(document: Document, chunk_size: int, overlap: int) -> list[Ch
                 text=text,
                 tenant_id=document.tenant_id,
                 collection_id=document.collection_id,
+                source_id=document.source_id,
+                source_version=document.source_version,
+                document_sha256=document.content_sha256,
             )
         )
         if start + chunk_size >= len(document.text):
@@ -80,42 +113,143 @@ def build_chunks(documents: list[Document], chunk_size: int = 80, overlap: int =
     ]
 
 
-def retrieve(
-    query: str,
+def authorized_chunks(
     chunks: list[Chunk],
     principal: Principal,
-    collection_id: str = "demo",
-    top_k: int = 3,
-) -> RetrievalResult:
-    if top_k < 1:
-        raise ValueError("top_k must be at least 1")
+    collection_id: str,
+) -> list[Chunk]:
+    """Return the only chunks that any ranker is allowed to inspect."""
 
-    started = perf_counter_ns()
-    authorized_chunks = [
+    return [
         chunk
         for chunk in chunks
         if chunk.tenant_id == principal.tenant_id
         and chunk.collection_id == collection_id
         and chunk.permission_group in principal.effective_permission_groups
     ]
-    if not authorized_chunks:
-        elapsed_ms = (perf_counter_ns() - started) / 1_000_000
-        return RetrievalResult((), elapsed_ms, 0, ())
 
-    tokenized_corpus = [tokenize(chunk.text) for chunk in authorized_chunks]
-    bm25 = BM25Okapi(tokenized_corpus)
-    scores = bm25.get_scores(tokenize(query))
-    ranked = sorted(
-        zip(authorized_chunks, scores, strict=True),
-        key=lambda item: (-float(item[1]), item[0].chunk_id),
+
+def _semantic_feature_vector(text: str) -> tuple[float, ...]:
+    normalized = text.lower()
+    return tuple(
+        float(sum(normalized.count(term) for term in dimension))
+        for dimension in SEMANTIC_FEATURES
     )
-    selected = tuple(chunk for chunk, _score in ranked[:top_k])
+
+
+def _cosine(left: tuple[float, ...], right: tuple[float, ...]) -> float:
+    if not any(left) or not any(right):
+        return 0.0
+    dot_product = sum(a * b for a, b in zip(left, right, strict=True))
+    query_norm = sqrt(sum(weight * weight for weight in left))
+    document_norm = sqrt(sum(weight * weight for weight in right))
+    if query_norm == 0 or document_norm == 0:
+        return 0.0
+    return dot_product / (query_norm * document_norm)
+
+
+def rank_chunks(
+    query: str,
+    chunks: list[Chunk],
+    principal: Principal,
+    *,
+    collection_id: str = "demo",
+    method: RetrievalMethod = "lexical",
+    rrf_k: int = 60,
+) -> tuple[RankedChunk, ...]:
+    """Rank an authorization-filtered set and retain every recomputable component."""
+
+    if method not in {"lexical", "vector", "hybrid"}:
+        raise ValueError(f"unsupported retrieval method: {method}")
+    if rrf_k < 1:
+        raise ValueError("rrf_k must be at least 1")
+
+    candidates = authorized_chunks(chunks, principal, collection_id)
+    if not candidates:
+        return ()
+
+    tokenized_corpus = [tokenize(chunk.text) for chunk in candidates]
+    query_tokens = tokenize(query)
+    bm25 = BM25Okapi(tokenized_corpus)
+    lexical_scores = [float(score) for score in bm25.get_scores(query_tokens)]
+    query_vector = _semantic_feature_vector(query)
+    vector_scores = [
+        _cosine(query_vector, _semantic_feature_vector(chunk.text))
+        for chunk in candidates
+    ]
+
+    def component_ranks(scores: list[float]) -> dict[str, int]:
+        ordered = sorted(
+            zip(candidates, scores, strict=True),
+            key=lambda item: (-item[1], item[0].chunk_id),
+        )
+        return {chunk.chunk_id: rank for rank, (chunk, _score) in enumerate(ordered, 1)}
+
+    lexical_ranks = component_ranks(lexical_scores)
+    vector_ranks = component_ranks(vector_scores)
+    ranked: list[RankedChunk] = []
+    for chunk, lexical_score, vector_score in zip(
+        candidates, lexical_scores, vector_scores, strict=True
+    ):
+        lexical_rank = lexical_ranks[chunk.chunk_id]
+        vector_rank = vector_ranks[chunk.chunk_id]
+        if method == "lexical":
+            final_score = lexical_score
+        elif method == "vector":
+            final_score = vector_score
+        else:
+            final_score = (1.0 / (rrf_k + lexical_rank)) + (
+                1.0 / (rrf_k + vector_rank)
+            )
+        ranked.append(
+            RankedChunk(
+                chunk=chunk,
+                final_score=final_score,
+                lexical_score=lexical_score,
+                vector_score=vector_score,
+                lexical_rank=lexical_rank,
+                vector_rank=vector_rank,
+            )
+        )
+    return tuple(
+        sorted(ranked, key=lambda row: (-row.final_score, row.chunk.chunk_id))
+    )
+
+
+def retrieve(
+    query: str,
+    chunks: list[Chunk],
+    principal: Principal,
+    collection_id: str = "demo",
+    top_k: int = 3,
+    method: RetrievalMethod = "lexical",
+    rrf_k: int = 60,
+) -> RetrievalResult:
+    if top_k < 1:
+        raise ValueError("top_k must be at least 1")
+
+    started = perf_counter_ns()
+    candidates = authorized_chunks(chunks, principal, collection_id)
+    if not candidates:
+        elapsed_ms = (perf_counter_ns() - started) / 1_000_000
+        return RetrievalResult((), elapsed_ms, 0, (), ())
+
+    ranked = rank_chunks(
+        query,
+        chunks,
+        principal,
+        collection_id=collection_id,
+        method=method,
+        rrf_k=rrf_k,
+    )
+    selected = tuple(row.chunk for row in ranked[:top_k])
     elapsed_ms = (perf_counter_ns() - started) / 1_000_000
     return RetrievalResult(
         selected,
         elapsed_ms,
-        len(authorized_chunks),
-        tuple(chunk.chunk_id for chunk in authorized_chunks),
+        len(candidates),
+        tuple(chunk.chunk_id for chunk in candidates),
+        ranked,
     )
 
 

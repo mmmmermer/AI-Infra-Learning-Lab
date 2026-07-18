@@ -95,7 +95,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "*\tools\validate_rq01_artifacts.py") {
         Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "RQ01 发布文件 SHA-256、压缩快照安全路径、成员覆盖和逐文件哈希门禁"
     } elseif ($relative -like "*\tools\run_full_validation.ps1") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "八套 Python 3.13 reference 共 149 项测试，并覆盖编码、内容、Mermaid、编译和发布候选 diff"
+        Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "十套 Python 3.13 reference 共 257 项测试，逐项目期望数与总数由统一门禁校验，并覆盖编码、内容、Mermaid、编译和发布候选 diff"
     } elseif ($relative -like "*\tools\rebuild_remediation_matrix.ps1") {
         Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "逐文件覆盖与自动分诊清单生成器已执行；未复核文件保持 unassessed/unknown"
     } elseif ($relative -like "*\tools\split_m05_textbook.ps1") {
@@ -106,7 +106,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "*\artifacts\content_quality_audit_2026-07-11\*") {
         Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留" "Markdown/Zhlint/Vale/Lychee 全库原始审计证据"
     } elseif ($relative -like "*\artifacts\official_docs_content_audit_2026-07-12\*") {
-        Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留为历史快照" "2026-07-12 的 202 章历史 JSON/CSV；现行 203 章见 2026-07-18 artifact"
+        Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留为历史快照" "2026-07-12 的 202 章历史 JSON/CSV；现行 210 章见 2026-07-18 artifact"
     } elseif ($relative -like "*\artifacts\m05_split_2026-07-11\*") {
         Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留" "M05 无损拆分的原始行区间、迁移瞬时哈希和使用说明"
     } elseif ($relative -like "*\artifacts\full_validation_2026-07-11\*") {
@@ -120,7 +120,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "*\08_自学教材规范符合性与首批改造报告_2026-07-12.md") {
         Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留/按证据更新" "自学规范映射、首批改造证据、适用边界和后续优先级已复核"
     } elseif ($relative -like "*\09_权威技术学习文档格式对标与教材内容检查_2026-07-12.md") {
-        Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留为历史报告" "2026-07-12 对 22 份教材、202 章的历史检查；现行 203 章证据见 2026-07-18 artifact"
+        Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留为历史报告" "2026-07-12 对 22 份教材、202 章的历史检查；现行 210 章证据见 2026-07-18 artifact"
     } elseif (
         $relative -like "10_学习模块\F02_*\F02_*_适配教材.md" -or
         $relative -like "10_学习模块\F03_*\F03_*_适配教材.md" -or
@@ -147,13 +147,17 @@ $rows = foreach ($file in $files) {
          $relative -like "10_学习模块\*\*_章节教材.md") -and
         $relative -notlike "*\99_归档\*"
     ) {
-        Set-Classification $row "draft" "not-applicable" "unverified" "medium" "保留/按 09 报告修订" "203 章已人工归类且 22 份入口齐全；对应 instructional 文档闭环尚未全部达到 content-reviewed" "" "完成 09 报告 Wave 2-3 项并通过人工语义复核"
+        Set-Classification $row "draft" "not-applicable" "unverified" "medium" "保留/按 09 报告修订" "210 章已人工归类，其中 166 章为 instructional，且 22 份入口齐全；对应 instructional 文档闭环尚未全部达到 content-reviewed" "" "完成 09 报告 Wave 2-3 项并通过人工语义复核"
     } elseif ($relative -like "10_学习模块\M05_任务队列与调度\教材章节\*") {
         Set-Classification $row "draft" "not-applicable" "unverified" "medium" "保留/继续答案隔离" "M05 无损拆分章节；结构和代码块已验证，完整答案与固定结果仍需逐章隔离"
     } elseif ($relative -like "10_学习模块\M05_任务队列与调度\M05_参考答案与结果索引.md") {
         Set-Classification $row "content-reviewed" "not-applicable" "verified" "low" "保留" "只提供完成后 reference 导航，不复制答案"
     } elseif ($relative -like "40_实验练习\E05_调度实验\E05-05*" -or $relative -like "40_实验练习\E05_调度实验\E05-06*") {
         Set-Classification $row "content-reviewed" "runnable-task" "unverified" "medium" "保留/学习者复现" "新增独立学习者任务，提供接口、不变量和验收，不提供完整答案" "M05 对应章节" "学习者保存代码、原始 artifact、复现命令和证据表"
+    } elseif ($relative -like "40_实验练习\E00_工具链基础实验\os_network_reference\*") {
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "进程元数据、超时回收、信号清理、权限恢复和请求路径故障分类 reference，共 11 项测试通过"
+    } elseif ($relative -like "40_实验练习\E01_Python基础练习\concurrency_reference\*") {
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "线程池、进程池、asyncio 和取消清理 reference，共 6 项测试通过"
     } elseif (
         $relative -like "40_实验练习\E00_工具链基础实验\*.md" -or
         $relative -like "40_实验练习\E01_Python基础练习\*.md" -or
@@ -164,13 +168,13 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "00_路线总控\审计与整改\*") {
         Set-Classification $row "draft" "not-applicable" "unverified" "medium" "人工复核" "整改控制文件已纳入覆盖清单，但未由路径规则授予内容成熟度或低风险结论"
     } elseif ($relative -like "40_实验练习\E02_后端API实验\e02_service\*") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "单一 FastAPI reference：11 个运行时 API 契约和 1 个 OpenAPI schema 测试通过，共 12 项"
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "FastAPI 生命周期、跨租户隔离、幂等并发契约和自包含 OpenAPI schema reference，共 29 项测试通过"
     } elseif ($relative -like "40_实验练习\E03_RAG实验\e03_rag_reference\*") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "固定 corpus、黄金集、BM25、权限前置过滤和对抗边界，共 21 项测试通过"
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "固定 corpus、黄金集、BM25、权限前置过滤、摄取生命周期和评估闭环，共 35 项测试通过"
     } elseif ($relative -like "40_实验练习\E04_Agent实验\e04_runtime_reference\*") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "确定性 Agent runtime、授权审批、fencing、session 隔离和审计，共 38 项测试通过"
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "确定性 Agent runtime、授权审批、fencing、取消竞态、跨租户隔离和审计，共 76 项测试通过"
     } elseif ($relative -like "40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference\*") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "SQLite outbox、幂等、lease、reconciliation 和 stale-worker fencing，共 7 项测试通过"
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "SQLite outbox、幂等、lease、重试退避、reconciliation 和 stale-worker fencing，共 29 项测试通过"
     } elseif ($relative -like "40_实验练习\GF10_*\finance_reference\*") {
         Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "金融 P0 参考实现，9 个测试通过"
     } elseif ($relative -like "40_实验练习\E09_K8s实验\kind_reference\*") {

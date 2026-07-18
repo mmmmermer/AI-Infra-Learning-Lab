@@ -56,6 +56,44 @@ def test_run_to_approval_keeps_status_and_current_step_separate(
     assert (task.status, task.current_step) == ("waiting_approval", "human_approval")
     assert task.retrieved_source_ids == ("src-public", "src-owner")
     assert approval.target_task_version == task.version
+
+
+def test_initial_redelivery_is_idempotent_while_waiting_and_non_destructive_after_approval(
+    harness: Harness,
+    principal: Principal,
+) -> None:
+    waiting, approval = create_waiting(harness, principal)
+    event_count = len(harness.repository.events)
+
+    repeated_task, repeated_approval = harness.runtime.run_to_approval(
+        principal,
+        waiting.task_id,
+    )
+
+    assert repeated_task == waiting
+    assert repeated_approval == approval
+    assert len(harness.repository.events) == event_count
+
+    queued, _, outbox = harness.runtime.decide_approval(
+        principal,
+        task_id=waiting.task_id,
+        approval_id=approval.approval_id,
+        payload=decision_payload(approval),
+    )
+    assert outbox is not None
+    event_count = len(harness.repository.events)
+
+    with pytest.raises(InvalidTransition):
+        harness.runtime.run_to_approval(principal, waiting.task_id)
+
+    assert harness.repository.get_task(principal, waiting.task_id) == queued
+    assert harness.repository.get_approval(
+        principal,
+        waiting.task_id,
+        approval.approval_id,
+    ).status == "approved"
+    assert harness.repository.outbox_for_approval(approval.approval_id) == outbox
+    assert len(harness.repository.events) == event_count
     assert approval.version == 0
     assert approval.status == "pending"
     assert approval.required_approver_capability == "approval:decide"
@@ -297,7 +335,10 @@ def test_approved_workflow_claims_executes_and_finalizes(
         payload=decision_payload(approval),
     )
 
-    claim = harness.runtime.claim_resume(worker_id="worker-a")
+    claim = harness.runtime.claim_resume(
+        worker_id="worker-a",
+        tenant_scope=frozenset({principal.tenant_id}),
+    )
     assert claim is not None
     observation = harness.runtime.execute_resume(principal, claim)
     completed = harness.runtime.finalize_resume(principal, claim)
@@ -307,10 +348,52 @@ def test_approved_workflow_claims_executes_and_finalizes(
     assert completed.current_step == "finalize_report"
     assert harness.publisher.effect_count == 1
     assert harness.repository.outbox_records[0].status == "delivered"
-    assert [event.event_type for event in harness.repository.events][-2:] == [
+    assert [event.event_type for event in harness.repository.events][-4:] == [
         "resume_claimed",
+        "side_effect_started",
+        "side_effect_executed",
         "report_finalized",
     ]
+
+
+def test_resume_claim_is_filtered_by_trusted_tenant_scope_and_rechecked_on_execute(
+    harness: Harness,
+    principal: Principal,
+    other_principal: Principal,
+) -> None:
+    task, approval = create_waiting(harness, principal)
+    harness.runtime.decide_approval(
+        principal,
+        task_id=task.task_id,
+        approval_id=approval.approval_id,
+        payload=decision_payload(approval),
+    )
+
+    assert (
+        harness.runtime.claim_resume(
+            worker_id="tenant-b-worker",
+            tenant_scope=frozenset({other_principal.tenant_id}),
+        )
+        is None
+    )
+    pending = harness.repository.outbox_for_approval(approval.approval_id)
+    assert pending is not None
+    assert pending.status == "pending"
+
+    claim = harness.runtime.claim_resume(
+        worker_id="tenant-a-worker",
+        tenant_scope=frozenset({principal.tenant_id}),
+    )
+    assert claim is not None
+    assert (claim.tenant_id, claim.owner_user_id) == (
+        principal.tenant_id,
+        principal.owner_user_id,
+    )
+
+    forged = replace(claim, owner_user_id=other_principal.owner_user_id)
+    with pytest.raises(StaleClaim):
+        harness.runtime.execute_resume(principal, forged)
+    assert harness.publisher.effect_count == 0
 
 
 def test_expired_claim_is_reclaimed_and_old_worker_is_fenced(
@@ -324,11 +407,19 @@ def test_expired_claim_is_reclaimed_and_old_worker_is_fenced(
         approval_id=approval.approval_id,
         payload=decision_payload(approval),
     )
-    first = harness.runtime.claim_resume(worker_id="worker-a", lease_seconds=1)
+    first = harness.runtime.claim_resume(
+        worker_id="worker-a",
+        tenant_scope=frozenset({principal.tenant_id}),
+        lease_seconds=1,
+    )
     assert first is not None
     harness.runtime.execute_resume(principal, first)
     harness.clock.advance(seconds=1)
-    second = harness.runtime.claim_resume(worker_id="worker-b", lease_seconds=5)
+    second = harness.runtime.claim_resume(
+        worker_id="worker-b",
+        tenant_scope=frozenset({principal.tenant_id}),
+        lease_seconds=5,
+    )
     assert second is not None
     assert second.claim_version == first.claim_version + 1
 
@@ -370,6 +461,7 @@ def test_invalid_runtime_ttl_and_lease_are_rejected_before_state_change(
         with pytest.raises(InvalidContract):
             harness.runtime.claim_resume(
                 worker_id=worker_id,
+                tenant_scope=frozenset({principal.tenant_id}),
                 lease_seconds=lease_seconds,
             )
 

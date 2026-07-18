@@ -17,15 +17,17 @@
     "machine_local_path_scan":  "passed",
     "staged_secret_scan":  "passed",
     "reference_python_version":  "3.13",
-    "reference_project_count":  8,
-    "reference_test_count":  149,
+    "reference_project_count":  10,
+    "reference_test_count":  257,
     "reference_test_counts":  {
-                                  "p01":  28,
-                                  "e02":  12,
-                                  "e03":  21,
-                                  "e04":  38,
-                                  "e06":  7,
+                                  "e00":  11,
+                                  "e01":  6,
+                                  "e02":  29,
+                                  "e03":  35,
+                                  "e04":  76,
+                                  "e06":  29,
                                   "e10":  7,
+                                  "p01":  28,
                                   "finance":  9,
                                   "p03":  27
                               },
@@ -37,5 +39,5 @@
                                      "lychee"
                                  ],
     "mermaid_skipped":  false,
-    "completed_at_utc":  "2026-07-18T11:09:43.4071820Z"
+    "completed_at_utc":  "2026-07-18T15:38:57.1640264Z"
 }

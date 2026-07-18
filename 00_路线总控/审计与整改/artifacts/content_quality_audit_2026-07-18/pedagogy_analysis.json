@@ -1,7 +1,7 @@
 {
   "schema_version": "1.3",
   "method": {
-    "chapter_boundary": "Use anchored H2 '第 X 章' headings; only fall back to anchored H1 chapters when a textbook has no matching H2 chapter. M05 split chapter files are aggregated under their stable compatibility index.",
+    "chapter_boundary": "Use anchored H2 '第 X 章' headings with Arabic numerals, an optional inserted letter suffix such as 6A, or Chinese numerals; only fall back to anchored H1 chapters when a textbook has no matching H2 chapter. M05 split chapter files are aggregated under their stable compatibility index.",
     "role_detection": "Match section headings within each chapter. Whole-file keyword presence is not used to claim chapter coverage.",
     "content_type_detection": "Use explicit textbook-content HTML comments, supported heading tags, or content type quote metadata. Chapter markers override a document default. Missing, unknown, or conflicting explicit types remain unclassified; titles and prose keywords are not used to guess a type.",
     "primary_role_coverage_scope": "Explicitly classified instructional chapters only.",
@@ -11,9 +11,9 @@
   "summary": {
     "active_textbook_count": 22,
     "archived_textbook_count": 1,
-    "active_chapter_count": 203,
+    "active_chapter_count": 210,
     "active_content_type_counts": {
-      "instructional": 159,
+      "instructional": 166,
       "workbook": 2,
       "reference": 4,
       "design-note": 27,
@@ -21,17 +21,17 @@
       "appendix": 11,
       "unclassified": 0
     },
-    "active_classified_chapter_count": 203,
+    "active_classified_chapter_count": 210,
     "active_unclassified_chapter_count": 0,
-    "active_instructional_chapter_count": 159,
+    "active_instructional_chapter_count": 166,
     "active_content_type_issue_count": 0,
     "active_content_type_issues": [],
     "active_chapter_detection_modes": {
       "h2": 21,
       "split_h1": 1
     },
-    "active_code_fence_count": 1536,
-    "active_visual_item_count": 367,
+    "active_code_fence_count": 1582,
+    "active_visual_item_count": 379,
     "active_accessibility": {
       "markdown_image_count": 0,
       "markdown_images_missing_alt": 0,
@@ -42,80 +42,80 @@
     },
     "role_coverage": {
       "objectives": {
-        "chapter_count": 159,
-        "chapters_with_explicit_section": 136,
-        "chapters_without_explicit_section": 23,
-        "coverage_ratio": 0.8553
+        "chapter_count": 166,
+        "chapters_with_explicit_section": 140,
+        "chapters_without_explicit_section": 26,
+        "coverage_ratio": 0.8434
       },
       "examples": {
-        "chapter_count": 159,
-        "chapters_with_explicit_section": 62,
-        "chapters_without_explicit_section": 97,
-        "coverage_ratio": 0.3899
+        "chapter_count": 166,
+        "chapters_with_explicit_section": 78,
+        "chapters_without_explicit_section": 88,
+        "coverage_ratio": 0.4699
       },
       "counterexamples": {
-        "chapter_count": 159,
-        "chapters_with_explicit_section": 112,
-        "chapters_without_explicit_section": 47,
-        "coverage_ratio": 0.7044
+        "chapter_count": 166,
+        "chapters_with_explicit_section": 117,
+        "chapters_without_explicit_section": 49,
+        "coverage_ratio": 0.7048
       },
       "practice": {
-        "chapter_count": 159,
-        "chapters_with_explicit_section": 109,
-        "chapters_without_explicit_section": 50,
-        "coverage_ratio": 0.6855
+        "chapter_count": 166,
+        "chapters_with_explicit_section": 115,
+        "chapters_without_explicit_section": 51,
+        "coverage_ratio": 0.6928
       },
       "acceptance": {
-        "chapter_count": 159,
-        "chapters_with_explicit_section": 122,
+        "chapter_count": 166,
+        "chapters_with_explicit_section": 129,
         "chapters_without_explicit_section": 37,
-        "coverage_ratio": 0.7673
+        "coverage_ratio": 0.7771
       },
       "sources": {
-        "chapter_count": 159,
-        "chapters_with_explicit_section": 40,
-        "chapters_without_explicit_section": 119,
-        "coverage_ratio": 0.2516
+        "chapter_count": 166,
+        "chapters_with_explicit_section": 51,
+        "chapters_without_explicit_section": 115,
+        "coverage_ratio": 0.3072
       }
     },
     "role_coverage_scope": "Explicitly classified instructional chapters only. Unclassified and non-instructional chapters are excluded from this denominator.",
     "role_coverage_by_content_type": {
       "instructional": {
         "objectives": {
-          "chapter_count": 159,
-          "chapters_with_explicit_section": 136,
-          "chapters_without_explicit_section": 23,
-          "coverage_ratio": 0.8553
+          "chapter_count": 166,
+          "chapters_with_explicit_section": 140,
+          "chapters_without_explicit_section": 26,
+          "coverage_ratio": 0.8434
         },
         "examples": {
-          "chapter_count": 159,
-          "chapters_with_explicit_section": 62,
-          "chapters_without_explicit_section": 97,
-          "coverage_ratio": 0.3899
+          "chapter_count": 166,
+          "chapters_with_explicit_section": 78,
+          "chapters_without_explicit_section": 88,
+          "coverage_ratio": 0.4699
         },
         "counterexamples": {
-          "chapter_count": 159,
-          "chapters_with_explicit_section": 112,
-          "chapters_without_explicit_section": 47,
-          "coverage_ratio": 0.7044
+          "chapter_count": 166,
+          "chapters_with_explicit_section": 117,
+          "chapters_without_explicit_section": 49,
+          "coverage_ratio": 0.7048
         },
         "practice": {
-          "chapter_count": 159,
-          "chapters_with_explicit_section": 109,
-          "chapters_without_explicit_section": 50,
-          "coverage_ratio": 0.6855
+          "chapter_count": 166,
+          "chapters_with_explicit_section": 115,
+          "chapters_without_explicit_section": 51,
+          "coverage_ratio": 0.6928
         },
         "acceptance": {
-          "chapter_count": 159,
-          "chapters_with_explicit_section": 122,
+          "chapter_count": 166,
+          "chapters_with_explicit_section": 129,
           "chapters_without_explicit_section": 37,
-          "coverage_ratio": 0.7673
+          "coverage_ratio": 0.7771
         },
         "sources": {
-          "chapter_count": 159,
-          "chapters_with_explicit_section": 40,
-          "chapters_without_explicit_section": 119,
-          "coverage_ratio": 0.2516
+          "chapter_count": 166,
+          "chapters_with_explicit_section": 51,
+          "chapters_without_explicit_section": 115,
+          "coverage_ratio": 0.3072
         }
       },
       "workbook": {
@@ -349,46 +349,46 @@
     },
     "all_active_role_coverage": {
       "objectives": {
-        "chapter_count": 203,
-        "chapters_with_explicit_section": 159,
-        "chapters_without_explicit_section": 44,
-        "coverage_ratio": 0.7833
+        "chapter_count": 210,
+        "chapters_with_explicit_section": 163,
+        "chapters_without_explicit_section": 47,
+        "coverage_ratio": 0.7762
       },
       "examples": {
-        "chapter_count": 203,
-        "chapters_with_explicit_section": 63,
-        "chapters_without_explicit_section": 140,
-        "coverage_ratio": 0.3103
+        "chapter_count": 210,
+        "chapters_with_explicit_section": 79,
+        "chapters_without_explicit_section": 131,
+        "coverage_ratio": 0.3762
       },
       "counterexamples": {
-        "chapter_count": 203,
-        "chapters_with_explicit_section": 130,
-        "chapters_without_explicit_section": 73,
-        "coverage_ratio": 0.6404
+        "chapter_count": 210,
+        "chapters_with_explicit_section": 135,
+        "chapters_without_explicit_section": 75,
+        "coverage_ratio": 0.6429
       },
       "practice": {
-        "chapter_count": 203,
-        "chapters_with_explicit_section": 126,
-        "chapters_without_explicit_section": 77,
-        "coverage_ratio": 0.6207
+        "chapter_count": 210,
+        "chapters_with_explicit_section": 132,
+        "chapters_without_explicit_section": 78,
+        "coverage_ratio": 0.6286
       },
       "acceptance": {
-        "chapter_count": 203,
-        "chapters_with_explicit_section": 143,
+        "chapter_count": 210,
+        "chapters_with_explicit_section": 150,
         "chapters_without_explicit_section": 60,
-        "coverage_ratio": 0.7044
+        "coverage_ratio": 0.7143
       },
       "sources": {
-        "chapter_count": 203,
-        "chapters_with_explicit_section": 52,
-        "chapters_without_explicit_section": 151,
-        "coverage_ratio": 0.2562
+        "chapter_count": 210,
+        "chapters_with_explicit_section": 63,
+        "chapters_without_explicit_section": 147,
+        "coverage_ratio": 0.3
       }
     },
     "scope_expectation": {
       "expected_active_textbooks": 22,
       "expected_archived_textbooks": 1,
-      "expected_active_chapters": 203,
+      "expected_active_chapters": 210,
       "chapterless_active_documents": [],
       "unclosed_fence_documents": [],
       "matches_expectation": true
@@ -8025,22 +8025,22 @@
       "file": "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md",
       "status": "active",
       "chapter_detection_mode": "h2",
-      "line_count": 1497,
-      "heading_count": 81,
-      "chapter_count": 12,
-      "code_fence_count": 63,
+      "line_count": 1701,
+      "heading_count": 91,
+      "chapter_count": 13,
+      "code_fence_count": 70,
       "code_fence_language_counts": {
-        "text": 23,
-        "powershell": 19,
-        "python": 12,
+        "text": 24,
+        "powershell": 21,
+        "python": 16,
         "mermaid": 7,
         "http": 1,
         "json": 1
       },
       "unclosed_fence_start_line": null,
-      "external_url_count": 17,
+      "external_url_count": 26,
       "visual_evidence": {
-        "table_count": 15,
+        "table_count": 17,
         "markdown_image_count": 0,
         "markdown_images_missing_alt": 0,
         "html_image_count": 0,
@@ -8048,7 +8048,7 @@
         "mermaid_count": 7,
         "mermaid_accessible_count": 2,
         "mermaid_missing_accessibility_count": 5,
-        "visual_item_count": 22
+        "visual_item_count": 24
       },
       "outside_chapter_role_headings": [],
       "default_content_type": "instructional",
@@ -8056,7 +8056,7 @@
       "default_content_type_marker_line": 3,
       "content_type_issues": [],
       "content_type_counts": {
-        "instructional": 10,
+        "instructional": 11,
         "reference": 1,
         "appendix": 1
       },
@@ -8150,9 +8150,9 @@
           "title": "第 1 章：为什么工程学习必须先学工具链",
           "heading_level": 2,
           "start_line": 102,
-          "end_line": 163,
-          "line_count": 62,
-          "prose_character_count": 876,
+          "end_line": 164,
+          "line_count": 63,
+          "prose_character_count": 874,
           "heading_count": 4,
           "code_fence_count": 2,
           "code_fence_language_counts": {
@@ -8167,14 +8167,14 @@
             "objectives": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 331,
+              "prose_character_count": 329,
               "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "1.3 这一章怎么读，以及它想给你什么",
                   "heading_line": 140,
-                  "end_line": 163,
-                  "prose_character_count": 331,
+                  "end_line": 164,
+                  "prose_character_count": 329,
                   "code_fence_count": 1
                 }
               ]
@@ -8241,8 +8241,8 @@
         {
           "title": "第 2 章：Shell、目录和路径",
           "heading_level": 2,
-          "start_line": 164,
-          "end_line": 330,
+          "start_line": 165,
+          "end_line": 331,
           "line_count": 167,
           "prose_character_count": 2763,
           "heading_count": 8,
@@ -8275,8 +8275,8 @@
               "evidence": [
                 {
                   "heading": "2.1 从一个真实报错开始",
-                  "heading_line": 166,
-                  "end_line": 177,
+                  "heading_line": 167,
+                  "end_line": 178,
                   "prose_character_count": 202,
                   "code_fence_count": 1
                 }
@@ -8290,8 +8290,8 @@
               "evidence": [
                 {
                   "heading": "2.5 工程习惯与踩坑现场",
-                  "heading_line": 275,
-                  "end_line": 296,
+                  "heading_line": 276,
+                  "end_line": 297,
                   "prose_character_count": 507,
                   "code_fence_count": 0
                 }
@@ -8319,8 +8319,8 @@
               "evidence": [
                 {
                   "heading": "2.7 推荐资料",
-                  "heading_line": 320,
-                  "end_line": 330,
+                  "heading_line": 321,
+                  "end_line": 331,
                   "prose_character_count": 245,
                   "code_fence_count": 0
                 }
@@ -8351,8 +8351,8 @@
         {
           "title": "第 3 章：Python 解释器、pip 和虚拟环境",
           "heading_level": 2,
-          "start_line": 331,
-          "end_line": 516,
+          "start_line": 332,
+          "end_line": 517,
           "line_count": 186,
           "prose_character_count": 3262,
           "heading_count": 9,
@@ -8384,8 +8384,8 @@
               "evidence": [
                 {
                   "heading": "3.1 从一个把人逼疯的报错开始",
-                  "heading_line": 333,
-                  "end_line": 344,
+                  "heading_line": 334,
+                  "end_line": 345,
                   "prose_character_count": 249,
                   "code_fence_count": 1
                 }
@@ -8399,8 +8399,8 @@
               "evidence": [
                 {
                   "heading": "3.5b 一个真实权衡，和一个踩坑现场",
-                  "heading_line": 454,
-                  "end_line": 482,
+                  "heading_line": 455,
+                  "end_line": 483,
                   "prose_character_count": 929,
                   "code_fence_count": 0
                 }
@@ -8428,8 +8428,8 @@
               "evidence": [
                 {
                   "heading": "3.7 推荐资料",
-                  "heading_line": 507,
-                  "end_line": 516,
+                  "heading_line": 508,
+                  "end_line": 517,
                   "prose_character_count": 255,
                   "code_fence_count": 0
                 }
@@ -8460,8 +8460,8 @@
         {
           "title": "第 4 章：Git 的真正作用",
           "heading_level": 2,
-          "start_line": 517,
-          "end_line": 673,
+          "start_line": 518,
+          "end_line": 674,
           "line_count": 157,
           "prose_character_count": 3843,
           "heading_count": 8,
@@ -8495,8 +8495,8 @@
               "evidence": [
                 {
                   "heading": "4.1 从一个你一定会遇到的场景开始",
-                  "heading_line": 519,
-                  "end_line": 530,
+                  "heading_line": 520,
+                  "end_line": 531,
                   "prose_character_count": 455,
                   "code_fence_count": 0
                 }
@@ -8510,8 +8510,8 @@
               "evidence": [
                 {
                   "heading": "4.5 踩坑现场：一条让新手懵掉的报错",
-                  "heading_line": 620,
-                  "end_line": 646,
+                  "heading_line": 621,
+                  "end_line": 647,
                   "prose_character_count": 641,
                   "code_fence_count": 1
                 }
@@ -8539,8 +8539,8 @@
               "evidence": [
                 {
                   "heading": "4.6 推荐资料",
-                  "heading_line": 662,
-                  "end_line": 673,
+                  "heading_line": 663,
+                  "end_line": 674,
                   "prose_character_count": 376,
                   "code_fence_count": 0
                 }
@@ -8571,8 +8571,8 @@
         {
           "title": "第 5 章：日志和调试",
           "heading_level": 2,
-          "start_line": 674,
-          "end_line": 818,
+          "start_line": 675,
+          "end_line": 819,
           "line_count": 145,
           "prose_character_count": 2923,
           "heading_count": 8,
@@ -8632,8 +8632,8 @@
               "evidence": [
                 {
                   "heading": "5.6 推荐资料",
-                  "heading_line": 809,
-                  "end_line": 818,
+                  "heading_line": 810,
+                  "end_line": 819,
                   "prose_character_count": 261,
                   "code_fence_count": 0
                 }
@@ -8666,8 +8666,8 @@
         {
           "title": "第 6 章：pytest 和最小质量保障",
           "heading_level": 2,
-          "start_line": 819,
-          "end_line": 941,
+          "start_line": 820,
+          "end_line": 942,
           "line_count": 123,
           "prose_character_count": 2263,
           "heading_count": 6,
@@ -8727,8 +8727,8 @@
               "evidence": [
                 {
                   "heading": "6.5 推荐资料",
-                  "heading_line": 932,
-                  "end_line": 941,
+                  "heading_line": 933,
+                  "end_line": 942,
                   "prose_character_count": 250,
                   "code_fence_count": 0
                 }
@@ -8759,27 +8759,163 @@
           "content_type_issues": []
         },
         {
-          "title": "第 7 章：HTTP、JSON 和服务交互",
+          "title": "第 6A 章：进程、信号、环境变量与文件权限",
           "heading_level": 2,
-          "start_line": 942,
-          "end_line": 1197,
-          "line_count": 256,
-          "prose_character_count": 4381,
-          "heading_count": 12,
-          "code_fence_count": 10,
+          "start_line": 943,
+          "end_line": 1072,
+          "line_count": 130,
+          "prose_character_count": 2711,
+          "heading_count": 8,
+          "code_fence_count": 4,
           "code_fence_language_counts": {
-            "python": 4,
-            "powershell": 2,
-            "mermaid": 1,
-            "http": 1,
-            "json": 1,
-            "text": 1
+            "python": 3,
+            "powershell": 1
           },
           "external_url_count": 4,
           "external_urls": [
+            "https://docs.python.org/3.13/library/os.html#os.access",
+            "https://docs.python.org/3.13/library/signal.html",
+            "https://docs.python.org/3.13/library/subprocess.html",
+            "https://man7.org/linux/man-pages/man7/signal.7.html"
+          ],
+          "wiki_link_count": 0,
+          "wiki_links": [],
+          "roles": {
+            "objectives": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 338,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "6A.1 本章目标与边界",
+                  "heading_line": 945,
+                  "end_line": 958,
+                  "prose_character_count": 338,
+                  "code_fence_count": 0
+                }
+              ]
+            },
+            "examples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 190,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "6A.5 Worked example：可执行 reference",
+                  "heading_line": 1035,
+                  "end_line": 1047,
+                  "prose_character_count": 190,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "counterexamples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 366,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "6A.6 独立练习、反例与验收",
+                  "heading_line": 1048,
+                  "end_line": 1060,
+                  "prose_character_count": 366,
+                  "code_fence_count": 0
+                }
+              ]
+            },
+            "practice": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 366,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "6A.6 独立练习、反例与验收",
+                  "heading_line": 1048,
+                  "end_line": 1060,
+                  "prose_character_count": 366,
+                  "code_fence_count": 0
+                }
+              ]
+            },
+            "acceptance": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 366,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "6A.6 独立练习、反例与验收",
+                  "heading_line": 1048,
+                  "end_line": 1060,
+                  "prose_character_count": 366,
+                  "code_fence_count": 0
+                }
+              ]
+            },
+            "sources": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 382,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "6A.7 本章来源",
+                  "heading_line": 1061,
+                  "end_line": 1072,
+                  "prose_character_count": 382,
+                  "code_fence_count": 0
+                }
+              ]
+            }
+          },
+          "missing_explicit_role_sections": [],
+          "visual_evidence": {
+            "table_count": 1,
+            "markdown_image_count": 0,
+            "markdown_images_missing_alt": 0,
+            "html_image_count": 0,
+            "html_images_missing_alt": 0,
+            "mermaid_count": 0,
+            "mermaid_accessible_count": 0,
+            "mermaid_missing_accessibility_count": 0,
+            "visual_item_count": 1
+          },
+          "content_type": "instructional",
+          "content_type_source": "document_default_marker",
+          "content_type_marker_line": 3,
+          "content_type_issues": []
+        },
+        {
+          "title": "第 7 章：HTTP、JSON 和服务交互",
+          "heading_level": 2,
+          "start_line": 1073,
+          "end_line": 1395,
+          "line_count": 323,
+          "prose_character_count": 5984,
+          "heading_count": 14,
+          "code_fence_count": 13,
+          "code_fence_language_counts": {
+            "python": 5,
+            "powershell": 3,
+            "text": 2,
+            "mermaid": 1,
+            "http": 1,
+            "json": 1
+          },
+          "external_url_count": 9,
+          "external_urls": [
+            "https://`",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+            "https://docs.python.org/3.13/library/socket.html",
+            "https://docs.python.org/3.13/library/ssl.html",
             "https://www.python-httpx.org/advanced/transports/#mock-transports",
             "https://www.python-httpx.org/quickstart/#sending-json-encoded-data",
             "https://www.rfc-editor.org/rfc/rfc8259.html",
+            "https://www.rfc-editor.org/rfc/rfc9110",
             "https://www.rfc-editor.org/rfc/rfc9110.html#name-methods"
           ],
           "wiki_link_count": 0,
@@ -8793,8 +8929,8 @@
               "evidence": [
                 {
                   "heading": "7.1 本章目标、前置与学习边界",
-                  "heading_line": 944,
-                  "end_line": 968,
+                  "heading_line": 1075,
+                  "end_line": 1099,
                   "prose_character_count": 610,
                   "code_fence_count": 1
                 }
@@ -8808,8 +8944,8 @@
               "evidence": [
                 {
                   "heading": "7.5 Worked example：用 `MockTransport` 离线走完整链路",
-                  "heading_line": 1044,
-                  "end_line": 1106,
+                  "heading_line": 1175,
+                  "end_line": 1237,
                   "prose_character_count": 221,
                   "code_fence_count": 1
                 }
@@ -8823,8 +8959,8 @@
               "evidence": [
                 {
                   "heading": "7.7 单一错误反例与恢复：不要把错误 JSON 当成功 JSON",
-                  "heading_line": 1127,
-                  "end_line": 1145,
+                  "heading_line": 1258,
+                  "end_line": 1276,
                   "prose_character_count": 445,
                   "code_fence_count": 1
                 }
@@ -8838,8 +8974,8 @@
               "evidence": [
                 {
                   "heading": "7.8 独立变式练习",
-                  "heading_line": 1146,
-                  "end_line": 1157,
+                  "heading_line": 1277,
+                  "end_line": 1288,
                   "prose_character_count": 356,
                   "code_fence_count": 0
                 }
@@ -8847,15 +8983,22 @@
             },
             "acceptance": {
               "explicit_section_present": true,
-              "section_count": 1,
-              "prose_character_count": 426,
-              "code_fence_count": 1,
+              "section_count": 2,
+              "prose_character_count": 1128,
+              "code_fence_count": 2,
               "evidence": [
                 {
                   "heading": "7.9 验收与清理",
-                  "heading_line": 1158,
-                  "end_line": 1177,
+                  "heading_line": 1289,
+                  "end_line": 1308,
                   "prose_character_count": 426,
+                  "code_fence_count": 1
+                },
+                {
+                  "heading": "7.12 分层故障实验与验收",
+                  "heading_line": 1358,
+                  "end_line": 1385,
+                  "prose_character_count": 702,
                   "code_fence_count": 1
                 }
               ]
@@ -8868,8 +9011,8 @@
               "evidence": [
                 {
                   "heading": "7.10 本章来源",
-                  "heading_line": 1178,
-                  "end_line": 1188,
+                  "heading_line": 1309,
+                  "end_line": 1319,
                   "prose_character_count": 529,
                   "code_fence_count": 0
                 }
@@ -8878,7 +9021,7 @@
           },
           "missing_explicit_role_sections": [],
           "visual_evidence": {
-            "table_count": 1,
+            "table_count": 2,
             "markdown_image_count": 0,
             "markdown_images_missing_alt": 0,
             "html_image_count": 0,
@@ -8886,7 +9029,7 @@
             "mermaid_count": 1,
             "mermaid_accessible_count": 1,
             "mermaid_missing_accessibility_count": 0,
-            "visual_item_count": 2
+            "visual_item_count": 3
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
@@ -8896,8 +9039,8 @@
         {
           "title": "第 8 章：P01 贯通案例：task_sorter",
           "heading_level": 2,
-          "start_line": 1198,
-          "end_line": 1412,
+          "start_line": 1396,
+          "end_line": 1610,
           "line_count": 215,
           "prose_character_count": 2765,
           "heading_count": 11,
@@ -8925,8 +9068,8 @@
               "evidence": [
                 {
                   "heading": "8.1 项目目标与前置",
-                  "heading_line": 1212,
-                  "end_line": 1222,
+                  "heading_line": 1410,
+                  "end_line": 1420,
                   "prose_character_count": 149,
                   "code_fence_count": 0
                 }
@@ -8940,8 +9083,8 @@
               "evidence": [
                 {
                   "heading": "第 8 章：P01 贯通案例：task_sorter",
-                  "heading_line": 1198,
-                  "end_line": 1412,
+                  "heading_line": 1396,
+                  "end_line": 1610,
                   "prose_character_count": 2740,
                   "code_fence_count": 5
                 }
@@ -8962,8 +9105,8 @@
               "evidence": [
                 {
                   "heading": "8.6 独立变式与验收",
-                  "heading_line": 1348,
-                  "end_line": 1360,
+                  "heading_line": 1546,
+                  "end_line": 1558,
                   "prose_character_count": 322,
                   "code_fence_count": 0
                 }
@@ -8977,8 +9120,8 @@
               "evidence": [
                 {
                   "heading": "8.6 独立变式与验收",
-                  "heading_line": 1348,
-                  "end_line": 1360,
+                  "heading_line": 1546,
+                  "end_line": 1558,
                   "prose_character_count": 322,
                   "code_fence_count": 0
                 }
@@ -8992,8 +9135,8 @@
               "evidence": [
                 {
                   "heading": "8.9 本章来源",
-                  "heading_line": 1397,
-                  "end_line": 1405,
+                  "heading_line": 1595,
+                  "end_line": 1603,
                   "prose_character_count": 351,
                   "code_fence_count": 0
                 }
@@ -9022,10 +9165,10 @@
         {
           "title": "第 9 章：学习检查",
           "heading_level": 2,
-          "start_line": 1413,
-          "end_line": 1442,
-          "line_count": 30,
-          "prose_character_count": 387,
+          "start_line": 1611,
+          "end_line": 1646,
+          "line_count": 36,
+          "prose_character_count": 621,
           "heading_count": 1,
           "code_fence_count": 0,
           "code_fence_language_counts": {},
@@ -9065,14 +9208,14 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 377,
+              "prose_character_count": 611,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "第 9 章：学习检查",
-                  "heading_line": 1413,
-                  "end_line": 1442,
-                  "prose_character_count": 377,
+                  "heading_line": 1611,
+                  "end_line": 1646,
+                  "prose_character_count": 611,
                   "code_fence_count": 0
                 }
               ]
@@ -9111,8 +9254,8 @@
         {
           "title": "第 10 章：本模块外部资料索引",
           "heading_level": 2,
-          "start_line": 1443,
-          "end_line": 1468,
+          "start_line": 1647,
+          "end_line": 1672,
           "line_count": 26,
           "prose_character_count": 815,
           "heading_count": 4,
@@ -9178,8 +9321,8 @@
               "evidence": [
                 {
                   "heading": "第 10 章：本模块外部资料索引",
-                  "heading_line": 1443,
-                  "end_line": 1468,
+                  "heading_line": 1647,
+                  "end_line": 1672,
                   "prose_character_count": 799,
                   "code_fence_count": 0
                 }
@@ -9206,14 +9349,14 @@
           },
           "content_type": "reference",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1445,
+          "content_type_marker_line": 1649,
           "content_type_issues": []
         },
         {
           "title": "第 11 章：暂时不要深入",
           "heading_level": 2,
-          "start_line": 1469,
-          "end_line": 1497,
+          "start_line": 1673,
+          "end_line": 1701,
           "line_count": 29,
           "prose_character_count": 558,
           "heading_count": 1,
@@ -9290,7 +9433,7 @@
           },
           "content_type": "appendix",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1471,
+          "content_type_marker_line": 1675,
           "content_type_issues": []
         }
       ]
@@ -9299,21 +9442,21 @@
       "file": "10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md",
       "status": "active",
       "chapter_detection_mode": "h2",
-      "line_count": 2255,
-      "heading_count": 112,
-      "chapter_count": 15,
-      "code_fence_count": 93,
+      "line_count": 2425,
+      "heading_count": 122,
+      "chapter_count": 16,
+      "code_fence_count": 100,
       "code_fence_language_counts": {
-        "python": 58,
+        "python": 63,
+        "powershell": 16,
         "text": 15,
-        "powershell": 14,
         "mermaid": 4,
         "json": 2
       },
       "unclosed_fence_start_line": null,
-      "external_url_count": 23,
+      "external_url_count": 27,
       "visual_evidence": {
-        "table_count": 14,
+        "table_count": 15,
         "markdown_image_count": 0,
         "markdown_images_missing_alt": 0,
         "html_image_count": 0,
@@ -9321,15 +9464,15 @@
         "mermaid_count": 4,
         "mermaid_accessible_count": 0,
         "mermaid_missing_accessibility_count": 4,
-        "visual_item_count": 18
+        "visual_item_count": 19
       },
       "outside_chapter_role_headings": [],
       "default_content_type": "instructional",
       "default_content_type_source": "document_default_marker",
-      "default_content_type_marker_line": 91,
+      "default_content_type_marker_line": 92,
       "content_type_issues": [],
       "content_type_counts": {
-        "instructional": 12,
+        "instructional": 13,
         "appendix": 2,
         "workbook": 1
       },
@@ -9337,9 +9480,9 @@
         {
           "title": "第 1 章：Python 工程能力到底是什么",
           "heading_level": 2,
-          "start_line": 93,
-          "end_line": 185,
-          "line_count": 93,
+          "start_line": 94,
+          "end_line": 187,
+          "line_count": 94,
           "prose_character_count": 884,
           "heading_count": 5,
           "code_fence_count": 3,
@@ -9360,8 +9503,8 @@
               "evidence": [
                 {
                   "heading": "1.4 这一章怎么读，以及它想给你什么",
-                  "heading_line": 160,
-                  "end_line": 185,
+                  "heading_line": 161,
+                  "end_line": 187,
                   "prose_character_count": 316,
                   "code_fence_count": 1
                 }
@@ -9423,14 +9566,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 2 章：从业务需求到数据模型",
           "heading_level": 2,
-          "start_line": 186,
-          "end_line": 378,
+          "start_line": 188,
+          "end_line": 380,
           "line_count": 193,
           "prose_character_count": 3832,
           "heading_count": 9,
@@ -9490,8 +9633,8 @@
               "evidence": [
                 {
                   "heading": "2.8 推荐资料",
-                  "heading_line": 368,
-                  "end_line": 378,
+                  "heading_line": 370,
+                  "end_line": 380,
                   "prose_character_count": 335,
                   "code_fence_count": 0
                 }
@@ -9518,14 +9661,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 3 章：函数：把规则变成可测试单元",
           "heading_level": 2,
-          "start_line": 379,
-          "end_line": 597,
+          "start_line": 381,
+          "end_line": 599,
           "line_count": 219,
           "prose_character_count": 3844,
           "heading_count": 8,
@@ -9603,14 +9746,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 4 章：类型标注：让代码更容易被读懂",
           "heading_level": 2,
-          "start_line": 598,
-          "end_line": 696,
+          "start_line": 600,
+          "end_line": 698,
           "line_count": 99,
           "prose_character_count": 1885,
           "heading_count": 6,
@@ -9689,14 +9832,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 5 章：模块和项目结构",
           "heading_level": 2,
-          "start_line": 697,
-          "end_line": 822,
+          "start_line": 699,
+          "end_line": 824,
           "line_count": 126,
           "prose_character_count": 1703,
           "heading_count": 6,
@@ -9778,14 +9921,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 6 章：异常处理：让错误可理解",
           "heading_level": 2,
-          "start_line": 823,
-          "end_line": 954,
+          "start_line": 825,
+          "end_line": 956,
           "line_count": 132,
           "prose_character_count": 2212,
           "heading_count": 6,
@@ -9865,14 +10008,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 7 章：文件、JSON 和 pathlib",
           "heading_level": 2,
-          "start_line": 955,
-          "end_line": 1246,
+          "start_line": 957,
+          "end_line": 1248,
           "line_count": 292,
           "prose_character_count": 4546,
           "heading_count": 11,
@@ -9901,8 +10044,8 @@
               "evidence": [
                 {
                   "heading": "7.1 本章目标、前置与学习边界",
-                  "heading_line": 957,
-                  "end_line": 974,
+                  "heading_line": 959,
+                  "end_line": 976,
                   "prose_character_count": 578,
                   "code_fence_count": 0
                 }
@@ -9916,8 +10059,8 @@
               "evidence": [
                 {
                   "heading": "7.4 Worked example：独立可运行的最小边界与往返",
-                  "heading_line": 1038,
-                  "end_line": 1138,
+                  "heading_line": 1040,
+                  "end_line": 1140,
                   "prose_character_count": 186,
                   "code_fence_count": 1
                 }
@@ -9931,8 +10074,8 @@
               "evidence": [
                 {
                   "heading": "7.6 错误反例、根因与恢复",
-                  "heading_line": 1156,
-                  "end_line": 1174,
+                  "heading_line": 1158,
+                  "end_line": 1176,
                   "prose_character_count": 456,
                   "code_fence_count": 1
                 }
@@ -9946,8 +10089,8 @@
               "evidence": [
                 {
                   "heading": "7.7 独立练习：从最小 Task 迁移到 E01/P01 字段",
-                  "heading_line": 1175,
-                  "end_line": 1191,
+                  "heading_line": 1177,
+                  "end_line": 1193,
                   "prose_character_count": 567,
                   "code_fence_count": 0
                 }
@@ -9961,8 +10104,8 @@
               "evidence": [
                 {
                   "heading": "7.8 验收",
-                  "heading_line": 1192,
-                  "end_line": 1224,
+                  "heading_line": 1194,
+                  "end_line": 1226,
                   "prose_character_count": 464,
                   "code_fence_count": 2
                 }
@@ -9976,8 +10119,8 @@
               "evidence": [
                 {
                   "heading": "7.9 本章来源",
-                  "heading_line": 1225,
-                  "end_line": 1237,
+                  "heading_line": 1227,
+                  "end_line": 1239,
                   "prose_character_count": 738,
                   "code_fence_count": 0
                 }
@@ -9998,14 +10141,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 8 章：面向对象不是为了复杂，而是为了表达关系",
           "heading_level": 2,
-          "start_line": 1247,
-          "end_line": 1383,
+          "start_line": 1249,
+          "end_line": 1385,
           "line_count": 137,
           "prose_character_count": 2037,
           "heading_count": 6,
@@ -10034,8 +10177,8 @@
               "evidence": [
                 {
                   "heading": "8.5 例子：Scheduler 现在该是函数，不是类",
-                  "heading_line": 1355,
-                  "end_line": 1383,
+                  "heading_line": 1357,
+                  "end_line": 1385,
                   "prose_character_count": 516,
                   "code_fence_count": 2
                 }
@@ -10090,14 +10233,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 9 章：pytest 在 M01 中要学到什么程度",
           "heading_level": 2,
-          "start_line": 1384,
-          "end_line": 1509,
+          "start_line": 1386,
+          "end_line": 1511,
           "line_count": 126,
           "prose_character_count": 1245,
           "heading_count": 7,
@@ -10178,14 +10321,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 10 章：贯通案例：从 task_sorter 到 Mini Scheduler",
           "heading_level": 2,
-          "start_line": 1510,
-          "end_line": 1661,
+          "start_line": 1512,
+          "end_line": 1663,
           "line_count": 152,
           "prose_character_count": 633,
           "heading_count": 6,
@@ -10215,15 +10358,15 @@
               "evidence": [
                 {
                   "heading": "第 10 章：贯通案例：从 task_sorter 到 Mini Scheduler",
-                  "heading_line": 1510,
-                  "end_line": 1661,
+                  "heading_line": 1512,
+                  "end_line": 1663,
                   "prose_character_count": 595,
                   "code_fence_count": 7
                 },
                 {
                   "heading": "10.5 最小代码骨架",
-                  "heading_line": 1579,
-                  "end_line": 1661,
+                  "heading_line": 1581,
+                  "end_line": 1663,
                   "prose_character_count": 52,
                   "code_fence_count": 3
                 }
@@ -10278,14 +10421,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 11 章：常见坏味道和改进方式",
           "heading_level": 2,
-          "start_line": 1662,
-          "end_line": 1746,
+          "start_line": 1664,
+          "end_line": 1748,
           "line_count": 85,
           "prose_character_count": 245,
           "heading_count": 5,
@@ -10320,8 +10463,8 @@
               "evidence": [
                 {
                   "heading": "第 11 章：常见坏味道和改进方式",
-                  "heading_line": 1662,
-                  "end_line": 1746,
+                  "heading_line": 1664,
+                  "end_line": 1748,
                   "prose_character_count": 228,
                   "code_fence_count": 7
                 }
@@ -10369,16 +10512,16 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
           "title": "第 12 章：把工具组合成一个小工程（argparse 为主）",
           "heading_level": 2,
-          "start_line": 1747,
-          "end_line": 2011,
+          "start_line": 1749,
+          "end_line": 2013,
           "line_count": 265,
-          "prose_character_count": 3443,
+          "prose_character_count": 3484,
           "heading_count": 14,
           "code_fence_count": 9,
           "code_fence_language_counts": {
@@ -10404,8 +10547,8 @@
               "evidence": [
                 {
                   "heading": "12.1 本章目标、前置与定位",
-                  "heading_line": 1749,
-                  "end_line": 1761,
+                  "heading_line": 1751,
+                  "end_line": 1763,
                   "prose_character_count": 311,
                   "code_fence_count": 0
                 }
@@ -10419,8 +10562,8 @@
               "evidence": [
                 {
                   "heading": "12.5 Worked example：可独立运行的最小 CLI",
-                  "heading_line": 1823,
-                  "end_line": 1902,
+                  "heading_line": 1825,
+                  "end_line": 1904,
                   "prose_character_count": 362,
                   "code_fence_count": 4
                 }
@@ -10434,8 +10577,8 @@
               "evidence": [
                 {
                   "heading": "12.8 常见错误",
-                  "heading_line": 1955,
-                  "end_line": 1964,
+                  "heading_line": 1957,
+                  "end_line": 1966,
                   "prose_character_count": 186,
                   "code_fence_count": 0
                 }
@@ -10449,8 +10592,8 @@
               "evidence": [
                 {
                   "heading": "12.9 独立练习与验收",
-                  "heading_line": 1965,
-                  "end_line": 1976,
+                  "heading_line": 1967,
+                  "end_line": 1978,
                   "prose_character_count": 312,
                   "code_fence_count": 0
                 }
@@ -10464,8 +10607,8 @@
               "evidence": [
                 {
                   "heading": "12.9 独立练习与验收",
-                  "heading_line": 1965,
-                  "end_line": 1976,
+                  "heading_line": 1967,
+                  "end_line": 1978,
                   "prose_character_count": 312,
                   "code_fence_count": 0
                 }
@@ -10479,8 +10622,8 @@
               "evidence": [
                 {
                   "heading": "12.10 本章来源",
-                  "heading_line": 1977,
-                  "end_line": 1987,
+                  "heading_line": 1979,
+                  "end_line": 1989,
                   "prose_character_count": 394,
                   "code_fence_count": 0
                 }
@@ -10501,26 +10644,138 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 91,
+          "content_type_marker_line": 92,
           "content_type_issues": []
         },
         {
-          "title": "第 13 章：本模块学习顺序",
+          "title": "第 13 章：并发选择、事件循环与取消",
           "heading_level": 2,
-          "start_line": 2012,
-          "end_line": 2083,
-          "line_count": 72,
-          "prose_character_count": 953,
-          "heading_count": 7,
+          "start_line": 2014,
+          "end_line": 2156,
+          "line_count": 143,
+          "prose_character_count": 3471,
+          "heading_count": 9,
+          "code_fence_count": 6,
+          "code_fence_language_counts": {
+            "python": 5,
+            "powershell": 1
+          },
+          "external_url_count": 4,
+          "external_urls": [
+            "https://docs.python.org/3.13/library/asyncio-dev.html",
+            "https://docs.python.org/3.13/library/asyncio-task.html",
+            "https://docs.python.org/3.13/library/asyncio-task.html#asyncio.to_thread",
+            "https://docs.python.org/3.13/library/concurrent.futures.html"
+          ],
+          "wiki_link_count": 0,
+          "wiki_links": [],
+          "roles": {
+            "objectives": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            },
+            "examples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 447,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "13.7 Worked example、练习与验收",
+                  "heading_line": 2127,
+                  "end_line": 2147,
+                  "prose_character_count": 447,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "counterexamples": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            },
+            "practice": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 447,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "13.7 Worked example、练习与验收",
+                  "heading_line": 2127,
+                  "end_line": 2147,
+                  "prose_character_count": 447,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "acceptance": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 447,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "13.7 Worked example、练习与验收",
+                  "heading_line": 2127,
+                  "end_line": 2147,
+                  "prose_character_count": 447,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "sources": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            }
+          },
+          "missing_explicit_role_sections": [
+            "objectives",
+            "counterexamples",
+            "sources"
+          ],
+          "visual_evidence": {
+            "table_count": 1,
+            "markdown_image_count": 0,
+            "markdown_images_missing_alt": 0,
+            "html_image_count": 0,
+            "html_images_missing_alt": 0,
+            "mermaid_count": 0,
+            "mermaid_accessible_count": 0,
+            "mermaid_missing_accessibility_count": 0,
+            "visual_item_count": 1
+          },
+          "content_type": "instructional",
+          "content_type_source": "document_default_marker",
+          "content_type_marker_line": 92,
+          "content_type_issues": []
+        },
+        {
+          "title": "第 14 章：本模块学习顺序",
+          "heading_level": 2,
+          "start_line": 2157,
+          "end_line": 2240,
+          "line_count": 84,
+          "prose_character_count": 1144,
+          "heading_count": 8,
           "code_fence_count": 0,
           "code_fence_language_counts": {},
           "external_url_count": 0,
           "external_urls": [],
-          "wiki_link_count": 3,
+          "wiki_link_count": 4,
           "wiki_links": [
             "[[40_实验练习/E01_Python基础练习/E01-01 任务排序脚本]]",
             "[[40_实验练习/E01_Python基础练习/E01-02 Python 类实现 Task 和 Worker]]",
-            "[[40_实验练习/E01_Python基础练习/E01-03 pytest 测试调度器]]"
+            "[[40_实验练习/E01_Python基础练习/E01-03 pytest 测试调度器]]",
+            "[[40_实验练习/E01_Python基础练习/E01-04 并发选择与取消]]"
           ],
           "roles": {
             "objectives": {
@@ -10587,20 +10842,20 @@
           },
           "content_type": "appendix",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 2014,
+          "content_type_marker_line": 2159,
           "content_type_issues": []
         },
         {
-          "title": "第 14 章：学习检查",
+          "title": "第 15 章：学习检查",
           "heading_level": 2,
-          "start_line": 2084,
-          "end_line": 2198,
-          "line_count": 115,
-          "prose_character_count": 1280,
+          "start_line": 2241,
+          "end_line": 2368,
+          "line_count": 128,
+          "prose_character_count": 1572,
           "heading_count": 6,
-          "code_fence_count": 6,
+          "code_fence_count": 7,
           "code_fence_language_counts": {
-            "powershell": 5,
+            "powershell": 6,
             "json": 1
           },
           "external_url_count": 0,
@@ -10639,34 +10894,34 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 4,
-              "prose_character_count": 1947,
-              "code_fence_count": 12,
+              "prose_character_count": 2364,
+              "code_fence_count": 14,
               "evidence": [
                 {
-                  "heading": "第 14 章：学习检查",
-                  "heading_line": 2084,
-                  "end_line": 2198,
-                  "prose_character_count": 1269,
-                  "code_fence_count": 6
+                  "heading": "第 15 章：学习检查",
+                  "heading_line": 2241,
+                  "end_line": 2368,
+                  "prose_character_count": 1561,
+                  "code_fence_count": 7
                 },
                 {
-                  "heading": "14.2 固定验收输入",
-                  "heading_line": 2100,
-                  "end_line": 2137,
+                  "heading": "15.2 固定验收输入",
+                  "heading_line": 2260,
+                  "end_line": 2297,
                   "prose_character_count": 169,
                   "code_fence_count": 1
                 },
                 {
-                  "heading": "14.3 Learner reproduction 的机器验收",
-                  "heading_line": 2138,
-                  "end_line": 2175,
-                  "prose_character_count": 413,
-                  "code_fence_count": 4
+                  "heading": "15.3 Learner reproduction 的机器验收",
+                  "heading_line": 2298,
+                  "end_line": 2345,
+                  "prose_character_count": 538,
+                  "code_fence_count": 5
                 },
                 {
-                  "heading": "14.4 Reference 验证不是本人验收",
-                  "heading_line": 2176,
-                  "end_line": 2186,
+                  "heading": "15.4 Reference 验证不是本人验收",
+                  "heading_line": 2346,
+                  "end_line": 2356,
                   "prose_character_count": 96,
                   "code_fence_count": 1
                 }
@@ -10700,14 +10955,14 @@
           },
           "content_type": "workbook",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 2086,
+          "content_type_marker_line": 2243,
           "content_type_issues": []
         },
         {
-          "title": "第 15 章：外部资料索引",
+          "title": "第 16 章：外部资料索引",
           "heading_level": 2,
-          "start_line": 2199,
-          "end_line": 2241,
+          "start_line": 2369,
+          "end_line": 2411,
           "line_count": 43,
           "prose_character_count": 1073,
           "heading_count": 4,
@@ -10778,9 +11033,9 @@
               "code_fence_count": 1,
               "evidence": [
                 {
-                  "heading": "第 15 章：外部资料索引",
-                  "heading_line": 2199,
-                  "end_line": 2241,
+                  "heading": "第 16 章：外部资料索引",
+                  "heading_line": 2369,
+                  "end_line": 2411,
                   "prose_character_count": 1060,
                   "code_fence_count": 1
                 }
@@ -10807,7 +11062,7 @@
           },
           "content_type": "appendix",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 2201,
+          "content_type_marker_line": 2371,
           "content_type_issues": []
         }
       ]
@@ -10816,21 +11071,21 @@
       "file": "10_学习模块\\M02_后端API与服务化\\M02_后端API与服务化_适配教材.md",
       "status": "active",
       "chapter_detection_mode": "h2",
-      "line_count": 1806,
-      "heading_count": 108,
-      "chapter_count": 13,
-      "code_fence_count": 59,
+      "line_count": 2178,
+      "heading_count": 133,
+      "chapter_count": 16,
+      "code_fence_count": 68,
       "code_fence_language_counts": {
-        "python": 25,
-        "text": 14,
-        "powershell": 12,
-        "mermaid": 4,
-        "json": 4
+        "python": 27,
+        "text": 17,
+        "powershell": 15,
+        "json": 5,
+        "mermaid": 4
       },
       "unclosed_fence_start_line": null,
-      "external_url_count": 31,
+      "external_url_count": 42,
       "visual_evidence": {
-        "table_count": 18,
+        "table_count": 20,
         "markdown_image_count": 0,
         "markdown_images_missing_alt": 0,
         "html_image_count": 0,
@@ -10838,15 +11093,15 @@
         "mermaid_count": 4,
         "mermaid_accessible_count": 2,
         "mermaid_missing_accessibility_count": 2,
-        "visual_item_count": 22
+        "visual_item_count": 24
       },
       "outside_chapter_role_headings": [],
       "default_content_type": "instructional",
       "default_content_type_source": "document_default_marker",
-      "default_content_type_marker_line": 105,
+      "default_content_type_marker_line": 108,
       "content_type_issues": [],
       "content_type_counts": {
-        "instructional": 10,
+        "instructional": 13,
         "appendix": 2,
         "workbook": 1
       },
@@ -10854,8 +11109,8 @@
         {
           "title": "第 1 章：为什么 M02 先学 API",
           "heading_level": 2,
-          "start_line": 107,
-          "end_line": 223,
+          "start_line": 110,
+          "end_line": 226,
           "line_count": 117,
           "prose_character_count": 1091,
           "heading_count": 5,
@@ -10935,14 +11190,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 2 章：REST 和资源建模",
           "heading_level": 2,
-          "start_line": 224,
-          "end_line": 379,
+          "start_line": 227,
+          "end_line": 382,
           "line_count": 156,
           "prose_character_count": 3166,
           "heading_count": 11,
@@ -10970,8 +11225,8 @@
               "evidence": [
                 {
                   "heading": "2.0 本章目标与前置",
-                  "heading_line": 226,
-                  "end_line": 242,
+                  "heading_line": 229,
+                  "end_line": 245,
                   "prose_character_count": 343,
                   "code_fence_count": 0
                 }
@@ -10985,8 +11240,8 @@
               "evidence": [
                 {
                   "heading": "2.3b 从需求到契约：固定案例",
-                  "heading_line": 286,
-                  "end_line": 302,
+                  "heading_line": 289,
+                  "end_line": 305,
                   "prose_character_count": 370,
                   "code_fence_count": 0
                 }
@@ -11000,8 +11255,8 @@
               "evidence": [
                 {
                   "heading": "2.3c 反例：URL 能工作，不等于契约清楚",
-                  "heading_line": 303,
-                  "end_line": 318,
+                  "heading_line": 306,
+                  "end_line": 321,
                   "prose_character_count": 259,
                   "code_fence_count": 1
                 }
@@ -11015,8 +11270,8 @@
               "evidence": [
                 {
                   "heading": "2.5 独立练习与验收",
-                  "heading_line": 340,
-                  "end_line": 359,
+                  "heading_line": 343,
+                  "end_line": 362,
                   "prose_character_count": 378,
                   "code_fence_count": 0
                 }
@@ -11030,8 +11285,8 @@
               "evidence": [
                 {
                   "heading": "2.5 独立练习与验收",
-                  "heading_line": 340,
-                  "end_line": 359,
+                  "heading_line": 343,
+                  "end_line": 362,
                   "prose_character_count": 378,
                   "code_fence_count": 0
                 }
@@ -11045,8 +11300,8 @@
               "evidence": [
                 {
                   "heading": "本章来源",
-                  "heading_line": 360,
-                  "end_line": 372,
+                  "heading_line": 363,
+                  "end_line": 375,
                   "prose_character_count": 776,
                   "code_fence_count": 0
                 }
@@ -11067,14 +11322,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 3 章：请求体和响应体",
           "heading_level": 2,
-          "start_line": 380,
-          "end_line": 488,
+          "start_line": 383,
+          "end_line": 491,
           "line_count": 109,
           "prose_character_count": 1306,
           "heading_count": 6,
@@ -11152,14 +11407,14 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 4 章：Pydantic 模型",
           "heading_level": 2,
-          "start_line": 489,
-          "end_line": 735,
+          "start_line": 492,
+          "end_line": 738,
           "line_count": 247,
           "prose_character_count": 3530,
           "heading_count": 11,
@@ -11187,8 +11442,8 @@
               "evidence": [
                 {
                   "heading": "4.0 本章目标与前置",
-                  "heading_line": 491,
-                  "end_line": 496,
+                  "heading_line": 494,
+                  "end_line": 499,
                   "prose_character_count": 141,
                   "code_fence_count": 0
                 }
@@ -11209,8 +11464,8 @@
               "evidence": [
                 {
                   "heading": "4.6 反例、练习与验收",
-                  "heading_line": 699,
-                  "end_line": 720,
+                  "heading_line": 702,
+                  "end_line": 723,
                   "prose_character_count": 543,
                   "code_fence_count": 1
                 }
@@ -11224,8 +11479,8 @@
               "evidence": [
                 {
                   "heading": "4.6 反例、练习与验收",
-                  "heading_line": 699,
-                  "end_line": 720,
+                  "heading_line": 702,
+                  "end_line": 723,
                   "prose_character_count": 543,
                   "code_fence_count": 1
                 }
@@ -11239,8 +11494,8 @@
               "evidence": [
                 {
                   "heading": "4.6 反例、练习与验收",
-                  "heading_line": 699,
-                  "end_line": 720,
+                  "heading_line": 702,
+                  "end_line": 723,
                   "prose_character_count": 543,
                   "code_fence_count": 1
                 }
@@ -11254,8 +11509,8 @@
               "evidence": [
                 {
                   "heading": "本章来源",
-                  "heading_line": 721,
-                  "end_line": 728,
+                  "heading_line": 724,
+                  "end_line": 731,
                   "prose_character_count": 372,
                   "code_fence_count": 0
                 }
@@ -11278,16 +11533,16 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 5 章：状态码和错误处理",
           "heading_level": 2,
-          "start_line": 736,
-          "end_line": 841,
-          "line_count": 106,
-          "prose_character_count": 992,
+          "start_line": 739,
+          "end_line": 866,
+          "line_count": 128,
+          "prose_character_count": 1448,
           "heading_count": 6,
           "code_fence_count": 6,
           "code_fence_language_counts": {
@@ -11316,14 +11571,14 @@
             "counterexamples": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 317,
+              "prose_character_count": 416,
               "code_fence_count": 2,
               "evidence": [
                 {
                   "heading": "5.5 踩坑现场：为什么 `return {}` 很危险",
-                  "heading_line": 806,
-                  "end_line": 841,
-                  "prose_character_count": 317,
+                  "heading_line": 830,
+                  "end_line": 866,
+                  "prose_character_count": 416,
                   "code_fence_count": 2
                 }
               ]
@@ -11370,16 +11625,16 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 6 章：项目分层",
           "heading_level": 2,
-          "start_line": 842,
-          "end_line": 916,
-          "line_count": 75,
-          "prose_character_count": 895,
+          "start_line": 867,
+          "end_line": 952,
+          "line_count": 86,
+          "prose_character_count": 1287,
           "heading_count": 5,
           "code_fence_count": 3,
           "code_fence_language_counts": {
@@ -11456,16 +11711,16 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 7 章：接口测试",
           "heading_level": 2,
-          "start_line": 917,
-          "end_line": 1103,
-          "line_count": 187,
-          "prose_character_count": 2747,
+          "start_line": 953,
+          "end_line": 1140,
+          "line_count": 188,
+          "prose_character_count": 2885,
           "heading_count": 11,
           "code_fence_count": 7,
           "code_fence_language_counts": {
@@ -11489,8 +11744,8 @@
               "evidence": [
                 {
                   "heading": "7.1 本章目标与前置",
-                  "heading_line": 919,
-                  "end_line": 937,
+                  "heading_line": 955,
+                  "end_line": 973,
                   "prose_character_count": 528,
                   "code_fence_count": 0
                 }
@@ -11504,8 +11759,8 @@
               "evidence": [
                 {
                   "heading": "7.4 Worked example：测试创建任务",
-                  "heading_line": 986,
-                  "end_line": 1011,
+                  "heading_line": 1022,
+                  "end_line": 1047,
                   "prose_character_count": 0,
                   "code_fence_count": 1
                 }
@@ -11519,8 +11774,8 @@
               "evidence": [
                 {
                   "heading": "7.2 踩坑现场：只测成功路径为什么不够",
-                  "heading_line": 938,
-                  "end_line": 969,
+                  "heading_line": 974,
+                  "end_line": 1005,
                   "prose_character_count": 380,
                   "code_fence_count": 1
                 }
@@ -11534,8 +11789,8 @@
               "evidence": [
                 {
                   "heading": "7.8 独立变式与验收",
-                  "heading_line": 1077,
-                  "end_line": 1087,
+                  "heading_line": 1114,
+                  "end_line": 1124,
                   "prose_character_count": 282,
                   "code_fence_count": 0
                 }
@@ -11549,8 +11804,8 @@
               "evidence": [
                 {
                   "heading": "7.8 独立变式与验收",
-                  "heading_line": 1077,
-                  "end_line": 1087,
+                  "heading_line": 1114,
+                  "end_line": 1124,
                   "prose_character_count": 282,
                   "code_fence_count": 0
                 }
@@ -11564,8 +11819,8 @@
               "evidence": [
                 {
                   "heading": "7.9 本章来源",
-                  "heading_line": 1088,
-                  "end_line": 1096,
+                  "heading_line": 1125,
+                  "end_line": 1133,
                   "prose_character_count": 323,
                   "code_fence_count": 0
                 }
@@ -11586,16 +11841,16 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 8 章：OpenAPI 自动文档",
           "heading_level": 2,
-          "start_line": 1104,
-          "end_line": 1210,
-          "line_count": 107,
-          "prose_character_count": 1736,
+          "start_line": 1141,
+          "end_line": 1254,
+          "line_count": 114,
+          "prose_character_count": 2026,
           "heading_count": 9,
           "code_fence_count": 3,
           "code_fence_language_counts": {
@@ -11619,8 +11874,8 @@
               "evidence": [
                 {
                   "heading": "8.1 本章目标与前置",
-                  "heading_line": 1106,
-                  "end_line": 1121,
+                  "heading_line": 1143,
+                  "end_line": 1158,
                   "prose_character_count": 218,
                   "code_fence_count": 0
                 }
@@ -11629,14 +11884,14 @@
             "examples": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 258,
+              "prose_character_count": 441,
               "code_fence_count": 2,
               "evidence": [
                 {
                   "heading": "8.4 Worked example：不用浏览器检查 OpenAPI 契约",
-                  "heading_line": 1139,
-                  "end_line": 1175,
-                  "prose_character_count": 258,
+                  "heading_line": 1176,
+                  "end_line": 1217,
+                  "prose_character_count": 441,
                   "code_fence_count": 2
                 }
               ]
@@ -11651,14 +11906,14 @@
             "practice": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 367,
+              "prose_character_count": 474,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "8.5 独立练习与验收",
-                  "heading_line": 1176,
-                  "end_line": 1186,
-                  "prose_character_count": 367,
+                  "heading_line": 1218,
+                  "end_line": 1230,
+                  "prose_character_count": 474,
                   "code_fence_count": 0
                 }
               ]
@@ -11666,14 +11921,14 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 367,
+              "prose_character_count": 474,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "8.5 独立练习与验收",
-                  "heading_line": 1176,
-                  "end_line": 1186,
-                  "prose_character_count": 367,
+                  "heading_line": 1218,
+                  "end_line": 1230,
+                  "prose_character_count": 474,
                   "code_fence_count": 0
                 }
               ]
@@ -11686,8 +11941,8 @@
               "evidence": [
                 {
                   "heading": "8.7 本章来源",
-                  "heading_line": 1195,
-                  "end_line": 1203,
+                  "heading_line": 1239,
+                  "end_line": 1247,
                   "prose_character_count": 370,
                   "code_fence_count": 0
                 }
@@ -11710,16 +11965,16 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 9 章：贯通案例：任务 API 服务",
           "heading_level": 2,
-          "start_line": 1211,
-          "end_line": 1466,
-          "line_count": 256,
-          "prose_character_count": 4697,
+          "start_line": 1255,
+          "end_line": 1500,
+          "line_count": 246,
+          "prose_character_count": 4993,
           "heading_count": 14,
           "code_fence_count": 8,
           "code_fence_language_counts": {
@@ -11745,14 +12000,14 @@
             "objectives": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 201,
+              "prose_character_count": 234,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "9.0 本章目标与前置",
-                  "heading_line": 1213,
-                  "end_line": 1219,
-                  "prose_character_count": 201,
+                  "heading_line": 1257,
+                  "end_line": 1263,
+                  "prose_character_count": 234,
                   "code_fence_count": 0
                 }
               ]
@@ -11760,14 +12015,14 @@
             "examples": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 4679,
+              "prose_character_count": 4975,
               "code_fence_count": 8,
               "evidence": [
                 {
                   "heading": "第 9 章：贯通案例：任务 API 服务",
-                  "heading_line": 1211,
-                  "end_line": 1466,
-                  "prose_character_count": 4679,
+                  "heading_line": 1255,
+                  "end_line": 1500,
+                  "prose_character_count": 4975,
                   "code_fence_count": 8
                 }
               ]
@@ -11801,8 +12056,8 @@
               "evidence": [
                 {
                   "heading": "本章来源",
-                  "heading_line": 1443,
-                  "end_line": 1457,
+                  "heading_line": 1477,
+                  "end_line": 1491,
                   "prose_character_count": 865,
                   "code_fence_count": 0
                 }
@@ -11827,16 +12082,16 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
           "title": "第 10 章：认证 Principal 与资源授权",
           "heading_level": 2,
-          "start_line": 1467,
-          "end_line": 1631,
-          "line_count": 165,
-          "prose_character_count": 3250,
+          "start_line": 1501,
+          "end_line": 1672,
+          "line_count": 172,
+          "prose_character_count": 3432,
           "heading_count": 10,
           "code_fence_count": 5,
           "code_fence_language_counts": {
@@ -11857,14 +12112,14 @@
             "objectives": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 405,
+              "prose_character_count": 421,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "10.1 本章目标与边界",
-                  "heading_line": 1469,
-                  "end_line": 1483,
-                  "prose_character_count": 405,
+                  "heading_line": 1503,
+                  "end_line": 1517,
+                  "prose_character_count": 421,
                   "code_fence_count": 0
                 }
               ]
@@ -11872,14 +12127,14 @@
             "examples": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 335,
+              "prose_character_count": 397,
               "code_fence_count": 3,
               "evidence": [
                 {
                   "heading": "10.3 Worked example：从凭据到 owner-scoped 查询",
-                  "heading_line": 1496,
-                  "end_line": 1549,
-                  "prose_character_count": 335,
+                  "heading_line": 1530,
+                  "end_line": 1589,
+                  "prose_character_count": 397,
                   "code_fence_count": 3
                 }
               ]
@@ -11892,8 +12147,8 @@
               "evidence": [
                 {
                   "heading": "10.4 反例：把身份放进请求体",
-                  "heading_line": 1550,
-                  "end_line": 1569,
+                  "heading_line": 1590,
+                  "end_line": 1609,
                   "prose_character_count": 335,
                   "code_fence_count": 1
                 }
@@ -11907,8 +12162,8 @@
               "evidence": [
                 {
                   "heading": "10.7 独立练习与验收",
-                  "heading_line": 1605,
-                  "end_line": 1616,
+                  "heading_line": 1646,
+                  "end_line": 1657,
                   "prose_character_count": 246,
                   "code_fence_count": 0
                 }
@@ -11922,8 +12177,8 @@
               "evidence": [
                 {
                   "heading": "10.7 独立练习与验收",
-                  "heading_line": 1605,
-                  "end_line": 1616,
+                  "heading_line": 1646,
+                  "end_line": 1657,
                   "prose_character_count": 246,
                   "code_fence_count": 0
                 }
@@ -11937,8 +12192,8 @@
               "evidence": [
                 {
                   "heading": "10.8 本章来源",
-                  "heading_line": 1617,
-                  "end_line": 1623,
+                  "heading_line": 1658,
+                  "end_line": 1664,
                   "prose_character_count": 510,
                   "code_fence_count": 0
                 }
@@ -11959,26 +12214,368 @@
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
-          "content_type_marker_line": 105,
+          "content_type_marker_line": 108,
           "content_type_issues": []
         },
         {
-          "title": "第 11 章：学习顺序",
+          "title": "第 11 章：请求生命周期、Middleware 与依赖注入",
           "heading_level": 2,
-          "start_line": 1632,
-          "end_line": 1711,
-          "line_count": 80,
-          "prose_character_count": 968,
+          "start_line": 1673,
+          "end_line": 1789,
+          "line_count": 117,
+          "prose_character_count": 2763,
           "heading_count": 8,
+          "code_fence_count": 5,
+          "code_fence_language_counts": {
+            "text": 3,
+            "python": 1,
+            "powershell": 1
+          },
+          "external_url_count": 4,
+          "external_urls": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+            "https://fastapi.tiangolo.com/tutorial/dependencies/",
+            "https://fastapi.tiangolo.com/tutorial/middleware/",
+            "https://www.starlette.io/requests/"
+          ],
+          "wiki_link_count": 0,
+          "wiki_links": [],
+          "roles": {
+            "objectives": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 239,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "11.1 本章目标与前置",
+                  "heading_line": 1675,
+                  "end_line": 1683,
+                  "prose_character_count": 239,
+                  "code_fence_count": 0
+                }
+              ]
+            },
+            "examples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 354,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "11.6 Worked example、反例与验收",
+                  "heading_line": 1762,
+                  "end_line": 1780,
+                  "prose_character_count": 354,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "counterexamples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 354,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "11.6 Worked example、反例与验收",
+                  "heading_line": 1762,
+                  "end_line": 1780,
+                  "prose_character_count": 354,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "practice": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            },
+            "acceptance": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 354,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "11.6 Worked example、反例与验收",
+                  "heading_line": 1762,
+                  "end_line": 1780,
+                  "prose_character_count": 354,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "sources": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            }
+          },
+          "missing_explicit_role_sections": [
+            "practice",
+            "sources"
+          ],
+          "visual_evidence": {
+            "table_count": 0,
+            "markdown_image_count": 0,
+            "markdown_images_missing_alt": 0,
+            "html_image_count": 0,
+            "html_images_missing_alt": 0,
+            "mermaid_count": 0,
+            "mermaid_accessible_count": 0,
+            "mermaid_missing_accessibility_count": 0,
+            "visual_item_count": 0
+          },
+          "content_type": "instructional",
+          "content_type_source": "document_default_marker",
+          "content_type_marker_line": 108,
+          "content_type_issues": []
+        },
+        {
+          "title": "第 12 章：Problem Details、分页与可恢复过载",
+          "heading_level": 2,
+          "start_line": 1790,
+          "end_line": 1871,
+          "line_count": 82,
+          "prose_character_count": 2432,
+          "heading_count": 7,
+          "code_fence_count": 2,
+          "code_fence_language_counts": {
+            "json": 1,
+            "powershell": 1
+          },
+          "external_url_count": 4,
+          "external_urls": [
+            "https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/",
+            "https://sre.google/sre-book/addressing-cascading-failures/",
+            "https://www.rfc-editor.org/rfc/rfc9110",
+            "https://www.rfc-editor.org/rfc/rfc9457"
+          ],
+          "wiki_link_count": 0,
+          "wiki_links": [],
+          "roles": {
+            "objectives": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            },
+            "examples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 250,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "12.5 Worked example、练习与验收",
+                  "heading_line": 1850,
+                  "end_line": 1862,
+                  "prose_character_count": 250,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "counterexamples": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            },
+            "practice": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 250,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "12.5 Worked example、练习与验收",
+                  "heading_line": 1850,
+                  "end_line": 1862,
+                  "prose_character_count": 250,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "acceptance": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 250,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "12.5 Worked example、练习与验收",
+                  "heading_line": 1850,
+                  "end_line": 1862,
+                  "prose_character_count": 250,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "sources": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            }
+          },
+          "missing_explicit_role_sections": [
+            "objectives",
+            "counterexamples",
+            "sources"
+          ],
+          "visual_evidence": {
+            "table_count": 1,
+            "markdown_image_count": 0,
+            "markdown_images_missing_alt": 0,
+            "html_image_count": 0,
+            "html_images_missing_alt": 0,
+            "mermaid_count": 0,
+            "mermaid_accessible_count": 0,
+            "mermaid_missing_accessibility_count": 0,
+            "visual_item_count": 1
+          },
+          "content_type": "instructional",
+          "content_type_source": "document_default_marker",
+          "content_type_marker_line": 108,
+          "content_type_issues": []
+        },
+        {
+          "title": "第 13 章：Deadline、幂等创建与版本 CAS",
+          "heading_level": 2,
+          "start_line": 1872,
+          "end_line": 1958,
+          "line_count": 87,
+          "prose_character_count": 2445,
+          "heading_count": 7,
+          "code_fence_count": 2,
+          "code_fence_language_counts": {
+            "python": 1,
+            "powershell": 1
+          },
+          "external_url_count": 4,
+          "external_urls": [
+            "https://docs.python.org/3.13/library/time.html#time.monotonic",
+            "https://docs.stripe.com/api/idempotent_requests",
+            "https://sre.google/sre-book/handling-overload/",
+            "https://www.rfc-editor.org/rfc/rfc9110"
+          ],
+          "wiki_link_count": 0,
+          "wiki_links": [],
+          "roles": {
+            "objectives": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            },
+            "examples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 277,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "13.5 Worked example、练习与验收",
+                  "heading_line": 1936,
+                  "end_line": 1948,
+                  "prose_character_count": 277,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "counterexamples": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            },
+            "practice": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 277,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "13.5 Worked example、练习与验收",
+                  "heading_line": 1936,
+                  "end_line": 1948,
+                  "prose_character_count": 277,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "acceptance": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 277,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "13.5 Worked example、练习与验收",
+                  "heading_line": 1936,
+                  "end_line": 1948,
+                  "prose_character_count": 277,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "sources": {
+              "explicit_section_present": false,
+              "section_count": 0,
+              "prose_character_count": 0,
+              "code_fence_count": 0,
+              "evidence": []
+            }
+          },
+          "missing_explicit_role_sections": [
+            "objectives",
+            "counterexamples",
+            "sources"
+          ],
+          "visual_evidence": {
+            "table_count": 1,
+            "markdown_image_count": 0,
+            "markdown_images_missing_alt": 0,
+            "html_image_count": 0,
+            "html_images_missing_alt": 0,
+            "mermaid_count": 0,
+            "mermaid_accessible_count": 0,
+            "mermaid_missing_accessibility_count": 0,
+            "visual_item_count": 1
+          },
+          "content_type": "instructional",
+          "content_type_source": "document_default_marker",
+          "content_type_marker_line": 108,
+          "content_type_issues": []
+        },
+        {
+          "title": "第 14 章：学习顺序",
+          "heading_level": 2,
+          "start_line": 1959,
+          "end_line": 2066,
+          "line_count": 108,
+          "prose_character_count": 1470,
+          "heading_count": 11,
           "code_fence_count": 0,
           "code_fence_language_counts": {},
           "external_url_count": 0,
           "external_urls": [],
-          "wiki_link_count": 3,
+          "wiki_link_count": 4,
           "wiki_links": [
             "[[40_实验练习/E02_后端API实验/E02-01 创建任务 API]]",
             "[[40_实验练习/E02_后端API实验/E02-02 查询任务状态 API]]",
-            "[[40_实验练习/E02_后端API实验/E02-03 metrics API]]"
+            "[[40_实验练习/E02_后端API实验/E02-03 metrics API]]",
+            "[[40_实验练习/E02_后端API实验/E02-04 请求生命周期可靠性与并发契约]]"
           ],
           "roles": {
             "objectives": {
@@ -12045,16 +12642,16 @@
           },
           "content_type": "appendix",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1634,
+          "content_type_marker_line": 1961,
           "content_type_issues": []
         },
         {
-          "title": "第 12 章：学习检查",
+          "title": "第 15 章：学习检查",
           "heading_level": 2,
-          "start_line": 1712,
-          "end_line": 1768,
-          "line_count": 57,
-          "prose_character_count": 1308,
+          "start_line": 2067,
+          "end_line": 2134,
+          "line_count": 68,
+          "prose_character_count": 1899,
           "heading_count": 3,
           "code_fence_count": 1,
           "code_fence_language_counts": {
@@ -12096,21 +12693,21 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 2,
-              "prose_character_count": 2043,
+              "prose_character_count": 2993,
               "code_fence_count": 1,
               "evidence": [
                 {
-                  "heading": "第 12 章：学习检查",
-                  "heading_line": 1712,
-                  "end_line": 1768,
-                  "prose_character_count": 1297,
+                  "heading": "第 15 章：学习检查",
+                  "heading_line": 2067,
+                  "end_line": 2134,
+                  "prose_character_count": 1888,
                   "code_fence_count": 1
                 },
                 {
-                  "heading": "12.2 Learner reproduction 验收",
-                  "heading_line": 1744,
-                  "end_line": 1768,
-                  "prose_character_count": 746,
+                  "heading": "15.2 Learner reproduction 验收",
+                  "heading_line": 2104,
+                  "end_line": 2134,
+                  "prose_character_count": 1105,
                   "code_fence_count": 0
                 }
               ]
@@ -12143,23 +12740,24 @@
           },
           "content_type": "workbook",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1714,
+          "content_type_marker_line": 2069,
           "content_type_issues": []
         },
         {
-          "title": "第 13 章：外部资料索引",
+          "title": "第 16 章：外部资料索引",
           "heading_level": 2,
-          "start_line": 1769,
-          "end_line": 1806,
-          "line_count": 38,
-          "prose_character_count": 1286,
+          "start_line": 2135,
+          "end_line": 2178,
+          "line_count": 44,
+          "prose_character_count": 1765,
           "heading_count": 4,
           "code_fence_count": 1,
           "code_fence_language_counts": {
             "text": 1
           },
-          "external_url_count": 15,
+          "external_url_count": 21,
           "external_urls": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
             "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status",
             "https://docs.pydantic.dev/latest/api/config/",
             "https://docs.pydantic.dev/latest/concepts/models/",
@@ -12170,11 +12768,16 @@
             "https://fastapi.tiangolo.com/reference/testclient/",
             "https://fastapi.tiangolo.com/tutorial/background-tasks/#caveat",
             "https://fastapi.tiangolo.com/tutorial/body/",
+            "https://fastapi.tiangolo.com/tutorial/dependencies/",
+            "https://fastapi.tiangolo.com/tutorial/middleware/",
             "https://fastapi.tiangolo.com/tutorial/response-model/",
             "https://fastapi.tiangolo.com/tutorial/testing/",
+            "https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/",
             "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/",
             "https://owasp.org/API-Security/editions/2023/en/0xa2-broken-authentication/",
-            "https://www.rfc-editor.org/rfc/rfc6750"
+            "https://www.rfc-editor.org/rfc/rfc6750",
+            "https://www.rfc-editor.org/rfc/rfc9110",
+            "https://www.rfc-editor.org/rfc/rfc9457"
           ],
           "wiki_link_count": 0,
           "wiki_links": [],
@@ -12217,14 +12820,14 @@
             "sources": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 1273,
+              "prose_character_count": 1752,
               "code_fence_count": 1,
               "evidence": [
                 {
-                  "heading": "第 13 章：外部资料索引",
-                  "heading_line": 1769,
-                  "end_line": 1806,
-                  "prose_character_count": 1273,
+                  "heading": "第 16 章：外部资料索引",
+                  "heading_line": 2135,
+                  "end_line": 2178,
+                  "prose_character_count": 1752,
                   "code_fence_count": 1
                 }
               ]
@@ -12250,7 +12853,7 @@
           },
           "content_type": "appendix",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1771,
+          "content_type_marker_line": 2137,
           "content_type_issues": []
         }
       ]
@@ -12259,20 +12862,21 @@
       "file": "10_学习模块\\M03_RAG工程\\M03_RAG工程_适配教材.md",
       "status": "active",
       "chapter_detection_mode": "h2",
-      "line_count": 1623,
-      "heading_count": 97,
+      "line_count": 1813,
+      "heading_count": 103,
       "chapter_count": 10,
-      "code_fence_count": 60,
+      "code_fence_count": 68,
       "code_fence_language_counts": {
-        "text": 40,
+        "text": 47,
         "python": 10,
         "json": 8,
-        "mermaid": 2
+        "mermaid": 2,
+        "powershell": 1
       },
       "unclosed_fence_start_line": null,
-      "external_url_count": 8,
+      "external_url_count": 14,
       "visual_evidence": {
-        "table_count": 19,
+        "table_count": 21,
         "markdown_image_count": 0,
         "markdown_images_missing_alt": 0,
         "html_image_count": 0,
@@ -12280,26 +12884,26 @@
         "mermaid_count": 2,
         "mermaid_accessible_count": 0,
         "mermaid_missing_accessibility_count": 2,
-        "visual_item_count": 21
+        "visual_item_count": 23
       },
       "outside_chapter_role_headings": [
         {
           "heading": "项目贯通案例：P03 的 RAG v1 最小闭环",
-          "line": 1414,
+          "line": 1600,
           "roles": [
             "examples"
           ]
         },
         {
           "heading": "贯通流程",
-          "line": 1429,
+          "line": 1615,
           "roles": [
             "examples"
           ]
         },
         {
           "heading": "贯通验收",
-          "line": 1504,
+          "line": 1690,
           "roles": [
             "acceptance"
           ]
@@ -12433,13 +13037,13 @@
           "title": "第 2 章：文档进入系统",
           "heading_level": 2,
           "start_line": 215,
-          "end_line": 351,
-          "line_count": 137,
-          "prose_character_count": 1149,
-          "heading_count": 8,
-          "code_fence_count": 5,
+          "end_line": 424,
+          "line_count": 210,
+          "prose_character_count": 2963,
+          "heading_count": 10,
+          "code_fence_count": 7,
           "code_fence_language_counts": {
-            "text": 3,
+            "text": 5,
             "python": 1,
             "json": 1
           },
@@ -12473,14 +13077,14 @@
             "counterexamples": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 157,
+              "prose_character_count": 295,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "2.5 常见错误",
-                  "heading_line": 313,
-                  "end_line": 326,
-                  "prose_character_count": 157,
+                  "heading_line": 371,
+                  "end_line": 392,
+                  "prose_character_count": 295,
                   "code_fence_count": 0
                 }
               ]
@@ -12488,14 +13092,14 @@
             "practice": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 62,
+              "prose_character_count": 172,
               "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "2.6 小练习",
-                  "heading_line": 327,
-                  "end_line": 344,
-                  "prose_character_count": 62,
+                  "heading_line": 393,
+                  "end_line": 414,
+                  "prose_character_count": 172,
                   "code_fence_count": 1
                 }
               ]
@@ -12503,14 +13107,14 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 93,
+              "prose_character_count": 203,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "2.7 本章检查标准",
-                  "heading_line": 345,
-                  "end_line": 351,
-                  "prose_character_count": 93,
+                  "heading_line": 415,
+                  "end_line": 424,
+                  "prose_character_count": 203,
                   "code_fence_count": 0
                 }
               ]
@@ -12528,7 +13132,7 @@
             "sources"
           ],
           "visual_evidence": {
-            "table_count": 1,
+            "table_count": 2,
             "markdown_image_count": 0,
             "markdown_images_missing_alt": 0,
             "html_image_count": 0,
@@ -12536,7 +13140,7 @@
             "mermaid_count": 0,
             "mermaid_accessible_count": 0,
             "mermaid_missing_accessibility_count": 0,
-            "visual_item_count": 1
+            "visual_item_count": 2
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
@@ -12546,8 +13150,8 @@
         {
           "title": "第 3 章：chunk 策略",
           "heading_level": 2,
-          "start_line": 352,
-          "end_line": 530,
+          "start_line": 425,
+          "end_line": 603,
           "line_count": 179,
           "prose_character_count": 1753,
           "heading_count": 10,
@@ -12569,8 +13173,8 @@
               "evidence": [
                 {
                   "heading": "3.1 本章目标",
-                  "heading_line": 354,
-                  "end_line": 365,
+                  "heading_line": 427,
+                  "end_line": 438,
                   "prose_character_count": 131,
                   "code_fence_count": 0
                 }
@@ -12591,15 +13195,15 @@
               "evidence": [
                 {
                   "heading": "3.5 踩坑现场：overlap 写错会让切分卡住",
-                  "heading_line": 439,
-                  "end_line": 468,
+                  "heading_line": 512,
+                  "end_line": 541,
                   "prose_character_count": 297,
                   "code_fence_count": 3
                 },
                 {
                   "heading": "3.8 常见错误",
-                  "heading_line": 509,
-                  "end_line": 522,
+                  "heading_line": 582,
+                  "end_line": 595,
                   "prose_character_count": 163,
                   "code_fence_count": 0
                 }
@@ -12620,8 +13224,8 @@
               "evidence": [
                 {
                   "heading": "3.9 本章检查标准",
-                  "heading_line": 523,
-                  "end_line": 530,
+                  "heading_line": 596,
+                  "end_line": 603,
                   "prose_character_count": 115,
                   "code_fence_count": 0
                 }
@@ -12659,8 +13263,8 @@
         {
           "title": "第 4 章：embedding 和向量检索",
           "heading_level": 2,
-          "start_line": 531,
-          "end_line": 831,
+          "start_line": 604,
+          "end_line": 904,
           "line_count": 301,
           "prose_character_count": 3564,
           "heading_count": 14,
@@ -12685,8 +13289,8 @@
               "evidence": [
                 {
                   "heading": "4.1 本章目标",
-                  "heading_line": 533,
-                  "end_line": 543,
+                  "heading_line": 606,
+                  "end_line": 616,
                   "prose_character_count": 121,
                   "code_fence_count": 0
                 }
@@ -12700,8 +13304,8 @@
               "evidence": [
                 {
                   "heading": "4.3.1 Worked example：离线算一次向量和 cosine similarity",
-                  "heading_line": 591,
-                  "end_line": 672,
+                  "heading_line": 664,
+                  "end_line": 745,
                   "prose_character_count": 495,
                   "code_fence_count": 3
                 }
@@ -12715,15 +13319,15 @@
               "evidence": [
                 {
                   "heading": "4.3.2 可复现反例：查询落在词表之外",
-                  "heading_line": 673,
-                  "end_line": 680,
+                  "heading_line": 746,
+                  "end_line": 753,
                   "prose_character_count": 204,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "4.7 常见错误",
-                  "heading_line": 782,
-                  "end_line": 795,
+                  "heading_line": 855,
+                  "end_line": 868,
                   "prose_character_count": 179,
                   "code_fence_count": 0
                 }
@@ -12737,15 +13341,15 @@
               "evidence": [
                 {
                   "heading": "4.3.3 独立变式",
-                  "heading_line": 681,
-                  "end_line": 692,
+                  "heading_line": 754,
+                  "end_line": 765,
                   "prose_character_count": 265,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "4.8 小练习",
-                  "heading_line": 796,
-                  "end_line": 814,
+                  "heading_line": 869,
+                  "end_line": 887,
                   "prose_character_count": 38,
                   "code_fence_count": 2
                 }
@@ -12759,8 +13363,8 @@
               "evidence": [
                 {
                   "heading": "4.9 本章检查标准",
-                  "heading_line": 815,
-                  "end_line": 824,
+                  "heading_line": 888,
+                  "end_line": 897,
                   "prose_character_count": 190,
                   "code_fence_count": 0
                 }
@@ -12774,8 +13378,8 @@
               "evidence": [
                 {
                   "heading": "4.10 本章依据",
-                  "heading_line": 825,
-                  "end_line": 831,
+                  "heading_line": 898,
+                  "end_line": 904,
                   "prose_character_count": 343,
                   "code_fence_count": 0
                 }
@@ -12802,8 +13406,8 @@
         {
           "title": "第 5 章：从检索到回答与引用",
           "heading_level": 2,
-          "start_line": 832,
-          "end_line": 996,
+          "start_line": 905,
+          "end_line": 1069,
           "line_count": 165,
           "prose_character_count": 1371,
           "heading_count": 9,
@@ -12825,8 +13429,8 @@
               "evidence": [
                 {
                   "heading": "5.1 本章目标",
-                  "heading_line": 834,
-                  "end_line": 845,
+                  "heading_line": 907,
+                  "end_line": 918,
                   "prose_character_count": 103,
                   "code_fence_count": 0
                 }
@@ -12847,15 +13451,15 @@
               "evidence": [
                 {
                   "heading": "5.5 常见错误",
-                  "heading_line": 915,
-                  "end_line": 928,
+                  "heading_line": 988,
+                  "end_line": 1001,
                   "prose_character_count": 138,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "5.6 踩坑现场：回答对了，但证据链丢了",
-                  "heading_line": 929,
-                  "end_line": 964,
+                  "heading_line": 1002,
+                  "end_line": 1037,
                   "prose_character_count": 239,
                   "code_fence_count": 2
                 }
@@ -12869,8 +13473,8 @@
               "evidence": [
                 {
                   "heading": "5.7 小练习",
-                  "heading_line": 965,
-                  "end_line": 989,
+                  "heading_line": 1038,
+                  "end_line": 1062,
                   "prose_character_count": 48,
                   "code_fence_count": 2
                 }
@@ -12884,8 +13488,8 @@
               "evidence": [
                 {
                   "heading": "5.8 本章检查标准",
-                  "heading_line": 990,
-                  "end_line": 996,
+                  "heading_line": 1063,
+                  "end_line": 1069,
                   "prose_character_count": 84,
                   "code_fence_count": 0
                 }
@@ -12922,14 +13526,15 @@
         {
           "title": "第 6 章：RAG 评估与失败处理",
           "heading_level": 2,
-          "start_line": 997,
-          "end_line": 1078,
-          "line_count": 82,
-          "prose_character_count": 1065,
-          "heading_count": 8,
-          "code_fence_count": 1,
+          "start_line": 1070,
+          "end_line": 1221,
+          "line_count": 152,
+          "prose_character_count": 3076,
+          "heading_count": 10,
+          "code_fence_count": 6,
           "code_fence_language_counts": {
-            "text": 1
+            "text": 5,
+            "powershell": 1
           },
           "external_url_count": 0,
           "external_urls": [],
@@ -12944,53 +13549,69 @@
               "evidence": [
                 {
                   "heading": "6.1 本章目标",
-                  "heading_line": 999,
-                  "end_line": 1004,
+                  "heading_line": 1072,
+                  "end_line": 1077,
                   "prose_character_count": 68,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
-              "code_fence_count": 0,
-              "evidence": []
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 162,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "6.4.1 Worked example：从 JSON 复算一条 hybrid",
+                  "heading_line": 1163,
+                  "end_line": 1173,
+                  "prose_character_count": 162,
+                  "code_fence_count": 1
+                }
+              ]
             },
             "counterexamples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 122,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "6.4.2 反例：漂亮平均数掩盖失败",
+                  "heading_line": 1174,
+                  "end_line": 1179,
+                  "prose_character_count": 122,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "practice": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 142,
-              "code_fence_count": 0,
+              "prose_character_count": 330,
+              "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "6.6 小练习",
-                  "heading_line": 1062,
-                  "end_line": 1071,
-                  "prose_character_count": 142,
-                  "code_fence_count": 0
+                  "heading_line": 1192,
+                  "end_line": 1211,
+                  "prose_character_count": 330,
+                  "code_fence_count": 1
                 }
               ]
             },
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 102,
+              "prose_character_count": 301,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "6.7 本章检查标准",
-                  "heading_line": 1072,
-                  "end_line": 1078,
-                  "prose_character_count": 102,
+                  "heading_line": 1212,
+                  "end_line": 1221,
+                  "prose_character_count": 301,
                   "code_fence_count": 0
                 }
               ]
@@ -13004,8 +13625,6 @@
             }
           },
           "missing_explicit_role_sections": [
-            "examples",
-            "counterexamples",
             "sources"
           ],
           "visual_evidence": {
@@ -13027,14 +13646,14 @@
         {
           "title": "第 7 章：metadata 权限过滤",
           "heading_level": 2,
-          "start_line": 1079,
-          "end_line": 1284,
-          "line_count": 206,
-          "prose_character_count": 3256,
-          "heading_count": 10,
-          "code_fence_count": 8,
+          "start_line": 1222,
+          "end_line": 1470,
+          "line_count": 249,
+          "prose_character_count": 4449,
+          "heading_count": 12,
+          "code_fence_count": 9,
           "code_fence_language_counts": {
-            "text": 6,
+            "text": 7,
             "python": 2
           },
           "external_url_count": 0,
@@ -13050,8 +13669,8 @@
               "evidence": [
                 {
                   "heading": "7.1 本章目标",
-                  "heading_line": 1081,
-                  "end_line": 1087,
+                  "heading_line": 1224,
+                  "end_line": 1230,
                   "prose_character_count": 86,
                   "code_fence_count": 0
                 }
@@ -13072,8 +13691,8 @@
               "evidence": [
                 {
                   "heading": "7.5 常见错误",
-                  "heading_line": 1253,
-                  "end_line": 1272,
+                  "heading_line": 1435,
+                  "end_line": 1454,
                   "prose_character_count": 303,
                   "code_fence_count": 0
                 }
@@ -13089,14 +13708,14 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 327,
+              "prose_character_count": 487,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "7.6 本章检查标准",
-                  "heading_line": 1273,
-                  "end_line": 1284,
-                  "prose_character_count": 327,
+                  "heading_line": 1455,
+                  "end_line": 1470,
+                  "prose_character_count": 487,
                   "code_fence_count": 0
                 }
               ]
@@ -13115,7 +13734,7 @@
             "sources"
           ],
           "visual_evidence": {
-            "table_count": 3,
+            "table_count": 4,
             "markdown_image_count": 0,
             "markdown_images_missing_alt": 0,
             "html_image_count": 0,
@@ -13123,7 +13742,7 @@
             "mermaid_count": 0,
             "mermaid_accessible_count": 0,
             "mermaid_missing_accessibility_count": 0,
-            "visual_item_count": 3
+            "visual_item_count": 4
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
@@ -13133,8 +13752,8 @@
         {
           "title": "第 8 章：把 RAG 请求接入 P03",
           "heading_level": 2,
-          "start_line": 1285,
-          "end_line": 1413,
+          "start_line": 1471,
+          "end_line": 1599,
           "line_count": 129,
           "prose_character_count": 1178,
           "heading_count": 8,
@@ -13156,8 +13775,8 @@
               "evidence": [
                 {
                   "heading": "8.1 本章目标",
-                  "heading_line": 1289,
-                  "end_line": 1294,
+                  "heading_line": 1475,
+                  "end_line": 1480,
                   "prose_character_count": 43,
                   "code_fence_count": 0
                 }
@@ -13178,8 +13797,8 @@
               "evidence": [
                 {
                   "heading": "8.6 常见错误",
-                  "heading_line": 1393,
-                  "end_line": 1406,
+                  "heading_line": 1579,
+                  "end_line": 1592,
                   "prose_character_count": 147,
                   "code_fence_count": 0
                 }
@@ -13200,8 +13819,8 @@
               "evidence": [
                 {
                   "heading": "8.7 本章检查标准",
-                  "heading_line": 1407,
-                  "end_line": 1413,
+                  "heading_line": 1593,
+                  "end_line": 1599,
                   "prose_character_count": 101,
                   "code_fence_count": 0
                 }
@@ -13233,14 +13852,14 @@
           },
           "content_type": "design-note",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1287,
+          "content_type_marker_line": 1473,
           "content_type_issues": []
         },
         {
           "title": "第 9 章：第一轮学习顺序",
           "heading_level": 2,
-          "start_line": 1516,
-          "end_line": 1559,
+          "start_line": 1702,
+          "end_line": 1745,
           "line_count": 44,
           "prose_character_count": 763,
           "heading_count": 4,
@@ -13287,8 +13906,8 @@
               "evidence": [
                 {
                   "heading": "9.3 本模块最终检查",
-                  "heading_line": 1548,
-                  "end_line": 1559,
+                  "heading_line": 1734,
+                  "end_line": 1745,
                   "prose_character_count": 225,
                   "code_fence_count": 0
                 }
@@ -13322,27 +13941,33 @@
           },
           "content_type": "appendix",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1518,
+          "content_type_marker_line": 1704,
           "content_type_issues": []
         },
         {
           "title": "第 10 章：外部资料怎么用",
           "heading_level": 2,
-          "start_line": 1560,
-          "end_line": 1607,
-          "line_count": 48,
-          "prose_character_count": 1359,
+          "start_line": 1746,
+          "end_line": 1797,
+          "line_count": 52,
+          "prose_character_count": 2236,
           "heading_count": 5,
           "code_fence_count": 1,
           "code_fence_language_counts": {
             "text": 1
           },
-          "external_url_count": 4,
+          "external_url_count": 10,
           "external_urls": [
             "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+            "https://nlp.stanford.edu/IR-book/html/htmledition/evaluation-of-ranked-retrieval-results-1.html",
             "https://nlp.stanford.edu/IR-book/html/htmledition/the-vector-space-model-for-scoring-1.html",
+            "https://opentelemetry.io/docs/security/",
             "https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/",
-            "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html"
+            "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.ndcg_score.html",
+            "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html",
+            "https://trec.nist.gov/",
+            "https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-similarity.html",
+            "https://www.w3.org/TR/prov-o/"
           ],
           "wiki_link_count": 0,
           "wiki_links": [],
@@ -13385,28 +14010,28 @@
             "sources": {
               "explicit_section_present": true,
               "section_count": 3,
-              "prose_character_count": 2498,
+              "prose_character_count": 4252,
               "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "第 10 章：外部资料怎么用",
-                  "heading_line": 1560,
-                  "end_line": 1607,
-                  "prose_character_count": 1345,
+                  "heading_line": 1746,
+                  "end_line": 1797,
+                  "prose_character_count": 2222,
                   "code_fence_count": 1
                 },
                 {
                   "heading": "10.1 资料使用原则",
-                  "heading_line": 1564,
-                  "end_line": 1576,
+                  "heading_line": 1750,
+                  "end_line": 1762,
                   "prose_character_count": 244,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "10.4 正文主张与来源映射",
-                  "heading_line": 1599,
-                  "end_line": 1607,
-                  "prose_character_count": 909,
+                  "heading_line": 1785,
+                  "end_line": 1797,
+                  "prose_character_count": 1786,
                   "code_fence_count": 0
                 }
               ]
@@ -13432,7 +14057,7 @@
           },
           "content_type": "reference",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1562,
+          "content_type_marker_line": 1748,
           "content_type_issues": []
         }
       ]
@@ -13441,20 +14066,21 @@
       "file": "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md",
       "status": "active",
       "chapter_detection_mode": "h2",
-      "line_count": 1794,
-      "heading_count": 106,
+      "line_count": 1923,
+      "heading_count": 109,
       "chapter_count": 10,
-      "code_fence_count": 54,
+      "code_fence_count": 60,
       "code_fence_language_counts": {
-        "text": 45,
-        "python": 7,
+        "text": 48,
+        "python": 8,
+        "json": 2,
         "mermaid": 1,
-        "json": 1
+        "powershell": 1
       },
       "unclosed_fence_start_line": null,
-      "external_url_count": 12,
+      "external_url_count": 19,
       "visual_evidence": {
-        "table_count": 23,
+        "table_count": 24,
         "markdown_image_count": 0,
         "markdown_images_missing_alt": 0,
         "html_image_count": 0,
@@ -13462,40 +14088,40 @@
         "mermaid_count": 1,
         "mermaid_accessible_count": 0,
         "mermaid_missing_accessibility_count": 1,
-        "visual_item_count": 24
+        "visual_item_count": 25
       },
       "outside_chapter_role_headings": [
         {
           "heading": "项目贯通案例：P03 Agent 报告任务",
-          "line": 1669,
+          "line": 1790,
           "roles": [
             "examples"
           ]
         },
         {
           "heading": "目标",
-          "line": 1671,
+          "line": 1792,
           "roles": [
             "objectives"
           ]
         },
         {
           "heading": "最小验收",
-          "line": 1727,
+          "line": 1848,
           "roles": [
             "acceptance"
           ]
         },
         {
           "heading": "外部资料怎么用",
-          "line": 1753,
+          "line": 1874,
           "roles": [
             "sources"
           ]
         },
         {
           "heading": "本模块最终检查",
-          "line": 1782,
+          "line": 1909,
           "roles": [
             "acceptance"
           ]
@@ -13987,13 +14613,15 @@
           "title": "第 5 章：失败处理和重试",
           "heading_level": 2,
           "start_line": 655,
-          "end_line": 743,
-          "line_count": 89,
-          "prose_character_count": 1134,
-          "heading_count": 9,
-          "code_fence_count": 3,
+          "end_line": 786,
+          "line_count": 132,
+          "prose_character_count": 1866,
+          "heading_count": 10,
+          "code_fence_count": 6,
           "code_fence_language_counts": {
-            "text": 3
+            "text": 4,
+            "json": 1,
+            "python": 1
           },
           "external_url_count": 0,
           "external_urls": [],
@@ -14030,15 +14658,15 @@
               "evidence": [
                 {
                   "heading": "5.5 常见错误",
-                  "heading_line": 704,
-                  "end_line": 723,
+                  "heading_line": 746,
+                  "end_line": 765,
                   "prose_character_count": 381,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "踩坑现场：所有失败都重试，队列被坏任务拖住",
-                  "heading_line": 720,
-                  "end_line": 723,
+                  "heading_line": 762,
+                  "end_line": 765,
                   "prose_character_count": 123,
                   "code_fence_count": 0
                 }
@@ -14052,8 +14680,8 @@
               "evidence": [
                 {
                   "heading": "5.6 小练习",
-                  "heading_line": 724,
-                  "end_line": 736,
+                  "heading_line": 766,
+                  "end_line": 778,
                   "prose_character_count": 46,
                   "code_fence_count": 1
                 }
@@ -14062,14 +14690,14 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 78,
+              "prose_character_count": 104,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "5.7 本章检查标准",
-                  "heading_line": 737,
-                  "end_line": 743,
-                  "prose_character_count": 78,
+                  "heading_line": 779,
+                  "end_line": 786,
+                  "prose_character_count": 104,
                   "code_fence_count": 0
                 }
               ]
@@ -14105,10 +14733,10 @@
         {
           "title": "第 6 章：人工确认，人必须能接管关键步骤",
           "heading_level": 2,
-          "start_line": 744,
-          "end_line": 1030,
-          "line_count": 287,
-          "prose_character_count": 3060,
+          "start_line": 787,
+          "end_line": 1079,
+          "line_count": 293,
+          "prose_character_count": 3294,
           "heading_count": 9,
           "code_fence_count": 5,
           "code_fence_language_counts": {
@@ -14128,8 +14756,8 @@
               "evidence": [
                 {
                   "heading": "6.1 为什么要学",
-                  "heading_line": 748,
-                  "end_line": 753,
+                  "heading_line": 791,
+                  "end_line": 796,
                   "prose_character_count": 79,
                   "code_fence_count": 0
                 }
@@ -14150,8 +14778,8 @@
               "evidence": [
                 {
                   "heading": "6.6 常见错误",
-                  "heading_line": 984,
-                  "end_line": 1008,
+                  "heading_line": 1033,
+                  "end_line": 1057,
                   "prose_character_count": 382,
                   "code_fence_count": 0
                 }
@@ -14165,8 +14793,8 @@
               "evidence": [
                 {
                   "heading": "6.7 小练习",
-                  "heading_line": 1009,
-                  "end_line": 1019,
+                  "heading_line": 1058,
+                  "end_line": 1068,
                   "prose_character_count": 73,
                   "code_fence_count": 1
                 }
@@ -14180,8 +14808,8 @@
               "evidence": [
                 {
                   "heading": "6.8 本章检查标准",
-                  "heading_line": 1020,
-                  "end_line": 1030,
+                  "heading_line": 1069,
+                  "end_line": 1079,
                   "prose_character_count": 247,
                   "code_fence_count": 0
                 }
@@ -14212,14 +14840,14 @@
           },
           "content_type": "design-note",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 746,
+          "content_type_marker_line": 789,
           "content_type_issues": []
         },
         {
           "title": "第 7 章：Agent 和 M05 调度的连接",
           "heading_level": 2,
-          "start_line": 1031,
-          "end_line": 1124,
+          "start_line": 1080,
+          "end_line": 1173,
           "line_count": 94,
           "prose_character_count": 1029,
           "heading_count": 8,
@@ -14240,8 +14868,8 @@
               "evidence": [
                 {
                   "heading": "7.1 为什么要学",
-                  "heading_line": 1035,
-                  "end_line": 1042,
+                  "heading_line": 1084,
+                  "end_line": 1091,
                   "prose_character_count": 235,
                   "code_fence_count": 0
                 }
@@ -14262,8 +14890,8 @@
               "evidence": [
                 {
                   "heading": "7.5 常见错误",
-                  "heading_line": 1094,
-                  "end_line": 1107,
+                  "heading_line": 1143,
+                  "end_line": 1156,
                   "prose_character_count": 116,
                   "code_fence_count": 0
                 }
@@ -14277,8 +14905,8 @@
               "evidence": [
                 {
                   "heading": "7.6 小练习",
-                  "heading_line": 1108,
-                  "end_line": 1117,
+                  "heading_line": 1157,
+                  "end_line": 1166,
                   "prose_character_count": 99,
                   "code_fence_count": 1
                 }
@@ -14292,8 +14920,8 @@
               "evidence": [
                 {
                   "heading": "7.7 本章检查标准",
-                  "heading_line": 1118,
-                  "end_line": 1124,
+                  "heading_line": 1167,
+                  "end_line": 1173,
                   "prose_character_count": 77,
                   "code_fence_count": 0
                 }
@@ -14324,17 +14952,17 @@
           },
           "content_type": "design-note",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1033,
+          "content_type_marker_line": 1082,
           "content_type_issues": []
         },
         {
           "title": "第 8 章：日志和监控，Agent 每一步都要能复盘",
           "heading_level": 2,
-          "start_line": 1125,
-          "end_line": 1198,
-          "line_count": 74,
-          "prose_character_count": 1068,
-          "heading_count": 8,
+          "start_line": 1174,
+          "end_line": 1268,
+          "line_count": 95,
+          "prose_character_count": 1963,
+          "heading_count": 9,
           "code_fence_count": 1,
           "code_fence_language_counts": {
             "text": 1
@@ -14352,8 +14980,8 @@
               "evidence": [
                 {
                   "heading": "8.1 为什么要学",
-                  "heading_line": 1129,
-                  "end_line": 1134,
+                  "heading_line": 1178,
+                  "end_line": 1183,
                   "prose_character_count": 79,
                   "code_fence_count": 0
                 }
@@ -14369,14 +14997,14 @@
             "counterexamples": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 149,
+              "prose_character_count": 497,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "8.5 常见错误",
-                  "heading_line": 1168,
-                  "end_line": 1181,
-                  "prose_character_count": 149,
+                  "heading_line": 1231,
+                  "end_line": 1251,
+                  "prose_character_count": 497,
                   "code_fence_count": 0
                 }
               ]
@@ -14389,8 +15017,8 @@
               "evidence": [
                 {
                   "heading": "8.6 小练习",
-                  "heading_line": 1182,
-                  "end_line": 1191,
+                  "heading_line": 1252,
+                  "end_line": 1261,
                   "prose_character_count": 73,
                   "code_fence_count": 1
                 }
@@ -14404,8 +15032,8 @@
               "evidence": [
                 {
                   "heading": "8.7 本章检查标准",
-                  "heading_line": 1192,
-                  "end_line": 1198,
+                  "heading_line": 1262,
+                  "end_line": 1268,
                   "prose_character_count": 70,
                   "code_fence_count": 0
                 }
@@ -14424,7 +15052,7 @@
             "sources"
           ],
           "visual_evidence": {
-            "table_count": 2,
+            "table_count": 3,
             "markdown_image_count": 0,
             "markdown_images_missing_alt": 0,
             "html_image_count": 0,
@@ -14432,28 +15060,31 @@
             "mermaid_count": 0,
             "mermaid_accessible_count": 0,
             "mermaid_missing_accessibility_count": 0,
-            "visual_item_count": 2
+            "visual_item_count": 3
           },
           "content_type": "design-note",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1127,
+          "content_type_marker_line": 1176,
           "content_type_issues": []
         },
         {
           "title": "第 9 章：安全和权限的第一层边界",
           "heading_level": 2,
-          "start_line": 1199,
-          "end_line": 1309,
-          "line_count": 111,
-          "prose_character_count": 2210,
-          "heading_count": 8,
-          "code_fence_count": 2,
+          "start_line": 1269,
+          "end_line": 1430,
+          "line_count": 162,
+          "prose_character_count": 3407,
+          "heading_count": 9,
+          "code_fence_count": 5,
           "code_fence_language_counts": {
-            "text": 1,
-            "python": 1
+            "text": 3,
+            "python": 1,
+            "powershell": 1
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 1,
+          "external_urls": [
+            "https://api.example.com\""
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -14465,8 +15096,8 @@
               "evidence": [
                 {
                   "heading": "9.1 为什么要学",
-                  "heading_line": 1201,
-                  "end_line": 1217,
+                  "heading_line": 1271,
+                  "end_line": 1287,
                   "prose_character_count": 96,
                   "code_fence_count": 1
                 }
@@ -14489,37 +15120,37 @@
             "practice": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 333,
-              "code_fence_count": 0,
+              "prose_character_count": 500,
+              "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "9.7 小练习与检查标准",
-                  "heading_line": 1297,
-                  "end_line": 1309,
-                  "prose_character_count": 333,
-                  "code_fence_count": 0
+                  "heading_line": 1407,
+                  "end_line": 1430,
+                  "prose_character_count": 500,
+                  "code_fence_count": 1
                 }
               ]
             },
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 2,
-              "prose_character_count": 688,
-              "code_fence_count": 0,
+              "prose_character_count": 1140,
+              "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "9.6 失败语义与负向验收",
-                  "heading_line": 1282,
-                  "end_line": 1296,
-                  "prose_character_count": 355,
+                  "heading_line": 1388,
+                  "end_line": 1406,
+                  "prose_character_count": 640,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "9.7 小练习与检查标准",
-                  "heading_line": 1297,
-                  "end_line": 1309,
-                  "prose_character_count": 333,
-                  "code_fence_count": 0
+                  "heading_line": 1407,
+                  "end_line": 1430,
+                  "prose_character_count": 500,
+                  "code_fence_count": 1
                 }
               ]
             },
@@ -14555,8 +15186,8 @@
         {
           "title": "第 10 章：从零实现最小 Agent Runtime",
           "heading_level": 2,
-          "start_line": 1310,
-          "end_line": 1668,
+          "start_line": 1431,
+          "end_line": 1789,
           "line_count": 359,
           "prose_character_count": 7912,
           "heading_count": 13,
@@ -14588,8 +15219,8 @@
               "evidence": [
                 {
                   "heading": "10.1 为什么要学",
-                  "heading_line": 1314,
-                  "end_line": 1333,
+                  "heading_line": 1435,
+                  "end_line": 1454,
                   "prose_character_count": 375,
                   "code_fence_count": 1
                 }
@@ -14610,8 +15241,8 @@
               "evidence": [
                 {
                   "heading": "10.9 常见错误",
-                  "heading_line": 1630,
-                  "end_line": 1643,
+                  "heading_line": 1751,
+                  "end_line": 1764,
                   "prose_character_count": 364,
                   "code_fence_count": 0
                 }
@@ -14625,8 +15256,8 @@
               "evidence": [
                 {
                   "heading": "10.10 小练习",
-                  "heading_line": 1644,
-                  "end_line": 1654,
+                  "heading_line": 1765,
+                  "end_line": 1775,
                   "prose_character_count": 558,
                   "code_fence_count": 0
                 }
@@ -14640,8 +15271,8 @@
               "evidence": [
                 {
                   "heading": "10.11 本章检查标准",
-                  "heading_line": 1655,
-                  "end_line": 1668,
+                  "heading_line": 1776,
+                  "end_line": 1789,
                   "prose_character_count": 359,
                   "code_fence_count": 0
                 }
@@ -14655,8 +15286,8 @@
               "evidence": [
                 {
                   "heading": "10.2 权威资料怎么吸收",
-                  "heading_line": 1334,
-                  "end_line": 1376,
+                  "heading_line": 1455,
+                  "end_line": 1497,
                   "prose_character_count": 2230,
                   "code_fence_count": 1
                 }
@@ -14679,7 +15310,7 @@
           },
           "content_type": "design-note",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1312,
+          "content_type_marker_line": 1433,
           "content_type_issues": []
         }
       ]
@@ -17553,21 +18184,22 @@
       "file": "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_适配教材.md",
       "status": "active",
       "chapter_detection_mode": "h2",
-      "line_count": 1647,
-      "heading_count": 101,
-      "chapter_count": 10,
-      "code_fence_count": 71,
+      "line_count": 2020,
+      "heading_count": 136,
+      "chapter_count": 12,
+      "code_fence_count": 80,
       "code_fence_language_counts": {
-        "text": 52,
-        "python": 8,
-        "sql": 7,
+        "text": 56,
+        "sql": 9,
+        "python": 9,
         "mermaid": 3,
+        "powershell": 2,
         "json": 1
       },
       "unclosed_fence_start_line": null,
-      "external_url_count": 4,
+      "external_url_count": 23,
       "visual_evidence": {
-        "table_count": 12,
+        "table_count": 16,
         "markdown_image_count": 0,
         "markdown_images_missing_alt": 0,
         "html_image_count": 0,
@@ -17575,26 +18207,26 @@
         "mermaid_count": 3,
         "mermaid_accessible_count": 0,
         "mermaid_missing_accessibility_count": 3,
-        "visual_item_count": 15
+        "visual_item_count": 19
       },
       "outside_chapter_role_headings": [
         {
           "heading": "本模块工程练习主线",
-          "line": 88,
+          "line": 92,
           "roles": [
             "practice"
           ]
         },
         {
           "heading": "项目贯通案例：P03 的持久化异步闭环",
-          "line": 1354,
+          "line": 1695,
           "roles": [
             "examples"
           ]
         },
         {
           "heading": "贯通验收",
-          "line": 1435,
+          "line": 1776,
           "roles": [
             "acceptance"
           ]
@@ -17605,7 +18237,7 @@
       "default_content_type_marker_line": 3,
       "content_type_issues": [],
       "content_type_counts": {
-        "instructional": 8,
+        "instructional": 10,
         "appendix": 1,
         "reference": 1
       },
@@ -17613,18 +18245,21 @@
         {
           "title": "第 1 章：为什么 M06 是从脚本到系统的分界线",
           "heading_level": 2,
-          "start_line": 123,
-          "end_line": 258,
-          "line_count": 136,
-          "prose_character_count": 1376,
-          "heading_count": 8,
+          "start_line": 128,
+          "end_line": 273,
+          "line_count": 146,
+          "prose_character_count": 1938,
+          "heading_count": 10,
           "code_fence_count": 8,
           "code_fence_language_counts": {
             "text": 7,
             "mermaid": 1
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 2,
+          "external_urls": [
+            "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+            "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -17636,19 +18271,27 @@
               "evidence": [
                 {
                   "heading": "1.1 本章目标",
-                  "heading_line": 125,
-                  "end_line": 140,
+                  "heading_line": 130,
+                  "end_line": 145,
                   "prose_character_count": 97,
                   "code_fence_count": 2
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 319,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：把一次同步 RAG 请求改成可恢复任务",
+                  "heading_line": 232,
+                  "end_line": 237,
+                  "prose_character_count": 319,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
@@ -17658,8 +18301,8 @@
               "evidence": [
                 {
                   "heading": "1.5 常见错误",
-                  "heading_line": 227,
-                  "end_line": 240,
+                  "heading_line": 238,
+                  "end_line": 251,
                   "prose_character_count": 311,
                   "code_fence_count": 0
                 }
@@ -17673,8 +18316,8 @@
               "evidence": [
                 {
                   "heading": "1.6 小练习",
-                  "heading_line": 241,
-                  "end_line": 251,
+                  "heading_line": 252,
+                  "end_line": 262,
                   "prose_character_count": 8,
                   "code_fence_count": 1
                 }
@@ -17688,25 +18331,30 @@
               "evidence": [
                 {
                   "heading": "1.7 本章检查标准",
-                  "heading_line": 252,
-                  "end_line": 258,
+                  "heading_line": 263,
+                  "end_line": 269,
                   "prose_character_count": 106,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 213,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 270,
+                  "end_line": 273,
+                  "prose_character_count": 213,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
             "table_count": 1,
             "markdown_image_count": 0,
@@ -17726,18 +18374,21 @@
         {
           "title": "第 2 章：SQL 和任务状态表",
           "heading_level": 2,
-          "start_line": 259,
-          "end_line": 415,
-          "line_count": 157,
-          "prose_character_count": 1379,
-          "heading_count": 10,
+          "start_line": 274,
+          "end_line": 438,
+          "line_count": 165,
+          "prose_character_count": 1825,
+          "heading_count": 12,
           "code_fence_count": 6,
           "code_fence_language_counts": {
             "text": 3,
             "sql": 3
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 2,
+          "external_urls": [
+            "https://www.postgresql.org/docs/current/ddl-constraints.html",
+            "https://www.postgresql.org/docs/current/tutorial.html"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -17749,19 +18400,27 @@
               "evidence": [
                 {
                   "heading": "2.1 本章目标",
-                  "heading_line": 261,
-                  "end_line": 266,
+                  "heading_line": 276,
+                  "end_line": 281,
                   "prose_character_count": 75,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 221,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：一条任务从合法写入到非法更新",
+                  "heading_line": 387,
+                  "end_line": 390,
+                  "prose_character_count": 221,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
@@ -17771,15 +18430,15 @@
               "evidence": [
                 {
                   "heading": "2.6 常见错误",
-                  "heading_line": 372,
-                  "end_line": 389,
+                  "heading_line": 391,
+                  "end_line": 408,
                   "prose_character_count": 351,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "踩坑现场：worker 做完了，但用户永远看到 running",
-                  "heading_line": 386,
-                  "end_line": 389,
+                  "heading_line": 405,
+                  "end_line": 408,
                   "prose_character_count": 155,
                   "code_fence_count": 0
                 }
@@ -17793,8 +18452,8 @@
               "evidence": [
                 {
                   "heading": "2.7 小练习",
-                  "heading_line": 390,
-                  "end_line": 408,
+                  "heading_line": 409,
+                  "end_line": 427,
                   "prose_character_count": 81,
                   "code_fence_count": 1
                 }
@@ -17808,25 +18467,30 @@
               "evidence": [
                 {
                   "heading": "2.8 本章检查标准",
-                  "heading_line": 409,
-                  "end_line": 415,
+                  "heading_line": 428,
+                  "end_line": 434,
                   "prose_character_count": 84,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 198,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 435,
+                  "end_line": 438,
+                  "prose_character_count": 198,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
             "table_count": 0,
             "markdown_image_count": 0,
@@ -17844,20 +18508,157 @@
           "content_type_issues": []
         },
         {
+          "title": "第 2A 章：数据库正确性、查询计划与并发先修",
+          "heading_level": 2,
+          "start_line": 439,
+          "end_line": 543,
+          "line_count": 105,
+          "prose_character_count": 2954,
+          "heading_count": 8,
+          "code_fence_count": 4,
+          "code_fence_language_counts": {
+            "sql": 2,
+            "text": 1,
+            "powershell": 1
+          },
+          "external_url_count": 5,
+          "external_urls": [
+            "https://www.postgresql.org/docs/current/ddl-constraints.html",
+            "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-DEADLOCKS",
+            "https://www.postgresql.org/docs/current/transaction-iso.html",
+            "https://www.postgresql.org/docs/current/using-explain.html",
+            "https://www.sqlite.org/lang_transaction.html"
+          ],
+          "wiki_link_count": 0,
+          "wiki_links": [],
+          "roles": {
+            "objectives": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 150,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "学习目标",
+                  "heading_line": 441,
+                  "end_line": 450,
+                  "prose_character_count": 150,
+                  "code_fence_count": 0
+                }
+              ]
+            },
+            "examples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 361,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "2A.6 示例、反例、练习与验收",
+                  "heading_line": 521,
+                  "end_line": 539,
+                  "prose_character_count": 361,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "counterexamples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 361,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "2A.6 示例、反例、练习与验收",
+                  "heading_line": 521,
+                  "end_line": 539,
+                  "prose_character_count": 361,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "practice": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 361,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "2A.6 示例、反例、练习与验收",
+                  "heading_line": 521,
+                  "end_line": 539,
+                  "prose_character_count": 361,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "acceptance": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 361,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "2A.6 示例、反例、练习与验收",
+                  "heading_line": 521,
+                  "end_line": 539,
+                  "prose_character_count": 361,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "sources": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 421,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "权威来源（本章来源）",
+                  "heading_line": 540,
+                  "end_line": 543,
+                  "prose_character_count": 421,
+                  "code_fence_count": 0
+                }
+              ]
+            }
+          },
+          "missing_explicit_role_sections": [],
+          "visual_evidence": {
+            "table_count": 1,
+            "markdown_image_count": 0,
+            "markdown_images_missing_alt": 0,
+            "html_image_count": 0,
+            "html_images_missing_alt": 0,
+            "mermaid_count": 0,
+            "mermaid_accessible_count": 0,
+            "mermaid_missing_accessibility_count": 0,
+            "visual_item_count": 1
+          },
+          "content_type": "instructional",
+          "content_type_source": "document_default_marker",
+          "content_type_marker_line": 3,
+          "content_type_issues": []
+        },
+        {
           "title": "第 3 章：从 API 到 Repository",
           "heading_level": 2,
-          "start_line": 416,
-          "end_line": 560,
-          "line_count": 145,
-          "prose_character_count": 1276,
-          "heading_count": 9,
+          "start_line": 544,
+          "end_line": 699,
+          "line_count": 156,
+          "prose_character_count": 2082,
+          "heading_count": 11,
           "code_fence_count": 5,
           "code_fence_language_counts": {
             "text": 3,
             "python": 2
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 3,
+          "external_urls": [
+            "https://fastapi.tiangolo.com/tutorial/bigger-applications/",
+            "https://microservices.io/patterns/data/transactional-outbox.html",
+            "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -17869,19 +18670,27 @@
               "evidence": [
                 {
                   "heading": "3.1 本章目标",
-                  "heading_line": 418,
-                  "end_line": 423,
+                  "heading_line": 546,
+                  "end_line": 551,
                   "prose_character_count": 89,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 344,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：两次重复提交只产生一个 outbox",
+                  "heading_line": 660,
+                  "end_line": 665,
+                  "prose_character_count": 344,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
@@ -17891,8 +18700,8 @@
               "evidence": [
                 {
                   "heading": "3.6 常见错误",
-                  "heading_line": 531,
-                  "end_line": 544,
+                  "heading_line": 666,
+                  "end_line": 679,
                   "prose_character_count": 139,
                   "code_fence_count": 0
                 }
@@ -17906,8 +18715,8 @@
               "evidence": [
                 {
                   "heading": "3.7 小练习",
-                  "heading_line": 545,
-                  "end_line": 554,
+                  "heading_line": 680,
+                  "end_line": 689,
                   "prose_character_count": 51,
                   "code_fence_count": 1
                 }
@@ -17921,25 +18730,30 @@
               "evidence": [
                 {
                   "heading": "3.8 本章检查标准",
-                  "heading_line": 555,
-                  "end_line": 560,
+                  "heading_line": 690,
+                  "end_line": 695,
                   "prose_character_count": 83,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 324,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 696,
+                  "end_line": 699,
+                  "prose_character_count": 324,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
             "table_count": 1,
             "markdown_image_count": 0,
@@ -17959,19 +18773,22 @@
         {
           "title": "第 4 章：任务状态流转",
           "heading_level": 2,
-          "start_line": 561,
-          "end_line": 743,
-          "line_count": 183,
-          "prose_character_count": 2223,
-          "heading_count": 9,
+          "start_line": 700,
+          "end_line": 904,
+          "line_count": 205,
+          "prose_character_count": 3472,
+          "heading_count": 11,
           "code_fence_count": 8,
           "code_fence_language_counts": {
             "text": 4,
             "sql": 3,
             "mermaid": 1
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 2,
+          "external_urls": [
+            "https://www.postgresql.org/docs/current/explicit-locking.html",
+            "https://www.postgresql.org/docs/current/sql-update.html"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -17983,19 +18800,27 @@
               "evidence": [
                 {
                   "heading": "4.1 本章目标",
-                  "heading_line": 563,
-                  "end_line": 568,
+                  "heading_line": 702,
+                  "end_line": 707,
                   "prose_character_count": 68,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 315,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：旧 worker 完成得更晚，却不能覆盖新结果",
+                  "heading_line": 857,
+                  "end_line": 862,
+                  "prose_character_count": 315,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
@@ -18005,8 +18830,8 @@
               "evidence": [
                 {
                   "heading": "4.6 常见错误",
-                  "heading_line": 706,
-                  "end_line": 723,
+                  "heading_line": 863,
+                  "end_line": 880,
                   "prose_character_count": 298,
                   "code_fence_count": 0
                 }
@@ -18020,8 +18845,8 @@
               "evidence": [
                 {
                   "heading": "4.7 小练习",
-                  "heading_line": 724,
-                  "end_line": 736,
+                  "heading_line": 881,
+                  "end_line": 893,
                   "prose_character_count": 51,
                   "code_fence_count": 1
                 }
@@ -18035,27 +18860,32 @@
               "evidence": [
                 {
                   "heading": "4.8 本章检查标准",
-                  "heading_line": 737,
-                  "end_line": 743,
+                  "heading_line": 894,
+                  "end_line": 900,
                   "prose_character_count": 63,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 218,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 901,
+                  "end_line": 904,
+                  "prose_character_count": 218,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
-            "table_count": 2,
+            "table_count": 3,
             "markdown_image_count": 0,
             "markdown_images_missing_alt": 0,
             "html_image_count": 0,
@@ -18063,7 +18893,7 @@
             "mermaid_count": 1,
             "mermaid_accessible_count": 0,
             "mermaid_missing_accessibility_count": 1,
-            "visual_item_count": 3
+            "visual_item_count": 4
           },
           "content_type": "instructional",
           "content_type_source": "document_default_marker",
@@ -18073,18 +18903,21 @@
         {
           "title": "第 5 章：Redis 缓存",
           "heading_level": 2,
-          "start_line": 744,
-          "end_line": 856,
-          "line_count": 113,
-          "prose_character_count": 1530,
-          "heading_count": 10,
+          "start_line": 905,
+          "end_line": 1027,
+          "line_count": 123,
+          "prose_character_count": 2106,
+          "heading_count": 12,
           "code_fence_count": 4,
           "code_fence_language_counts": {
             "text": 3,
             "python": 1
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 2,
+          "external_urls": [
+            "https://redis.io/docs/latest/develop/use/client-side-caching/",
+            "https://redis.io/solutions/caching/"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -18096,19 +18929,27 @@
               "evidence": [
                 {
                   "heading": "5.1 本章目标",
-                  "heading_line": 746,
-                  "end_line": 754,
+                  "heading_line": 907,
+                  "end_line": 915,
                   "prose_character_count": 80,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 342,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：ACL 版本变化必须造成 cache miss",
+                  "heading_line": 983,
+                  "end_line": 988,
+                  "prose_character_count": 342,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
@@ -18118,15 +18959,15 @@
               "evidence": [
                 {
                   "heading": "5.6 常见错误",
-                  "heading_line": 822,
-                  "end_line": 839,
+                  "heading_line": 989,
+                  "end_line": 1006,
                   "prose_character_count": 380,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "踩坑现场：缓存 key 少了权限字段，检索结果串给了别人",
-                  "heading_line": 836,
-                  "end_line": 839,
+                  "heading_line": 1003,
+                  "end_line": 1006,
                   "prose_character_count": 213,
                   "code_fence_count": 0
                 }
@@ -18140,8 +18981,8 @@
               "evidence": [
                 {
                   "heading": "5.7 小练习",
-                  "heading_line": 840,
-                  "end_line": 849,
+                  "heading_line": 1007,
+                  "end_line": 1016,
                   "prose_character_count": 92,
                   "code_fence_count": 0
                 }
@@ -18155,25 +18996,30 @@
               "evidence": [
                 {
                   "heading": "5.8 本章检查标准",
-                  "heading_line": 850,
-                  "end_line": 856,
+                  "heading_line": 1017,
+                  "end_line": 1023,
                   "prose_character_count": 88,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 201,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 1024,
+                  "end_line": 1027,
+                  "prose_character_count": 201,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
             "table_count": 1,
             "markdown_image_count": 0,
@@ -18193,18 +19039,21 @@
         {
           "title": "第 6 章：异步任务队列",
           "heading_level": 2,
-          "start_line": 857,
-          "end_line": 1048,
-          "line_count": 192,
-          "prose_character_count": 2844,
-          "heading_count": 9,
+          "start_line": 1028,
+          "end_line": 1229,
+          "line_count": 202,
+          "prose_character_count": 3380,
+          "heading_count": 11,
           "code_fence_count": 9,
           "code_fence_language_counts": {
             "text": 7,
             "python": 2
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 2,
+          "external_urls": [
+            "https://redis.io/docs/latest/commands/xautoclaim/",
+            "https://redis.io/docs/latest/develop/data-types/streams/"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -18216,19 +19065,27 @@
               "evidence": [
                 {
                   "heading": "6.1 本章目标",
-                  "heading_line": 859,
-                  "end_line": 864,
+                  "heading_line": 1030,
+                  "end_line": 1035,
                   "prose_character_count": 178,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 287,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：finalize 已提交但 ACK 丢失",
+                  "heading_line": 1170,
+                  "end_line": 1175,
+                  "prose_character_count": 287,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
@@ -18238,8 +19095,8 @@
               "evidence": [
                 {
                   "heading": "6.6 常见错误",
-                  "heading_line": 999,
-                  "end_line": 1025,
+                  "heading_line": 1176,
+                  "end_line": 1202,
                   "prose_character_count": 477,
                   "code_fence_count": 0
                 }
@@ -18253,8 +19110,8 @@
               "evidence": [
                 {
                   "heading": "6.7 小练习",
-                  "heading_line": 1026,
-                  "end_line": 1038,
+                  "heading_line": 1203,
+                  "end_line": 1215,
                   "prose_character_count": 50,
                   "code_fence_count": 1
                 }
@@ -18268,25 +19125,30 @@
               "evidence": [
                 {
                   "heading": "6.8 本章检查标准",
-                  "heading_line": 1039,
-                  "end_line": 1048,
+                  "heading_line": 1216,
+                  "end_line": 1225,
                   "prose_character_count": 335,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 219,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 1226,
+                  "end_line": 1229,
+                  "prose_character_count": 219,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
             "table_count": 0,
             "markdown_image_count": 0,
@@ -18304,20 +19166,153 @@
           "content_type_issues": []
         },
         {
+          "title": "第 6A 章：从 crash point 推导分布式失效语义",
+          "heading_level": 2,
+          "start_line": 1230,
+          "end_line": 1327,
+          "line_count": 98,
+          "prose_character_count": 3806,
+          "heading_count": 9,
+          "code_fence_count": 3,
+          "code_fence_language_counts": {
+            "text": 2,
+            "powershell": 1
+          },
+          "external_url_count": 3,
+          "external_urls": [
+            "https://martinfowler.com/articles/patterns-of-distributed-systems/",
+            "https://redis.io/docs/latest/develop/data-types/streams/",
+            "https://sre.google/sre-book/addressing-cascading-failures/"
+          ],
+          "wiki_link_count": 0,
+          "wiki_links": [],
+          "roles": {
+            "objectives": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 131,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "学习目标",
+                  "heading_line": 1232,
+                  "end_line": 1235,
+                  "prose_character_count": 131,
+                  "code_fence_count": 0
+                }
+              ]
+            },
+            "examples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 478,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "6A.6 示例、反例、练习与验收",
+                  "heading_line": 1304,
+                  "end_line": 1323,
+                  "prose_character_count": 478,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "counterexamples": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 478,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "6A.6 示例、反例、练习与验收",
+                  "heading_line": 1304,
+                  "end_line": 1323,
+                  "prose_character_count": 478,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "practice": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 478,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "6A.6 示例、反例、练习与验收",
+                  "heading_line": 1304,
+                  "end_line": 1323,
+                  "prose_character_count": 478,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "acceptance": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 478,
+              "code_fence_count": 1,
+              "evidence": [
+                {
+                  "heading": "6A.6 示例、反例、练习与验收",
+                  "heading_line": 1304,
+                  "end_line": 1323,
+                  "prose_character_count": 478,
+                  "code_fence_count": 1
+                }
+              ]
+            },
+            "sources": {
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 272,
+              "code_fence_count": 0,
+              "evidence": [
+                {
+                  "heading": "权威来源（本章来源）",
+                  "heading_line": 1324,
+                  "end_line": 1327,
+                  "prose_character_count": 272,
+                  "code_fence_count": 0
+                }
+              ]
+            }
+          },
+          "missing_explicit_role_sections": [],
+          "visual_evidence": {
+            "table_count": 2,
+            "markdown_image_count": 0,
+            "markdown_images_missing_alt": 0,
+            "html_image_count": 0,
+            "html_images_missing_alt": 0,
+            "mermaid_count": 0,
+            "mermaid_accessible_count": 0,
+            "mermaid_missing_accessibility_count": 0,
+            "visual_item_count": 2
+          },
+          "content_type": "instructional",
+          "content_type_source": "document_default_marker",
+          "content_type_marker_line": 3,
+          "content_type_issues": []
+        },
+        {
           "title": "第 7 章：失败重试和幂等性",
           "heading_level": 2,
-          "start_line": 1049,
-          "end_line": 1237,
-          "line_count": 189,
-          "prose_character_count": 1621,
-          "heading_count": 11,
-          "code_fence_count": 10,
+          "start_line": 1328,
+          "end_line": 1547,
+          "line_count": 220,
+          "prose_character_count": 2767,
+          "heading_count": 13,
+          "code_fence_count": 11,
           "code_fence_language_counts": {
             "text": 7,
-            "python": 3
+            "python": 4
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 2,
+          "external_urls": [
+            "https://sre.google/sre-book/addressing-cascading-failures/",
+            "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-UNIQUE-CONSTRAINTS"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -18329,37 +19324,45 @@
               "evidence": [
                 {
                   "heading": "7.1 本章目标",
-                  "heading_line": 1051,
-                  "end_line": 1056,
+                  "heading_line": 1330,
+                  "end_line": 1335,
                   "prose_character_count": 62,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 425,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：timeout 进入有限退避，权限错误直接终止",
+                  "heading_line": 1489,
+                  "end_line": 1494,
+                  "prose_character_count": 425,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
               "section_count": 2,
-              "prose_character_count": 536,
+              "prose_character_count": 620,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "7.7 常见错误",
-                  "heading_line": 1195,
-                  "end_line": 1214,
-                  "prose_character_count": 382,
+                  "heading_line": 1495,
+                  "end_line": 1518,
+                  "prose_character_count": 466,
                   "code_fence_count": 0
                 },
                 {
                   "heading": "踩坑现场：retry 后重复生成、重复写结果、重复算成本",
-                  "heading_line": 1211,
-                  "end_line": 1214,
+                  "heading_line": 1515,
+                  "end_line": 1518,
                   "prose_character_count": 154,
                   "code_fence_count": 0
                 }
@@ -18373,8 +19376,8 @@
               "evidence": [
                 {
                   "heading": "7.8 小练习",
-                  "heading_line": 1215,
-                  "end_line": 1230,
+                  "heading_line": 1519,
+                  "end_line": 1534,
                   "prose_character_count": 75,
                   "code_fence_count": 2
                 }
@@ -18383,30 +19386,35 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 81,
+              "prose_character_count": 167,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "7.9 本章检查标准",
-                  "heading_line": 1231,
-                  "end_line": 1237,
-                  "prose_character_count": 81,
+                  "heading_line": 1535,
+                  "end_line": 1543,
+                  "prose_character_count": 167,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 292,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 1544,
+                  "end_line": 1547,
+                  "prose_character_count": 292,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
             "table_count": 1,
             "markdown_image_count": 0,
@@ -18426,19 +19434,22 @@
         {
           "title": "第 8 章：任务结果、日志和 metrics",
           "heading_level": 2,
-          "start_line": 1238,
-          "end_line": 1353,
-          "line_count": 116,
-          "prose_character_count": 984,
-          "heading_count": 8,
-          "code_fence_count": 4,
+          "start_line": 1548,
+          "end_line": 1694,
+          "line_count": 147,
+          "prose_character_count": 2143,
+          "heading_count": 10,
+          "code_fence_count": 5,
           "code_fence_language_counts": {
-            "text": 2,
+            "text": 3,
             "json": 1,
             "sql": 1
           },
-          "external_url_count": 0,
-          "external_urls": [],
+          "external_url_count": 2,
+          "external_urls": [
+            "https://www.postgresql.org/docs/current/dml-returning.html",
+            "https://www.postgresql.org/docs/current/sql-createtrigger.html"
+          ],
           "wiki_link_count": 0,
           "wiki_links": [],
           "roles": {
@@ -18450,19 +19461,27 @@
               "evidence": [
                 {
                   "heading": "8.1 本章目标",
-                  "heading_line": 1240,
-                  "end_line": 1245,
+                  "heading_line": 1550,
+                  "end_line": 1555,
                   "prose_character_count": 50,
                   "code_fence_count": 0
                 }
               ]
             },
             "examples": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 299,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "示例：用事件链定位“任务为什么重跑”",
+                  "heading_line": 1627,
+                  "end_line": 1632,
+                  "prose_character_count": 299,
+                  "code_fence_count": 0
+                }
+              ]
             },
             "counterexamples": {
               "explicit_section_present": true,
@@ -18472,8 +19491,8 @@
               "evidence": [
                 {
                   "heading": "8.5 常见错误",
-                  "heading_line": 1315,
-                  "end_line": 1330,
+                  "heading_line": 1648,
+                  "end_line": 1663,
                   "prose_character_count": 278,
                   "code_fence_count": 0
                 }
@@ -18482,14 +19501,14 @@
             "practice": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 60,
+              "prose_character_count": 176,
               "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "8.6 小练习",
-                  "heading_line": 1331,
-                  "end_line": 1346,
-                  "prose_character_count": 60,
+                  "heading_line": 1664,
+                  "end_line": 1681,
+                  "prose_character_count": 176,
                   "code_fence_count": 1
                 }
               ]
@@ -18497,30 +19516,35 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 83,
+              "prose_character_count": 168,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "8.7 本章检查标准",
-                  "heading_line": 1347,
-                  "end_line": 1353,
-                  "prose_character_count": 83,
+                  "heading_line": 1682,
+                  "end_line": 1690,
+                  "prose_character_count": 168,
                   "code_fence_count": 0
                 }
               ]
             },
             "sources": {
-              "explicit_section_present": false,
-              "section_count": 0,
-              "prose_character_count": 0,
+              "explicit_section_present": true,
+              "section_count": 1,
+              "prose_character_count": 230,
               "code_fence_count": 0,
-              "evidence": []
+              "evidence": [
+                {
+                  "heading": "本章来源",
+                  "heading_line": 1691,
+                  "end_line": 1694,
+                  "prose_character_count": 230,
+                  "code_fence_count": 0
+                }
+              ]
             }
           },
-          "missing_explicit_role_sections": [
-            "examples",
-            "sources"
-          ],
+          "missing_explicit_role_sections": [],
           "visual_evidence": {
             "table_count": 1,
             "markdown_image_count": 0,
@@ -18540,11 +19564,11 @@
         {
           "title": "第 9 章：第一轮学习顺序",
           "heading_level": 2,
-          "start_line": 1446,
-          "end_line": 1594,
-          "line_count": 149,
-          "prose_character_count": 1722,
-          "heading_count": 10,
+          "start_line": 1787,
+          "end_line": 1963,
+          "line_count": 177,
+          "prose_character_count": 2594,
+          "heading_count": 12,
           "code_fence_count": 7,
           "code_fence_language_counts": {
             "text": 7
@@ -18578,14 +19602,14 @@
             "practice": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 884,
+              "prose_character_count": 1430,
               "code_fence_count": 7,
               "evidence": [
                 {
                   "heading": "9.2 E06 练习路线",
-                  "heading_line": 1462,
-                  "end_line": 1574,
-                  "prose_character_count": 884,
+                  "heading_line": 1805,
+                  "end_line": 1940,
+                  "prose_character_count": 1430,
                   "code_fence_count": 7
                 }
               ]
@@ -18593,14 +19617,14 @@
             "acceptance": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 220,
+              "prose_character_count": 377,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "9.4 本模块最终检查",
-                  "heading_line": 1585,
-                  "end_line": 1594,
-                  "prose_character_count": 220,
+                  "heading_line": 1951,
+                  "end_line": 1963,
+                  "prose_character_count": 377,
                   "code_fence_count": 0
                 }
               ]
@@ -18632,16 +19656,16 @@
           },
           "content_type": "appendix",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1448,
+          "content_type_marker_line": 1789,
           "content_type_issues": []
         },
         {
           "title": "第 10 章：外部资料怎么用",
           "heading_level": 2,
-          "start_line": 1595,
-          "end_line": 1633,
-          "line_count": 39,
-          "prose_character_count": 512,
+          "start_line": 1964,
+          "end_line": 2006,
+          "line_count": 43,
+          "prose_character_count": 868,
           "heading_count": 4,
           "code_fence_count": 1,
           "code_fence_language_counts": {
@@ -18690,21 +19714,21 @@
             "sources": {
               "explicit_section_present": true,
               "section_count": 2,
-              "prose_character_count": 826,
+              "prose_character_count": 1538,
               "code_fence_count": 1,
               "evidence": [
                 {
                   "heading": "第 10 章：外部资料怎么用",
-                  "heading_line": 1595,
-                  "end_line": 1633,
-                  "prose_character_count": 498,
+                  "heading_line": 1964,
+                  "end_line": 2006,
+                  "prose_character_count": 854,
                   "code_fence_count": 1
                 },
                 {
                   "heading": "10.1 资料使用原则",
-                  "heading_line": 1599,
-                  "end_line": 1610,
-                  "prose_character_count": 328,
+                  "heading_line": 1968,
+                  "end_line": 1983,
+                  "prose_character_count": 684,
                   "code_fence_count": 0
                 }
               ]
@@ -18730,7 +19754,7 @@
           },
           "content_type": "reference",
           "content_type_source": "chapter_marker",
-          "content_type_marker_line": 1597,
+          "content_type_marker_line": 1966,
           "content_type_issues": []
         }
       ]

@@ -1,7 +1,7 @@
 [project]
 name = "e06-sqlite-reference"
-version = "0.1.0"
-description = "SQLite outbox and worker recovery reference for E06"
+version = "0.2.0"
+description = "SQLite database correctness and worker recovery reference for E06"
 requires-python = ">=3.13,<3.14"
 
 [project.optional-dependencies]

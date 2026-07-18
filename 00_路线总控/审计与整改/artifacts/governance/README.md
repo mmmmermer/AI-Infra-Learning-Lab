@@ -4,9 +4,9 @@
 
 ## 文件
 
-- `optimization_matrix_status_evidence.csv`：只为 `blocked` 和 `completed` 等状态保存原因与证据，
-  避免改变 `11_教材内容优化任务矩阵.csv` 的固定 17 列结构。2026-07-18 的证据审计结果为
-  `completed` 11 项、`in-progress` 10 项、`blocked` 2 项、`planned` 87 项。
+- `optimization_matrix_status_evidence.csv`：为全部非 `planned` 状态保存原因与证据，避免改变
+  `11_教材内容优化任务矩阵.csv` 的固定 17 列结构。2026-07-18 的证据审计结果为
+  `completed` 24 项、`in-progress` 8 项、`blocked` 2 项、`planned` 76 项。
 - `optimization_matrix_status_audit_2026-07-18.md`：记录逐状态判定规则、任务清单和未完成条件。
 - `provenance_license_ledger.csv`：按资产类别登记来源、版本、许可/条款、修改情况、再分发判断、
   证据和复核日期。`unknown / review-required` 是明确的未决状态，不是许可结论。

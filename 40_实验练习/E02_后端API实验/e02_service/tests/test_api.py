@@ -17,8 +17,10 @@ client = TestClient(app, headers=ALICE_HEADERS)
 @pytest.fixture(autouse=True)
 def clear_repository():
     repository.clear()
+    app.state.container.limiter.reset()
     yield
     repository.clear()
+    app.state.container.limiter.reset()
 
 
 def test_create_then_query_task_and_observe_metrics():
@@ -36,6 +38,8 @@ def test_create_then_query_task_and_observe_metrics():
     created_at = datetime.fromisoformat(created["created_at"])
     assert created_at.utcoffset() == timedelta(0)
     assert created["status"] == "pending"
+    assert created["version"] == 1
+    assert created_response.headers["etag"] == '"1"'
     assert "submit_time" not in created
 
     queried_response = client.get(f"/tasks/{created['task_id']}")
@@ -51,7 +55,10 @@ def test_unknown_task_returns_stable_error():
     response = client.get("/tasks/not-found")
 
     assert response.status_code == 404
-    assert response.json() == {"detail": "task_not_found"}
+    assert response.headers["content-type"].startswith("application/problem+json")
+    assert response.json()["code"] == "task_not_found"
+    assert response.json()["status"] == 404
+    assert response.json()["request_id"] == response.headers["x-request-id"]
 
 
 def test_create_rejects_server_owned_fields():
@@ -156,18 +163,19 @@ def test_authentication_and_scope_failures_are_distinct():
     ).post("/tasks", json=payload)
     forbidden = client.post("/tasks", json=payload, headers=READER_HEADERS)
 
-    assert (missing.status_code, missing.json()["detail"]) == (
+    assert (missing.status_code, missing.json()["code"]) == (
         401,
         "authentication_required",
     )
-    assert (invalid.status_code, invalid.json()["detail"]) == (
+    assert (invalid.status_code, invalid.json()["code"]) == (
         401,
         "invalid_credentials",
     )
-    assert (forbidden.status_code, forbidden.json()["detail"]) == (
+    assert (forbidden.status_code, forbidden.json()["code"]) == (
         403,
         "insufficient_scope",
     )
+    assert repository.count_all() == 0
 
 
 def test_cross_owner_task_and_metrics_are_not_visible():
@@ -184,6 +192,6 @@ def test_cross_owner_task_and_metrics_are_not_visible():
     bob_metrics = client.get("/metrics", headers=BOB_HEADERS)
 
     assert hidden.status_code == 404
-    assert hidden.json() == {"detail": "task_not_found"}
+    assert hidden.json()["code"] == "task_not_found"
     assert bob_metrics.status_code == 200
     assert bob_metrics.json()["task_count"] == 0

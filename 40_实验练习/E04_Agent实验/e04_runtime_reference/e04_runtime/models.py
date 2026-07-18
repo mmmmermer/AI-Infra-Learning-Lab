@@ -34,6 +34,19 @@ class AppendMessageRequest(StrictModel):
     expected_version: StrictInt = Field(ge=0)
 
 
+class CancelTaskRequest(StrictModel):
+    expected_version: StrictInt = Field(ge=0)
+    reason: StrictStr | None = Field(default=None, max_length=500)
+
+    @field_validator("reason")
+    @classmethod
+    def normalize_reason(cls, value: str | None) -> str | None:
+        if value is None:
+            return None
+        normalized = " ".join(value.split())
+        return normalized or None
+
+
 class ToolProposal(StrictModel):
     tool_name: StrictStr = Field(min_length=1, max_length=64)
     arguments: dict[str, object]
@@ -142,6 +155,8 @@ class ToolObservation:
 class ExecutionContext:
     authorization: Authorization
     idempotency_key: str | None
+    normalized_url: str | None = None
+    normalized_path: str | None = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -149,6 +164,8 @@ class ResumeClaim:
     outbox_id: str
     task_id: str
     approval_id: str
+    tenant_id: str
+    owner_user_id: str
     worker_id: str
     claim_version: int
     task_version: int

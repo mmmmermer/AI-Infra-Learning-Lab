@@ -1,6 +1,7 @@
 # E03-01 chunk 大小对检索效果的影响
 
-> 当前状态：`draft / partial / unverified`。本页原先允许关键词匹配和手工排序，不能据此比较 chunk 参数。修订后的正式实验必须使用固定 corpus、独立黄金 query/evidence 集、锁定版本的确定性 BM25 或 embedding，并用真实计时和检索指标验收。
+> 当前状态：`content-reviewed / executable / reference-verified / learner-not-evaluated`。reference 已固定
+> corpus、黄金 query/evidence、三路检索和可复算排名；学习者仍需亲自运行参数组并解释结果。
 
 已补可执行参考：`e03_rag_reference/`，Python 3.13 下测试通过。该 reference 验证检索实验方法，不代表真实生产 RAG 结论。
 
@@ -90,7 +91,7 @@ title: 合规条款测试片段
 ### 文档 D：金融公告样例
 
 ```yaml
-document_id: doc_finance_notice_001
+document_id: doc_finance_public_001
 doc_type: finance_notice
 permission_group: public
 source: self_made_test_data
@@ -137,11 +138,22 @@ overlap
 metadata
 ```
 
-### 步骤 4：执行检索
+### 步骤 4：执行同一黄金集的三路检索
 
-使用锁定版本的确定性 BM25 作为第一条 baseline。手工排序只能用于检查黄金集，不能作为实验结果。若改用 embedding，必须固定模型名、版本、维度、归一化方式、距离度量和索引版本。
+每组 chunk 参数都运行锁定版本的 BM25 lexical、固定语义特征 cosine vector 与 RRF hybrid。三路方法必须
+共用 `tests/fixtures/golden_queries.json`，手工排序只能检查黄金集，不能作为实验结果。若改用真实
+embedding，必须另开配置并固定模型名、版本、维度、归一化方式、距离度量和索引版本。
 
 每个 query 在每组 chunk 参数下记录 top-3 候选片段，并将检索结果与独立黄金 evidence id 对比。
+
+```powershell
+cd e03_rag_reference
+python examples\run_evaluation.py --chunk-size 80 --overlap 0 --output artifacts\chunk-a.json
+python examples\run_evaluation.py --chunk-size 160 --overlap 30 --output artifacts\chunk-b.json
+python examples\run_evaluation.py --chunk-size 320 --overlap 50 --output artifacts\chunk-c.json
+```
+
+每个 JSON 都保留 component score/rank、final rank、corpus fingerprint 和逐 query failure class。
 
 ### 步骤 5：判断引用是否支撑回答
 
@@ -151,6 +163,21 @@ metadata
 - retrieved chunk 是否包含足够上下文？
 - answer 是否能被 sources 支撑？
 - 是否出现无关片段？
+
+### 步骤 6：复算与反例
+
+从一个 JSON 任选一条 hybrid 候选，用
+`1/(60+lexical_rank) + 1/(60+vector_rank)` 复算分数，再从 final rank 复算 Recall@3、RR 和
+nDCG@3。然后把 `top_k` 改为 1，观察失败类别是否变成 `relevant_below_cutoff`、
+`zero_retrieval_signal` 或 `relevant_not_ranked_first`。
+
+**反例**：只保存“平均 Recall=1.0”而不保存逐 query 排名。此结果无法检查同分排序、无法定位哪条
+query 失败，也无法证明 lexical/vector/hybrid 使用过同一批问题，不满足验收。
+
+Q5“怎样避免生成结论成为无证断言？”还展示了融合反例：lexical 没有正信号，只因稳定次级排序
+把相关文档放在第二，必须诊断为 `zero_retrieval_signal`；固定语义特征 vector 把它排在第一。等权
+RRF 遇到 component 名次互换时可能同分，最终由 `chunk_id` 次级排序决定。hybrid 不是天然胜者，
+融合参数也不能在同一黄金集上反复调到“看起来最好”后才汇报。
 
 ## 观察指标
 
@@ -185,6 +212,8 @@ metadata
 | 每组参数换不同文档 | 无法比较 chunk 参数影响 | 固定同一批文档和 query |
 | 只记录命中，不记录噪声 | 看不到大 chunk 的副作用 | 记录 noise_count |
 | 用真实金融结论做样例 | 容易虚构或误导 | 第一轮使用自造测试数据或公开可核验来源 |
+| 三种方法使用不同 query | 方法间不可比较 | 固定同一黄金 fixture 和 query ID 集合 |
+| 只保存平均指标 | 不能定位失败或复算 | 保存全候选 component/final 排名和 failure class |
 | 把实验写成教程 | 失去可复盘性 | 用记录表保存每次实验设置和结果 |
 
 ## 验收标准
@@ -192,6 +221,9 @@ metadata
 - [ ] 至少完成 3 个 query、3 组 chunk 参数的对比。
 - [ ] 每条记录都有 `retrieved_sources`、`retrieval_ms`、`estimated_token_count` 和检索质量指标。
 - [ ] corpus、黄金集、切分器和检索器版本固定且可重放。
+- [ ] 每组参数的 lexical/vector/hybrid 使用完全相同的黄金 query ID。
+- [ ] 能从 JSON 复算至少一条 RRF、Recall@k、RR 和 nDCG，且与汇总一致。
+- [ ] 每个 query/method 都有 `failure_class`，而不是只有平均值。
 - [ ] 能说明哪组 chunk 参数更适合作为 P03 RAG v1 的基线。
 - [ ] 能指出至少一种失败类型，例如 `chunk_too_small`、`chunk_too_large`、`no_relevant_chunk`。
 - [ ] 能把实验字段映射到 P03 的 RagTask 或 metrics。
@@ -215,3 +247,13 @@ metadata
 - 接 [[E03-02 top-k 对回答质量和延迟的影响]]，继续观察 top_k。
 - 接 [[E08_监控压测实验_索引]]，把 `latency_ms` 迁移成压测指标。
 - 接 [[50_项目产出/P03_AI_Workload_Platform/P03_AI_Workload_Platform 项目主页|P03 AI Workload Platform]] 的 RAG v1。
+
+## 方法依据
+
+- [Elasticsearch similarity / BM25](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-similarity.html)
+- [NIST TREC](https://trec.nist.gov/)
+- [Stanford IR Book: ranked evaluation](https://nlp.stanford.edu/IR-book/html/htmledition/evaluation-of-ranked-retrieval-results-1.html)
+- [scikit-learn ndcg_score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.ndcg_score.html)
+
+固定五维语义特征 cosine 只用于确定性教学和复算，不代表学习得到的生产 embedding；小型 fixture 上的最优参数也不能
+外推到真实 corpus。

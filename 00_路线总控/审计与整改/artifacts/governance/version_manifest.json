@@ -104,11 +104,29 @@
       "component_id": "postgresql",
       "name": "PostgreSQL",
       "category": "service-image",
-      "baseline": "17.5-alpine with pinned sha256 digest",
+      "baseline": "17.5-alpine with pinned sha256 digest for P03; observed 17.9 for the isolated E06 deadlock reference",
       "status": "active",
-      "boundary": "Validated for the P03 reference schema and recovery paths; production backup, PITR and upgrade policy remain outside this baseline.",
+      "boundary": "P03 uses the digest-pinned 17.5 container. E06 separately records one disposable local 17.9 cluster for SQLSTATE 40P01 and rollback semantics. Neither proves production backup, PITR, topology or upgrade policy.",
       "source_url": "https://www.postgresql.org/docs/17/",
-      "evidence": ["50_项目产出/P03_AI_Workload_Platform/p03_service/compose.yaml"],
+      "evidence": [
+        "50_项目产出/P03_AI_Workload_Platform/p03_service/compose.yaml",
+        "40_实验练习/E06_数据库异步任务实验/e06_sqlite_reference/artifacts/postgres_deadlock_reference_2026-07-18.json"
+      ],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "psycopg",
+      "name": "Psycopg",
+      "category": "python-dependency",
+      "baseline": "3.2.9",
+      "status": "active",
+      "boundary": "Pinned only for the optional E06 PostgreSQL deadlock demo; it is not installed by the default SQLite reference environment.",
+      "source_url": "https://www.psycopg.org/psycopg3/docs/",
+      "evidence": [
+        "40_实验练习/E06_数据库异步任务实验/e06_sqlite_reference/requirements-postgres.lock",
+        "40_实验练习/E06_数据库异步任务实验/e06_sqlite_reference/examples/postgres_deadlock_demo.py"
+      ],
       "last_reviewed": "2026-07-18",
       "max_age_days": 90
     },

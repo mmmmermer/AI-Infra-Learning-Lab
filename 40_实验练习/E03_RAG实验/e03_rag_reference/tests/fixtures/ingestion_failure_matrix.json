@@ -1,0 +1,85 @@
+{
+  "observed_at": "2026-07-18T08:00:00+00:00",
+  "cases": [
+    {
+      "case_id": "valid-v1",
+      "operation": "ingest",
+      "document_id": "doc-lifecycle",
+      "content_utf8": "RAG lifecycle fixture version one.",
+      "media_type": "text/plain",
+      "source_version": 1,
+      "expected_status": "accepted"
+    },
+    {
+      "case_id": "blank-after-parse",
+      "operation": "ingest",
+      "document_id": "doc-blank",
+      "content_utf8": "  \n\t  ",
+      "media_type": "text/markdown",
+      "source_version": 1,
+      "expected_status": "rejected_blank"
+    },
+    {
+      "case_id": "corrupt-utf8",
+      "operation": "ingest",
+      "document_id": "doc-corrupt",
+      "content_base64": "//79",
+      "media_type": "text/plain",
+      "source_version": 1,
+      "expected_status": "rejected_corrupt"
+    },
+    {
+      "case_id": "duplicate-content",
+      "operation": "ingest",
+      "document_id": "doc-copy",
+      "content_utf8": "RAG lifecycle fixture version one.",
+      "media_type": "text/plain",
+      "source_version": 1,
+      "expected_status": "rejected_duplicate"
+    },
+    {
+      "case_id": "expired-before-ingestion",
+      "operation": "ingest",
+      "document_id": "doc-expired",
+      "content_utf8": "This record is already outside retention.",
+      "media_type": "text/plain",
+      "source_version": 1,
+      "expires_at": "2026-07-17T08:00:00+00:00",
+      "expected_status": "rejected_expired"
+    },
+    {
+      "case_id": "same-version-different-content",
+      "operation": "ingest",
+      "document_id": "doc-lifecycle",
+      "content_utf8": "Conflicting payload at version one.",
+      "media_type": "text/plain",
+      "source_version": 1,
+      "expected_status": "rejected_version_conflict"
+    },
+    {
+      "case_id": "valid-v2-update",
+      "operation": "ingest",
+      "document_id": "doc-lifecycle",
+      "content_utf8": "RAG lifecycle fixture version two.",
+      "media_type": "text/plain",
+      "source_version": 2,
+      "expected_status": "updated"
+    },
+    {
+      "case_id": "versioned-delete",
+      "operation": "delete",
+      "document_id": "doc-lifecycle",
+      "source_version": 3,
+      "expected_status": "deleted"
+    },
+    {
+      "case_id": "stale-replay-after-delete",
+      "operation": "ingest",
+      "document_id": "doc-lifecycle",
+      "content_utf8": "Attempted stale resurrection.",
+      "media_type": "text/plain",
+      "source_version": 2,
+      "expected_status": "rejected_version_conflict"
+    }
+  ]
+}

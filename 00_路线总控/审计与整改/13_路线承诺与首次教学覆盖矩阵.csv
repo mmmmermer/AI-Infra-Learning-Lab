@@ -1,11 +1,11 @@
 promise_id,route,keyword,current_first_teaching,content_type,evidence,status,publication_claim,next_action
 PR-001,AI Infra,Python 3.13 工程基础,M00/M01 对应 instructional 章,instructional,M00/M01 教材与 E00/E01 入口,current-covered,当前教材入口可用；学习者完成另计,保持版本门禁并补本人复现
-PR-002,AI Infra,FastAPI 请求响应与契约,M02 第 1-9 章,instructional,E02 12 tests,current-covered,最小 owner-scoped API reference 已验证,后续补生产 JWT/TLS/CORS 生命周期
+PR-002,AI Infra,FastAPI 请求响应与契约,M02 第 1-9 章,instructional,E02 29 tests,current-covered,最小 owner-scoped API reference 已验证；包含生命周期、deadline 与并发幂等,后续补生产 JWT/TLS/CORS 与跨副本语义
 PR-003,AI Infra,server-owned Principal 与对象授权,M02 第 10 章,instructional,E02 认证/scope/跨 owner/422 负测,current-covered-minimal,只覆盖 fixture principal 与资源授权顺序,生产身份提供方仍为后续项
-PR-004,AI Infra,RAG 检索评估与 ACL,M03 第 3-7 章,instructional,E03 21 tests,current-covered-retrieval,检索与安全结构可执行；generation 未验证,补真实生成与 citation/adversarial eval
-PR-005,AI Infra,Agent 工作流与工具安全,M04 第 1-10 章,instructional-design,E04 deterministic in-memory runtime；38 tests 覆盖 schema、capability/resource、approval CAS/outbox、fencing 与 session isolation,current-covered-minimal,只证明无模型、无网络、单进程 reference；不是 P03 或生产 Agent Runtime,继续 M04-001/002/003 与生产集成
+PR-004,AI Infra,RAG 检索评估与 ACL,M03 第 3-7 章,instructional,E03 35 tests,current-covered-retrieval,检索/ingestion 生命周期与安全结构可执行；generation 未验证,补真实生成与 citation/adversarial eval
+PR-005,AI Infra,Agent 工作流与工具安全,M04 第 1-10 章,instructional-design,E04 deterministic in-memory runtime；76 tests 覆盖 schema、capability/resource、approval CAS/outbox、fencing、session isolation、取消与副作用边界,current-covered-minimal,只证明无模型、无网络、单进程 reference；不是 P03 或生产 Agent Runtime,继续 reducer/checkpoint/replay 与生产集成
 PR-006,AI Infra,调度策略与尾延迟,M05 第 0-12 章,instructional,P01 28 tests,current-covered-reference,调度 reference 可执行；研究结论只限证据范围,补 Pareto/burst、P03 service replay 与学习者复现
-PR-007,AI Infra,持久任务与可恢复队列,M06 第 4/6/7 章,instructional,E06 fencing tests；P03 Streams tests/current Compose,current-covered-reference,SQLite/PostgreSQL/Redis reference 已验证,补备份恢复与外部副作用幂等
+PR-007,AI Infra,持久任务与可恢复队列,M06 第 4/6/7 章,instructional,E06 29 tests；PostgreSQL deadlock evidence；P03 Streams tests/current Compose,current-covered-reference,SQLite/PostgreSQL/Redis reference 已验证,补 E06 自有 FastAPI/缓存前置、备份恢复与外部副作用幂等
 PR-008,AI Infra,Docker 多服务闭环,M07 对应 instructional 章,instructional,P03 五服务 Compose evidence,current-covered-local,本地 Compose reference 已验证；不是生产部署,补供应链与生产安全门禁
 PR-009,AI Infra,监控压测与可观测性,M08 对应 instructional 章,instructional,E08 1/2/4 worker × 3 mock repeat + BM25 单轮 smoke；P03 fixed-replay sender 3 tests,partial,局部 reference；sender 单测不是服务回放，且无长时/多机/完整 OTel-Prometheus 闭环,执行真实 P03 replay 并补跨进程 trace 与 Prometheus 实验
 PR-010,AI Infra,Kubernetes 部署与扩缩容,M09 对应 instructional/design-note 章,mixed,E09 kind E09-01/02/03 local reference,partial-local,kind 本地功能 reference；HPA/KEDA/生产化未完成,完成 E09-05 或继续 design-note

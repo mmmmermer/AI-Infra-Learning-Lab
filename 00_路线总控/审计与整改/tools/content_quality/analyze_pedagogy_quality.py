@@ -15,9 +15,9 @@ M05_SPLIT_INDEX = Path(
 M05_CHAPTER_DIRECTORY = Path("10_学习模块/M05_任务队列与调度/教材章节")
 EXPECTED_ACTIVE_TEXTBOOKS = 22
 EXPECTED_ARCHIVED_TEXTBOOKS = 1
-EXPECTED_ACTIVE_CHAPTERS = 203
+EXPECTED_ACTIVE_CHAPTERS = 210
 CHAPTER_TITLE_RE = re.compile(
-    r"^第\s*(?:\d+(?:\.\d+)*|[一二三四五六七八九十百]+)\s*章(?:[：:\s]|$)"
+    r"^第\s*(?:\d+(?:\.\d+)*(?:[A-Za-z])?|[一二三四五六七八九十百]+)\s*章(?:[：:\s]|$)"
 )
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 FENCE_RE = re.compile(r"^\s*(`{3,}|~{3,})(.*)$")
@@ -847,9 +847,10 @@ def main() -> int:
         "schema_version": "1.3",
         "method": {
             "chapter_boundary": (
-                "Use anchored H2 '第 X 章' headings; only fall back to anchored H1 chapters "
-                "when a textbook has no matching H2 chapter. M05 split chapter files are "
-                "aggregated under their stable compatibility index."
+                "Use anchored H2 '第 X 章' headings with Arabic numerals, an optional inserted "
+                "letter suffix such as 6A, or Chinese numerals; only fall back to anchored H1 "
+                "chapters when a textbook has no matching H2 chapter. M05 split chapter files "
+                "are aggregated under their stable compatibility index."
             ),
             "role_detection": (
                 "Match section headings within each chapter. Whole-file keyword presence is not "

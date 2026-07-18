@@ -89,6 +89,52 @@ function Convert-LogToUtf8 {
     }
 }
 
+function Convert-ValidationArtifactsToPortable {
+    param(
+        [Parameter(Mandatory = $true)][string]$Directory,
+        [Parameter(Mandatory = $true)][string]$RepositoryRoot
+    )
+
+    $machinePaths = @(
+        @{ Value = $RepositoryRoot; Placeholder = "<repository>" },
+        @{ Value = ([IO.Path]::GetTempPath().TrimEnd("\")); Placeholder = "<temp>" },
+        @{ Value = $env:LOCALAPPDATA; Placeholder = "<local-app-data>" },
+        @{ Value = $env:APPDATA; Placeholder = "<app-data>" },
+        @{ Value = $env:USERPROFILE; Placeholder = "<user-profile>" }
+    )
+    $replacementPairs = @{}
+    foreach ($machinePath in $machinePaths) {
+        $value = [string]$machinePath.Value
+        if ([string]::IsNullOrWhiteSpace($value)) {
+            continue
+        }
+        foreach ($form in @(
+            $value,
+            $value.Replace("\", "\\"),
+            $value.Replace("\", "/")
+        )) {
+            if (-not $replacementPairs.ContainsKey($form)) {
+                $replacementPairs[$form] = [string]$machinePath.Placeholder
+            }
+        }
+    }
+
+    Get-ChildItem -LiteralPath $Directory -Recurse -File | Where-Object {
+        $_.Extension -in @(".csv", ".json", ".log", ".md", ".txt", ".xml")
+    } | ForEach-Object {
+        $content = [IO.File]::ReadAllText($_.FullName)
+        $portable = $content
+        foreach ($pair in $replacementPairs.GetEnumerator() | Sort-Object { $_.Key.Length } -Descending) {
+            $portable = $portable.Replace([string]$pair.Key, [string]$pair.Value)
+        }
+        $portable = $portable.Replace("\\?\<repository>", "<repository>")
+        $portable = $portable.Replace("//?/<repository>", "<repository>")
+        if ($portable -ne $content) {
+            [IO.File]::WriteAllText($_.FullName, $portable, $utf8)
+        }
+    }
+}
+
 function Assert-NoMachineLocalPathsInStagedTree {
     param([Parameter(Mandatory = $true)][string]$RepositoryRoot)
 
@@ -153,14 +199,19 @@ if ($encodingPreflightExit -ne 0) {
 }
 
 $projects = @(
-    @{ Name = "p01"; Path = "50_项目产出\P01_Mini_Scheduler\mini_scheduler"; ExpectedTests = 28 },
-    @{ Name = "e02"; Path = "40_实验练习\E02_后端API实验\e02_service"; ExpectedTests = 12 },
-    @{ Name = "e03"; Path = "40_实验练习\E03_RAG实验\e03_rag_reference"; ExpectedTests = 21 },
-    @{ Name = "e04"; Path = "40_实验练习\E04_Agent实验\e04_runtime_reference"; ExpectedTests = 38 },
-    @{ Name = "e06"; Path = "40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference"; ExpectedTests = 7 },
+    @{ Name = "e00"; Path = "40_实验练习\E00_工具链基础实验\os_network_reference"; ExpectedTests = 11 },
+    @{ Name = "e01"; Path = "40_实验练习\E01_Python基础练习\concurrency_reference"; ExpectedTests = 6 },
+    @{ Name = "e02"; Path = "40_实验练习\E02_后端API实验\e02_service"; ExpectedTests = 29 },
+    @{ Name = "e03"; Path = "40_实验练习\E03_RAG实验\e03_rag_reference"; ExpectedTests = 35 },
+    @{ Name = "e04"; Path = "40_实验练习\E04_Agent实验\e04_runtime_reference"; ExpectedTests = 76 },
+    @{ Name = "e06"; Path = "40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference"; ExpectedTests = 29 },
     @{ Name = "e10"; Path = "40_实验练习\E10_推理服务实验\e10_inference_reference"; ExpectedTests = 7 },
+    @{ Name = "p01"; Path = "50_项目产出\P01_Mini_Scheduler\mini_scheduler"; ExpectedTests = 28 },
     @{ Name = "finance"; Path = "40_实验练习\GF10_金融工程全阶段实验候选\finance_reference"; ExpectedTests = 9 },
     @{ Name = "p03"; Path = "50_项目产出\P03_AI_Workload_Platform\p03_service"; ExpectedTests = 27 }
+)
+$expectedReferenceTestTotal = [int](
+    ($projects | ForEach-Object { [int]$_["ExpectedTests"] } | Measure-Object -Sum).Sum
 )
 
 $testCounts = [ordered]@{}
@@ -179,7 +230,7 @@ foreach ($project in $projects) {
     )
     Push-Location $projectRoot
     try {
-        & $python -m pytest -q --junitxml=$junitPath 2>&1 |
+        & $python -X dev -W "error::ResourceWarning" -m pytest -q --junitxml=$junitPath 2>&1 |
             Tee-Object -FilePath (Join-Path $output "$($project.Name)_pytest.log")
         $projectExit = $LASTEXITCODE
         Convert-LogToUtf8 -Path (Join-Path $output "$($project.Name)_pytest.log")
@@ -204,9 +255,9 @@ foreach ($project in $projects) {
         Remove-Item -LiteralPath $junitPath -Force -ErrorAction SilentlyContinue
     }
 }
-$referenceTestTotal = ($testCounts.Values | Measure-Object -Sum).Sum
-if ($referenceTestTotal -ne 149) {
-    throw "reference test total is $referenceTestTotal; expected 149"
+$referenceTestTotal = [int](($testCounts.Values | Measure-Object -Sum).Sum)
+if ($referenceTestTotal -ne $expectedReferenceTestTotal) {
+    throw "reference test total is $referenceTestTotal; expected $expectedReferenceTestTotal"
 }
 
 $governanceValidators = @(
@@ -375,7 +426,11 @@ try {
         "00_路线总控\审计与整改\artifacts\content_quality_audit_$dateStamp"
     )
     foreach ($generatedPath in $generatedEvidencePaths) {
-        if (Test-Path -LiteralPath (Join-Path $root $generatedPath)) {
+        $generatedAbsolutePath = Join-Path $root $generatedPath
+        if (Test-Path -LiteralPath $generatedAbsolutePath) {
+            Convert-ValidationArtifactsToPortable `
+                -Directory $generatedAbsolutePath `
+                -RepositoryRoot $root
             & git add -A -- $generatedPath
             if ($LASTEXITCODE -ne 0) {
                 throw "failed to stage generated validation evidence: $generatedPath"

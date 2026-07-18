@@ -83,4 +83,10 @@ GOLD_QUERIES = [
         frozenset({"public", "finance_public"}),
         frozenset({"doc_finance_public_001"}),
     ),
+    GoldQuery(
+        "Q5",
+        "怎样避免生成结论成为无证断言？",
+        frozenset({"public"}),
+        frozenset({"doc_course_rag_001"}),
+    ),
 ]

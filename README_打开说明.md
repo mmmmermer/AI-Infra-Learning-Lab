@@ -25,11 +25,12 @@
 - [[20_资料库/学习资料总索引|学习资料总索引]]
 - [[50_项目产出/P03_AI_Workload_Platform/P03_AI_Workload_Platform 项目主页]]
 
-> 当前状态（2026-07-18）：八套 Python 3.13 reference 共 149 项测试通过
->（P01 28、E02 12、E03 21、E04 38、E06 7、E10 7、Finance 9、P03 27）。
-> Wave 0 的 10 项 P0 阻断任务已完成，但更广的 14 项 P0 仍有 4 项进行中；110 项优化矩阵
-> 当前为 `completed` 11、`in-progress` 10、`blocked` 2、`planned` 87。P03 固定回放 sender
-> 已实现，真实 P03 服务回放/真实 trace、E09 自动扩缩容与生产化、真实 vLLM/Triton、
+> 当前状态（2026-07-18）：十套 Python 3.13 reference 共 257 项测试通过
+>（E00 11、E01 6、E02 29、E03 35、E04 76、E06 29、E10 7、P01 28、Finance 9、P03 27）。
+> Wave 0 的 10 项 P0 阻断任务已完成；更广的 14 项 P0 为 `completed` 13、`in-progress` 1；
+> 110 项优化矩阵当前为 `completed` 24、`in-progress` 8、`blocked` 2、`planned` 76。
+> E00/E01 reference 已验证但学习者尚未复现；E03 generation、真实 P03 服务回放/真实 trace、
+> E09 自动扩缩容与生产化、真实 vLLM/Triton、
 > RQ01 final run 和学习者整体试学验证仍未完成。具体状态以
 > [[00_路线总控/看板与索引/08_学习模块建设状态表|模块建设状态表]]、
 > [[00_路线总控/审计与整改/11_教材内容优化任务矩阵.csv|优化任务矩阵]]和

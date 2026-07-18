@@ -48,9 +48,21 @@ try {
         $output = Join-Path $renderRoot ("document-{0:D2}.md" -f $index)
         $stdout = Join-Path $renderRoot ("document-{0:D2}.stdout.log" -f $index)
         $stderr = Join-Path $renderRoot ("document-{0:D2}.stderr.log" -f $index)
-        & $npx --yes "@mermaid-js/mermaid-cli@11.16.0" `
-            -i $file -o $output 1> $stdout 2> $stderr
-        $renderExit = $LASTEXITCODE
+        $attemptCount = 0
+        $renderExit = 1
+        do {
+            $attemptCount += 1
+            Remove-Item -LiteralPath $output -Force -ErrorAction SilentlyContinue
+            $outputBase = [IO.Path]::GetFileNameWithoutExtension($output)
+            Get-ChildItem -LiteralPath $renderRoot -File -Filter "$outputBase-*.svg" |
+                Remove-Item -Force -ErrorAction SilentlyContinue
+            & $npx --yes "@mermaid-js/mermaid-cli@11.16.0" `
+                -i $file -o $output 1> $stdout 2> $stderr
+            $renderExit = $LASTEXITCODE
+            if ($renderExit -ne 0 -and $attemptCount -lt 2) {
+                Start-Sleep -Seconds 1
+            }
+        } while ($renderExit -ne 0 -and $attemptCount -lt 2)
         foreach ($log in @($stdout, $stderr)) {
             if (Test-Path -LiteralPath $log) {
                 $content = [IO.File]::ReadAllText($log)
@@ -60,6 +72,7 @@ try {
         $rows += [ordered]@{
             file = Get-RepositoryRelativePath -Path $file
             exit_code = $renderExit
+            attempt_count = $attemptCount
             rendered_markdown = Get-RepositoryRelativePath -Path $output
             stdout = Get-RepositoryRelativePath -Path $stdout
             stderr = Get-RepositoryRelativePath -Path $stderr

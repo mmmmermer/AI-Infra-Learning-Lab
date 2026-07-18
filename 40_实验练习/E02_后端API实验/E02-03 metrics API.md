@@ -33,9 +33,12 @@ metrics 不能是启动时写死的常量。每次请求都从 repository 当前
 4. 再次 `GET /metrics`，`task_count` 和 `pending` 均增加到 1。
 5. Bob 使用自己的 fixture credential 查询，`task_count` 仍为 0。
 
-自动验证位于 `e02_service/tests/test_api.py`。2026-07-13 在 Python 3.13 下全套 12 个测试通过，
-其中 11 个运行时契约测试、1 个 OpenAPI schema 测试；准确数量以当次 pytest 输出为准。
+自动验证位于 `e02_service/tests/`。2026-07-18 在 Python 3.13 下全套 29 个测试通过；其中新增
+请求生命周期、Problem Details、readiness/依赖恢复、限流恢复、deadline、幂等和 CAS 契约。
+准确数量以当次 pytest 输出为准。
 
 ## 边界
 
 E02 不模拟 worker，也不把任务假装成 `succeeded`。状态执行、队列和恢复由 P03/M06 后续实验负责。
+
+下一步：[[E02-04 请求生命周期可靠性与并发契约]]。

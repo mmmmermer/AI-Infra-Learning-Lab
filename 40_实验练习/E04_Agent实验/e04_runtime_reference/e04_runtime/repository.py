@@ -12,6 +12,7 @@ from .errors import (
     NotFound,
     PermissionDenied,
     StaleClaim,
+    TaskCancelled,
     VersionConflict,
 )
 from .models import DecisionRequest, Principal, ResumeClaim
@@ -76,6 +77,8 @@ class ResumeOutbox:
     claim_version: int = 0
     claimed_task_version: int | None = None
     lease_until: datetime | None = None
+    effect_started: bool = False
+    effect_executed: bool = False
 
 
 @dataclass(frozen=True, slots=True)
@@ -185,12 +188,111 @@ class InMemoryRepository:
         with self._lock:
             return self._owned_task_locked(principal, task_id)
 
-    def claim_initial(self, principal: Principal, task_id: str, *, now: datetime) -> AgentTask:
+    def assert_active(
+        self,
+        principal: Principal,
+        task_id: str,
+        *,
+        expected_version: int,
+    ) -> AgentTask:
+        with self._lock:
+            task = self._owned_task_locked(principal, task_id)
+            if task.status == "cancelled":
+                raise TaskCancelled(task_id)
+            if task.status in {"failed", "succeeded"}:
+                raise InvalidTransition("task is terminal")
+            if task.version != expected_version:
+                raise VersionConflict("task version changed")
+            return task
+
+    def cancel_task(
+        self,
+        principal: Principal,
+        task_id: str,
+        *,
+        expected_version: int,
+        reason_present: bool,
+        reason_length: int,
+        now: datetime,
+    ) -> AgentTask:
+        with self._lock:
+            task = self._owned_task_locked(principal, task_id)
+            if task.version != expected_version:
+                raise VersionConflict("task version changed")
+            if task.status == "cancelled":
+                raise TaskCancelled("task is already cancelled")
+            if task.status in {"failed", "succeeded"}:
+                raise InvalidTransition("task is terminal")
+
+            approval = (
+                self._approvals.get(task.approval_id)
+                if task.approval_id is not None
+                else None
+            )
+            outbox_id = (
+                self._outbox_by_approval.get(task.approval_id)
+                if task.approval_id is not None
+                else None
+            )
+            outbox = self._outbox.get(outbox_id) if outbox_id is not None else None
+            if outbox is not None and (
+                outbox.effect_started
+                or outbox.effect_executed
+                or outbox.status == "delivered"
+            ):
+                raise InvalidTransition("side effect execution has already started")
+
+            if approval is not None and approval.status == "pending":
+                cancelled_approval = replace(
+                    approval,
+                    version=approval.version + 1,
+                    status="cancelled",
+                    decision="cancelled",
+                    decided_at=now,
+                )
+                self._approvals[approval.approval_id] = cancelled_approval
+                self._append_approval_audit_locked(now, cancelled_approval)
+            if outbox is not None and outbox.status in {"pending", "claimed"}:
+                self._outbox[outbox.outbox_id] = replace(
+                    outbox,
+                    status="cancelled",
+                    claim_owner=None,
+                    claimed_task_version=None,
+                    lease_until=None,
+                )
+
+            cancelled = replace(
+                task,
+                status="cancelled",
+                version=task.version + 1,
+                error_type="task_cancelled",
+            )
+            self._tasks[task_id] = cancelled
+            self._append_event_locked(
+                now,
+                cancelled,
+                "task_cancelled",
+                task.status,
+                metadata=(
+                    ("reason_present", str(reason_present).lower()),
+                    ("reason_length", str(reason_length)),
+                ),
+            )
+            return cancelled
+
+    def claim_initial(
+        self,
+        principal: Principal,
+        task_id: str,
+        *,
+        expected_version: int,
+        now: datetime,
+    ) -> AgentTask:
         with self._lock:
             task = self._owned_task_locked(principal, task_id)
             return self._transition_locked(
                 task,
-                expected_version=task.version,
+                expected_version=expected_version,
                 status="running",
                 current_step="retrieve_docs",
                 event_type="initial_worker_claimed",
@@ -366,6 +468,7 @@ class InMemoryRepository:
         self,
         *,
         worker_id: str,
+        tenant_scope: frozenset[str],
         now: datetime,
         lease_seconds: int,
     ) -> ResumeClaim | None:
@@ -381,6 +484,8 @@ class InMemoryRepository:
                     continue
 
                 task = self._tasks[outbox.task_id]
+                if task.tenant_id not in tenant_scope:
+                    continue
                 if pending:
                     if (
                         task.status != "queued"
@@ -418,6 +523,8 @@ class InMemoryRepository:
                     outbox_id=claimed.outbox_id,
                     task_id=claimed.task_id,
                     approval_id=claimed.approval_id,
+                    tenant_id=task.tenant_id,
+                    owner_user_id=task.owner_user_id,
                     worker_id=worker_id,
                     claim_version=claimed.claim_version,
                     task_version=claimed_task.version,
@@ -439,6 +546,87 @@ class InMemoryRepository:
                 raise StaleClaim()
             self._validate_claim_locked(task, outbox, claim, now)
             return task, outbox
+
+    def begin_side_effect(
+        self,
+        principal: Principal,
+        claim: ResumeClaim,
+        *,
+        now: datetime,
+    ) -> ResumeOutbox:
+        """Atomically fence hard cancellation before entering an external handler."""
+        with self._lock:
+            task = self._owned_task_locked(principal, claim.task_id)
+            outbox = self._outbox.get(claim.outbox_id)
+            if outbox is None:
+                raise StaleClaim()
+            self._validate_claim_locked(task, outbox, claim, now)
+            if outbox.effect_started:
+                return outbox
+            updated = replace(outbox, effect_started=True)
+            self._outbox[outbox.outbox_id] = updated
+            self._append_event_locked(
+                now,
+                task,
+                "side_effect_started",
+                task.status,
+            )
+            return updated
+
+    def mark_side_effect_executed(
+        self,
+        principal: Principal,
+        claim: ResumeClaim,
+        *,
+        now: datetime,
+    ) -> ResumeOutbox:
+        with self._lock:
+            task = self._owned_task_locked(principal, claim.task_id)
+            outbox = self._outbox.get(claim.outbox_id)
+            if outbox is None:
+                raise StaleClaim()
+            self._validate_claim_locked(
+                task,
+                outbox,
+                claim,
+                now,
+                allow_expired_lease=True,
+            )
+            if not outbox.effect_started:
+                raise InvalidTransition("side effect has not started")
+            if outbox.effect_executed:
+                return outbox
+            updated = replace(outbox, effect_executed=True)
+            self._outbox[outbox.outbox_id] = updated
+            self._append_event_locked(
+                now,
+                task,
+                "side_effect_executed",
+                task.status,
+            )
+            return updated
+
+    def record_step_failure(
+        self,
+        principal: Principal,
+        task_id: str,
+        *,
+        error_type: str,
+        now: datetime,
+    ) -> None:
+        with self._lock:
+            task = self._owned_task_locked(principal, task_id)
+            if task.status == "cancelled":
+                raise TaskCancelled(task_id)
+            if task.status in {"failed", "succeeded"}:
+                return
+            self._append_event_locked(
+                now,
+                task,
+                "step_failed",
+                task.status,
+                metadata=(("error_type", error_type),),
+            )
 
     def finalize_resume(
         self,
@@ -491,13 +679,21 @@ class InMemoryRepository:
     ) -> AgentTask:
         with self._lock:
             task = self._owned_task_locked(principal, task_id)
+            if task.status == "cancelled":
+                raise TaskCancelled(task_id)
             if task.status in {"succeeded", "failed"}:
                 raise InvalidTransition("task is terminal")
             if task.version != expected_version:
                 raise VersionConflict()
             failed = replace(task, status="failed", version=task.version + 1, error_type=error_type)
             self._tasks[task_id] = failed
-            self._append_event_locked(now, failed, "task_failed", task.status)
+            self._append_event_locked(
+                now,
+                failed,
+                "task_failed",
+                task.status,
+                metadata=(("error_type", error_type),),
+            )
             return failed
 
     def create_session(
@@ -606,6 +802,8 @@ class InMemoryRepository:
         metadata: tuple[tuple[str, str], ...] = (),
         **changes: object,
     ) -> AgentTask:
+        if task.status == "cancelled":
+            raise TaskCancelled(task.task_id)
         if task.version != expected_version:
             raise VersionConflict()
         source = (task.status, task.current_step)
@@ -720,9 +918,15 @@ class InMemoryRepository:
         outbox: ResumeOutbox,
         claim: ResumeClaim,
         now: datetime,
+        *,
+        allow_expired_lease: bool = False,
     ) -> None:
+        if task.status == "cancelled":
+            raise TaskCancelled(task.task_id)
         if (
-            outbox.status != "claimed"
+            claim.tenant_id != task.tenant_id
+            or claim.owner_user_id != task.owner_user_id
+            or outbox.status != "claimed"
             or outbox.claim_owner != claim.worker_id
             or outbox.claim_version != claim.claim_version
             or outbox.claimed_task_version != claim.task_version
@@ -730,6 +934,6 @@ class InMemoryRepository:
             or task.status != "running"
             or task.current_step != "finalize_report"
             or outbox.lease_until is None
-            or outbox.lease_until <= now
+            or (not allow_expired_lease and outbox.lease_until <= now)
         ):
             raise StaleClaim()

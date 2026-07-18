@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact": "e06_postgresql_deadlock_reference",
+  "verified_at_utc": "2026-07-18T13:30:21.980924Z",
+  "environment": {
+    "postgresql_major": 17,
+    "postgresql_version": "17.9",
+    "instance_scope": "ephemeral local isolated cluster",
+    "network_scope": "loopback on a non-default port",
+    "authentication_scope": "temporary trust authentication",
+    "cluster_retained_after_verification": false
+  },
+  "execution": {
+    "script": "examples/postgres_deadlock_demo.py",
+    "exit_code": 0,
+    "observed_sqlstate": "40P01",
+    "victim_session": "session-b",
+    "victim_rollback_verified": true,
+    "survivor_session": "session-a",
+    "survivor_commit_verified": true,
+    "final_rows": [
+      {
+        "id": 1,
+        "value": 1
+      },
+      {
+        "id": 2,
+        "value": 1
+      }
+    ],
+    "rollback_verification_basis": "Each transaction incremented both rows. Values of one on both rows prove the victim's first increment rolled back and only the survivor committed."
+  },
+  "repeatability": {
+    "additional_successful_runs": 3,
+    "all_runs_observed_one_40P01_and_one_commit": true,
+    "all_runs_preserved_final_rows": true,
+    "victim_selection_varied_between_sessions": true
+  },
+  "limitations": [
+    "This is one local reference environment, not continuous integration evidence.",
+    "This does not establish production topology, load, permissions, monitoring, or retry behavior."
+  ]
+}

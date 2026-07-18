@@ -17,6 +17,14 @@ class PermissionDenied(RuntimeReferenceError):
     code = "permission_denied"
 
 
+class UnsafeEgressTarget(PermissionDenied):
+    code = "unsafe_egress_target"
+
+
+class UnsafePathTarget(PermissionDenied):
+    code = "unsafe_path_target"
+
+
 class InvalidToolOutput(RuntimeReferenceError):
     code = "invalid_tool_output"
 
@@ -47,6 +55,10 @@ class VersionConflict(RuntimeReferenceError):
 
 class InvalidTransition(RuntimeReferenceError):
     code = "invalid_transition"
+
+
+class TaskCancelled(RuntimeReferenceError):
+    code = "task_cancelled"
 
 
 class ApprovalTargetMismatch(RuntimeReferenceError):

@@ -45,15 +45,47 @@ class ServiceResult:
     cache_hit: bool
 
 
+@dataclass(frozen=True)
+class _CacheEntry:
+    result: RetrievalResult
+    tenant_id: str
+    collection_id: str
+    collection_version: str
+
+
 class RetrievalCache:
     def __init__(self) -> None:
-        self._entries: dict[str, RetrievalResult] = {}
+        self._entries: dict[str, _CacheEntry] = {}
 
     def get(self, key: str) -> RetrievalResult | None:
-        return self._entries.get(key)
+        entry = self._entries.get(key)
+        return None if entry is None else entry.result
 
-    def put(self, key: str, result: RetrievalResult) -> None:
-        self._entries[key] = result
+    def put(
+        self,
+        key: str,
+        result: RetrievalResult,
+        *,
+        tenant_id: str,
+        collection_id: str,
+        collection_version: str,
+    ) -> None:
+        self._entries[key] = _CacheEntry(
+            result=result,
+            tenant_id=tenant_id,
+            collection_id=collection_id,
+            collection_version=collection_version,
+        )
+
+    def invalidate_collection(self, tenant_id: str, collection_id: str) -> int:
+        keys = [
+            key
+            for key, entry in self._entries.items()
+            if entry.tenant_id == tenant_id and entry.collection_id == collection_id
+        ]
+        for key in keys:
+            del self._entries[key]
+        return len(keys)
 
     @property
     def entry_count(self) -> int:
@@ -143,7 +175,13 @@ def execute_retrieval(
         top_k=request.top_k,
     )
     _assert_result_is_authorized(result, request, verified_principal)
-    cache.put(cache_key, result)
+    cache.put(
+        cache_key,
+        result,
+        tenant_id=verified_principal.tenant_id,
+        collection_id=request.collection_id,
+        collection_version=collection_version,
+    )
     return ServiceResult(result, cache_key, False)
 
 

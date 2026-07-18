@@ -1,0 +1,32 @@
+[
+  {
+    "query_id": "Q1",
+    "query": "RAG 回答为什么需要来源引用？",
+    "allowed_groups": ["public"],
+    "expected_document_ids": ["doc_course_rag_001"]
+  },
+  {
+    "query_id": "Q2",
+    "query": "SJF 会带来什么副作用？",
+    "allowed_groups": ["public"],
+    "expected_document_ids": ["doc_exp_scheduler_001"]
+  },
+  {
+    "query_id": "Q3",
+    "query": "卖方在目的地变更时需要做什么？",
+    "allowed_groups": ["public"],
+    "expected_document_ids": ["doc_compliance_clause_001"]
+  },
+  {
+    "query_id": "Q4",
+    "query": "金融公告提到了哪些风险？",
+    "allowed_groups": ["finance_public", "public"],
+    "expected_document_ids": ["doc_finance_public_001"]
+  },
+  {
+    "query_id": "Q5",
+    "query": "怎样避免生成结论成为无证断言？",
+    "allowed_groups": ["public"],
+    "expected_document_ids": ["doc_course_rag_001"]
+  }
+]

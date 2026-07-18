@@ -273,6 +273,9 @@ class MockLLM(LLMClient):
 | 参数错误 | 3/5/7 | `test_tool_registry.py` | calculator 缺少 expression | 记录 `invalid_tool_args` | P0 |
 | 解析失败 | 4/5/7 | `test_runtime_loop.py` | MockLLM 返回非 JSON | 记录 `parse_error` | P0 |
 | 最大轮次 | 6/7 | `test_runtime_loop.py` | 一直返回 tool_call | 达到 `max_turns` 后停止，记录 `max_turns_exceeded` | P0 |
+| handler 非预期异常 | 3/6/7 | reference `test_cancellation_and_injection.py` | 工具抛出任意异常 | 归一为 `invalid_tool_output`，任务失败事件含 current_step，异常原文不进 trace | P0 |
+| 恶意 tool output | 3/6/7 | reference `test_cancellation_and_injection.py` | chunk 要求扩权、泄密和 publish | capability/proposal/approval/副作用次数不变 | P0 |
+| URL/path 攻击 | 3/6/7 | reference `test_target_security.py` | 私网 URL、userinfo、`..`、编码、盘符/UNC | handler 调用次数为 0 | P0 |
 | session 隔离预检查 | 2/7 | `test_session_state.py` | 两个 session 各自写 todo | messages 和 tool_results 不互相污染 | P1 |
 | 真实 LLM smoke test | 9 | 手动脚本或 README | 使用同一组 tool schema | 能返回 final_answer 或 tool_call；失败也要记录 | P2 |
 
@@ -285,31 +288,57 @@ P0 必须先通过，P1/P2 可以在 E04-05 或真实项目阶段继续完善。
 ### ToolRegistry.call
 
 ```python
-class ToolRegistry:
-    def __init__(self):
-        self._tools = {}
+from pydantic import BaseModel, ConfigDict, ValidationError
 
-    def register(self, spec, fn):
-        self._tools[spec.name] = {"spec": spec, "fn": fn}
 
-    def call(self, name: str, arguments: dict) -> dict:
-        if name not in self._tools:
-            return {"status": "failed", "error_type": "missing_tool"}
+class StrictArgs(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True, frozen=True)
 
-        item = self._tools[name]
-        missing = [key for key in item["spec"].args_schema if key not in arguments]
-        if missing:
-            return {"status": "failed", "error_type": "invalid_tool_args"}
+
+class ToolGateway:
+    def call(self, principal, name: str, arguments: dict):
+        spec = self.registry.require(name)  # 未注册工具在这里停止
+        try:
+            args = spec.args_model.model_validate(arguments)
+        except ValidationError as exc:
+            raise InvalidToolArgs() from exc
+
+        resource = spec.resource_resolver(args)
+        authorization = self.policy.authorize(
+            principal,
+            action=spec.action,
+            resource=resource,
+        )
+        normalized_url = self.egress.validate(spec.url_resolver(args)) \
+            if spec.url_resolver else None
+        normalized_path = self.paths.validate(spec.path_resolver(args)) \
+            if spec.path_resolver else None
 
         try:
-            return item["fn"](**arguments)
-        except Exception:
-            return {"status": "failed", "error_type": "tool_error"}
+            raw = spec.handler(
+                args,
+                ExecutionContext(
+                    authorization=authorization,
+                    normalized_url=normalized_url,
+                    normalized_path=normalized_path,
+                ),
+            )
+        except RuntimeReferenceError:
+            raise
+        except Exception as exc:
+            raise InvalidToolOutput() from exc
+        try:
+            return spec.output_model.model_validate(raw)
+        except ValidationError as exc:
+            raise InvalidToolOutput() from exc
 ```
 
-第一版只需要理解三个动作：找工具、校验参数、执行并返回结构化结果。不要把异常吞掉，也不要直接把 Python exception 当成用户可见回答。
+最小实现也不能只检查“必填字段存在”。工具是模型跨入真实系统的边界，第一版就要拒绝额外字段、
+宽松类型转换、客户端身份/权限字段和未授权资源；URL/path 目标要在 handler 前由默认拒绝策略验证。
+handler 的未知异常只能映射为有限错误码，不能把 exception 文本、credential 或完整输入写进 trace。
 
-这里的参数校验先只做“必填字段检查”。类型校验、取值范围、权限控制可以留到后续增强，但要在日志里保留 `error_type`，方便以后扩展。
+教学 reference 已把这条调用链实现于 `e04_runtime/tools.py` 与 `e04_runtime/security.py`。它使用
+固定 planner、mock 工具和内存 repository，帮助理解契约，不代表真实 LLM 或 P03 生产集成。
 
 ### OutputParser.parse
 
@@ -445,6 +474,8 @@ P03 v0.3.1 仍然先维护 `rag_retrieval` task 闭环。本实验属于 post-v0
 | 工具返回一段自然语言，后续无法统计 | 工具没有结构化返回格式 | 工具返回 `status/result/error_type/metadata` |
 | 单元测试依赖真实 LLM，结果不稳定 | 没有 MockLLM 边界 | P0 测试只用 MockLLM，真实 API 只做 smoke test |
 | 日志记录完整思考链 | 把不可展示推理过程当 trace | 只记录 `decision_reason` 或简短可展示摘要 |
+| 只验证顶层日志字段 | credential 藏在 nested payload/header 中泄漏 | 递归按 key 脱敏，再扫描 bearer/token/password/URL/path 模式 |
+| URL 只检查字符串前缀 | SSRF、userinfo、私网或相似域名绕过 | 结构化解析、规范化、IP 检查、exact origin allowlist；redirect/DNS 在真实客户端复检 |
 
 你正式学习时，可以把这个表当作调试顺序：先保证可解析，再保证可调用，再保证可记录，最后再看回答质量。
 
@@ -500,6 +531,8 @@ pytest tests/
 - [ ] 能解释工具结果如何进入下一轮 context。
 - [ ] 能解释为什么不记录完整 chain-of-thought。
 - [ ] 能说明本实验如何连接 E04-05/E04-06/E04-07 和 P03 Runtime 字段。
+- [ ] 工具入口使用 strict schema、server principal 与 action/resource authorization，非法参数不会调用 handler。
+- [ ] 能用负向测试证明恶意 tool output、SSRF/path 攻击和非预期异常不会扩大权限或泄漏 trace。
 
 ## 边界提醒
 
