@@ -1,0 +1,41 @@
+{
+    "status":  "passed",
+    "encoding_validation":  "passed",
+    "governance_validation":  "passed",
+    "provenance_inventory_status":  "review-required",
+    "provenance_row_count":  33,
+    "provenance_verified_count":  1,
+    "provenance_review_required_count":  32,
+    "structured_data_validation":  "passed",
+    "rq01_artifact_validation":  "passed",
+    "powershell_syntax_validation":  "passed",
+    "powershell_script_count":  13,
+    "compose_config_validation":  "passed",
+    "kustomize_validation":  "passed",
+    "compileall_validation":  "passed",
+    "git_release_candidate_validation":  "passed",
+    "machine_local_path_scan":  "passed",
+    "staged_secret_scan":  "passed",
+    "reference_python_version":  "3.13",
+    "reference_project_count":  8,
+    "reference_test_count":  149,
+    "reference_test_counts":  {
+                                  "p01":  28,
+                                  "e02":  12,
+                                  "e03":  21,
+                                  "e04":  38,
+                                  "e06":  7,
+                                  "e10":  7,
+                                  "finance":  9,
+                                  "p03":  27
+                              },
+    "content_audit_skipped":  false,
+    "content_audit_status":  "passed_with_advisories",
+    "content_audit_advisories":  [
+                                     "markdownlint",
+                                     "zhlint",
+                                     "lychee"
+                                 ],
+    "mermaid_skipped":  false,
+    "completed_at_utc":  "2026-07-18T11:09:43.4071820Z"
+}

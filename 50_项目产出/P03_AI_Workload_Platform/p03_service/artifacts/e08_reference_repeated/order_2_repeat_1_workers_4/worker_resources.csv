@@ -1,0 +1,4 @@
+﻿"sampled_at_utc","worker_container_count","worker_cpu_percent_sum","worker_cpu_percent_mean","worker_memory_mib_sum"
+"2026-07-10T16:50:07.0718630Z","4","215.38","53.845","162.45"
+"2026-07-10T16:50:11.2950824Z","4","70.22","17.555","162.62"
+"2026-07-10T16:50:14.3639295Z","4","0.09","0.0225","162.38"

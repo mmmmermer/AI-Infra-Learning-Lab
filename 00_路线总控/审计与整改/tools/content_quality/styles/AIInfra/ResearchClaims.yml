@@ -1,0 +1,12 @@
+extends: existence
+message: "科研或工程强断言 '%s' 需要对应实验、样本、指标和适用边界。"
+level: warning
+ignorecase: false
+tokens:
+  - '显著优于'
+  - '证明了'
+  - '普遍适用'
+  - '达到生产级'
+  - '完全正确'
+  - '毫无风险'
+  - '100%[ ]*(准确|安全|可靠)'

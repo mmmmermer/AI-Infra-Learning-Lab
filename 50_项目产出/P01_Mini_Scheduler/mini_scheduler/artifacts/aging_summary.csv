@@ -1,0 +1,4 @@
+strategy,task_count,average_wait_time,max_wait_time,p95_wait_time,p99_wait_time,average_turnaround_time,max_ready_queue_length,worker_utilization
+no_aging,30.0,48.63333333333333,110.8,110.6,110.8,52.5,23.0,0.9206349206349206
+gentle_aging,30.0,48.63333333333333,110.8,110.6,110.8,52.5,23.0,0.9206349206349206
+strong_aging,30.0,42.66,104.4,100.8,104.4,46.526666666666664,25.0,0.9206349206349206

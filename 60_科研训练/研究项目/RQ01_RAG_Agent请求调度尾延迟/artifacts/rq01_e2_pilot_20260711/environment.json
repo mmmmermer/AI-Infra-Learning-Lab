@@ -1,0 +1,15 @@
+{
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "python_executable": "<repository>/50_项目产出/P01_Mini_Scheduler/mini_scheduler/.venv/Scripts/python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "hardware_disclosure": "Omitted because this deterministic simulator does not support hardware-performance claims.",
+  "git_commit": "f4f48e26f3557240f34bb21bbf421e36dffb5126",
+  "git_worktree_dirty": true,
+  "source_reproduction_boundary": "git commit alone is insufficient; use the bundled source snapshot",
+  "source_snapshot": "source_snapshot.tar.gz",
+  "source_snapshot_sha256": "1b2d3db3df86325eb7a811f6316618a99dc7c0d78ac1ad39e5224e9f6311214d",
+  "source_snapshot_file_manifest": "source_snapshot_files.sha256",
+  "dependency_lock": "50_项目产出\\P01_Mini_Scheduler\\mini_scheduler\\requirements-dev.lock",
+  "dependency_lock_sha256": "a1f80946d863e8e22d598b3c9f0323cbc147938075d966147214e87643534add"
+}

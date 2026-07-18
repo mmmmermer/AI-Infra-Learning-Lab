@@ -1,0 +1,744 @@
+{
+  "schema_version": "1.1",
+  "markdown_file_count": 310,
+  "area_counts": {
+    "40_实验练习": 89,
+    "10_学习模块": 62,
+    "00_路线总控": 47,
+    "50_项目产出": 33,
+    "20_资料库": 31,
+    "60_科研训练": 14,
+    "80_就业市场与简历": 11,
+    "30_知识卡片": 8,
+    "70_导师实验室与联系": 7,
+    "90_计划复盘": 5,
+    "99_归档": 2,
+    "README_打开说明.md": 1
+  },
+  "textbook_file_count": 23,
+  "active_textbook_file_count": 22,
+  "archived_textbook_file_count": 1,
+  "textbooks": [
+    {
+      "file": "10_学习模块\\F00_金融市场与资产基础\\F00_金融市场与资产基础_适配教材.md",
+      "status": "active",
+      "line_count": 802,
+      "heading_count": 66,
+      "code_fence_pairs": 27,
+      "external_url_count": 11,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives"
+      ]
+    },
+    {
+      "file": "10_学习模块\\F01_概率统计与数学基础\\F01_概率统计与数学基础_适配教材.md",
+      "status": "active",
+      "line_count": 1021,
+      "heading_count": 85,
+      "code_fence_pairs": 44,
+      "external_url_count": 8,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": []
+    },
+    {
+      "file": "10_学习模块\\F02_Python金融数据与时间序列\\F02_Python金融数据与时间序列_适配教材.md",
+      "status": "active",
+      "line_count": 1407,
+      "heading_count": 116,
+      "code_fence_pairs": 48,
+      "external_url_count": 17,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives",
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\F03_投资组合与风险管理\\F03_投资组合与风险管理_适配教材.md",
+      "status": "active",
+      "line_count": 799,
+      "heading_count": 72,
+      "code_fence_pairs": 34,
+      "external_url_count": 9,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives"
+      ]
+    },
+    {
+      "file": "10_学习模块\\F04_衍生品定价与随机过程导论\\F04_衍生品定价与随机过程导论_适配教材.md",
+      "status": "active",
+      "line_count": 794,
+      "heading_count": 54,
+      "code_fence_pairs": 23,
+      "external_url_count": 5,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\F05_固定收益与利率基础\\F05_固定收益与利率基础_适配教材.md",
+      "status": "active",
+      "line_count": 794,
+      "heading_count": 56,
+      "code_fence_pairs": 27,
+      "external_url_count": 4,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\F06_量化研究与回测工程\\F06_量化研究与回测工程_适配教材.md",
+      "status": "active",
+      "line_count": 810,
+      "heading_count": 61,
+      "code_fence_pairs": 30,
+      "external_url_count": 5,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives",
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\F07_金融机器学习与模型风险\\F07_金融机器学习与模型风险_适配教材.md",
+      "status": "active",
+      "line_count": 1078,
+      "heading_count": 65,
+      "code_fence_pairs": 43,
+      "external_url_count": 8,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\F08_金融工程任务与AI_Workload接口\\F08_金融工程任务与AI_Workload接口_适配教材.md",
+      "status": "active",
+      "line_count": 885,
+      "heading_count": 55,
+      "code_fence_pairs": 28,
+      "external_url_count": 5,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives",
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md",
+      "status": "active",
+      "line_count": 1497,
+      "heading_count": 82,
+      "code_fence_pairs": 63,
+      "external_url_count": 18,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md",
+      "status": "active",
+      "line_count": 2255,
+      "heading_count": 114,
+      "code_fence_pairs": 93,
+      "external_url_count": 24,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": []
+    },
+    {
+      "file": "10_学习模块\\M02_后端API与服务化\\M02_后端API与服务化_适配教材.md",
+      "status": "active",
+      "line_count": 1596,
+      "heading_count": 97,
+      "code_fence_pairs": 54,
+      "external_url_count": 30,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M03_RAG工程\\M03_RAG工程_适配教材.md",
+      "status": "active",
+      "line_count": 1486,
+      "heading_count": 94,
+      "code_fence_pairs": 55,
+      "external_url_count": 6,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": []
+    },
+    {
+      "file": "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md",
+      "status": "active",
+      "line_count": 1491,
+      "heading_count": 105,
+      "code_fence_pairs": 55,
+      "external_url_count": 12,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M05_任务队列与调度\\99_归档\\M05_任务队列与调度_适配教材.md",
+      "status": "archived",
+      "line_count": 558,
+      "heading_count": 62,
+      "code_fence_pairs": 10,
+      "external_url_count": 8,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": false,
+        "concepts": true,
+        "examples": false,
+        "practice": true,
+        "acceptance": false,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives",
+        "prerequisites",
+        "examples",
+        "acceptance"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M05_任务队列与调度\\M05_任务队列与调度_章节教材.md",
+      "status": "active",
+      "line_count": 7811,
+      "heading_count": 292,
+      "code_fence_pairs": 516,
+      "external_url_count": 6,
+      "split_chapter_file_count": 13,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_适配教材.md",
+      "status": "active",
+      "line_count": 1568,
+      "heading_count": 101,
+      "code_fence_pairs": 71,
+      "external_url_count": 4,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": false,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "examples"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M07_Docker与容器化\\M07_Docker与容器化_适配教材.md",
+      "status": "active",
+      "line_count": 1038,
+      "heading_count": 89,
+      "code_fence_pairs": 44,
+      "external_url_count": 6,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": []
+    },
+    {
+      "file": "10_学习模块\\M08_监控压测与可观测性\\M08_监控压测与可观测性_适配教材.md",
+      "status": "active",
+      "line_count": 1842,
+      "heading_count": 121,
+      "code_fence_pairs": 73,
+      "external_url_count": 16,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives",
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M09_Kubernetes与云原生\\M09_Kubernetes与云原生_适配教材.md",
+      "status": "active",
+      "line_count": 1219,
+      "heading_count": 88,
+      "code_fence_pairs": 56,
+      "external_url_count": 15,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": true,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": false,
+        "boundaries": true
+      },
+      "missing_features": [
+        "sources"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M10_AI推理系统_vLLM_Triton\\M10_AI推理系统_vLLM_Triton_适配教材.md",
+      "status": "active",
+      "line_count": 1207,
+      "heading_count": 88,
+      "code_fence_pairs": 49,
+      "external_url_count": 14,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives",
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M11_科研方法与实验设计\\M11_科研方法与实验设计_适配教材.md",
+      "status": "active",
+      "line_count": 1564,
+      "heading_count": 109,
+      "code_fence_pairs": 53,
+      "external_url_count": 9,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": false,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives",
+        "concepts"
+      ]
+    },
+    {
+      "file": "10_学习模块\\M12_金融投研AI场景\\M12_金融投研AI场景_适配教材.md",
+      "status": "active",
+      "line_count": 1111,
+      "heading_count": 60,
+      "code_fence_pairs": 41,
+      "external_url_count": 9,
+      "split_chapter_file_count": 0,
+      "features": {
+        "objectives": false,
+        "prerequisites": true,
+        "concepts": true,
+        "examples": true,
+        "practice": true,
+        "acceptance": true,
+        "sources": true,
+        "boundaries": true
+      },
+      "missing_features": [
+        "objectives"
+      ]
+    }
+  ],
+  "textbooks_missing_any_feature": 19,
+  "textbooks_without_external_urls": 0,
+  "active_textbooks_missing_any_feature": 18,
+  "active_textbooks_without_external_urls": 0,
+  "unique_external_url_occurrences": 690,
+  "top_external_domains": {
+    "docs.python.org": 52,
+    "docs.langchain.com": 39,
+    "kubernetes.io": 35,
+    "github.com": 35,
+    "ocw.mit.edu": 28,
+    "pandas.pydata.org": 23,
+    "fastapi.tiangolo.com": 19,
+    "fred.stlouisfed.org": 17,
+    "scikit-learn.org": 17,
+    "docs.pytest.org": 17,
+    "www.sec.gov": 16,
+    "prometheus.io": 16,
+    "127.0.0.1:8001": 13,
+    "docs.docker.com": 13,
+    "docs.vllm.ai": 12,
+    "docs.pydantic.dev": 12,
+    "doi.org": 11,
+    "www.statsmodels.org": 10,
+    "docs.scipy.org": 10,
+    "developers.openai.com": 10,
+    "docs.ragas.io": 10,
+    "kueue.sigs.k8s.io": 9,
+    "www.quantlib.org": 8,
+    "arxiv.org": 8,
+    "developers.google.com": 8,
+    "missing.csail.mit.edu": 7,
+    "www.python-httpx.org": 7,
+    "openai.github.io": 7,
+    "docs.locust.io": 7,
+    "docs.github.com": 7
+  },
+  "placeholder_count": 3,
+  "placeholders": [
+    {
+      "file": "10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md",
+      "line": 1182,
+      "match": "TODO",
+      "text": "TODO 校验，不从第 12 章目标结构倒抄完整实现。"
+    },
+    {
+      "file": "00_路线总控\\审计与整改\\04_变更日志.md",
+      "line": 247,
+      "match": "TODO",
+      "text": "M05 reference 导航；高风险成品循环、成本公式和预写结论改为接口、约束与 TODO。"
+    },
+    {
+      "file": "00_路线总控\\审计与整改\\07_教材章节质量契约.md",
+      "line": 94,
+      "match": "TODO",
+      "text": "4. 脚手架应逐步撤除：`完整示范 -> 部分 TODO -> 独立实现 -> 新场景迁移`，不能一直照抄完整代码。"
+    }
+  ],
+  "stale_python_reference_count": 20,
+  "stale_python_non_explanatory_count": 6,
+  "stale_python_references": [
+    {
+      "file": "50_项目产出\\P01_Mini_Scheduler\\03_代码结构与接口.md",
+      "line": 44,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "> 环境提示：本项目使用 Python 3.13。先用 `py -3.13 -m venv .venv` 创建环境并激活，再运行代码。旧文件中的 `from __future__ import annotations` 可以保留，但不代表继续支持 Python 3.8/3.9。"
+    },
+    {
+      "file": "50_项目产出\\P01_Mini_Scheduler\\06_README草稿.md",
+      "line": 345,
+      "match": "Python 3.8",
+      "likely_explanatory": false,
+      "text": "2026-07-10 已在项目 Python 3.13 虚拟环境运行：`22 passed`。若另一个终端提示 `No module named pytest`，先确认已经激活项目 `.venv`，不要改用系统 Python 3.8/3.9。"
+    },
+    {
+      "file": "50_项目产出\\P01_Mini_Scheduler\\P01_Mini_Scheduler 项目主页.md",
+      "line": 34,
+      "match": "Python 3.8",
+      "likely_explanatory": false,
+      "text": "P01 统一在 Python 3.13 项目虚拟环境中运行。默认 `python` 仍可能指向系统 Python 3.8.6，因此创建环境时必须显式使用 `py -3.13`，激活后再运行测试和示例。"
+    },
+    {
+      "file": "50_项目产出\\P01_Mini_Scheduler\\P01_Mini_Scheduler 项目主页.md",
+      "line": 36,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "旧代码中的 `from __future__ import annotations` 可以保留，但 P01 不再声明兼容 Python 3.8/3.9。"
+    },
+    {
+      "file": "40_实验练习\\E05_调度实验\\E05-R0-R1 学习边界与最小模型复现.md",
+      "line": 35,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "- 如果类型标注运行失败，先检查是否误用了系统 Python 3.8/3.9，而不是修改教材去兼容已废弃环境。"
+    },
+    {
+      "file": "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md",
+      "line": 34,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "Python；pytest、HTTPX 和 Git 的实际版本应在实验记录中保存。Python 3.8/3.9 只用于阅读历史"
+    },
+    {
+      "file": "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md",
+      "line": 53,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "Windows 主学习环境固定使用 **Python 3.13**。当前机器同时存在 Python 3.8.6 和 3.13，因此不能依赖含义不明确的全局 `python` 命令。"
+    },
+    {
+      "file": "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md",
+      "line": 69,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "Python 3.8 和 3.9 已结束官方安全支持，不再作为本路线的运行或验收目标。旧资料中关于 `Optional[...]`、`List[...]` 或 `from __future__ import annotations` 的内容只用于阅读历史代码，不用于继续维持旧环境。"
+    },
+    {
+      "file": "10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md",
+      "line": 47,
+      "match": "Python 3.8",
+      "likely_explanatory": false,
+      "text": "第一行应显示 Python 3.13，第三行应输出 `M01 prerequisite ok`，最后一行应为 `True`。解释器或 Git 命令不可用时，先返回 M00 修复环境；不要用系统中的 Python 3.8/3.9 继续本模块。"
+    },
+    {
+      "file": "10_学习模块\\M05_任务队列与调度\\M05_任务队列与调度_章节教材.md",
+      "line": 94,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "旧代码顶部的 `from __future__ import annotations` 可以保留，但不再作为支持 Python 3.8/3.9 的理由。版本异常时先检查解释器和虚拟环境，不通过修改类型标注掩盖环境漂移。"
+    },
+    {
+      "file": "10_学习模块\\M08_监控压测与可观测性\\M08_监控压测与可观测性_适配教材.md",
+      "line": 620,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "> 环境要求：本模块统一使用 Python 3.13 项目 `.venv`。若类型标注报错，先检查解释器路径，不再用兼容 Python 3.8/3.9 的改写掩盖环境漂移。"
+    },
+    {
+      "file": "00_路线总控\\审计与整改\\00_整改总控.md",
+      "line": 124,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "- [x] 当前正式入口不再把 Python 3.8/3.9 作为可验收环境。"
+    },
+    {
+      "file": "00_路线总控\\审计与整改\\学习路线教材与内容审计报告_2026-07-10.md",
+      "line": 56,
+      "match": "Python 3.8",
+      "likely_explanatory": false,
+      "text": "当前默认 `python` 命令仍指向 Python 3.8.6，同时系统另有 Python 3.13。教材仍把 3.8/3.9 作为可继续使用或验收的环境。"
+    },
+    {
+      "file": "00_路线总控\\审计与整改\\学习路线教材与内容审计报告_2026-07-10.md",
+      "line": 58,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "- Python 3.8 已于 2024-10 EOL。"
+    },
+    {
+      "file": "00_路线总控\\审计与整改\\学习路线教材与内容审计报告_2026-07-10.md",
+      "line": 59,
+      "match": "Python 3.9",
+      "likely_explanatory": true,
+      "text": "- Python 3.9 已于 2025-10 EOL。"
+    },
+    {
+      "file": "00_路线总控\\看板与索引\\01_当前阶段任务看板.md",
+      "line": 86,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "- 默认 `python` 仍指向已 EOL 的 Python 3.8.6，未激活虚拟环境时不得用于验收。"
+    },
+    {
+      "file": "00_路线总控\\看板与索引\\12_审计接力交接文档.md",
+      "line": 3,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "> 历史说明（2026-07-10）：本文记录的是旧审计会话和当时的 Python 3.8 环境，已被 `00_路线总控/审计与整改/` 下的新报告、矩阵和验证清单取代。当前主学习环境为 Python 3.13，不得按本文旧版本兼容建议继续修改教材。"
+    },
+    {
+      "file": "00_路线总控\\看板与索引\\12_审计接力交接文档.md",
+      "line": 31,
+      "match": "Python 3.8",
+      "likely_explanatory": false,
+      "text": "- **Python 3.8 类型注解陷阱**：全库 83 处用 `list[dict]`/`list[Task]`（需 3.9+）、`float|None`（需 3.10+）。在 3.8 上写进函数签名/dataclass 字段/变量注解会**定义时直接 `TypeError: 'type' object is not subscriptable`**，不是警告。"
+    },
+    {
+      "file": "00_路线总控\\看板与索引\\12_审计接力交接文档.md",
+      "line": 55,
+      "match": "Python 3.9",
+      "likely_explanatory": false,
+      "text": "> 版本提示：下面的 `list[dict]`（或 `float | None`）写法需要 Python 3.9+（3.10+）。如果你的 `python --version` 是 3.8，在文件最顶部加一行 `from __future__ import annotations` 即可正常运行。详见 [[10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材]] 第 0 章。"
+    },
+    {
+      "file": "00_路线总控\\看板与索引\\13_M05精准增强交接文档.md",
+      "line": 119,
+      "match": "Python 3.8",
+      "likely_explanatory": true,
+      "text": "- 旧 Python 3.8.6 信息仅用于解释历史问题，不是兼容或验收目标。"
+    }
+  ],
+  "missing_fence_language_count": 0,
+  "missing_fence_languages": [],
+  "oversized_file_count": 1,
+  "oversized_files": [
+    {
+      "file": "10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md",
+      "line_count": 2255,
+      "character_count": 56791
+    }
+  ],
+  "duplicate_paragraph_group_count": 0,
+  "duplicate_paragraph_groups": []
+}

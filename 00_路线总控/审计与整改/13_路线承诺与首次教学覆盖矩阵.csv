@@ -1,0 +1,21 @@
+promise_id,route,keyword,current_first_teaching,content_type,evidence,status,publication_claim,next_action
+PR-001,AI Infra,Python 3.13 工程基础,M00/M01 对应 instructional 章,instructional,M00/M01 教材与 E00/E01 入口,current-covered,当前教材入口可用；学习者完成另计,保持版本门禁并补本人复现
+PR-002,AI Infra,FastAPI 请求响应与契约,M02 第 1-9 章,instructional,E02 12 tests,current-covered,最小 owner-scoped API reference 已验证,后续补生产 JWT/TLS/CORS 生命周期
+PR-003,AI Infra,server-owned Principal 与对象授权,M02 第 10 章,instructional,E02 认证/scope/跨 owner/422 负测,current-covered-minimal,只覆盖 fixture principal 与资源授权顺序,生产身份提供方仍为后续项
+PR-004,AI Infra,RAG 检索评估与 ACL,M03 第 3-7 章,instructional,E03 21 tests,current-covered-retrieval,检索与安全结构可执行；generation 未验证,补真实生成与 citation/adversarial eval
+PR-005,AI Infra,Agent 工作流与工具安全,M04 第 1-10 章,instructional-design,E04 deterministic in-memory runtime；38 tests 覆盖 schema、capability/resource、approval CAS/outbox、fencing 与 session isolation,current-covered-minimal,只证明无模型、无网络、单进程 reference；不是 P03 或生产 Agent Runtime,继续 M04-001/002/003 与生产集成
+PR-006,AI Infra,调度策略与尾延迟,M05 第 0-12 章,instructional,P01 28 tests,current-covered-reference,调度 reference 可执行；研究结论只限证据范围,补 Pareto/burst、P03 service replay 与学习者复现
+PR-007,AI Infra,持久任务与可恢复队列,M06 第 4/6/7 章,instructional,E06 fencing tests；P03 Streams tests/current Compose,current-covered-reference,SQLite/PostgreSQL/Redis reference 已验证,补备份恢复与外部副作用幂等
+PR-008,AI Infra,Docker 多服务闭环,M07 对应 instructional 章,instructional,P03 五服务 Compose evidence,current-covered-local,本地 Compose reference 已验证；不是生产部署,补供应链与生产安全门禁
+PR-009,AI Infra,监控压测与可观测性,M08 对应 instructional 章,instructional,E08 1/2/4 worker × 3 mock repeat + BM25 单轮 smoke；P03 fixed-replay sender 3 tests,partial,局部 reference；sender 单测不是服务回放，且无长时/多机/完整 OTel-Prometheus 闭环,执行真实 P03 replay 并补跨进程 trace 与 Prometheus 实验
+PR-010,AI Infra,Kubernetes 部署与扩缩容,M09 对应 instructional/design-note 章,mixed,E09 kind E09-01/02/03 local reference,partial-local,kind 本地功能 reference；HPA/KEDA/生产化未完成,完成 E09-05 或继续 design-note
+PR-011,AI Infra,vLLM/Triton serving,M10 第 6 章与 E10-03,design-note,E10-01/02 simulator only,blocked-resource,只发布推理 workload/指标导论；不宣称真实 serving 验证,满足 Linux/GPU/模型预算后做真实实验
+PR-012,科研,实验设计与统计推断,M11 与 RQ01,instructional-pilot,RQ01 30-seed E2 synthetic pilot,partial-pilot,可作为合成 pilot；不能当最终科研结论,补检索协议/功效/析因/稳健性/伦理
+PR-013,金融,F01 概率统计基础,F01 基础章,instructional,描述统计/协方差/组合方差局部内容,partial,基础直觉可学；推断/回归/数值方法未完整覆盖,补微积分/数值/推断/线性代数诊断
+PR-014,金融,statsmodels 时间序列,F02 尚无承担首次教学的章节,none,路线已降级标计划补强,gap-declared,不计当前覆盖,新增平稳性/ACF-PACF/基线预测章与实验
+PR-015,金融,CAPM 与多资产 Markowitz,F03 尚无完整首次教学章,none,路线已降级标计划补强,gap-declared,两资产方差不等于 CAPM/有效前沿,新增 CAPM/约束优化/估计误差主章
+PR-016,金融,Black-Scholes 与 Monte Carlo,F04 对应基础章,instructional,GF04 候选与局部解析/MC 内容,partial,基础定价可学；IV/Greeks/曲面未闭环,补 IV/Greeks/校准实验
+PR-017,金融,随机过程与二叉树,F04 尚无完整首次教学章,none,路线已降级标计划补强,gap-declared,不计当前覆盖,新增随机过程桥梁与复制/二叉树主章
+PR-018,金融,YTM 久期凸性,F05 对应基础章,instructional,finance_reference tests,current-covered-reference,基础现金流/YTM/久期凸性 reference 已验证,补市场约定和日期引擎
+PR-019,金融,收益率曲线与关键利率风险,F05 尚无完整首次教学章,none,路线已降级标计划补强,gap-declared,不计当前覆盖,新增 bootstrapping/forward/key-rate 实验
+PR-020,金融,回测与金融机器学习,F06/F07 对应基础章,instructional,泄漏/标签/holdout 局部 reference,partial,基础防泄漏可学；正式推断/容量/漂移未闭环,补 purged CV/容量/稳健推断与治理

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "captured_at_utc": "2026-07-17T16:05:29.0163322Z",
+  "repository_revision": "f4f48e2",
+  "scope": "Observed local versions used to review the manifest; this is evidence, not a dependency lock file.",
+  "commands": [
+    "py -3.13 --version",
+    "e02_service/.venv/Scripts/python.exe -c import fastapi,pydantic,httpx,pytest",
+    "e04_runtime_reference/.venv/Scripts/python.exe -c import pydantic",
+    "p03_service/.venv/Scripts/python.exe -c import fastapi,pydantic,httpx,pytest,redis",
+    ".tools/content-quality/vale/3.15.1/vale.exe --version",
+    ".tools/content-quality/lychee/0.24.2/lychee-x86_64-pc-windows-msvc/lychee.exe --version",
+    ".tools/content-quality/gitleaks/8.30.1/gitleaks.exe version"
+  ],
+  "observed": {
+    "python": "3.13.2",
+    "fastapi": "0.116.1",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "pytest": "8.4.2",
+    "redis-py": "8.0.1",
+    "vale": "3.15.1",
+    "lychee": "0.24.2",
+    "gitleaks": "8.30.1"
+  },
+  "boundary": "Pydantic 2.13.4 is direct and pinned in E04, but remains transitive in E02/P03. Local .venv directories are not publication artifacts and must not be used as the only evidence for a repository-wide supported range."
+}

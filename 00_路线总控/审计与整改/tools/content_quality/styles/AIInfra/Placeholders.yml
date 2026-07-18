@@ -1,0 +1,10 @@
+extends: existence
+message: "正文仍含待办或占位标记 '%s'，确认是否应补齐、降级或归档。"
+level: suggestion
+ignorecase: false
+tokens:
+  - '\bTODO\b'
+  - '\bTBD\b'
+  - '待补充'
+  - '待完善'
+  - '内容占位'

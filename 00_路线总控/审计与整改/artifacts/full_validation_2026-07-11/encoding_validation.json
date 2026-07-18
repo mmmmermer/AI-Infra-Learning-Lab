@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "status": "passed",
+  "root": "<repository>",
+  "directories_scanned": 158,
+  "files_scanned": 657,
+  "text_files_scanned": 653,
+  "issue_count": 0,
+  "issue_counts": {},
+  "issues": []
+}

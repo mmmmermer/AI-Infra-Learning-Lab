@@ -1,0 +1,36 @@
+﻿{
+    "run_id":  "e08-workers_4-6de58d5604184d2aadafa92909d4d167",
+    "label":  "workers_4",
+    "users":  5,
+    "spawn_rate":  5,
+    "run_time":  "10s",
+    "worker_count":  4,
+    "sleep_ms":  25,
+    "requests_per_user":  5,
+    "task_processing_utilization":  0.4026429462682057508630770866,
+    "metrics":  {
+                    "task_count":  190,
+                    "broker_queue_length":  0,
+                    "queue_length":  0,
+                    "active_workers":  0,
+                    "pending_outbox_count":  0,
+                    "completed_last_minute":  190,
+                    "status_counts":  {
+                                          "pending":  0,
+                                          "queued":  0,
+                                          "running":  0,
+                                          "succeeded":  190,
+                                          "failed":  0,
+                                          "retrying":  0,
+                                          "cancelled":  0
+                                      },
+                    "average_queue_wait_ms":  98.77507368421053,
+                    "p95_queue_wait_ms":  198.21794999999992,
+                    "p99_queue_wait_ms":  278.32033999999976,
+                    "average_runtime_ms":  25.207429899999994,
+                    "p95_runtime_ms":  25.3275699,
+                    "p99_runtime_ms":  25.54842988,
+                    "worker_busy_time_ms":  12377.249,
+                    "observation_window_ms":  7685.003
+                }
+}

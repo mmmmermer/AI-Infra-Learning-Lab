@@ -1,0 +1,9 @@
+{
+  "task_type": "mock_rag",
+  "priority": 5,
+  "estimated_duration_ms": 250,
+  "input_json": {
+    "query": "long fixture",
+    "sleep_ms": 250
+  }
+}

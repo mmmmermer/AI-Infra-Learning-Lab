@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: p03-redis
+  labels:
+    app.kubernetes.io/name: p03-redis
+spec:
+  selector:
+    app.kubernetes.io/name: p03-redis
+  ports:
+    - name: redis
+      port: 6379
+      targetPort: redis
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: p03-redis
+  labels:
+    app.kubernetes.io/name: p03-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: p03-redis
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: p03-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:8.0.3-alpine@sha256:25c0ae32c6c2301798579f5944af53729766a18eff5660bbef196fc2e6214a9c
+          imagePullPolicy: IfNotPresent
+          args: ["redis-server", "--appendonly", "no"]
+          ports:
+            - name: redis
+              containerPort: 6379
+          readinessProbe:
+            exec:
+              command: ["redis-cli", "ping"]
+            periodSeconds: 3
+            timeoutSeconds: 2
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi

@@ -1,0 +1,9 @@
+title = "AI Infra Learning Lab secret scanning"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Known generic-api-key false positives in the unmodified MIT-licensed Obsidian plugin bundle"
+targetRules = ["generic-api-key"]
+paths = ['''^\.obsidian/plugins/obsidian-local-rest-api/main\.js$''']

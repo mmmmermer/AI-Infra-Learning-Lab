@@ -1,0 +1,44 @@
+﻿{
+    "status":  "verified local kind reference; learner pending",
+    "verified_at_utc":  "2026-07-11T06:14:05.0577606Z",
+    "kind_version":  "kind v0.32.0 go1.26.3 windows/amd64",
+    "node_image":  "kindest/node:v1.34.8@sha256:02722c2dedddcfc00febf5d27fbeb9b7b2c14294c82109ff4a85d89ac9ba3256",
+    "kubelet_version":  "v1.34.8",
+    "namespace":  "p03-lab",
+    "api_non_root_uid":  "10001",
+    "rag_permission_prefilter":  true,
+    "api_rollout_persistence":  true,
+    "replica_results":  [
+                            {
+                                "replicas":  1,
+                                "ready_replicas":  1,
+                                "submitted_tasks":  24,
+                                "succeeded_tasks":  24,
+                                "failed_tasks":  0,
+                                "distinct_worker_ids":  1,
+                                "p95_queue_wait_ms":  5608.9385999999995,
+                                "p99_queue_wait_ms":  5754.53561
+                            },
+                            {
+                                "replicas":  2,
+                                "ready_replicas":  2,
+                                "submitted_tasks":  24,
+                                "succeeded_tasks":  24,
+                                "failed_tasks":  0,
+                                "distinct_worker_ids":  2,
+                                "p95_queue_wait_ms":  2055.2242499999998,
+                                "p99_queue_wait_ms":  2104.46395
+                            },
+                            {
+                                "replicas":  4,
+                                "ready_replicas":  4,
+                                "submitted_tasks":  24,
+                                "succeeded_tasks":  24,
+                                "failed_tasks":  0,
+                                "distinct_worker_ids":  4,
+                                "p95_queue_wait_ms":  805.1313499999999,
+                                "p99_queue_wait_ms":  835.57974
+                            }
+                        ],
+    "storage_boundary":  "PostgreSQL and Redis use emptyDir; data is not durable across dependency pod replacement"
+}

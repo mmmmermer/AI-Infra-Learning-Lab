@@ -1,0 +1,9 @@
+{
+  "task_type": "rag_retrieval",
+  "priority": 5,
+  "estimated_duration_ms": 0,
+  "input_json": {
+    "query": "RAG 回答为什么需要来源引用？",
+    "top_k": 3
+  }
+}

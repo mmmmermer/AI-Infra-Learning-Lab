@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "status": "failed",
+  "root": "<repository>",
+  "directories_scanned": 155,
+  "files_scanned": 626,
+  "text_files_scanned": 622,
+  "issue_count": 22,
+  "issue_counts": {
+    "invalid_utf8": 22
+  },
+  "issues": [
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/custom_analysis.stdout.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/gitleaks.stderr.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/jscpd.stdout.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/lychee.stderr.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/markdownlint.stderr.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/markdownlint.stdout.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/pedagogy_analysis.stdout.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/vale.json",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/zhlint.stderr.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/content_quality_audit_2026-07-11/zhlint.stdout.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/content_quality_audit.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/e02_pytest.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/e03_pytest.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/e06_pytest.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/e10_pytest.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/finance_pytest.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/git_diff_check.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/mermaid.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/p01_pytest.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/p03_pytest.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/repository_validator.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    },
+    {
+      "category": "invalid_utf8",
+      "severity": "error",
+      "path": "00_路线总控/审计与整改/artifacts/full_validation_2026-07-11/repository_validator_post_m05.log",
+      "detail": "byte 0: invalid start byte; UTF-8 or UTF-8 with BOM is required"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+extends: substitution
+message: "术语应写为 '%s'，当前写法为 '%s'。"
+level: warning
+ignorecase: false
+swap:
+  FastApi: FastAPI
+  fastAPI: FastAPI
+  Github: GitHub
+  gitHub: GitHub
+  Pytorch: PyTorch
+  Postgresql: PostgreSQL
+  postgreSQL: PostgreSQL
+  K8S: K8s
+  KuberNetes: Kubernetes
+  Javascript: JavaScript
+  Typescript: TypeScript
+  Langchain: LangChain
+  Langgraph: LangGraph
+  Llamaindex: LlamaIndex

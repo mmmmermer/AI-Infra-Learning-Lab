@@ -1,0 +1,115 @@
+{
+    "schema_version":  "1.0",
+    "source":  "10_学习模块/M05_任务队列与调度/M05_任务队列与调度_章节教材.md",
+    "original_line_count":  7826,
+    "original_sha256":  "8bf5e15a2cd3757eb43ca80c5192018b075029c40d168ea224e86bb250e4c585",
+    "preserved_intro_range":  "1-118",
+    "preserved_completion_range":  "7818-7826",
+    "chapter_line_count":  7699,
+    "chapters":  [
+                     {
+                         "number":  0,
+                         "start":  119,
+                         "end":  303,
+                         "file":  "00_这门小教材怎么学.md",
+                         "line_count":  185,
+                         "sha256":  "0de6032ef45cbd4fb9c7a5933a537e89df40f697a37ffb3a687683ec7e541e13"
+                     },
+                     {
+                         "number":  1,
+                         "start":  304,
+                         "end":  652,
+                         "file":  "01_为什么调度不是简单排序.md",
+                         "line_count":  349,
+                         "sha256":  "5fcf23483524005142b879984458a6f05a1b204361760e967fe460456afa56b1"
+                     },
+                     {
+                         "number":  2,
+                         "start":  653,
+                         "end":  1381,
+                         "file":  "02_Task_Worker_Queue_最小模型.md",
+                         "line_count":  729,
+                         "sha256":  "945714cd557f6580cce8e97443a11853678bb193c16bd80fb0ee29695e0297e4"
+                     },
+                     {
+                         "number":  3,
+                         "start":  1382,
+                         "end":  2002,
+                         "file":  "03_FIFO_baseline.md",
+                         "line_count":  621,
+                         "sha256":  "00c32d28d8d95f53f356f2cf58b50cd19156bf3cec59cbdb561bbc1ed261cbf5"
+                     },
+                     {
+                         "number":  4,
+                         "start":  2003,
+                         "end":  2576,
+                         "file":  "04_Priority_和业务优先级.md",
+                         "line_count":  574,
+                         "sha256":  "ca84996dd9bb3dbe23ebfe74525464a6c26846d5aab05300fb7407ebbf9d5afc"
+                     },
+                     {
+                         "number":  5,
+                         "start":  2577,
+                         "end":  3153,
+                         "file":  "05_SJF_和平均等待时间.md",
+                         "line_count":  577,
+                         "sha256":  "68c20b240e8e3b02dc5bf98287c432610d1c15ef603d87ec14fc11592c50d82f"
+                     },
+                     {
+                         "number":  6,
+                         "start":  3154,
+                         "end":  3775,
+                         "file":  "06_指标_average_P95_P99_utilization.md",
+                         "line_count":  622,
+                         "sha256":  "7edcc04d6fa83bd22bbe4328369e57d6a42f562e0e70ce3b2da155739cc33cbf"
+                     },
+                     {
+                         "number":  7,
+                         "start":  3776,
+                         "end":  4621,
+                         "file":  "07_高峰负载实验.md",
+                         "line_count":  846,
+                         "sha256":  "b14fda9cdff68c9a99aac63e47208e54549a9fd5feef53da261671913d17bd00"
+                     },
+                     {
+                         "number":  8,
+                         "start":  4622,
+                         "end":  5366,
+                         "file":  "08_Cost-aware_调度.md",
+                         "line_count":  745,
+                         "sha256":  "809052301850e53b359fb7a4230251535feed1e18a84aeb9999f589e2d8b758d"
+                     },
+                     {
+                         "number":  9,
+                         "start":  5367,
+                         "end":  5979,
+                         "file":  "09_分组分析_谁被牺牲了.md",
+                         "line_count":  613,
+                         "sha256":  "e02d75a5e89093a62f0c6583b3741b9b3f9093ca57a4539f09cd068f8bb8610b"
+                     },
+                     {
+                         "number":  10,
+                         "start":  5980,
+                         "end":  6690,
+                         "file":  "10_Aging_最大等待保护.md",
+                         "line_count":  711,
+                         "sha256":  "c57fb706c5aa75d1391a6204affc0e9b66ace0d1084316baa2493faff51cc973"
+                     },
+                     {
+                         "number":  11,
+                         "start":  6691,
+                         "end":  7338,
+                         "file":  "11_多_worker_与资源利用率.md",
+                         "line_count":  648,
+                         "sha256":  "450ab938839f4dcaaccd2b03b3c1fc25be8bcf4c381e905efc5c46d36c56341c"
+                     },
+                     {
+                         "number":  12,
+                         "start":  7339,
+                         "end":  7817,
+                         "file":  "12_项目总结与复盘.md",
+                         "line_count":  479,
+                         "sha256":  "ae411699081177a6abee73e9f63ffa31da889cf06c27bc472724d13cded79aa7"
+                     }
+                 ]
+}

@@ -1,0 +1,6 @@
+extends: existence
+message: "发现已停止支持的 Python 版本基线 '%s'；若不是历史说明，应升级或明确环境边界。"
+level: warning
+ignorecase: false
+tokens:
+  - 'Python[ ]*3\.(8|9)\b'

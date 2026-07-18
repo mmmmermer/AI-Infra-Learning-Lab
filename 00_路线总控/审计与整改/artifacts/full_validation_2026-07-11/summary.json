@@ -1,0 +1,8 @@
+{
+    "status":  "passed",
+    "encoding_validation":  "passed",
+    "reference_project_count":  7,
+    "content_audit_skipped":  false,
+    "mermaid_skipped":  false,
+    "completed_at_utc":  "2026-07-13T06:08:20.8822281Z"
+}

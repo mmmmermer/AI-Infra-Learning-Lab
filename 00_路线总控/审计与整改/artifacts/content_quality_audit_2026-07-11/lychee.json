@@ -1,0 +1,2667 @@
+{
+  "total": 741,
+  "unique": 324,
+  "successful": 563,
+  "unknown": 0,
+  "unsupported": 0,
+  "timeouts": 69,
+  "redirects": 34,
+  "remaps": 0,
+  "excludes": 0,
+  "errors": 109,
+  "cached": 371,
+  "success_map": {},
+  "error_map": {
+    "10_学习模块\\F04_衍生品定价与随机过程导论\\F04_衍生品定价与随机过程导论_适配教材.md": [
+      {
+        "url": "https://doi.org/10.1086/260062",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1086/260062",
+          "redirects": [
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 766,
+          "column": 3
+        },
+        "duration": {
+          "secs": 61,
+          "nanos": 518832900
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M00_工具链与计算机基础_资料索引.md": [
+      {
+        "url": "https://missing.csail.mit.edu/2020/version-control/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 14,
+          "column": 26
+        }
+      },
+      {
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 21,
+          "column": 23
+        }
+      },
+      {
+        "url": "https://git-scm.com/book/en/v2",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 15,
+          "column": 18
+        }
+      }
+    ],
+    "10_学习模块\\M05_任务队列与调度\\99_归档\\M05_任务队列与调度_适配教材.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 538,
+          "column": 3
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M09_Kubernetes与云原生_资料索引.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 36,
+          "column": 26
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M12_金融投研AI场景_资料索引.md": [
+      {
+        "url": "https://docs.ragas.io/en/stable/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 35,
+          "column": 16
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 27,
+          "column": 20
+        }
+      },
+      {
+        "url": "https://www.sec.gov/about/reports-publications/investorpubsbegfinstmtguide",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 29,
+          "column": 50
+        }
+      },
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 28,
+          "column": 27
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F03_投资组合与风险管理_资料索引.md": [
+      {
+        "url": "https://doi.org/10.2469/faj.v58.n4.2453",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 29,
+          "column": 41
+        }
+      }
+    ],
+    "00_路线总控\\金融工程_AI计算机高结合领域与岗位能力地图.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 20,
+          "column": 39
+        },
+        "duration": {
+          "secs": 8,
+          "nanos": 104334000
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M08_监控压测与可观测性_资料索引.md": [
+      {
+        "url": "https://github.com/prometheus/client_python",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 26,
+          "column": 30
+        }
+      },
+      {
+        "url": "https://prometheus.io/docs/introduction/overview/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 23,
+          "column": 25
+        }
+      },
+      {
+        "url": "https://grafana.com/docs/k6/latest/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 28,
+          "column": 21
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\06_教材教学有效性与工具复核报告_2026-07-11.md": [
+      {
+        "url": "https://github.com/zhlint-project/zhlint",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://github.com/zhlint-project/zhlint))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 63,
+          "column": 3
+        },
+        "duration": {
+          "secs": 19,
+          "nanos": 245544500
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M03_RAG工程_资料索引.md": [
+      {
+        "url": "https://developers.llamaindex.ai/python/framework/understanding/rag/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 23,
+          "column": 25
+        }
+      }
+    ],
+    "10_学习模块\\M03_RAG工程\\M03_RAG工程_适配教材.md": [
+      {
+        "url": "https://developers.llamaindex.ai/python/framework/understanding/rag/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 45,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\F05_固定收益与利率基础\\F05_固定收益与利率基础_学习地图.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 61,
+          "column": 3
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F07_金融机器学习与模型风险_资料索引.md": [
+      {
+        "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 34,
+          "column": 41
+        }
+      },
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 35,
+          "column": 30
+        }
+      }
+    ],
+    "10_学习模块\\F00_金融市场与资产基础\\F00_金融市场与资产基础_学习地图.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 70,
+          "column": 3
+        },
+        "duration": {
+          "secs": 8,
+          "nanos": 736913500
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 71,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\M09_Kubernetes与云原生\\M09_Kubernetes与云原生_适配教材.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 31,
+          "column": 3
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\10_教材知识覆盖工程强度科研基础与讲解质量审计_2026-07-13.md": [
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 442,
+          "column": 3
+        },
+        "duration": {
+          "secs": 30,
+          "nanos": 891447400
+        }
+      }
+    ],
+    "10_学习模块\\F00_金融市场与资产基础\\F00_金融市场与资产基础_适配教材.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 526,
+          "column": 5
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 194723100
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 674,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 669,
+          "column": 3
+        },
+        "duration": {
+          "secs": 2,
+          "nanos": 544166700
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 671,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 672,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 779,
+          "column": 55
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 777,
+          "column": 49
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/docs/api/fred/series_observations.html))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 525,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 424556600
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 778,
+          "column": 51
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 779,
+          "column": 152
+        }
+      }
+    ],
+    "10_学习模块\\M11_科研方法与实验设计\\M11_科研方法与实验设计_学习地图.md": [
+      {
+        "url": "https://docs.ragas.io/en/stable/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 72,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\M11_科研方法与实验设计\\M11_科研方法与实验设计_适配教材.md": [
+      {
+        "url": "https://docs.ragas.io/en/stable/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1539,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 1538,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 1124,
+          "column": 3
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F01_概率统计与数学基础_资料索引.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 32,
+          "column": 30
+        }
+      }
+    ],
+    "10_学习模块\\F06_量化研究与回测工程\\F06_量化研究与回测工程_适配教材.md": [
+      {
+        "url": "https://doi.org/10.1111/1468-0262.00152",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1111/1468-0262.00152",
+          "redirects": [
+            {
+              "url": "http://doi.wiley.com/10.1111/1468-0262.00152",
+              "code": 302
+            },
+            {
+              "url": "https://onlinelibrary.wiley.com/doi/10.1111/1468-0262.00152",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 663,
+          "column": 19
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 937429500
+        }
+      },
+      {
+        "url": "https://doi.org/10.1093/rfs/5.4.553",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1093/rfs/5.4.553",
+          "redirects": [
+            {
+              "url": "https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/5.4.553",
+              "code": 302
+            },
+            {
+              "url": "https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/5.4.553",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 662,
+          "column": 20
+        },
+        "duration": {
+          "secs": 16,
+          "nanos": 16349000
+        }
+      },
+      {
+        "url": "https://doi.org/10.1093/rfs/hhv059",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1093/rfs/hhv059",
+          "redirects": [
+            {
+              "url": "https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/hhv059",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 665,
+          "column": 20
+        },
+        "duration": {
+          "secs": 6,
+          "nanos": 894911300
+        }
+      }
+    ],
+    "10_学习模块\\F02_Python金融数据与时间序列\\F02_Python金融数据与时间序列_学习地图.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 76,
+          "column": 3
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F00_金融市场与资产基础_资料索引.md": [
+      {
+        "url": "https://www.sec.gov/about/reports-publications/investorpubsbegfinstmtguide",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 34,
+          "column": 50
+        },
+        "duration": {
+          "secs": 15,
+          "nanos": 288594700
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 35,
+          "column": 14
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 36,
+          "column": 46
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 36,
+          "column": 183
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 33,
+          "column": 20
+        }
+      }
+    ],
+    "10_学习模块\\M12_金融投研AI场景\\M12_金融投研AI场景_适配教材.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 49,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://docs.ragas.io/en/stable/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 54,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 234,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 233,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 50,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://docs.ragas.io/en/stable/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 604,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\F01_概率统计与数学基础\\F01_概率统计与数学基础_适配教材.md": [
+      {
+        "url": "https://doi.org/10.2307/1913610",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.2307/1913610",
+          "redirects": [
+            {
+              "url": "https://www.jstor.org/stable/1913610?origin=crossref",
+              "code": 302
+            },
+            {
+              "url": "https://www.jstor.org/stable/1913610?origin=crossref",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 995,
+          "column": 21
+        },
+        "duration": {
+          "secs": 24,
+          "nanos": 686745200
+        }
+      }
+    ],
+    "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_学习地图.md": [
+      {
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+        "status": {
+          "text": "Network error: Connection failed. Check network connectivity and firewall settings (error sending request for url (https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview))",
+          "details": "Connection failed. Check network connectivity and firewall settings"
+        },
+        "span": {
+          "line": 84,
+          "column": 3
+        },
+        "duration": {
+          "secs": 16,
+          "nanos": 666846700
+        }
+      }
+    ],
+    "10_学习模块\\M12_金融投研AI场景\\M12_金融投研AI场景_学习地图.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 65,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://docs.ragas.io/en/stable/",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://docs.ragas.io/en/stable/))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 71,
+          "column": 3
+        },
+        "duration": {
+          "secs": 21,
+          "nanos": 988002400
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F06_量化研究与回测工程_资料索引.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 35,
+          "column": 30
+        }
+      }
+    ],
+    "10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md": [
+      {
+        "url": "https://www.python-httpx.org/quickstart/",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://www.python-httpx.org/quickstart/))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 2224,
+          "column": 20
+        },
+        "duration": {
+          "secs": 43,
+          "nanos": 985539200
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M10_AI推理系统_vLLM_Triton_资料索引.md": [
+      {
+        "url": "https://arxiv.org/abs/2309.06180",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 26,
+          "column": 31
+        }
+      },
+      {
+        "url": "https://kserve.github.io/website/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 29,
+          "column": 17
+        }
+      }
+    ],
+    "10_学习模块\\M05_任务队列与调度\\M05_任务队列与调度_学习地图.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 96,
+          "column": 3
+        },
+        "duration": {
+          "secs": 34,
+          "nanos": 286564400
+        }
+      }
+    ],
+    "10_学习模块\\F07_金融机器学习与模型风险\\F07_金融机器学习与模型风险_学习地图.md": [
+      {
+        "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 85,
+          "column": 3
+        }
+      }
+    ],
+    "00_路线总控\\金融工程与量化金融支线路线.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 57,
+          "column": 39
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F05_固定收益与利率基础_资料索引.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 31,
+          "column": 14
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M05_任务队列与调度_资料索引.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 34,
+          "column": 26
+        }
+      }
+    ],
+    "60_科研训练\\研究项目\\RQ01_RAG_Agent请求调度尾延迟\\01_相关论文与资料.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 12,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://arxiv.org/abs/2309.06180",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 20,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 19,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 31,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://doi.org/10.1145/75246.75248",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1145/75246.75248",
+          "redirects": [
+            {
+              "url": "https://dl.acm.org/doi/10.1145/75246.75248",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 11,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 456000900
+        }
+      }
+    ],
+    "00_路线总控\\金融工程高质量资料与路线审计.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 139,
+          "column": 20
+        },
+        "duration": {
+          "secs": 12,
+          "nanos": 908885500
+        }
+      },
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 83,
+          "column": 30
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/docs/api/fred/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 138,
+          "column": 14
+        },
+        "duration": {
+          "secs": 6,
+          "nanos": 180721500
+        }
+      }
+    ],
+    "99_归档\\旧版讲义\\M00_工具链与计算机基础_完整学习讲义.md": [
+      {
+        "url": "https://missing.csail.mit.edu/2020/course-shell/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 236,
+          "column": 33
+        }
+      },
+      {
+        "url": "https://git-scm.com/book/en/v2",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 454,
+          "column": 16
+        }
+      },
+      {
+        "url": "https://missing.csail.mit.edu/2020/version-control/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 453,
+          "column": 27
+        }
+      },
+      {
+        "url": "https://docs.python.org/3/library/logging.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 535,
+          "column": 24
+        }
+      }
+    ],
+    "10_学习模块\\F05_固定收益与利率基础\\F05_固定收益与利率基础_适配教材.md": [
+      {
+        "url": "https://fred.stlouisfed.org/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 620,
+          "column": 1
+        },
+        "duration": {
+          "secs": 28,
+          "nanos": 192903700
+        }
+      }
+    ],
+    "10_学习模块\\M02_后端API与服务化\\M02_后端API与服务化_学习地图.md": [
+      {
+        "url": "https://docs.pydantic.dev/",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://docs.pydantic.dev/))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "redirects": {
+          "origin": "https://docs.pydantic.dev/",
+          "redirects": [
+            {
+              "url": "https://pydantic.dev/docs/",
+              "code": 301
+            },
+            {
+              "url": "https://pydantic.dev/docs/",
+              "code": 301
+            }
+          ]
+        },
+        "span": {
+          "line": 55,
+          "column": 3
+        },
+        "duration": {
+          "secs": 19,
+          "nanos": 473440000
+        }
+      }
+    ],
+    "10_学习模块\\F08_金融工程任务与AI_Workload接口\\F08_金融工程任务与AI_Workload接口_适配教材.md": [
+      {
+        "url": "https://specs.opencontainers.org/image-spec/descriptor/",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://specs.opencontainers.org/image-spec/descriptor/))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 875,
+          "column": 45
+        },
+        "duration": {
+          "secs": 6,
+          "nanos": 809942800
+        }
+      },
+      {
+        "url": "https://slsa.dev/spec/v1.1/provenance",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://slsa.dev/spec/v1.1/provenance))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 876,
+          "column": 21
+        },
+        "duration": {
+          "secs": 6,
+          "nanos": 459889800
+        }
+      }
+    ],
+    "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md": [
+      {
+        "url": "https://missing.csail.mit.edu/2020/course-shell/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1449,
+          "column": 30
+        }
+      },
+      {
+        "url": "https://missing.csail.mit.edu/2020/version-control/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1450,
+          "column": 24
+        }
+      },
+      {
+        "url": "https://git-scm.com/book/en/v2",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1460,
+          "column": 16
+        }
+      }
+    ],
+    "10_学习模块\\F02_Python金融数据与时间序列\\F02_Python金融数据与时间序列_适配教材.md": [
+      {
+        "url": "https://alfred.stlouisfed.org/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://alfred.stlouisfed.org/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 1232,
+          "column": 3
+        },
+        "duration": {
+          "secs": 12,
+          "nanos": 784764000
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1230,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1231,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.quantconnect.com/docs/v2/writing-algorithms/universes/futures#06-Continuous-Contracts",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://www.quantconnect.com/docs/v2/writing-algorithms/universes/futures#06-Continuous-Contracts))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 842,
+          "column": 3
+        },
+        "duration": {
+          "secs": 3,
+          "nanos": 188468500
+        }
+      },
+      {
+        "url": "https://alfred.stlouisfed.org/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://alfred.stlouisfed.org/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 1388,
+          "column": 74
+        },
+        "duration": {
+          "secs": 9,
+          "nanos": 653330200
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1388,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\F03_投资组合与风险管理\\F03_投资组合与风险管理_适配教材.md": [
+      {
+        "url": "https://doi.org/10.2469/faj.v58.n4.2453",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.2469/faj.v58.n4.2453",
+          "redirects": [
+            {
+              "url": "https://www.tandfonline.com/doi/full/10.2469/faj.v58.n4.2453",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 575,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 691449300
+        }
+      },
+      {
+        "url": "https://doi.org/10.2469/faj.v58.n4.2453",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 775,
+          "column": 28
+        }
+      }
+    ],
+    "10_学习模块\\M08_监控压测与可观测性\\M08_监控压测与可观测性_适配教材.md": [
+      {
+        "url": "https://grafana.com/docs/k6/latest/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 68,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://prometheus.io/docs/introduction/overview/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 61,
+          "column": 3
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M01_Python工程能力_资料索引.md": [
+      {
+        "url": "https://www.python-httpx.org/quickstart/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 50,
+          "column": 20
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M06_数据库缓存与异步任务_资料索引.md": [
+      {
+        "url": "https://redis.io/docs/latest/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 20,
+          "column": 16
+        }
+      },
+      {
+        "url": "https://www.postgresql.org/docs/current/tutorial.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 19,
+          "column": 25
+        }
+      },
+      {
+        "url": "https://docs.celeryq.dev/en/stable/userguide/workers.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 22,
+          "column": 20
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M04_Agent工作流_资料索引.md": [
+      {
+        "url": "https://developers.openai.com/api/docs/guides/compaction",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 26,
+          "column": 23
+        }
+      }
+    ],
+    "10_学习模块\\M05_任务队列与调度\\教材章节\\00_这门小教材怎么学.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Network error: Connection closed unexpectedly. Server terminated early (error sending request for url (https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/))",
+          "details": "Connection closed unexpectedly. Server terminated early"
+        },
+        "span": {
+          "line": 123,
+          "column": 3
+        },
+        "duration": {
+          "secs": 8,
+          "nanos": 7741400
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M11_科研方法与实验设计_资料索引.md": [
+      {
+        "url": "https://github.com/openai/evals",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 29,
+          "column": 18
+        }
+      },
+      {
+        "url": "https://docs.langchain.com/langsmith/annotation-queues",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 31,
+          "column": 33
+        }
+      },
+      {
+        "url": "https://docs.ragas.io/en/stable/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 33,
+          "column": 16
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F02_Python金融数据与时间序列_资料索引.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 33,
+          "column": 20
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 30,
+          "column": 14
+        }
+      }
+    ],
+    "10_学习模块\\M09_Kubernetes与云原生\\M09_Kubernetes与云原生_学习地图.md": [
+      {
+        "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 65,
+          "column": 3
+        }
+      }
+    ]
+  },
+  "timeout_map": {
+    "10_学习模块\\M08_监控压测与可观测性\\M08_监控压测与可观测性_适配教材.md": [
+      {
+        "url": "https://github.com/giltene/wrk2#coordinated-omission",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 72,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 50895000
+        }
+      },
+      {
+        "url": "https://github.com/prometheus/client_python",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 64,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 35421300
+        }
+      },
+      {
+        "url": "https://github.com/tsenart/vegeta#usage-manual",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 73,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 54491400
+        }
+      },
+      {
+        "url": "https://www.usenix.org/conference/nsdi-06/open-versus-closed-cautionary-tale",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 71,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 26757300
+        }
+      }
+    ],
+    "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md": [
+      {
+        "url": "https://developers.openai.com/api/docs/guides/compaction",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 1091,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 31544000
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\07_教材章节质量契约.md": [
+      {
+        "url": "https://udlguidelines.cast.org/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 275,
+          "column": 3
+        },
+        "duration": {
+          "secs": 42,
+          "nanos": 43066500
+        }
+      },
+      {
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 279,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 46964700
+        }
+      },
+      {
+        "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/1",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 273,
+          "column": 3
+        },
+        "duration": {
+          "secs": 50,
+          "nanos": 31374900
+        }
+      },
+      {
+        "url": "https://open.umn.edu/opentextbooks/reviews/rubric",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 277,
+          "column": 3
+        },
+        "duration": {
+          "secs": 42,
+          "nanos": 40974100
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\08_自学教材规范符合性与首批改造报告_2026-07-12.md": [
+      {
+        "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/1",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 80,
+          "column": 3
+        },
+        "duration": {
+          "secs": 59,
+          "nanos": 42144100
+        }
+      },
+      {
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 83,
+          "column": 3
+        },
+        "duration": {
+          "secs": 37,
+          "nanos": 609370200
+        }
+      }
+    ],
+    "10_学习模块\\F04_衍生品定价与随机过程导论\\F04_衍生品定价与随机过程导论_适配教材.md": [
+      {
+        "url": "https://doi.org/10.1086/260062",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1086/260062",
+          "redirects": [
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            },
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 651,
+          "column": 3
+        },
+        "duration": {
+          "secs": 52,
+          "nanos": 97920600
+        }
+      }
+    ],
+    "10_学习模块\\F07_金融机器学习与模型风险\\F07_金融机器学习与模型风险_适配教材.md": [
+      {
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 1057,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 59367700
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F05_固定收益与利率基础_资料索引.md": [
+      {
+        "url": "https://docs.scipy.org/doc/scipy/reference/optimize.html",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 33,
+          "column": 20
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 39413900
+        }
+      }
+    ],
+    "10_学习模块\\M12_金融投研AI场景\\M12_金融投研AI场景_学习地图.md": [
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 66,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 46454800
+        }
+      },
+      {
+        "url": "https://www.sec.gov/investor/pubs/begfinstmtguide.htm",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 67,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 44414900
+        }
+      }
+    ],
+    "10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md": [
+      {
+        "url": "https://git-scm.com/book/en/v2",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 666,
+          "column": 26
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 46522500
+        }
+      },
+      {
+        "url": "https://www.python-httpx.org/quickstart/#sending-json-encoded-data",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 1186,
+          "column": 3
+        },
+        "duration": {
+          "secs": 42,
+          "nanos": 52962800
+        }
+      },
+      {
+        "url": "https://www.python-httpx.org/quickstart/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 1458,
+          "column": 20
+        },
+        "duration": {
+          "secs": 60,
+          "nanos": 918409800
+        }
+      },
+      {
+        "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 1403,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 37571000
+        }
+      },
+      {
+        "url": "https://missing.csail.mit.edu/2020/course-shell/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 324,
+          "column": 35
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 51012900
+        }
+      },
+      {
+        "url": "https://www.python-httpx.org/advanced/transports/#mock-transports",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 1184,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 38767400
+        }
+      },
+      {
+        "url": "https://missing.csail.mit.edu/2020/version-control/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 667,
+          "column": 25
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 40008300
+        }
+      }
+    ],
+    "10_学习模块\\M10_AI推理系统_vLLM_Triton\\M10_AI推理系统_vLLM_Triton_适配教材.md": [
+      {
+        "url": "https://kserve.github.io/website/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 39,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 36807300
+        }
+      },
+      {
+        "url": "https://prometheus.io/docs/practices/naming/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 35,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 39258000
+        }
+      },
+      {
+        "url": "https://arxiv.org/abs/2309.06180",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 28,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 51237200
+        }
+      },
+      {
+        "url": "https://huggingface.co/docs/transformers/main/en/cache_explanation",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 32,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 35305000
+        }
+      },
+      {
+        "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 33,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 45186100
+        }
+      },
+      {
+        "url": "https://www.usenix.org/conference/osdi24/presentation/zhong-yinmin",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 34,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 39064700
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M00_工具链与计算机基础_资料索引.md": [
+      {
+        "url": "https://docs.python.org/3/library/logging.html",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 18,
+          "column": 20
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 58694400
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M09_Kubernetes与云原生_资料索引.md": [
+      {
+        "url": "https://kind.sigs.k8s.io/docs/user/quick-start/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 37,
+          "column": 22
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 33502300
+        }
+      }
+    ],
+    "60_科研训练\\研究项目\\RQ01_RAG_Agent请求调度尾延迟\\01_相关论文与资料.md": [
+      {
+        "url": "https://www.usenix.org/conference/atc23/presentation/wu",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 21,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 70240300
+        }
+      },
+      {
+        "url": "https://doi.org/10.1145/2408776.2408794",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 10,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 38725900
+        }
+      },
+      {
+        "url": "https://doi.org/10.1287/opre.16.3.687",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 9,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 37517800
+        }
+      }
+    ],
+    "10_学习模块\\M08_监控压测与可观测性\\M08_监控压测与可观测性_学习地图.md": [
+      {
+        "url": "https://prometheus.io/docs/introduction/overview/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 62,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 55573000
+        }
+      },
+      {
+        "url": "https://grafana.com/docs/k6/latest/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 65,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 32041600
+        }
+      }
+    ],
+    "00_路线总控\\金融工程_AI计算机高结合领域与岗位能力地图.md": [
+      {
+        "url": "https://www.cmu.edu/mscf/academics/curriculum/index.html",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 19,
+          "column": 26
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 103659400
+        }
+      },
+      {
+        "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 25,
+          "column": 41
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 99747500
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M12_金融投研AI场景_资料索引.md": [
+      {
+        "url": "https://www.cfainstitute.org/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 30,
+          "column": 48
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 38758800
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\06_教材教学有效性与工具复核报告_2026-07-11.md": [
+      {
+        "url": "https://github.com/DavidAnson/markdownlint-cli2",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 62,
+          "column": 3
+        },
+        "duration": {
+          "secs": 59,
+          "nanos": 983127400
+        }
+      },
+      {
+        "url": "https://github.com/vale-cli/vale",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 64,
+          "column": 3
+        },
+        "duration": {
+          "secs": 60,
+          "nanos": 107229900
+        }
+      },
+      {
+        "url": "https://endoflife.date/docs/api/v1/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 121,
+          "column": 57
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 51601200
+        }
+      },
+      {
+        "url": "https://github.com/lycheeverse/lychee",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 65,
+          "column": 3
+        },
+        "duration": {
+          "secs": 46,
+          "nanos": 817125700
+        }
+      }
+    ],
+    "10_学习模块\\M11_科研方法与实验设计\\M11_科研方法与实验设计_学习地图.md": [
+      {
+        "url": "https://github.com/openai/openai-cookbook/tree/main/examples/evaluation",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 74,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 49782400
+        }
+      },
+      {
+        "url": "https://docs.langchain.com/langsmith/annotation-queues",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 75,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 50651200
+        }
+      },
+      {
+        "url": "https://github.com/openai/evals",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 73,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 50332900
+        }
+      }
+    ],
+    "10_学习模块\\M03_RAG工程\\M03_RAG工程_学习地图.md": [
+      {
+        "url": "https://developers.llamaindex.ai/python/framework/understanding/rag/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 77,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 61189600
+        }
+      }
+    ],
+    "10_学习模块\\F05_固定收益与利率基础\\F05_固定收益与利率基础_适配教材.md": [
+      {
+        "url": "https://www.treasurydirect.gov/marketable-securities/understanding-pricing/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 301,
+          "column": 3
+        },
+        "duration": {
+          "secs": 99,
+          "nanos": 885910600
+        }
+      },
+      {
+        "url": "https://www.treasurydirect.gov/marketable-securities/understanding-pricing/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 768,
+          "column": 3
+        },
+        "duration": {
+          "secs": 118,
+          "nanos": 28770500
+        }
+      },
+      {
+        "url": "https://www.treasurydirect.gov/marketable-securities/understanding-pricing/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 466,
+          "column": 3
+        },
+        "duration": {
+          "secs": 109,
+          "nanos": 399472700
+        }
+      },
+      {
+        "url": "https://www.treasurydirect.gov/marketable-securities/understanding-pricing/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 202,
+          "column": 3
+        },
+        "duration": {
+          "secs": 90,
+          "nanos": 86034200
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\09_权威技术学习文档格式对标与教材内容检查_2026-07-12.md": [
+      {
+        "url": "https://learn.microsoft.com/en-us/training/support/learn-content-types",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 158,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 28656400
+        }
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 159,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 45555400
+        }
+      }
+    ],
+    "10_学习模块\\M11_科研方法与实验设计\\M11_科研方法与实验设计_适配教材.md": [
+      {
+        "url": "https://arxiv.org/abs/2309.15217",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 1540,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 60551700
+        }
+      }
+    ],
+    "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_适配教材.md": [
+      {
+        "url": "https://docs.celeryq.dev/en/stable/userguide/workers.html",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 69,
+          "column": 3
+        },
+        "duration": {
+          "secs": 44,
+          "nanos": 41872500
+        }
+      },
+      {
+        "url": "https://www.postgresql.org/docs/current/tutorial.html",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 66,
+          "column": 3
+        },
+        "duration": {
+          "secs": 45,
+          "nanos": 668112600
+        }
+      },
+      {
+        "url": "https://redis.io/docs/latest/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 67,
+          "column": 3
+        },
+        "duration": {
+          "secs": 44,
+          "nanos": 816152400
+        }
+      }
+    ],
+    "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_学习地图.md": [
+      {
+        "url": "https://docs.celeryq.dev/en/stable/userguide/workers.html",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 67,
+          "column": 3
+        },
+        "duration": {
+          "secs": 43,
+          "nanos": 512242600
+        }
+      },
+      {
+        "url": "https://redis.io/docs/latest/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 65,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 44952600
+        }
+      },
+      {
+        "url": "https://python-rq.org/docs/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 66,
+          "column": 3
+        },
+        "duration": {
+          "secs": 42,
+          "nanos": 68687200
+        }
+      },
+      {
+        "url": "https://www.postgresql.org/docs/current/tutorial.html",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 64,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 32180700
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\10_教材知识覆盖工程强度科研基础与讲解质量审计_2026-07-13.md": [
+      {
+        "url": "https://pandas.pydata.org/docs/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 445,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 39325800
+        }
+      },
+      {
+        "url": "https://www.statsmodels.org/stable/",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 446,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 39037500
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M11_科研方法与实验设计_资料索引.md": [
+      {
+        "url": "https://arxiv.org/abs/2309.15217",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 34,
+          "column": 17
+        },
+        "duration": {
+          "secs": 42,
+          "nanos": 710659100
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\05_教材内容质量大检查报告_2026-07-11.md": [
+      {
+        "url": "https://github.com/lycheeverse/lychee",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 29,
+          "column": 3
+        },
+        "duration": {
+          "secs": 42,
+          "nanos": 36963500
+        }
+      },
+      {
+        "url": "https://github.com/zhlint-project/zhlint",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 27,
+          "column": 3
+        },
+        "duration": {
+          "secs": 43,
+          "nanos": 342008300
+        }
+      },
+      {
+        "url": "https://github.com/DavidAnson/markdownlint-cli2",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 26,
+          "column": 3
+        },
+        "duration": {
+          "secs": 50,
+          "nanos": 245776600
+        }
+      },
+      {
+        "url": "https://github.com/textlint/textlint",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 30,
+          "column": 3
+        },
+        "duration": {
+          "secs": 36,
+          "nanos": 226368200
+        }
+      },
+      {
+        "url": "https://github.com/vale-cli/vale",
+        "status": {
+          "text": "Timeout",
+          "details": "Request timed out"
+        },
+        "span": {
+          "line": 28,
+          "column": 3
+        },
+        "duration": {
+          "secs": 50,
+          "nanos": 159578500
+        }
+      }
+    ]
+  },
+  "suggestion_map": {},
+  "redirect_map": {},
+  "excluded_map": {},
+  "duration": {
+    "secs": 750,
+    "nanos": 882580800
+  },
+  "detailed_stats": false
+}

@@ -1,0 +1,287 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-07-18",
+  "default_max_age_days": 90,
+  "components": [
+    {
+      "component_id": "python",
+      "name": "Python",
+      "category": "runtime",
+      "baseline": "3.13.x; observed 3.13.2",
+      "status": "active",
+      "boundary": "Executable reference projects declare >=3.13,<3.14; the observed patch version is not a repository-wide lock.",
+      "source_url": "https://docs.python.org/3.13/",
+      "evidence": [
+        "40_实验练习/E02_后端API实验/e02_service/pyproject.toml",
+        "00_路线总控/审计与整改/artifacts/governance/version_resolution_2026-07-18.json"
+      ],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "fastapi",
+      "name": "FastAPI",
+      "category": "python-dependency",
+      "baseline": "0.116.1",
+      "status": "active",
+      "boundary": "Pinned in E02 and P03; this does not assert compatibility outside their declared Python range.",
+      "source_url": "https://fastapi.tiangolo.com/",
+      "evidence": [
+        "40_实验练习/E02_后端API实验/e02_service/pyproject.toml",
+        "50_项目产出/P03_AI_Workload_Platform/p03_service/pyproject.toml"
+      ],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "pydantic",
+      "name": "Pydantic",
+      "category": "python-dependency",
+      "baseline": "2.13.4 direct/pinned in E04; transitive in E02/P03",
+      "status": "review-required",
+      "boundary": "E04 directly pins 2.13.4, while E02/P03 currently resolve it transitively through FastAPI; define and test a shared supported range before promoting the repository-wide baseline to active.",
+      "source_url": "https://docs.pydantic.dev/",
+      "evidence": [
+        "00_路线总控/审计与整改/artifacts/governance/version_resolution_2026-07-18.json",
+        "40_实验练习/E04_Agent实验/e04_runtime_reference/pyproject.toml",
+        "50_项目产出/P03_AI_Workload_Platform/p03_service/pyproject.toml"
+      ],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 30
+    },
+    {
+      "component_id": "httpx",
+      "name": "HTTPX",
+      "category": "python-dependency",
+      "baseline": "0.28.1",
+      "status": "active",
+      "boundary": "Pinned as a development/test dependency in E02 and P03, not a production runtime dependency.",
+      "source_url": "https://www.python-httpx.org/",
+      "evidence": ["40_实验练习/E02_后端API实验/e02_service/pyproject.toml"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "pytest",
+      "name": "pytest",
+      "category": "test-tool",
+      "baseline": "8.4.2; P01 permits >=8.4,<9",
+      "status": "active",
+      "boundary": "Most reference projects pin 8.4.2; P01 intentionally declares a compatible range and should be reconciled before a single lock is claimed.",
+      "source_url": "https://docs.pytest.org/",
+      "evidence": [
+        "40_实验练习/E06_数据库异步任务实验/e06_sqlite_reference/pyproject.toml",
+        "50_项目产出/P01_Mini_Scheduler/mini_scheduler/pyproject.toml"
+      ],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "redis-py",
+      "name": "redis-py",
+      "category": "python-dependency",
+      "baseline": "8.0.1",
+      "status": "active",
+      "boundary": "P03 client library only; it is distinct from the Redis server image baseline.",
+      "source_url": "https://redis.readthedocs.io/",
+      "evidence": ["50_项目产出/P03_AI_Workload_Platform/p03_service/pyproject.toml"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "redis-server",
+      "name": "Redis server",
+      "category": "service-image",
+      "baseline": "8.0.3-alpine with pinned sha256 digest",
+      "status": "active",
+      "boundary": "Validated only for the P03 Compose/kind reference topology and its persistence/recovery exercises.",
+      "source_url": "https://redis.io/docs/latest/",
+      "evidence": ["50_项目产出/P03_AI_Workload_Platform/p03_service/compose.yaml"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "postgresql",
+      "name": "PostgreSQL",
+      "category": "service-image",
+      "baseline": "17.5-alpine with pinned sha256 digest",
+      "status": "active",
+      "boundary": "Validated for the P03 reference schema and recovery paths; production backup, PITR and upgrade policy remain outside this baseline.",
+      "source_url": "https://www.postgresql.org/docs/17/",
+      "evidence": ["50_项目产出/P03_AI_Workload_Platform/p03_service/compose.yaml"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "kind",
+      "name": "kind",
+      "category": "cluster-tool",
+      "baseline": "0.32.0",
+      "status": "active",
+      "boundary": "Windows local disposable cluster reference; binary SHA256 is pinned by the installer.",
+      "source_url": "https://kind.sigs.k8s.io/",
+      "evidence": ["40_实验练习/E09_K8s实验/kind_reference/scripts/install_kind.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "kubernetes",
+      "name": "Kubernetes",
+      "category": "cluster-runtime",
+      "baseline": "1.34.8 kind node image with pinned sha256 digest",
+      "status": "active",
+      "boundary": "Functional local reference only; no production Ingress/TLS, NetworkPolicy, HPA or Secret lifecycle claim.",
+      "source_url": "https://kubernetes.io/docs/",
+      "evidence": ["40_实验练习/E09_K8s实验/kind_reference/README.md"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 60
+    },
+    {
+      "component_id": "vllm",
+      "name": "vLLM",
+      "category": "inference-runtime",
+      "baseline": "not-selected",
+      "status": "blocked",
+      "boundary": "E10-03 has no independent Linux/WSL GPU execution evidence; choose a version only with its Python/PyTorch/CUDA/model compatibility matrix.",
+      "source_url": "https://docs.vllm.ai/en/latest/getting_started/installation/",
+      "evidence": ["40_实验练习/E10_推理服务实验/E10-03 vLLM 最小服务实验.md"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 30
+    },
+    {
+      "component_id": "nvidia-triton-inference-server",
+      "name": "NVIDIA Triton Inference Server",
+      "category": "inference-runtime",
+      "baseline": "not-selected",
+      "status": "design-only",
+      "boundary": "The curriculum explains system positioning only; no executable Triton Inference Server lab exists.",
+      "source_url": "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/",
+      "evidence": ["10_学习模块/M10_AI推理系统_vLLM_Triton/M10_AI推理系统_vLLM_Triton_适配教材.md"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 60
+    },
+    {
+      "component_id": "openai-triton-language",
+      "name": "Triton language/compiler",
+      "category": "gpu-compiler",
+      "baseline": "not-selected",
+      "status": "design-only",
+      "boundary": "Explicitly excluded from the first-pass curriculum and distinct from NVIDIA Triton Inference Server.",
+      "source_url": "https://triton-lang.org/",
+      "evidence": ["10_学习模块/M10_AI推理系统_vLLM_Triton/M10_AI推理系统_vLLM_Triton_适配教材.md"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 60
+    },
+    {
+      "component_id": "markdownlint-cli2",
+      "name": "markdownlint-cli2",
+      "category": "content-check-tool",
+      "baseline": "0.23.0",
+      "status": "active",
+      "boundary": "Pinned through npx; configured rules intentionally relax line length and table alignment for Chinese prose.",
+      "source_url": "https://github.com/DavidAnson/markdownlint-cli2",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/run_content_quality_audit.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "zhlint",
+      "name": "Zhlint",
+      "category": "content-check-tool",
+      "baseline": "0.8.2",
+      "status": "active",
+      "boundary": "Pinned through npx; findings are advisory after sanitized-input preprocessing.",
+      "source_url": "https://github.com/zhlint-project/zhlint",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/run_content_quality_audit.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "vale",
+      "name": "Vale",
+      "category": "content-check-tool",
+      "baseline": "3.15.1",
+      "status": "active",
+      "boundary": "Checksum-pinned Windows binary with repository-specific styles; raw alerts require human confirmation.",
+      "source_url": "https://vale.sh/",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/install_open_source_checkers.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "lychee",
+      "name": "Lychee",
+      "category": "content-check-tool",
+      "baseline": "0.24.2",
+      "status": "active",
+      "boundary": "Checksum-pinned Windows binary; network failures and access controls are reviewed separately from confirmed 404/410 results.",
+      "source_url": "https://github.com/lycheeverse/lychee",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/install_open_source_checkers.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "codespell",
+      "name": "Codespell",
+      "category": "content-check-tool",
+      "baseline": "2.4.2",
+      "status": "active",
+      "boundary": "Checksum-pinned wheel installed without dependencies; scope and ignore list are repository-specific.",
+      "source_url": "https://github.com/codespell-project/codespell",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/install_open_source_checkers.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "gitleaks",
+      "name": "Gitleaks",
+      "category": "security-check-tool",
+      "baseline": "8.30.1",
+      "status": "active",
+      "boundary": "Checksum-pinned binary; the current blocker scans tracked Git history with the private-key rule and does not prove absence of every secret class.",
+      "source_url": "https://github.com/gitleaks/gitleaks",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/install_open_source_checkers.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 60
+    },
+    {
+      "component_id": "jscpd",
+      "name": "jscpd",
+      "category": "content-check-tool",
+      "baseline": "5.0.12",
+      "status": "active",
+      "boundary": "Pinned through npx; duplicate groups are review candidates rather than automatic textbook defects.",
+      "source_url": "https://github.com/kucherenko/jscpd",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/run_content_quality_audit.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "mermaid-cli",
+      "name": "Mermaid CLI",
+      "category": "diagram-check-tool",
+      "baseline": "11.16.0",
+      "status": "active",
+      "boundary": "Pinned through npx for render validation; successful rendering does not establish accessibility metadata quality.",
+      "source_url": "https://github.com/mermaid-js/mermaid-cli",
+      "evidence": ["00_路线总控/审计与整改/tools/content_quality/validate_mermaid.ps1"],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "custom-content-audit",
+      "name": "Repository content quality analyzers",
+      "category": "repository-tool",
+      "baseline": "chapter analyzer schema 1.3 plus official-doc and pedagogy analyzers",
+      "status": "active",
+      "boundary": "Deterministic structural checks support human review; they do not certify learner outcomes or factual correctness by themselves.",
+      "source_url": "repository-local",
+      "evidence": [
+        "00_路线总控/审计与整改/tools/content_quality/analyze_textbook_quality.py",
+        "00_路线总控/审计与整改/tools/content_quality/analyze_official_docs_structure.py"
+      ],
+      "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    }
+  ]
+}

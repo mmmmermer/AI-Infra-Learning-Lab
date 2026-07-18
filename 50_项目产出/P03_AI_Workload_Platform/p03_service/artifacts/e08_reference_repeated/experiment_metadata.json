@@ -1,0 +1,20 @@
+﻿{
+    "status":  "single-machine local reference; not a capacity benchmark",
+    "generated_at_utc":  "2026-07-10T16:53:23.3342719Z",
+    "random_seed":  20260711,
+    "repeats":  3,
+    "worker_counts":  [
+                          1,
+                          2,
+                          4
+                      ],
+    "users":  5,
+    "spawn_rate":  5,
+    "run_time":  "5s",
+    "task_type":  "mock_rag",
+    "sleep_ms":  25,
+    "requests_per_user":  5,
+    "sample_interval_ms":  500,
+    "resource_sample_interval_ms":  1000,
+    "confidence_interval":  "two-sided 95% Student t interval over independent local runs"
+}

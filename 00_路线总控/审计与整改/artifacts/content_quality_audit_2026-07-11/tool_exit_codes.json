@@ -1,0 +1,23 @@
+{
+    "audit_status":  "passed_with_advisories",
+    "active_textbook_count":  22,
+    "blocker_failures":  [
+
+                         ],
+    "advisory_nonzero":  [
+                             "markdownlint",
+                             "zhlint",
+                             "lychee"
+                         ],
+    "markdownlint_exit":  1,
+    "zhlint_exit":  1,
+    "jscpd_exit":  0,
+    "vale_exit":  0,
+    "codespell_exit":  0,
+    "lychee_exit":  2,
+    "gitleaks_tracked_private_key_exit":  0,
+    "custom_analysis_exit":  0,
+    "content_quality_tests_exit":  0,
+    "pedagogy_analysis_exit":  0,
+    "official_docs_structure_exit":  0
+}

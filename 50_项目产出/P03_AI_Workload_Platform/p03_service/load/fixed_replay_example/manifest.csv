@@ -1,0 +1,7 @@
+request_id,planned_offset_ms,task_type,payload_ref
+r001,0,rag_retrieval,payloads/rag-public.json
+r002,100,mock_rag,payloads/mock-short.json
+r003,200,rag_retrieval,payloads/rag-public.json
+r004,300,mock_rag,payloads/mock-long.json
+r005,400,rag_retrieval,payloads/rag-public.json
+r006,500,mock_rag,payloads/mock-short.json

@@ -1,0 +1,13 @@
+task_type,task_count,average_wait_time,max_wait_time,p95_wait_time,average_turnaround_time,experiment
+batch_heavy,5.0,90.8,100.4,100.4,96.8,no_aging
+cheap_medium,5.0,9.599999999999996,13.199999999999996,13.199999999999996,12.599999999999996,no_aging
+long_low_token,5.0,35.4,49.0,49.0,43.4,no_aging
+low_priority_short,5.0,0.3999999999999986,0.40000000000000036,0.40000000000000036,1.5999999999999979,no_aging
+short_high_token,5.0,88.4,110.8,110.8,89.4,no_aging
+urgent_medium,5.0,67.2,72.8,72.8,71.2,no_aging
+batch_heavy,5.0,68.8,104.4,104.4,74.8,strong_aging
+cheap_medium,5.0,8.159999999999997,13.199999999999996,13.199999999999996,11.159999999999997,strong_aging
+long_low_token,5.0,57.4,93.0,93.0,65.4,strong_aging
+low_priority_short,5.0,3.9999999999999987,9.399999999999997,9.399999999999997,5.1999999999999975,strong_aging
+short_high_token,5.0,52.4,92.2,92.2,53.4,strong_aging
+urgent_medium,5.0,65.2,100.8,100.8,69.2,strong_aging

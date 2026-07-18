@@ -1,0 +1,18 @@
+[project]
+name = "e10-inference-reference"
+version = "0.1.0"
+description = "Deterministic inference workload model for E10"
+requires-python = ">=3.13,<3.14"
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["e10_reference"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

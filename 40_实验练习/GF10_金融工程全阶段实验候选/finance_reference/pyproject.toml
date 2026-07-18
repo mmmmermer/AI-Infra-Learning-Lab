@@ -1,0 +1,19 @@
+[project]
+name = "finance-reference"
+version = "0.1.0"
+description = "Verified reference implementations for the finance learning labs"
+requires-python = ">=3.13,<3.14"
+dependencies = ["pandas==2.3.3"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "scikit-learn==1.9.0"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["finance_reference"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

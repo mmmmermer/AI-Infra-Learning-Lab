@@ -1,0 +1,25 @@
+﻿{
+    "task_count":  65,
+    "broker_queue_length":  0,
+    "queue_length":  0,
+    "active_workers":  0,
+    "pending_outbox_count":  0,
+    "completed_last_minute":  65,
+    "status_counts":  {
+                          "pending":  0,
+                          "queued":  0,
+                          "running":  0,
+                          "succeeded":  65,
+                          "failed":  0,
+                          "retrying":  0,
+                          "cancelled":  0
+                      },
+    "average_queue_wait_ms":  247.51576923076922,
+    "p95_queue_wait_ms":  402.504,
+    "p99_queue_wait_ms":  422.98664,
+    "average_runtime_ms":  25.216336492307693,
+    "p95_runtime_ms":  25.3336634,
+    "p99_runtime_ms":  25.58129916,
+    "worker_busy_time_ms":  4439.604,
+    "observation_window_ms":  2875.388
+}

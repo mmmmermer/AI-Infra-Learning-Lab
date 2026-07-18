@@ -1,0 +1,19 @@
+[project]
+name = "e04-runtime-reference"
+version = "0.1.0"
+description = "Deterministic in-memory Agent runtime reference for E04"
+requires-python = ">=3.13,<3.14"
+dependencies = ["pydantic==2.13.4"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["e04_runtime"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

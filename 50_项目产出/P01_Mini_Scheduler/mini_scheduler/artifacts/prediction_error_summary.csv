@@ -1,0 +1,4 @@
+strategy,task_count,average_wait_time,max_wait_time,p95_wait_time,p99_wait_time,average_turnaround_time,max_ready_queue_length,worker_utilization
+fifo,24.0,46.85,89.7,88.8,89.7,50.85,22.0,1.0
+predicted_sjf,24.0,61.35,92.8,92.2,92.8,65.35000000000001,22.0,1.0
+oracle_sjf,24.0,30.349999999999998,85.0,76.4,85.0,34.35,22.0,1.0

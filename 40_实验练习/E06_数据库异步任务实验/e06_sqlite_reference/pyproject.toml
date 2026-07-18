@@ -1,0 +1,18 @@
+[project]
+name = "e06-sqlite-reference"
+version = "0.1.0"
+description = "SQLite outbox and worker recovery reference for E06"
+requires-python = ">=3.13,<3.14"
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["e06_reference"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

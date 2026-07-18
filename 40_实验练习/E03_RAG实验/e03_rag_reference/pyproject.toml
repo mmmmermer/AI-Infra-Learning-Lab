@@ -1,0 +1,19 @@
+[project]
+name = "e03-rag-reference"
+version = "0.2.0"
+description = "Deterministic BM25 reference for E03 RAG experiments"
+requires-python = ">=3.13,<3.14"
+dependencies = ["rank-bm25==0.2.2"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["rag_reference"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

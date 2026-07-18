@@ -1,0 +1,30 @@
+[project]
+name = "p03-workload-platform"
+version = "0.3.1"
+description = "P03 workload platform reference with isolated RAG retrieval workloads"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "fastapi==0.116.1",
+  "psycopg==3.3.4",
+  "psycopg-binary==3.3.4",
+  "redis==8.0.1",
+  "rank-bm25==0.2.2",
+  "uvicorn==0.35.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx==0.28.1",
+  "locust==2.45.0",
+  "pytest==8.4.2",
+]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
