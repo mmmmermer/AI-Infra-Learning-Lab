@@ -176,9 +176,9 @@
       "candidate_missing_cleanup_for_stateful_work": 17,
       "candidate_missing_ordered_procedure": 4
     },
-    "chapter_code_fence_count": 1471,
+    "chapter_code_fence_count": 1474,
     "tagged_code_fence_count": 64,
-    "untagged_code_fence_count": 1407
+    "untagged_code_fence_count": 1410
   },
   "documents": [
     {
@@ -5358,7 +5358,7 @@
       "source_file": "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md",
       "chapter": "第 10 章：从零实现最小 Agent Runtime",
       "start_line": 1431,
-      "end_line": 1789,
+      "end_line": 1913,
       "declared_content_type": "design-note",
       "candidate_content_type": "design-note",
       "candidate_content_type_source": "explicit_local_metadata",
@@ -5381,11 +5381,11 @@
         "acceptance": true,
         "sources": true
       },
-      "numbered_step_count": 6,
+      "numbered_step_count": 11,
       "stateful_candidate": false,
-      "code_fence_count": 9,
+      "code_fence_count": 12,
       "tagged_code_fence_count": 0,
-      "untagged_code_fence_count": 9,
+      "untagged_code_fence_count": 12,
       "review_flags": []
     },
     {

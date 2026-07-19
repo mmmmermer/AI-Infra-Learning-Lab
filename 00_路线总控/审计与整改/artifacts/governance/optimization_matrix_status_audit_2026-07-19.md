@@ -4,7 +4,7 @@
 
 审计对象：`11_教材内容优化任务矩阵.csv` 的 110 个任务、
 `optimization_matrix_status_evidence.csv` 的 34 条非 `planned` 状态证据，以及本轮 E03
-多格式 ingestion、lineage 删除与离线 generation 输出评估候选。
+多格式 ingestion/lineage/generation 与 E04 reducer/checkpoint 验收候选。
 
 本报告只判定**整改任务自身**是否达到 acceptance。它不表示学习者已经完成、整个模块已
 `instructional-ready`，也不表示 reference 已在生产拓扑、真实模型、真实 OCR 或所有平台上验证。
@@ -23,8 +23,8 @@
 
 | 状态 | 数量 | 本轮变化 |
 |---|---:|---|
-| `completed` | 25 | `M03-002` 从 `in-progress` 升格 |
-| `in-progress` | 7 | `M03-004` 仍保留，未被离线 evaluator 冒充为真实模型证据 |
+| `completed` | 26 | `M03-002`、`M04-003` 从 `in-progress` 升格 |
+| `in-progress` | 6 | `M03-004` 仍保留，未被离线 evaluator 冒充为真实模型证据 |
 | `blocked` | 2 | 无变化 |
 | `planned` | 76 | 无变化 |
 | `cancelled` | 0 | 无变化 |
@@ -43,7 +43,7 @@ ACL、cache scope、poison/unauthorized observation、敏感日志最小化、li
 generation 输出规则；它没有可信 adapter 捕获并绑定的真实模型 raw response，不能证明真实模型
 在 generation 阶段抵抗间接注入。
 
-## 本轮升格：M03-002
+## 本轮升格：M03-002 与 M04-003
 
 `M03-002` 的 acceptance 是：损坏、空白、重复和过期文档有确定状态，且删除后不可被检索或
 缓存命中。本轮证据已把该闭环从理想文本扩展到受控多格式 reference：
@@ -63,6 +63,16 @@ generation 输出规则；它没有可信 adapter 捕获并绑定的真实模型
 因此，`M03-002` 只在“离线教材 reference 与 provider adapter contract”范围内完成。生产 parser
 沙箱、真实 OCR、外部存储删除回执和进程重启恢复不是该升格的隐含结论。
 
+`M04-003` 的 acceptance 是事件转换原子、重放确定，以及取消后迟到 completion 不改变终态。
+本轮新增 `task-reducer/v1` 和事件 schema v1：批次按可信 sequence 排序，同 sequence 同 fingerprint
+幂等忽略、内容冲突拒绝；状态事件 task version 必须严格递增，观察事件保持版本；checkpoint 绑定
+reducer/schema、最后事件 fingerprint 和状态 SHA-256。10 个新增用例直接覆盖 owner cursor、乱序、
+重复、冲突、version gap、增量恢复、摘要篡改、版本不兼容、混合 task 和取消后迟到完成。
+
+严格 E04 回归为 `86 collected / 86 passed`。这只完成本地确定性 reducer/checkpoint 任务；没有
+数据库事件表、持久 checkpoint store、跨进程 crash recovery、broker delivery 或外部副作用对账，
+因此不能把 `M04-003 completed` 解读为生产 Agent Runtime 已完成。
+
 ## 继续进行
 
 | 任务 | 已有产物 | 仍缺条件 |
@@ -72,7 +82,6 @@ generation 输出规则；它没有可信 adapter 捕获并绑定的真实模型
 | `PED-012` | 版本 manifest、时效阈值与校验器 | 明确 owner、Pydantic 复核及 blocked 组件处理 |
 | `M03-003` | 检索失败分类、prompt 结构、离线 citation 存在性/quote 匹配基础 | answer rubric、拒答集和逐引用 entailment 核对 artifact |
 | `M03-004` | 离线对抗 corpus、ACL/cache、lineage 删除、脱敏报告和 simulated generation evaluator | 可信真实模型输出绑定与重复对抗运行 |
-| `M04-003` | version transition、审批 CAS、outbox/claim、迟到 finalize 与 cancel fence | reducer/checkpoint/replay、乱序/重复事件和跨进程恢复 |
 | `M06-005` | database-only 与 P03 end-to-end 范围分离，P03 有 worker fixture | E06 自有 FastAPI 集成及 `M06-004` 缓存前置 |
 
 相邻 reference 通过不会自动升格这些任务。

@@ -108,7 +108,7 @@ M03 RAG 能力
 - [[40_实验练习/E04_Agent实验/E04-05 Session 隔离与多轮追问|E04-05 Session 隔离与多轮追问]]
 - [[40_实验练习/E04_Agent实验/E04-06 Context 压缩与 memory 召回|E04-06 Context 压缩与 memory 召回]]
 - [[40_实验练习/E04_Agent实验/E04-07 异步工具与 busy state|E04-07 异步工具与 busy state]]
-- [[40_实验练习/E04_Agent实验/e04_runtime_reference/README|E04 确定性 Runtime reference（72 项测试）]]
+- [[40_实验练习/E04_Agent实验/e04_runtime_reference/README|E04 确定性 Runtime reference（86 项测试）]]
 
 E04-04 到 E04-07 是二阶段 Runtime 初版实验页，用于承接第 10 章，不代表已经亲手完成。
 

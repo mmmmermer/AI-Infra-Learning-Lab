@@ -30,8 +30,8 @@
       "h2": 21,
       "split_h1": 1
     },
-    "active_code_fence_count": 1583,
-    "active_visual_item_count": 379,
+    "active_code_fence_count": 1586,
+    "active_visual_item_count": 382,
     "active_accessibility": {
       "markdown_image_count": 0,
       "markdown_images_missing_alt": 0,
@@ -14066,13 +14066,13 @@
       "file": "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md",
       "status": "active",
       "chapter_detection_mode": "h2",
-      "line_count": 1923,
-      "heading_count": 109,
+      "line_count": 2047,
+      "heading_count": 114,
       "chapter_count": 10,
-      "code_fence_count": 60,
+      "code_fence_count": 63,
       "code_fence_language_counts": {
-        "text": 48,
-        "python": 8,
+        "text": 50,
+        "python": 9,
         "json": 2,
         "mermaid": 1,
         "powershell": 1
@@ -14080,7 +14080,7 @@
       "unclosed_fence_start_line": null,
       "external_url_count": 19,
       "visual_evidence": {
-        "table_count": 24,
+        "table_count": 27,
         "markdown_image_count": 0,
         "markdown_images_missing_alt": 0,
         "html_image_count": 0,
@@ -14088,40 +14088,40 @@
         "mermaid_count": 1,
         "mermaid_accessible_count": 0,
         "mermaid_missing_accessibility_count": 1,
-        "visual_item_count": 25
+        "visual_item_count": 28
       },
       "outside_chapter_role_headings": [
         {
           "heading": "项目贯通案例：P03 Agent 报告任务",
-          "line": 1790,
+          "line": 1914,
           "roles": [
             "examples"
           ]
         },
         {
           "heading": "目标",
-          "line": 1792,
+          "line": 1916,
           "roles": [
             "objectives"
           ]
         },
         {
           "heading": "最小验收",
-          "line": 1848,
+          "line": 1972,
           "roles": [
             "acceptance"
           ]
         },
         {
           "heading": "外部资料怎么用",
-          "line": 1874,
+          "line": 1998,
           "roles": [
             "sources"
           ]
         },
         {
           "heading": "本模块最终检查",
-          "line": 1909,
+          "line": 2033,
           "roles": [
             "acceptance"
           ]
@@ -15187,14 +15187,14 @@
           "title": "第 10 章：从零实现最小 Agent Runtime",
           "heading_level": 2,
           "start_line": 1431,
-          "end_line": 1789,
-          "line_count": 359,
-          "prose_character_count": 7912,
-          "heading_count": 13,
-          "code_fence_count": 9,
+          "end_line": 1913,
+          "line_count": 483,
+          "prose_character_count": 10700,
+          "heading_count": 18,
+          "code_fence_count": 12,
           "code_fence_language_counts": {
-            "text": 7,
-            "python": 1,
+            "text": 9,
+            "python": 2,
             "json": 1
           },
           "external_url_count": 8,
@@ -15236,14 +15236,14 @@
             "counterexamples": {
               "explicit_section_present": true,
               "section_count": 1,
-              "prose_character_count": 364,
+              "prose_character_count": 473,
               "code_fence_count": 0,
               "evidence": [
                 {
                   "heading": "10.9 常见错误",
-                  "heading_line": 1751,
-                  "end_line": 1764,
-                  "prose_character_count": 364,
+                  "heading_line": 1873,
+                  "end_line": 1888,
+                  "prose_character_count": 473,
                   "code_fence_count": 0
                 }
               ]
@@ -15256,8 +15256,8 @@
               "evidence": [
                 {
                   "heading": "10.10 小练习",
-                  "heading_line": 1765,
-                  "end_line": 1775,
+                  "heading_line": 1889,
+                  "end_line": 1899,
                   "prose_character_count": 558,
                   "code_fence_count": 0
                 }
@@ -15271,8 +15271,8 @@
               "evidence": [
                 {
                   "heading": "10.11 本章检查标准",
-                  "heading_line": 1776,
-                  "end_line": 1789,
+                  "heading_line": 1900,
+                  "end_line": 1913,
                   "prose_character_count": 359,
                   "code_fence_count": 0
                 }
@@ -15298,7 +15298,7 @@
             "examples"
           ],
           "visual_evidence": {
-            "table_count": 8,
+            "table_count": 11,
             "markdown_image_count": 0,
             "markdown_images_missing_alt": 0,
             "html_image_count": 0,
@@ -15306,7 +15306,7 @@
             "mermaid_count": 0,
             "mermaid_accessible_count": 0,
             "mermaid_missing_accessibility_count": 0,
-            "visual_item_count": 8
+            "visual_item_count": 11
           },
           "content_type": "design-note",
           "content_type_source": "chapter_marker",

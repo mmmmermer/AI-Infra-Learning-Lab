@@ -8,6 +8,7 @@ from .errors import (
     ApprovalExpired,
     ApprovalTargetMismatch,
     DuplicateDecision,
+    InvalidContract,
     InvalidTransition,
     NotFound,
     PermissionDenied,
@@ -91,6 +92,7 @@ class RuntimeEvent:
     to_status: str
     current_step: CurrentStep
     task_version: int
+    schema_version: int = 1
     metadata: tuple[tuple[str, str], ...] = ()
 
 
@@ -115,7 +117,9 @@ class SessionState:
     messages: tuple[str, ...]
 
 
-_ALLOWED_TRANSITIONS: dict[tuple[str, CurrentStep], set[tuple[str, CurrentStep]]] = {
+ALLOWED_TASK_TRANSITIONS: dict[
+    tuple[str, CurrentStep], set[tuple[str, CurrentStep]]
+] = {
     ("pending", None): {("queued", "retrieve_docs")},
     ("queued", "retrieve_docs"): {("running", "retrieve_docs")},
     ("running", "retrieve_docs"): {("running", "draft_report")},
@@ -187,6 +191,27 @@ class InMemoryRepository:
     def get_task(self, principal: Principal, task_id: str) -> AgentTask:
         with self._lock:
             return self._owned_task_locked(principal, task_id)
+
+    def task_events(
+        self,
+        principal: Principal,
+        task_id: str,
+        *,
+        after_sequence: int = 0,
+    ) -> tuple[RuntimeEvent, ...]:
+        if (
+            isinstance(after_sequence, bool)
+            or not isinstance(after_sequence, int)
+            or after_sequence < 0
+        ):
+            raise InvalidContract("after_sequence must be a non-negative integer")
+        with self._lock:
+            self._owned_task_locked(principal, task_id)
+            return tuple(
+                event
+                for event in self._events
+                if event.task_id == task_id and event.sequence > after_sequence
+            )
 
     def assert_active(
         self,
@@ -808,7 +833,7 @@ class InMemoryRepository:
             raise VersionConflict()
         source = (task.status, task.current_step)
         target = (status, current_step)
-        if target not in _ALLOWED_TRANSITIONS.get(source, set()):
+        if target not in ALLOWED_TASK_TRANSITIONS.get(source, set()):
             if not (allow_reclaim and source == target == ("running", "finalize_report")):
                 raise InvalidTransition(f"{source} -> {target}")
         updated = replace(

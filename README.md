@@ -5,7 +5,7 @@
 验收标准，而不是只收集链接。
 
 > 当前状态（2026-07-19）：Wave 0 的 10 项 P0 阻断任务已完成；更广的 14 项 P0 为
-> `completed` 13、`in-progress` 1。110 项优化矩阵为 `completed` 25、`in-progress` 7、
+> `completed` 13、`in-progress` 1。110 项优化矩阵为 `completed` 26、`in-progress` 6、
 > `blocked` 2、`planned` 76。仓库仍是持续建设的结构化教材，
 > 不应被描述为所有章节均已教学就绪，也没有获得真实目标学习者的整体试学验证。
 
@@ -48,7 +48,7 @@ README 中的标准 Markdown 链接。
 
 ## 可执行 Reference
 
-统一门禁覆盖十套 Python 3.13 reference，共 376 项测试：
+统一门禁覆盖十套 Python 3.13 reference，共 386 项测试：
 
 | Reference | 重点 |
 |---|---|
@@ -57,7 +57,7 @@ README 中的标准 Markdown 链接。
 | P01 Mini Scheduler | FIFO/Priority/SJF、尾延迟、aging、研究 pilot |
 | E02 Task API | FastAPI、server-owned Principal、资源授权与 OpenAPI |
 | E03 RAG | ACL 预过滤、检索评估、多格式 ingestion、HTML/PDF 解析边界、lineage 删除与离线 generation 输出评估 |
-| E04 Agent Runtime | capability/resource gate、审批 CAS/outbox、claim fencing、session 隔离 |
+| E04 Agent Runtime | capability/resource gate、审批 CAS/outbox、claim fencing、versioned reducer/checkpoint、session 隔离 |
 | E06 SQLite | task/outbox 事务、lease 与 stale-worker fencing |
 | E10 Inference | 确定性推理 workload 模拟与延迟统计 |
 | Finance Reference | 时间序列、跨资产收益率、久期与凸性边界 |

@@ -75,3 +75,23 @@ class DuplicateDecision(RuntimeReferenceError):
 
 class StaleClaim(RuntimeReferenceError):
     code = "stale_claim"
+
+
+class ReplayConflict(RuntimeReferenceError):
+    code = "replay_conflict"
+
+
+class ReplayGap(RuntimeReferenceError):
+    code = "replay_gap"
+
+
+class LateTerminalEvent(ReplayConflict):
+    code = "late_terminal_event"
+
+
+class CheckpointMismatch(RuntimeReferenceError):
+    code = "checkpoint_mismatch"
+
+
+class UnsupportedReplayVersion(RuntimeReferenceError):
+    code = "unsupported_replay_version"

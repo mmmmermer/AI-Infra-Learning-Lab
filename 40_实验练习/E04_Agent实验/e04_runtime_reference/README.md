@@ -16,6 +16,9 @@ P03、Redis 或数据库。
 - 副作用 handler 前先在共享 repository 原子标记 `effect_started`，再以 approval ID 幂等执行并标记 `effect_executed`。取消先提交时 handler 不会执行；开始栅栏先提交时拒绝硬取消。租约重领后旧 claim 不能 finalize，新 claim 必须重新取得执行证据。
 - `ToolSpec` 可声明 URL/path resolver；统一策略默认拒绝网络与文件目标，exact origin 和 root containment 校验在 handler 前执行。
 - 非预期 handler 异常归一为 `invalid_tool_output`；取消、终态失败和可重试 step 失败都有运行事件。
+- `RuntimeEvent` 使用 schema v1；owner-scoped cursor 只返回当前 principal 的 task 事件。
+- `task-reducer/v1` 先按可信 sequence 归一事件，再检查 task version、状态迁移和终态规则；精确重复幂等，同 sequence 冲突、version gap、混合 task 和取消后迟到 completion 均拒绝。
+- checkpoint 绑定 reducer/schema 版本、最后事件 fingerprint 和状态 SHA-256，可从游标重叠的一批事件增量恢复。
 - session 以 tenant、owner、session ID 复合键隔离，并用 `expected_version` 防止丢失更新。
 - 运维审计递归隐藏 credential、query、message、comment、URL、路径、payload 和 tool output；只有精确命名且满足 bool/int/fixed-hex 合同的元数据可保留，未知嵌套字段默认隐藏；审批决策另存不可变领域事件。
 
@@ -25,6 +28,7 @@ P03、Redis 或数据库。
 |---|---|
 | `e04_runtime/runtime.py` | 有限两步工作流、取消入口、审批恢复和失败归一化 |
 | `e04_runtime/repository.py` | CAS 状态迁移、approval/outbox/lease、副作用标记和领域事件 |
+| `e04_runtime/replay.py` | versioned reducer、乱序/重复归一、终态保护与 checkpoint 校验 |
 | `e04_runtime/tools.py` | 严格工具 schema、capability/resource 授权与 handler 边界 |
 | `e04_runtime/security.py` | 默认拒绝的 exact-origin URL 与 root-confined path validator |
 | `e04_runtime/audit.py` | 递归脱敏、限长的运维 trace |
@@ -37,7 +41,7 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-2026-07-18 的本地 reference 验证结果为 `76 passed`、`0 skipped`。这只证明本目录的确定性契约测试，
+2026-07-19 的本地 reference 验证结果为 `86 passed`、`0 skipped`。这只证明本目录的确定性契约测试，
 不表示学习者已经完成实验。
 
 定向证据：
@@ -46,16 +50,19 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pytest -q tests\test_cancellation_and_injection.py
 .\.venv\Scripts\python.exe -m pytest -q tests\test_target_security.py
 .\.venv\Scripts\python.exe -m pytest -q tests\test_sessions_and_audit.py
+.\.venv\Scripts\python.exe -m pytest -q tests\test_replay_and_checkpoint.py
 ```
 
 - `test_cancellation_and_injection.py`：cancel CAS、审批/outbox 联动、副作用栅栏、异常审计、恶意工具输出。
 - `test_approval_workflow.py`：审批 CAS、初始消息幂等重投、tenant-scoped claim、lease reclaim 与 finalize fencing。
 - `test_target_security.py`：默认 deny egress/path、SSRF、编码/绝对/UNC/盘符路径、解析后符号链接逃逸。
 - `test_sessions_and_audit.py`：tenant/owner/session/CAS 与嵌套 trace 脱敏。
+- `test_replay_and_checkpoint.py`：owner cursor、确定性重放、checkpoint、版本/摘要冲突和取消后迟到 completion。
 
 ## 未证明的能力
 
 - 这里的 `RLock` 只模拟单进程事务边界，不替代数据库行锁、隔离级别和持久化 outbox。
+- reducer/checkpoint 只对内存事件执行纯计算；没有持久事件表、checkpoint store、跨进程 crash recovery、broker delivery 或损坏日志修复。
 - 没有真实队列 relay、跨进程 crash recovery、生产认证、策略引擎、HTTP client、egress sandbox 或 tracing backend。
 - URL validator 证明静态 origin/IP literal 边界，不执行 DNS 解析或重定向；生产客户端必须对每次解析结果和 redirect 重新校验并在网络层阻断私网/metadata。
 - Path validator 会检查解析后 containment；reference 不替代操作系统沙箱、只读挂载、文件描述符级防竞态或 TOCTOU 防护。

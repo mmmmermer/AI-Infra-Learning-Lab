@@ -11,8 +11,9 @@ E04 用于训练可控 Agent 工作流、状态机、能力式工具门禁、失
 
 `e04_runtime_reference/` 已实现确定性内存版的 server-owned principal、capability/resource
 授权、检索前 ACL、状态/步骤分离、审批目标绑定与 CAS、resume outbox/claim fencing、幂等副作用、
-显式取消生命周期、默认拒绝的 URL/path validator、不可信输出边界、session 隔离和递归脱敏审计。
-2026-07-18 在 Python 3.13 项目 `.venv` 运行结果为 `76 passed`、`0 skipped`。
+显式取消生命周期、versioned reducer/checkpoint、乱序/重复/迟到事件、默认拒绝的 URL/path
+validator、不可信输出边界、session 隔离和递归脱敏审计。2026-07-19 在 Python 3.13 项目 `.venv`
+运行结果为 `86 passed`、`0 skipped`。
 
 该结果属于 `reference-verified`，不等于学习者已完成；它也不证明数据库事务、真实队列、模型
 抗注入、生产策略引擎或 P03 `/agent/*` 集成。命令和边界见
@@ -29,6 +30,7 @@ E04 用于训练可控 Agent 工作流、状态机、能力式工具门禁、失
 | path | `tests/test_target_security.py` | `..`、单双重编码、绝对路径、盘符/UNC、解析后符号链接逃逸均不调用 handler |
 | 不可信工具输出 | `tests/test_cancellation_and_injection.py` | 恶意 chunk 不改变 capability、proposal、审批与副作用次数 |
 | trace | `tests/test_sessions_and_audit.py` | 嵌套 credential、URL、私有路径、完整 tool output 与后缀伪装字段不出现在序列化记录 |
+| reducer / checkpoint | `tests/test_replay_and_checkpoint.py` | owner cursor、乱序确定性、精确重复、冲突/version gap、摘要篡改与取消后迟到 completion |
 
 ## 实验闭环
 
@@ -62,7 +64,7 @@ E04-04 到 E04-07 服务 P03 post-v0.3.1 / vNext planned Agent Runtime：把 age
 | [[40_实验练习/E04_Agent实验/E04-04 最小 Agent Runtime 实现|E04-04 最小 Agent Runtime 实现]] | 第 10 章：agent loop / ToolRegistry / 输出解析 | 从零写一个最小 loop，支持直接回复、工具调用、解析失败和 max_turns | runtime 伪代码、ToolRegistry、基础测试矩阵 |
 | [[40_实验练习/E04_Agent实验/E04-05 Session 隔离与多轮追问|E04-05 Session 隔离与多轮追问]] | 第 10 章：session / context | 验证 tenant/owner 隔离、CAS 与同一用户多窗口追问 | `session_id/version`、messages、所有权/并发/注入负向测试 |
 | [[40_实验练习/E04_Agent实验/E04-06 Context 压缩与 memory 召回|E04-06 Context 压缩与 memory 召回]] | 第 10 章：context_summary / memory_hits | 设计基础摘要压缩和保守 memory 召回规则 | context 构造表、memory 召回记录、误召回案例 |
-| [[40_实验练习/E04_Agent实验/E04-07 异步工具与 busy state|E04-07 异步工具与 busy state]] | 第 10 章：async tool / runtime_events | 处理长工具执行、新消息到达、工具完成事件和取消请求 | runtime 状态图、event 表、busy state 处理规则 |
+| [[40_实验练习/E04_Agent实验/E04-07 异步工具与 busy state|E04-07 异步工具与 busy state]] | 第 10 章：async tool / runtime_events | 处理长工具执行、新消息、取消、乱序/重复事件和 checkpoint 恢复 | runtime 状态图、versioned reducer、checkpoint、busy state 规则 |
 
 ## 最小练习路线
 
@@ -96,6 +98,8 @@ E04-04 到 E04-07 服务 P03 post-v0.3.1 / vNext planned Agent Runtime：把 age
 | expected_version / cancellation event | 显式取消 CAS 与迟到 worker 栅栏；理由只记是否存在和长度 |
 | egress origin / normalized path | 模型外执行目标策略；默认无策略即拒绝能力 |
 | trust_label / redaction result | 不可信输出与递归 trace 脱敏证明 |
+| event schema / reducer version | 事件兼容边界与确定性恢复规则 |
+| sequence / event fingerprint | 乱序归一、精确重复、冲突和 checkpoint 游标 |
 
 `status` 只表示任务生命周期（如 `running/waiting_approval/failed`），`current_step` 只表示业务
 步骤（如 `retrieve_docs/human_approval/finalize_report`），不能创建 `retrieving/finalizing` 之类
@@ -153,4 +157,5 @@ policy、扩大 capability、关闭审批或触发副作用。
 - [ ] 能用 CAS 取消任务并同步关闭 pending approval/outbox；已知副作用执行后不能伪装取消成功。
 - [ ] 能证明 SSRF/path 攻击在 handler 前被拒绝，恶意 tool output 不能升级为指令或扩大权限。
 - [ ] 能证明 trace 不包含嵌套 credential、原始 URL、私有路径和完整工具输出。
+- [ ] 能用 versioned reducer/checkpoint 确定性重放乱序事件，拒绝冲突、version gap 和取消后迟到 completion。
 - [ ] 能识别并避免 AutoGPT、多 Agent、强化学习 Agent、复杂规划算法等发散方向。

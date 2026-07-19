@@ -306,9 +306,9 @@
     {
       "file": "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md",
       "status": "active",
-      "line_count": 1923,
-      "heading_count": 110,
-      "code_fence_pairs": 60,
+      "line_count": 2047,
+      "heading_count": 115,
+      "code_fence_pairs": 63,
       "external_url_count": 19,
       "split_chapter_file_count": 0,
       "features": {
@@ -573,7 +573,7 @@
     },
     {
       "file": "00_路线总控\\审计与整改\\04_变更日志.md",
-      "line": 375,
+      "line": 383,
       "match": "TODO",
       "text": "M05 reference 导航；高风险成品循环、成本公式和预写结论改为接口、约束与 TODO。"
     },
@@ -737,7 +737,7 @@
   ],
   "missing_fence_language_count": 0,
   "missing_fence_languages": [],
-  "oversized_file_count": 3,
+  "oversized_file_count": 4,
   "oversized_files": [
     {
       "file": "10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md",
@@ -748,6 +748,11 @@
       "file": "10_学习模块\\M02_后端API与服务化\\M02_后端API与服务化_适配教材.md",
       "line_count": 2178,
       "character_count": 63106
+    },
+    {
+      "file": "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md",
+      "line_count": 2047,
+      "character_count": 57674
     },
     {
       "file": "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_适配教材.md",

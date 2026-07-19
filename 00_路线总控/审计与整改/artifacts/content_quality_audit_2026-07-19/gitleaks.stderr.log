@@ -1,10 +1,10 @@
-gitleaks.exe : 7:44PM INF Overriding enabled rules: private-key
+gitleaks.exe : 9:51PM INF Overriding enabled rules: private-key
 At <repository>\00_路线总控\审计与整改\tools\content_quality\run_content_quality_audit.ps1:163 char:5
 +     & $gitleaks git $root --enable-rule private-key --log-opts="--all ...
 +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (7:44PM INF Over...es: private-key:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (9:51PM INF Over...es: private-key:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
-7:44PM INF 3 commits scanned.
-7:44PM INF scanned ~57154508 bytes (57.15 MB) in 8.78s
-7:44PM INF no leaks found
+9:51PM INF 4 commits scanned.
+9:51PM INF scanned ~61327539 bytes (61.33 MB) in 7.31s
+9:51PM INF no leaks found

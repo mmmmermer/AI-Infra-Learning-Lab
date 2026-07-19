@@ -247,7 +247,7 @@ $projects = @(
     @{ Name = "e01"; Path = "40_实验练习\E01_Python基础练习\concurrency_reference"; ExpectedTests = 6 },
     @{ Name = "e02"; Path = "40_实验练习\E02_后端API实验\e02_service"; ExpectedTests = 29 },
     @{ Name = "e03"; Path = "40_实验练习\E03_RAG实验\e03_rag_reference"; ExpectedTests = 154 },
-    @{ Name = "e04"; Path = "40_实验练习\E04_Agent实验\e04_runtime_reference"; ExpectedTests = 76 },
+    @{ Name = "e04"; Path = "40_实验练习\E04_Agent实验\e04_runtime_reference"; ExpectedTests = 86 },
     @{ Name = "e06"; Path = "40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference"; ExpectedTests = 29 },
     @{ Name = "e10"; Path = "40_实验练习\E10_推理服务实验\e10_inference_reference"; ExpectedTests = 7 },
     @{ Name = "p01"; Path = "50_项目产出\P01_Mini_Scheduler\mini_scheduler"; ExpectedTests = 28 },
