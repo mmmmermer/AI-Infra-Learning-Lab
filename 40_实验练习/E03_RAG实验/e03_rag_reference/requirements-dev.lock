@@ -1,8 +1,10 @@
 colorama==0.4.6
+defusedxml==0.7.1
 iniconfig==2.3.0
 numpy==2.5.1
 packaging==26.2
 pluggy==1.6.0
 Pygments==2.20.0
 pytest==8.4.2
+pypdf==6.14.2
 rank-bm25==0.2.2

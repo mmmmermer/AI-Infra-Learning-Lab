@@ -2,7 +2,7 @@ promise_id,route,keyword,current_first_teaching,content_type,evidence,status,pub
 PR-001,AI Infra,Python 3.13 工程基础,M00/M01 对应 instructional 章,instructional,M00/M01 教材与 E00/E01 入口,current-covered,当前教材入口可用；学习者完成另计,保持版本门禁并补本人复现
 PR-002,AI Infra,FastAPI 请求响应与契约,M02 第 1-9 章,instructional,E02 29 tests,current-covered,最小 owner-scoped API reference 已验证；包含生命周期、deadline 与并发幂等,后续补生产 JWT/TLS/CORS 与跨副本语义
 PR-003,AI Infra,server-owned Principal 与对象授权,M02 第 10 章,instructional,E02 认证/scope/跨 owner/422 负测,current-covered-minimal,只覆盖 fixture principal 与资源授权顺序,生产身份提供方仍为后续项
-PR-004,AI Infra,RAG 检索评估与 ACL,M03 第 3-7 章,instructional,E03 35 tests,current-covered-retrieval,检索/ingestion 生命周期与安全结构可执行；generation 未验证,补真实生成与 citation/adversarial eval
+PR-004,AI Infra,RAG 检索评估与 ACL,M03 第 2-8 章,instructional,E03 154 tests,current-covered-offline-reference,检索/多格式 ingestion/lineage 删除与离线 generation 输出评估可执行；真实模型未验证,补可信真实输出绑定、模型对抗与逐引用 entailment eval
 PR-005,AI Infra,Agent 工作流与工具安全,M04 第 1-10 章,instructional-design,E04 deterministic in-memory runtime；76 tests 覆盖 schema、capability/resource、approval CAS/outbox、fencing、session isolation、取消与副作用边界,current-covered-minimal,只证明无模型、无网络、单进程 reference；不是 P03 或生产 Agent Runtime,继续 reducer/checkpoint/replay 与生产集成
 PR-006,AI Infra,调度策略与尾延迟,M05 第 0-12 章,instructional,P01 28 tests,current-covered-reference,调度 reference 可执行；研究结论只限证据范围,补 Pareto/burst、P03 service replay 与学习者复现
 PR-007,AI Infra,持久任务与可恢复队列,M06 第 4/6/7 章,instructional,E06 29 tests；PostgreSQL deadlock evidence；P03 Streams tests/current Compose,current-covered-reference,SQLite/PostgreSQL/Redis reference 已验证,补 E06 自有 FastAPI/缓存前置、备份恢复与外部副作用幂等

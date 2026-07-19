@@ -1,0 +1,165 @@
+npx.cmd : 00_路线总控/看板与索引/01_当前阶段任务看板.md:40 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Co
+ntext: "- 路线：[[基础薄弱版12周执行路线]]"]
+At <repository>\00_路线总控\审计与整改\tools\content_quality\run_content_quality_audit.ps1:105 char:5
++     & $npx --yes markdownlint-cli2@0.23.0 "**/*.md" `
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (00_路线总控/看板与索引/0...础薄弱版12周执行路线]]"]:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+00_路线总控/看板与索引/07_库结构说明与检查清单.md:34 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "
+- [x] 覆盖 Python、后端、RAG、Agent、调..."]
+00_路线总控/看板与索引/12_审计接力交接文档.md:15 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "1.
+ `00_路线总控/审计与整改/00_整改总控.md`（..."]
+00_路线总控/看板与索引/12_审计接力交接文档.md:69 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- 
+[ ] `GF07-03 特征泄漏案例.md` ← **..."]
+00_路线总控/看板与索引/12_审计接力交接文档.md:76 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- 
+[ ] M02 后端API、M03 RAG、M04 Ag..."]
+00_路线总控/看板与索引/12_审计接力交接文档.md:79 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- 
+[ ] E02-01/03、E03、E04、E06、E0..."]
+00_路线总控/看板与索引/12_审计接力交接文档.md:83 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- 
+[ ] P03 八个文件（确认 v0.1 待实现口径、契..."]
+00_路线总控/看板与索引/12_审计接力交接文档.md:88 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- 
+[ ] 复查所有改动措辞/链接一致（统一指向 M00 第..."]
+00_路线总控/看板与索引/13_M05精准增强交接文档.md:33:46 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/看板与索引/13_M05精准增强交接文档.md:88 error MD031/blanks-around-fences Fenced code blocks should be surrounded by blank li
+nes [Context: "```text"]
+00_路线总控/看板与索引/13_M05精准增强交接文档.md:96 error MD031/blanks-around-fences Fenced code blocks should be surrounded by blank li
+nes [Context: "```"]
+00_路线总控/看板与索引/13_M05精准增强交接文档.md:104 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context:
+ "- **M00**(工具链,M00):已按"讲义标准"完整改..."]
+00_路线总控/看板与索引/13_M05精准增强交接文档.md:109 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context:
+ "- 深度 = **L3.5**:理解机制 + 理解设计权衡 ..."]
+00_路线总控/看板与索引/13_M05精准增强交接文档.md:118 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context:
+ "- 当前主学习环境：Python 3.13 项目 `.ven..."]
+00_路线总控/两个月快速上手路线.md:7 error MD036/no-emphasis-as-heading Emphasis used instead of a heading [Context: "AI Workload Pla
+tform for RAG/A..."]
+00_路线总控/模板/论文阅读模板.md:30:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/实验记录模板.md:26:3 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/实验记录模板.md:27:3 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/实验记录模板.md:28:3 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/实验记录模板.md:38:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:11:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:12:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:13:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:17:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:24:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:25:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:26:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:30:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/项目主页模板.md:31:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块编写规范.md:68 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "1. 先有学习地
+图，再有教材正文，再有资料索引，再有实验。"]
+00_路线总控/模板/学习模块模板.md:11:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:12:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:13:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:17:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:18:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:19:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:23:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:24:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:25:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:52:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:53:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/学习模块模板.md:54:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/知识卡片模板.md:15:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/知识卡片模板.md:16:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/知识卡片模板.md:17:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/知识卡片模板.md:21:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/周计划模板.md:8:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/周计划模板.md:9:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/周计划模板.md:10:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/周计划模板.md:14:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/周计划模板.md:18:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/周计划模板.md:22:6 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/资料卡模板.md:19:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/资料卡模板.md:20:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/资料卡模板.md:21:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/资料卡模板.md:25:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/资料卡模板.md:29:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+00_路线总控/模板/资料卡模板.md:33:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:248 error MD031/blanks-around-fences Fenced code blocks should be surrounde
+d by blank lines [Context: "```text"]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:250 error MD031/blanks-around-fences Fenced code blocks should be surrounde
+d by blank lines [Context: "```"]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:252 error MD031/blanks-around-fences Fenced code blocks should be surrounde
+d by blank lines [Context: "```text"]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:291 error MD032/blanks-around-lists Lists should be surrounded by blank lin
+es [Context: "> 1. 报错是相对路径找不到，而相对路径是从 cwd 算的..."]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:465 error MD032/blanks-around-lists Lists should be surrounded by blank lin
+es [Context: "> - venv 隔离了**包**；"]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:478 error MD032/blanks-around-lists Lists should be surrounded by blank lin
+es [Context: "> 1. "激活"只对**当前这个终端窗口**生效（它改的是..."]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:802 error MD031/blanks-around-fences Fenced code blocks should be surrounde
+d by blank lines [Context: "> ```text"]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:805 error MD031/blanks-around-fences Fenced code blocks should be surrounde
+d by blank lines [Context: "> ```"]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md:928 error MD032/blanks-around-lists Lists should be surrounded by blank lin
+es [Context: "> - 你后面会把这些测试接入 **CI**（每次提交自动跑..."]
+10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_学习地图.md:81 error MD032/blanks-around-lists Lists should be surrounded by blank line
+s [Context: "- [[10_学习模块/M00_工具链与计算机基础/M00_..."]
+10_学习模块/M01_Python工程能力/M01_Python工程能力_学习地图.md:22 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "- 基础语法复盘：变量、条件、循环、list、dict"]
+10_学习模块/M01_Python工程能力/M01_Python工程能力_学习地图.md:46 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "- [[10_学习模块/M01_Python工程能力/M01..."]
+10_学习模块/M01_Python工程能力/M01_Python工程能力_学习地图.md:84 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "- [ ] 能独立写出 `Task`、`Worker`、FI..."]
+10_学习模块/M05_任务队列与调度/教材章节/01_为什么调度不是简单排序.md:174 error MD032/blanks-around-lists Lists should be surrounded by blank line
+s [Context: "> - 它在优化**什么**目标？"]
+10_学习模块/M05_任务队列与调度/教材章节/03_FIFO_baseline.md:374 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "> - FIFO 优化**什么**？答：公平和可预测性。先来..."]
+10_学习模块/M05_任务队列与调度/M05_任务队列与调度_学习地图.md:135 error MD032/blanks-around-lists Lists should be surrounded by blank lines [
+Context: "1. 先读本学习地图，确认 M05 的边界：本模块只负责任务..."]
+20_资料库/学习资料总索引.md:59 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- [[20_资料库/模块
+资料索引/M00_工具链与计算机基..."]
+40_实验练习/E05_调度实验/E05_调度实验_索引.md:36 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: 
+"- [[10_学习模块/M05_任务队列与调度/M05_任务..."]
+40_实验练习/E05_调度实验/E05-01 实现 FIFO 调度.md:14 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Con
+text: "- [[10_学习模块/M05_任务队列与调度/教材章节/0..."]
+40_实验练习/E05_调度实验/E05-01 实现 FIFO 调度.md:59 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Con
+text: "1. 定义 `Task` 和 `Worker` 的最小结构。"]
+40_实验练习/E05_调度实验/E05-02 比较 FIFO 和 Priority.md:15 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "- [[10_学习模块/M05_任务队列与调度/教材章节/0..."]
+40_实验练习/E05_调度实验/E05-03 高峰负载下的 P95 延迟实验.md:16 error MD032/blanks-around-lists Lists should be surrounded by blank lines
+ [Context: "- [[10_学习模块/M05_任务队列与调度/教材章节/0..."]
+40_实验练习/E05_调度实验/E05-03 高峰负载下的 P95 延迟实验.md:104 error MD032/blanks-around-lists Lists should be surrounded by blank line
+s [Context: "1. 先运行低负载和高峰负载对比："]
+40_实验练习/E05_调度实验/E05-04 成本感知调度模拟.md:22 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Conte
+xt: "- [[10_学习模块/M05_任务队列与调度/教材章节/0..."]
+40_实验练习/E05_调度实验/E05-04 成本感知调度模拟.md:111 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Cont
+ext: "1. 复用前面实验的 `Task` 模型。"]
+50_项目产出/项目展示素材/00_索引.md:44 error MD032/blanks-around-lists Lists should be surrounded by blank lines [Context: "- [x] P
+01 实验结果 CSV"]
+50_项目产出/项目展示素材/00_索引.md:51:21 error MD047/single-trailing-newline Files should end with a single newline character
+50_项目产出/P01_Mini_Scheduler/04_实验记录/00_实验索引.md:12 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "- [[40_实验练习/E05_调度实验/E05-01 实现..."]
+50_项目产出/P01_Mini_Scheduler/04_实验记录/00_实验索引.md:18 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "- [[50_项目产出/P01_Mini_Scheduler..."]
+50_项目产出/P01_Mini_Scheduler/04_实验记录/00_实验索引.md:37 error MD032/blanks-around-lists Lists should be surrounded by blank li
+nes [Context: "1. 先完成 E01-01，证明三种排序能跑通。"]
+50_项目产出/P01_Mini_Scheduler/04_实验记录/FIFO_vs_Priority_vs_SJF.md:26 error MD032/blanks-around-lists Lists should be surrou
+nded by blank lines [Context: "- FIFO"]
+50_项目产出/P01_Mini_Scheduler/04_实验记录/FIFO_vs_Priority_vs_SJF.md:396 error MD032/blanks-around-lists Lists should be surro
+unded by blank lines [Context: "1. 激活项目 Python 3.13 虚拟环境并运行："]
+50_项目产出/P01_Mini_Scheduler/06_README草稿.md:28 error MD032/blanks-around-lists Lists should be surrounded by blank lines 
+[Context: "- FIFO / Priority / SJF / Cost..."]
+50_项目产出/P01_Mini_Scheduler/06_README草稿.md:44 error MD031/blanks-around-fences Fenced code blocks should be surrounded b
+y blank lines [Context: "```text"]
+50_项目产出/P01_Mini_Scheduler/06_README草稿.md:463 error MD032/blanks-around-lists Lists should be surrounded by blank lines
+ [Context: "- 将 `artifacts/` 中的 SVG 图表嵌入最终..."]
+50_项目产出/P01_Mini_Scheduler/P01_Mini_Scheduler 项目主页.md:76 error MD032/blanks-around-lists Lists should be surrounded by 
+blank lines [Context: "- 多 worker 分配"]
+50_项目产出/P01_Mini_Scheduler/P01_Mini_Scheduler 项目主页.md:180 error MD032/blanks-around-lists Lists should be surrounded by
+ blank lines [Context: "- [[10_学习模块/M05_任务队列与调度/M05_任务..."]
+50_项目产出/P01_Mini_Scheduler/P01_Mini_Scheduler 项目主页.md:204 error MD032/blanks-around-lists Lists should be surrounded by
+ blank lines [Context: "- 接 FastAPI"]
+50_项目产出/P03_AI_Workload_Platform/08_阶段执行说明_v0.1.md:141 error MD032/blanks-around-lists Lists should be surrounded by bl
+ank lines [Context: "- [x] 有项目代码骨架。"]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:103:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:107:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:134:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:138:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:142:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:146:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:150:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:154:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]
+80_就业市场与简历/岗位拆解/JD拆解模板_学习路线映射.md:158:2 error MD009/no-trailing-spaces Trailing spaces [Expected: 0 or 2; Actual: 1]

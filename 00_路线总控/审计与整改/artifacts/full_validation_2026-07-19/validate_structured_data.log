@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "file_counts": {
+    "csv": 99,
+    "json": 98,
+    "toml": 11
+  },
+  "errors": []
+}

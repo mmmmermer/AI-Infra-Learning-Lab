@@ -1,0 +1,192 @@
+{
+  "source_version": "fixture-v1",
+  "source_locator": "s3://private-bucket/course/source-do-not-log",
+  "cases": [
+    {
+      "case_id": "plain-text",
+      "payload_kind": "utf8",
+      "content": "PLAIN-MARKER-11 plain text ingestion evidence.",
+      "media_type": "text/plain",
+      "expected_markers": ["PLAIN-MARKER-11"],
+      "expected_status": "parsed",
+      "expected_detail": "parsed",
+      "expected_contains": "PLAIN-MARKER-11",
+      "minimum_blocks": 1
+    },
+    {
+      "case_id": "markdown",
+      "payload_kind": "utf8",
+      "content": "# MARKDOWN-MARKER-22\n\nA paragraph with **evidence**.",
+      "media_type": "text/markdown",
+      "expected_markers": ["MARKDOWN-MARKER-22"],
+      "expected_status": "parsed",
+      "expected_detail": "parsed",
+      "expected_contains": "MARKDOWN-MARKER-22",
+      "minimum_blocks": 2
+    },
+    {
+      "case_id": "html-with-table",
+      "payload_kind": "utf8",
+      "content": "<!doctype html><html><body><h1>HTML-MARKER-33</h1><script>DO-NOT-EXTRACT-991</script><table><tr><th>metric</th><th>value</th></tr><tr><td>recall</td><td>1.0</td></tr></table></body></html>",
+      "media_type": "text/html; charset=utf-8",
+      "expected_markers": ["HTML-MARKER-33"],
+      "expected_status": "parsed",
+      "expected_detail": "parsed",
+      "expected_contains": "HTML-MARKER-33",
+      "expected_not_contains": "DO-NOT-EXTRACT-991",
+      "minimum_tables": 1,
+      "minimum_rows": 2,
+      "minimum_cells": 4
+    },
+    {
+      "case_id": "csv-table",
+      "payload_kind": "utf8",
+      "content": "marker,score\nCSV-MARKER-44,0.97\n",
+      "media_type": "text/csv",
+      "expected_markers": ["CSV-MARKER-44"],
+      "expected_status": "parsed",
+      "expected_detail": "parsed",
+      "expected_contains": "CSV-MARKER-44",
+      "minimum_tables": 1,
+      "minimum_rows": 2,
+      "minimum_cells": 4
+    },
+    {
+      "case_id": "tsv-table",
+      "payload_kind": "utf8",
+      "content": "marker\tstatus\nTSV-MARKER-45\tverified\n",
+      "media_type": "text/tab-separated-values",
+      "expected_markers": ["TSV-MARKER-45"],
+      "expected_status": "parsed",
+      "expected_detail": "parsed",
+      "expected_contains": "TSV-MARKER-45",
+      "minimum_tables": 1,
+      "minimum_rows": 2,
+      "minimum_cells": 4
+    },
+    {
+      "case_id": "docx-paragraph-and-table",
+      "payload_kind": "docx",
+      "paragraphs": ["DOCX-MARKER-55 document paragraph."],
+      "table": [["metric", "value"], ["recall", "1.0"]],
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "expected_markers": ["DOCX-MARKER-55"],
+      "expected_status": "parsed",
+      "expected_detail": "parsed",
+      "expected_contains": "DOCX-MARKER-55",
+      "minimum_tables": 1,
+      "minimum_rows": 2,
+      "minimum_cells": 4,
+      "minimum_archive_entries": 3
+    },
+    {
+      "case_id": "xlsx-shared-strings",
+      "payload_kind": "xlsx",
+      "rows": [["marker", "status"], ["XLSX-MARKER-66", "verified"]],
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "expected_markers": ["XLSX-MARKER-66"],
+      "expected_status": "parsed",
+      "expected_detail": "parsed",
+      "expected_contains": "XLSX-MARKER-66",
+      "minimum_tables": 1,
+      "minimum_rows": 2,
+      "minimum_cells": 4,
+      "minimum_archive_entries": 6
+    },
+    {
+      "case_id": "pdf-through-pypdf-provider",
+      "payload_kind": "pdf_text",
+      "content": "PDF-MARKER-77",
+      "use_pypdf_provider": true,
+      "media_type": "application/pdf",
+      "expected_markers": ["PDF-MARKER-77"],
+      "expected_status": "parsed_via_adapter",
+      "expected_detail": "parsed_via_pdf_adapter",
+      "expected_contains": "PDF-MARKER-77",
+      "minimum_pages": 1
+    },
+    {
+      "case_id": "blank-pdf-through-pypdf-provider",
+      "payload_kind": "pdf_blank",
+      "use_pypdf_provider": true,
+      "media_type": "application/pdf",
+      "expected_markers": [],
+      "expected_status": "rejected_blank",
+      "expected_detail": "blank_after_parse",
+      "minimum_pages": 1
+    },
+    {
+      "case_id": "scan-only-pdf",
+      "payload_kind": "pdf_scan",
+      "media_type": "application/pdf",
+      "expected_markers": [],
+      "expected_status": "rejected_adapter_required",
+      "expected_detail": "pdf_adapter_required"
+    },
+    {
+      "case_id": "pdf-parser-required",
+      "payload_kind": "pdf_text",
+      "content": "PDF-NEEDS-ADAPTER-78",
+      "media_type": "application/pdf",
+      "expected_markers": [],
+      "expected_status": "rejected_adapter_required",
+      "expected_detail": "pdf_adapter_required"
+    },
+    {
+      "case_id": "png-through-ocr-adapter",
+      "payload_kind": "png",
+      "adapter_text": "OCR-MARKER-88 extracted from the image.",
+      "use_adapter": true,
+      "media_type": "image/png",
+      "expected_markers": ["OCR-MARKER-88"],
+      "expected_status": "parsed_via_adapter",
+      "expected_detail": "parsed_via_ocr_adapter",
+      "expected_contains": "OCR-MARKER-88",
+      "minimum_pages": 1
+    },
+    {
+      "case_id": "blank-after-parse",
+      "payload_kind": "utf8",
+      "content": "  \n\t  ",
+      "media_type": "text/plain",
+      "expected_markers": [],
+      "expected_status": "rejected_blank",
+      "expected_detail": "blank_after_parse"
+    },
+    {
+      "case_id": "corrupt-utf8",
+      "payload_kind": "base64",
+      "content": "//79",
+      "media_type": "text/plain",
+      "expected_markers": [],
+      "expected_status": "rejected_corrupt",
+      "expected_detail": "invalid_utf8"
+    },
+    {
+      "case_id": "pdf-signature-mismatch",
+      "payload_kind": "utf8",
+      "content": "not a PDF",
+      "media_type": "application/pdf",
+      "expected_markers": [],
+      "expected_status": "rejected_corrupt",
+      "expected_detail": "media_signature_mismatch"
+    },
+    {
+      "case_id": "corrupt-docx",
+      "payload_kind": "zip_prefix_only",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "expected_markers": [],
+      "expected_status": "rejected_corrupt",
+      "expected_detail": "invalid_docx_archive"
+    },
+    {
+      "case_id": "unsupported-media",
+      "payload_kind": "utf8",
+      "content": "unsupported",
+      "media_type": "application/x-unknown",
+      "expected_markers": [],
+      "expected_status": "rejected_unsupported_media",
+      "expected_detail": "unsupported_media_type"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+py.exe : ..............
+At <repository>\00_路线总控\审计与整改\tools\content_quality\run_content_quality_audit.ps1:175 char:5
++     & $python -3.13 -m unittest discover -s $configRoot -p "test_*.py ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (..............:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+----------------------------------------------------------------------
+Ran 14 tests in 0.210s
+
+OK

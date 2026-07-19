@@ -5,15 +5,15 @@
 ## 文件
 
 - `optimization_matrix_status_evidence.csv`：为全部非 `planned` 状态保存原因与证据，避免改变
-  `11_教材内容优化任务矩阵.csv` 的固定 17 列结构。2026-07-18 的证据审计结果为
-  `completed` 24 项、`in-progress` 8 项、`blocked` 2 项、`planned` 76 项。
-- `optimization_matrix_status_audit_2026-07-18.md`：记录逐状态判定规则、任务清单和未完成条件。
+  `11_教材内容优化任务矩阵.csv` 的固定 17 列结构。2026-07-19 的证据审计结果为
+  `completed` 25 项、`in-progress` 7 项、`blocked` 2 项、`planned` 76 项。
+- `optimization_matrix_status_audit_2026-07-19.md`：记录逐状态判定规则、任务清单和未完成条件。
 - `provenance_license_ledger.csv`：按资产类别登记来源、版本、许可/条款、修改情况、再分发判断、
   证据和复核日期。`unknown / review-required` 是明确的未决状态，不是许可结论。
 - `version_manifest.json`：记录运行时、依赖、服务、集群、推理系统和内容检查工具的当前基线与边界。
 - `version_resolution_2026-07-18.json`：本机版本观察记录，只作清单复核证据，不替代依赖锁文件。
 
-来源台账当前有 33 项登记，其中 1 项第三方 bundle 已完成许可证核验，其余 32 项仍为
+来源台账当前有 35 项登记，其中 1 项第三方 bundle 已完成许可证核验，其余 34 项仍为
 `review-required`。校验通过只证明台账结构、证据路径和状态逻辑有效，不代表这些未决项已经
 获得再分发批准。
 

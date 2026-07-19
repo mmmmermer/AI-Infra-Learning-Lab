@@ -1,0 +1,1009 @@
+{
+  "total": 889,
+  "unique": 393,
+  "successful": 824,
+  "unknown": 0,
+  "unsupported": 0,
+  "timeouts": 0,
+  "redirects": 44,
+  "remaps": 0,
+  "excludes": 0,
+  "errors": 65,
+  "cached": 433,
+  "success_map": {},
+  "error_map": {
+    "10_学习模块\\F03_投资组合与风险管理\\F03_投资组合与风险管理_适配教材.md": [
+      {
+        "url": "https://doi.org/10.2469/faj.v58.n4.2453",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.2469/faj.v58.n4.2453",
+          "redirects": [
+            {
+              "url": "https://www.tandfonline.com/doi/full/10.2469/faj.v58.n4.2453",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 775,
+          "column": 28
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 849094300
+        }
+      },
+      {
+        "url": "https://doi.org/10.2469/faj.v58.n4.2453",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.2469/faj.v58.n4.2453",
+          "redirects": [
+            {
+              "url": "https://www.tandfonline.com/doi/full/10.2469/faj.v58.n4.2453",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 575,
+          "column": 3
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 540032400
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F05_固定收益与利率基础_资料索引.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 31,
+          "column": 14
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F00_金融市场与资产基础_资料索引.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 36,
+          "column": 46
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 35,
+          "column": 14
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 36,
+          "column": 183
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 33,
+          "column": 20
+        }
+      },
+      {
+        "url": "https://www.sec.gov/about/reports-publications/investorpubsbegfinstmtguide",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 34,
+          "column": 50
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 214813800
+        }
+      }
+    ],
+    "10_学习模块\\F02_Python金融数据与时间序列\\F02_Python金融数据与时间序列_适配教材.md": [
+      {
+        "url": "https://alfred.stlouisfed.org/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://alfred.stlouisfed.org/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 1232,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 868050500
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1231,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://alfred.stlouisfed.org/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://alfred.stlouisfed.org/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 1388,
+          "column": 74
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 66949800
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1230,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 1388,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\F00_金融市场与资产基础\\F00_金融市场与资产基础_学习地图.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 71,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 70,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\F02_Python金融数据与时间序列\\F02_Python金融数据与时间序列_学习地图.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 76,
+          "column": 3
+        }
+      }
+    ],
+    "00_路线总控\\审计与整改\\10_教材知识覆盖工程强度科研基础与讲解质量审计_2026-07-13.md": [
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 446,
+          "column": 3
+        },
+        "duration": {
+          "secs": 3,
+          "nanos": 165076800
+        }
+      }
+    ],
+    "10_学习模块\\F00_金融市场与资产基础\\F00_金融市场与资产基础_适配教材.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/docs/api/fred/series_observations.html))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 525,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 234871700
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 777,
+          "column": 49
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 779,
+          "column": 55
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 671,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 526,
+          "column": 5
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 233844900
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 778,
+          "column": 51
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 779,
+          "column": 152
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_observations.html",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 672,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 674,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 283584900
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 669,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 150516800
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\M12_金融投研AI场景_资料索引.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 27,
+          "column": 20
+        }
+      },
+      {
+        "url": "https://www.sec.gov/about/reports-publications/investorpubsbegfinstmtguide",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 29,
+          "column": 50
+        }
+      },
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 28,
+          "column": 27
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F03_投资组合与风险管理_资料索引.md": [
+      {
+        "url": "https://doi.org/10.2469/faj.v58.n4.2453",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 29,
+          "column": 41
+        }
+      }
+    ],
+    "60_科研训练\\研究项目\\RQ01_RAG_Agent请求调度尾延迟\\01_相关论文与资料.md": [
+      {
+        "url": "https://doi.org/10.1145/75246.75248",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1145/75246.75248",
+          "redirects": [
+            {
+              "url": "https://dl.acm.org/doi/10.1145/75246.75248",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 11,
+          "column": 3
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 365939400
+        }
+      },
+      {
+        "url": "https://doi.org/10.1145/2408776.2408794",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1145/2408776.2408794",
+          "redirects": [
+            {
+              "url": "https://dl.acm.org/doi/10.1145/2408776.2408794",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 10,
+          "column": 3
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 355514300
+        }
+      },
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 31,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://doi.org/10.1287/opre.16.3.687",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1287/opre.16.3.687",
+          "redirects": [
+            {
+              "url": "https://pubsonline.informs.org/doi/10.1287/opre.16.3.687",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 9,
+          "column": 3
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 124653100
+        }
+      }
+    ],
+    "10_学习模块\\F05_固定收益与利率基础\\F05_固定收益与利率基础_适配教材.md": [
+      {
+        "url": "https://fred.stlouisfed.org/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 620,
+          "column": 1
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 208210300
+        }
+      }
+    ],
+    "00_路线总控\\金融工程_AI计算机高结合领域与岗位能力地图.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 20,
+          "column": 39
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 992364000
+        }
+      },
+      {
+        "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 25,
+          "column": 41
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 477506700
+        }
+      }
+    ],
+    "00_路线总控\\金融工程高质量资料与路线审计.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 139,
+          "column": 20
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 661193600
+        }
+      },
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 83,
+          "column": 30
+        }
+      },
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Network error: HTTP/2 protocol error. Server may not support HTTP/2 properly (error sending request for url (https://fred.stlouisfed.org/docs/api/fred/))",
+          "details": "HTTP/2 protocol error. Server may not support HTTP/2 properly"
+        },
+        "span": {
+          "line": 138,
+          "column": 14
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 644997700
+        }
+      }
+    ],
+    "10_学习模块\\F04_衍生品定价与随机过程导论\\F04_衍生品定价与随机过程导论_适配教材.md": [
+      {
+        "url": "https://doi.org/10.1086/260062",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1086/260062",
+          "redirects": [
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 766,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 875019500
+        }
+      },
+      {
+        "url": "https://doi.org/10.1086/260062",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1086/260062",
+          "redirects": [
+            {
+              "url": "https://www.journals.uchicago.edu/doi/10.1086/260062",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 651,
+          "column": 3
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 174432000
+        }
+      }
+    ],
+    "10_学习模块\\F06_量化研究与回测工程\\F06_量化研究与回测工程_适配教材.md": [
+      {
+        "url": "https://doi.org/10.1111/1468-0262.00152",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1111/1468-0262.00152",
+          "redirects": [
+            {
+              "url": "http://doi.wiley.com/10.1111/1468-0262.00152",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 663,
+          "column": 19
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 876189800
+        }
+      },
+      {
+        "url": "https://doi.org/10.1093/rfs/5.4.553",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1093/rfs/5.4.553",
+          "redirects": [
+            {
+              "url": "https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/5.4.553",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 662,
+          "column": 20
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 398121600
+        }
+      },
+      {
+        "url": "https://doi.org/10.1093/rfs/hhv059",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.1093/rfs/hhv059",
+          "redirects": [
+            {
+              "url": "https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/hhv059",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 665,
+          "column": 20
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 185220400
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F06_量化研究与回测工程_资料索引.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 35,
+          "column": 30
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F07_金融机器学习与模型风险_资料索引.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 35,
+          "column": 30
+        }
+      },
+      {
+        "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 34,
+          "column": 41
+        }
+      }
+    ],
+    "00_路线总控\\金融工程与量化金融支线路线.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 57,
+          "column": 39
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 517248600
+        }
+      }
+    ],
+    "10_学习模块\\M11_科研方法与实验设计\\M11_科研方法与实验设计_适配教材.md": [
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 1125,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 1539,
+          "column": 3
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F02_Python金融数据与时间序列_资料索引.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 30,
+          "column": 14
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 33,
+          "column": 20
+        }
+      }
+    ],
+    "10_学习模块\\M12_金融投研AI场景\\M12_金融投研AI场景_学习地图.md": [
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 66,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 226800500
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 65,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.sec.gov/investor/pubs/begfinstmtguide.htm",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 67,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 222294000
+        }
+      }
+    ],
+    "10_学习模块\\M12_金融投研AI场景\\M12_金融投研AI场景_适配教材.md": [
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 49,
+          "column": 3
+        }
+      },
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 234,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 71419100
+        }
+      },
+      {
+        "url": "https://www.sec.gov/os/accessing-edgar-data",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "span": {
+          "line": 50,
+          "column": 3
+        },
+        "duration": {
+          "secs": 0,
+          "nanos": 121070200
+        }
+      },
+      {
+        "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 233,
+          "column": 3
+        }
+      }
+    ],
+    "10_学习模块\\F01_概率统计与数学基础\\F01_概率统计与数学基础_适配教材.md": [
+      {
+        "url": "https://doi.org/10.2307/1913610",
+        "status": {
+          "text": "Rejected status code: 403 Forbidden",
+          "code": 403
+        },
+        "redirects": {
+          "origin": "https://doi.org/10.2307/1913610",
+          "redirects": [
+            {
+              "url": "https://www.jstor.org/stable/1913610?origin=crossref",
+              "code": 302
+            }
+          ]
+        },
+        "span": {
+          "line": 995,
+          "column": 21
+        },
+        "duration": {
+          "secs": 1,
+          "nanos": 708436600
+        }
+      }
+    ],
+    "10_学习模块\\F07_金融机器学习与模型风险\\F07_金融机器学习与模型风险_学习地图.md": [
+      {
+        "url": "https://www.citadelsecurities.com/careers/details/machine-learning-researcher-phd-graduate-us/",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 85,
+          "column": 3
+        }
+      }
+    ],
+    "20_资料库\\模块资料索引\\F01_概率统计与数学基础_资料索引.md": [
+      {
+        "url": "https://ieor.columbia.edu/msfe-curriculum",
+        "status": {
+          "text": "Error (cached)",
+          "code": 403
+        },
+        "span": {
+          "line": 32,
+          "column": 30
+        }
+      }
+    ],
+    "10_学习模块\\F05_固定收益与利率基础\\F05_固定收益与利率基础_学习地图.md": [
+      {
+        "url": "https://fred.stlouisfed.org/docs/api/fred/",
+        "status": {
+          "text": "Error (cached)",
+          "details": "Error (cached)"
+        },
+        "span": {
+          "line": 61,
+          "column": 3
+        }
+      }
+    ]
+  },
+  "timeout_map": {},
+  "suggestion_map": {},
+  "redirect_map": {},
+  "excluded_map": {},
+  "duration": {
+    "secs": 44,
+    "nanos": 344242400
+  },
+  "detailed_stats": false
+}

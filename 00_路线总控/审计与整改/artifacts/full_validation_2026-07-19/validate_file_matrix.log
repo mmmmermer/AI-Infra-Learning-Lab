@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "matrix": "00_路线总控/审计与整改/01_逐文件整改矩阵.csv",
+  "row_count": 500,
+  "expected_file_count": 500,
+  "review_state_counts": {
+    "rule-reviewed": 359,
+    "unreviewed": 141
+  },
+  "content_status_counts": {
+    "content-reviewed": 279,
+    "draft": 80,
+    "unassessed": 141
+  },
+  "implementation_status_counts": {
+    "absent": 1,
+    "executable": 197,
+    "not-applicable": 95,
+    "partial": 46,
+    "runnable-task": 20,
+    "unassessed": 141
+  },
+  "verification_status_counts": {
+    "unassessed": 141,
+    "unverified": 74,
+    "verified": 285
+  },
+  "learning_blocker_count": 0,
+  "errors": []
+}

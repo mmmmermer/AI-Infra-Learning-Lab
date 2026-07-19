@@ -1,0 +1,18 @@
+{
+  "status": "inventory-passed-with-review-required",
+  "ledger": "00_路线总控/审计与整改/artifacts/governance/provenance_license_ledger.csv",
+  "row_count": 35,
+  "asset_classes": [
+    "authored-content",
+    "data-or-fixture",
+    "dependency",
+    "external-material",
+    "generated-artifact",
+    "reference-code",
+    "tool"
+  ],
+  "verified_count": 1,
+  "review_required_count": 34,
+  "redistribution_fully_approved": false,
+  "errors": []
+}

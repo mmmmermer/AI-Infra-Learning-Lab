@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "manifest": "00_路线总控/审计与整改/artifacts/governance/version_manifest.json",
+  "as_of": "2026-07-19",
+  "component_count": 26,
+  "stale_components": [],
+  "errors": []
+}

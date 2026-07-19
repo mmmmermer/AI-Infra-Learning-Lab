@@ -61,7 +61,19 @@ $includedNames = @(".gitignore", ".dockerignore", "Dockerfile")
 $separatorPattern = [regex]::Escape([IO.Path]::DirectorySeparatorChar)
 $excludedPattern = "$separatorPattern(\.git|\.obsidian|\.tools|\.venv|__pycache__|\.pytest_cache|[^$separatorPattern]+\.egg-info)($separatorPattern|$)"
 
-$files = Get-ChildItem -LiteralPath $root -Recurse -File | Where-Object {
+$enumerationErrors = @()
+$allFiles = Get-ChildItem -LiteralPath $root -Recurse -File `
+    -ErrorAction SilentlyContinue -ErrorVariable +enumerationErrors
+$unexpectedEnumerationErrors = @(
+    $enumerationErrors | Where-Object {
+        ([string]$_.TargetObject) -notmatch $excludedPattern
+    }
+)
+if ($unexpectedEnumerationErrors.Count -gt 0) {
+    throw "source enumeration failed outside excluded directories: $($unexpectedEnumerationErrors[0])"
+}
+
+$files = $allFiles | Where-Object {
     $_.FullName -notmatch $excludedPattern -and
     $_.FullName -ne $matrixPath -and
     ($includedExtensions -contains $_.Extension.ToLowerInvariant() -or $includedNames -contains $_.Name)
@@ -95,7 +107,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "*\tools\validate_rq01_artifacts.py") {
         Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "RQ01 发布文件 SHA-256、压缩快照安全路径、成员覆盖和逐文件哈希门禁"
     } elseif ($relative -like "*\tools\run_full_validation.ps1") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "十套 Python 3.13 reference 共 257 项测试，逐项目期望数与总数由统一门禁校验，并覆盖编码、内容、Mermaid、编译和发布候选 diff"
+        Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "十套 Python 3.13 reference 共 376 项测试，逐项目期望数与总数由统一门禁校验，并覆盖编码、内容、Mermaid、编译和发布候选 diff"
     } elseif ($relative -like "*\tools\rebuild_remediation_matrix.ps1") {
         Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "逐文件覆盖与自动分诊清单生成器已执行；未复核文件保持 unassessed/unknown"
     } elseif ($relative -like "*\tools\split_m05_textbook.ps1") {
@@ -170,7 +182,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "40_实验练习\E02_后端API实验\e02_service\*") {
         Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "FastAPI 生命周期、跨租户隔离、幂等并发契约和自包含 OpenAPI schema reference，共 29 项测试通过"
     } elseif ($relative -like "40_实验练习\E03_RAG实验\e03_rag_reference\*") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "固定 corpus、黄金集、BM25、权限前置过滤、摄取生命周期和评估闭环，共 35 项测试通过"
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "固定 corpus/黄金集、三路检索、权限前置过滤、多格式解析质量、并发 retention/cache lineage 删除和离线 generation 输出评估闭环，共 154 项测试通过"
     } elseif ($relative -like "40_实验练习\E04_Agent实验\e04_runtime_reference\*") {
         Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "确定性 Agent runtime、授权审批、fencing、取消竞态、跨租户隔离和审计，共 76 项测试通过"
     } elseif ($relative -like "40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference\*") {
@@ -223,7 +235,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "40_实验练习\E02_后端API实验\*") {
         Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "文档已对齐单一 FastAPI 项目"
     } elseif ($relative -like "40_实验练习\E03_RAG实验\*") {
-        Set-Classification $row "content-reviewed" "partial" "verified" "medium" "保留" "检索和权限闭环 verified，generation partial"
+        Set-Classification $row "content-reviewed" "partial" "verified" "medium" "保留" "检索、权限、多格式 ingestion、lineage 删除与 simulated generation evaluator 已验证；真实模型 generation 和生产解析隔离仍为 partial"
     } elseif ($relative -like "40_实验练习\E06_数据库异步任务实验\*") {
         Set-Classification $row "content-reviewed" "partial" "verified" "medium" "保留" "SQLite 语义闭环与 P03 PostgreSQL/Redis 多服务 reference 均已验证"
     } elseif ($relative -like "40_实验练习\GF00_*\GF02-01*" -or

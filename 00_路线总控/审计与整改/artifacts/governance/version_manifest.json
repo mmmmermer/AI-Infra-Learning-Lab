@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-07-18",
+  "last_updated": "2026-07-19",
   "default_max_age_days": 90,
   "components": [
     {
@@ -59,6 +59,48 @@
       "source_url": "https://www.python-httpx.org/",
       "evidence": ["40_实验练习/E02_后端API实验/e02_service/pyproject.toml"],
       "last_reviewed": "2026-07-18",
+      "max_age_days": 90
+    },
+    {
+      "component_id": "defusedxml",
+      "name": "defusedxml",
+      "category": "python-dependency",
+      "baseline": "0.7.1",
+      "status": "active",
+      "boundary": "Pinned for E03 XML parsing inside DOCX/XLSX adapters. It hardens XML parsing against entity and DTD attacks but does not sandbox ZIP/XML processing or certify untrusted Office files as safe.",
+      "source_url": "https://pypi.org/project/defusedxml/",
+      "evidence": [
+        "40_实验练习/E03_RAG实验/e03_rag_reference/pyproject.toml",
+        "40_实验练习/E03_RAG实验/e03_rag_reference/requirements-dev.lock"
+      ],
+      "last_reviewed": "2026-07-19",
+      "max_age_days": 60
+    },
+    {
+      "component_id": "pypdf",
+      "name": "pypdf",
+      "category": "python-dependency",
+      "baseline": "6.14.2",
+      "status": "active",
+      "boundary": "Pinned for the E03 born-digital PDF adapter. Image-only files route to OCR-required; the in-process adapter is not a parser sandbox or production document-security certification.",
+      "source_url": "https://pypdf.readthedocs.io/",
+      "evidence": [
+        "40_实验练习/E03_RAG实验/e03_rag_reference/pyproject.toml",
+        "40_实验练习/E03_RAG实验/e03_rag_reference/requirements-dev.lock"
+      ],
+      "last_reviewed": "2026-07-19",
+      "max_age_days": 60
+    },
+    {
+      "component_id": "rank-bm25",
+      "name": "rank-bm25",
+      "category": "python-dependency",
+      "baseline": "0.2.2",
+      "status": "active",
+      "boundary": "Pinned for deterministic lexical retrieval in E03 and P03; the fixed teaching corpus is not a production relevance benchmark.",
+      "source_url": "https://github.com/dorianbrown/rank_bm25",
+      "evidence": ["40_实验练习/E03_RAG实验/e03_rag_reference/pyproject.toml"],
+      "last_reviewed": "2026-07-19",
       "max_age_days": 90
     },
     {

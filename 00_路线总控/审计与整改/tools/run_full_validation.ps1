@@ -20,9 +20,51 @@ $summaryName = if ($SkipContentAudit -or $SkipMermaid) {
 }
 $summaryPath = Join-Path $output $summaryName
 $summaryRelativePaths = @(
-    (Join-Path $output "summary.json").Substring($root.Length).TrimStart("\"),
-    (Join-Path $output "summary_smoke.json").Substring($root.Length).TrimStart("\")
+    (Join-Path $output "summary.json").Substring($root.Length).TrimStart("\").Replace("\", "/"),
+    (Join-Path $output "summary_smoke.json").Substring($root.Length).TrimStart("\").Replace("\", "/")
 )
+$generatedEvidenceRelativePaths = @(
+    $output.Substring($root.Length).TrimStart("\").Replace("\", "/"),
+    $contentAuditOutput.Substring($root.Length).TrimStart("\").Replace("\", "/")
+)
+$generatedEvidencePrefixes = @($generatedEvidenceRelativePaths | ForEach-Object { "$_/" })
+$generatedEvidenceExclusionPathspecs = @(
+    $generatedEvidenceRelativePaths | ForEach-Object { ":(exclude)$_/**" }
+)
+
+function Remove-StaleGeneratedEvidence {
+    $previousPreference = $ErrorActionPreference
+    Push-Location $root
+    try {
+        $ErrorActionPreference = "Continue"
+        $trackedEvidenceFiles = @()
+        foreach ($relativePath in $generatedEvidenceRelativePaths) {
+            $trackedEvidenceFiles += @(& git -c core.quotepath=false ls-files -- $relativePath)
+            if ($LASTEXITCODE -ne 0) {
+                throw "cannot enumerate tracked validation evidence: $relativePath"
+            }
+        }
+
+        foreach ($directory in @($output, $contentAuditOutput)) {
+            if (Test-Path -LiteralPath $directory) {
+                Remove-Item -LiteralPath $directory -Recurse -Force -ErrorAction Stop
+            }
+            if (Test-Path -LiteralPath $directory) {
+                throw "stale validation evidence directory still exists after cleanup: $directory"
+            }
+        }
+
+        foreach ($trackedPath in @($trackedEvidenceFiles | Select-Object -Unique)) {
+            & git update-index --force-remove -- $trackedPath 2>$null
+            if ($LASTEXITCODE -ne 0) {
+                throw "failed to stage stale validation evidence removal: $trackedPath"
+            }
+        }
+    } finally {
+        $ErrorActionPreference = $previousPreference
+        Pop-Location
+    }
+}
 
 function Remove-StaleValidationSummary {
     foreach ($summary in $summaryRelativePaths) {
@@ -50,18 +92,26 @@ function Remove-StaleValidationSummary {
     }
 }
 
+Remove-StaleGeneratedEvidence
+
 Push-Location $root
 try {
     & git diff --quiet --exit-code
     if ($LASTEXITCODE -ne 0) {
         throw "unstaged tracked changes detected; stage the release candidate before validation"
     }
-    $untracked = @(& git ls-files --others --exclude-standard)
+    $untracked = @(& git -c core.quotepath=false ls-files --others --exclude-standard)
     if ($LASTEXITCODE -ne 0) {
         throw "cannot enumerate untracked release-candidate files"
     }
-    if ($untracked.Count -gt 0) {
-        throw "untracked release-candidate files detected; stage or ignore them before validation: $($untracked -join ', ')"
+    $untrackedCandidate = @(
+        $untracked | Where-Object {
+            $path = $_.Replace("\", "/")
+            -not ($generatedEvidencePrefixes | Where-Object { $path.StartsWith($_) })
+        }
+    )
+    if ($untrackedCandidate.Count -gt 0) {
+        throw "untracked release-candidate files detected; stage or ignore them before validation: $($untrackedCandidate -join ', ')"
     }
 } catch {
     Remove-StaleValidationSummary
@@ -71,12 +121,6 @@ try {
 }
 
 Remove-StaleValidationSummary
-if (Test-Path -LiteralPath $output) {
-    Remove-Item -LiteralPath $output -Recurse -Force
-}
-if (-not $SkipContentAudit -and (Test-Path -LiteralPath $contentAuditOutput)) {
-    Remove-Item -LiteralPath $contentAuditOutput -Recurse -Force
-}
 New-Item -ItemType Directory -Force -Path $output | Out-Null
 $pythonLauncher = (Get-Command py.exe).Source
 
@@ -202,7 +246,7 @@ $projects = @(
     @{ Name = "e00"; Path = "40_实验练习\E00_工具链基础实验\os_network_reference"; ExpectedTests = 11 },
     @{ Name = "e01"; Path = "40_实验练习\E01_Python基础练习\concurrency_reference"; ExpectedTests = 6 },
     @{ Name = "e02"; Path = "40_实验练习\E02_后端API实验\e02_service"; ExpectedTests = 29 },
-    @{ Name = "e03"; Path = "40_实验练习\E03_RAG实验\e03_rag_reference"; ExpectedTests = 35 },
+    @{ Name = "e03"; Path = "40_实验练习\E03_RAG实验\e03_rag_reference"; ExpectedTests = 154 },
     @{ Name = "e04"; Path = "40_实验练习\E04_Agent实验\e04_runtime_reference"; ExpectedTests = 76 },
     @{ Name = "e06"; Path = "40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference"; ExpectedTests = 29 },
     @{ Name = "e10"; Path = "40_实验练习\E10_推理服务实验\e10_inference_reference"; ExpectedTests = 7 },
@@ -279,6 +323,10 @@ foreach ($validator in $governanceValidators) {
         throw "$validatorName failed"
     }
 }
+$versionManifestPath = Join-Path $root "00_路线总控\审计与整改\artifacts\governance\version_manifest.json"
+$versionManifest = Get-Content -LiteralPath $versionManifestPath -Raw -Encoding utf8 |
+    ConvertFrom-Json
+$versionManifestComponentCount = @($versionManifest.components).Count
 $provenanceLedgerPath = Join-Path $root "00_路线总控\审计与整改\artifacts\governance\provenance_license_ledger.csv"
 $provenanceRows = @(Import-Csv -LiteralPath $provenanceLedgerPath -Encoding utf8)
 $provenanceReviewRequiredCount = @(
@@ -431,9 +479,28 @@ try {
             Convert-ValidationArtifactsToPortable `
                 -Directory $generatedAbsolutePath `
                 -RepositoryRoot $root
-            & git add -A -- $generatedPath
+            & git add -f -A -- $generatedPath
             if ($LASTEXITCODE -ne 0) {
                 throw "failed to stage generated validation evidence: $generatedPath"
+            }
+
+            $trackedGeneratedPaths = @(& git -c core.quotepath=false ls-files -- $generatedPath)
+            if ($LASTEXITCODE -ne 0) {
+                throw "cannot enumerate staged validation evidence: $generatedPath"
+            }
+            $trackedGeneratedSet = @{}
+            foreach ($trackedGeneratedPath in $trackedGeneratedPaths) {
+                $trackedGeneratedSet[$trackedGeneratedPath.Replace("\", "/")] = $true
+            }
+            $missingGeneratedPaths = @(
+                Get-ChildItem -LiteralPath $generatedAbsolutePath -Recurse -File |
+                    ForEach-Object {
+                        $_.FullName.Substring($root.Length).TrimStart("\").Replace("\", "/")
+                    } |
+                    Where-Object { -not $trackedGeneratedSet.ContainsKey($_) }
+            )
+            if ($missingGeneratedPaths.Count -gt 0) {
+                throw "generated validation evidence is not tracked: $($missingGeneratedPaths -join ', ')"
             }
         }
     }
@@ -465,7 +532,7 @@ try {
         Remove-Item -LiteralPath $gitleaksStagedReport -Force -ErrorAction SilentlyContinue
     }
 
-    $untrackedAfterValidation = @(& git ls-files --others --exclude-standard)
+    $untrackedAfterValidation = @(& git -c core.quotepath=false ls-files --others --exclude-standard)
     if ($LASTEXITCODE -ne 0) {
         throw "cannot enumerate untracked files after validation"
     }
@@ -478,9 +545,17 @@ try {
         throw "validation left unstaged tracked changes outside the sealed evidence paths"
     }
 
+    # Raw validator logs intentionally preserve diagnostics such as trailing-space
+    # findings. Keep source whitespace checks strict without rewriting that evidence.
     $gitChecks = @(
-        @{ Name = "worktree"; Arguments = @("diff", "--check") },
-        @{ Name = "index"; Arguments = @("diff", "--cached", "--check") }
+        @{
+            Name = "worktree"
+            Arguments = @("diff", "--check", "--", ".") + $generatedEvidenceExclusionPathspecs
+        },
+        @{
+            Name = "index"
+            Arguments = @("diff", "--cached", "--check", "--", ".") + $generatedEvidenceExclusionPathspecs
+        }
     )
     foreach ($check in $gitChecks) {
         $checkOutput = & git @($check.Arguments) 2>&1
@@ -509,8 +584,19 @@ try {
         if ($LASTEXITCODE -ne 0) {
             throw "temporary release-candidate staging failed"
         }
+        foreach ($generatedPath in $generatedEvidenceRelativePaths) {
+            $generatedAbsolutePath = Join-Path $root $generatedPath
+            if (Test-Path -LiteralPath $generatedAbsolutePath) {
+                & git add -f -A -- $generatedPath
+                if ($LASTEXITCODE -ne 0) {
+                    throw "temporary validation evidence staging failed: $generatedPath"
+                }
+            }
+        }
 
-        $candidateOutput = & git diff --cached --check 2>&1
+        $candidateDiffArguments = @("diff", "--cached", "--check", "--", ".") +
+            $generatedEvidenceExclusionPathspecs
+        $candidateOutput = & git @candidateDiffArguments 2>&1
         $candidateExit = $LASTEXITCODE
         if ($candidateExit -ne 0) {
             throw "release-candidate git diff --check failed`n$($candidateOutput -join [Environment]::NewLine)"
@@ -543,6 +629,7 @@ try {
     status = "passed"
     encoding_validation = "passed"
     governance_validation = "passed"
+    version_manifest_component_count = $versionManifestComponentCount
     provenance_inventory_status = if ($provenanceReviewRequiredCount -eq 0) {
         "fully-reviewed"
     } else {
@@ -559,6 +646,7 @@ try {
     kustomize_validation = "passed"
     compileall_validation = "passed"
     git_release_candidate_validation = "passed"
+    generated_evidence_tracking = "passed"
     machine_local_path_scan = "passed"
     staged_secret_scan = "passed"
     reference_python_version = "3.13"
@@ -569,6 +657,7 @@ try {
     content_audit_status = $contentAuditStatus
     content_audit_advisories = $contentAuditAdvisories
     mermaid_skipped = [bool]$SkipMermaid
+    mermaid_validation = if ($SkipMermaid) { "skipped" } else { "passed" }
     completed_at_utc = [DateTime]::UtcNow.ToString("o")
 } | ConvertTo-Json | ForEach-Object {
     [IO.File]::WriteAllText($summaryPath, $_ + [Environment]::NewLine, $utf8)
@@ -584,7 +673,7 @@ try {
     }
     Assert-NoMachineLocalPathsInStagedTree -RepositoryRoot $root
 
-    $postSummaryUntracked = @(& git ls-files --others --exclude-standard)
+    $postSummaryUntracked = @(& git -c core.quotepath=false ls-files --others --exclude-standard)
     if ($LASTEXITCODE -ne 0 -or $postSummaryUntracked.Count -gt 0) {
         throw "final summary sealing left untracked release candidates: $($postSummaryUntracked -join ', ')"
     }
@@ -592,7 +681,9 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "final summary sealing left unstaged tracked changes"
     }
-    $postSummaryDiff = & git diff --cached --check 2>&1
+    $postSummaryDiffArguments = @("diff", "--cached", "--check", "--", ".") +
+        $generatedEvidenceExclusionPathspecs
+    $postSummaryDiff = & git @postSummaryDiffArguments 2>&1
     if ($LASTEXITCODE -ne 0) {
         throw "final summary staged diff check failed`n$($postSummaryDiff -join [Environment]::NewLine)"
     }

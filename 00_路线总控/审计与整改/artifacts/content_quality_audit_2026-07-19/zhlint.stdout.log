@@ -1,0 +1,327 @@
+Config file "<repository>\.tools\content-quality\zhlint-input\.zhlintrc" does not exist. Will proceed as default.
+Global ignored cases file "<repository>\.tools\content-quality\zhlint-input\.zhlintignore" does not exist. Will proceed as none.
+Global ignored cases file "<repository>\.tools\content-quality\zhlint-input\.zhlintcaseignore" does not exist. Will proceed as none.
+[start] README_打开说明.md
+[start] README.md
+[start] 99_归档\00_索引.md
+[start] 99_归档\旧版讲义\M00_工具链与计算机基础_完整学习讲义.md
+[start] 90_计划复盘\计划复盘总览.md
+[start] 90_计划复盘\每周计划\2026-W26 周计划.md
+[start] 90_计划复盘\每周复盘\00_索引.md
+[start] 90_计划复盘\月度总结\00_索引.md
+[start] 90_计划复盘\学习日志\00_索引.md
+[start] 80_就业市场与简历\就业市场总览.md
+[start] 80_就业市场与简历\面试题库\00_索引.md
+[start] 80_就业市场与简历\简历项目表达\项目与科研表达模板_按完成状态分级.md
+[start] 80_就业市场与简历\简历项目表达\00_索引.md
+[start] 80_就业市场与简历\技能差距分析\当前技能差距.md
+[start] 80_就业市场与简历\岗位拆解\JD驱动学习路线补强规则.md
+[start] 80_就业市场与简历\岗位拆解\JD拆解模板_学习路线映射.md
+[start] 80_就业市场与简历\岗位拆解\2026-06-30_金融代码复合标注员_JD拆解.md
+[start] 80_就业市场与简历\岗位拆解\00_索引.md
+[start] 80_就业市场与简历\实习准备\00_索引.md
+[start] 80_就业市场与简历\公司需求\00_索引.md
+[start] 70_导师实验室与联系\导师实验室总览.md
+[start] 70_导师实验室与联系\顾琳老师\顾琳老师方向主页.md
+[start] 70_导师实验室与联系\石宣化老师\00_索引.md
+[start] 70_导师实验室与联系\导师邮件\00_索引.md
+[start] 70_导师实验室与联系\姚德中老师\00_索引.md
+[start] 70_导师实验室与联系\吴松团队\00_索引.md
+[start] 70_导师实验室与联系\个人科研陈述\00_索引.md
+[start] 60_科研训练\科研训练总览.md
+[start] 60_科研训练\论文阅读笔记\00_索引.md
+[start] 60_科研训练\论文复现记录\00_索引.md
+[start] 60_科研训练\研究项目\RQ01_RAG_Agent请求调度尾延迟\05_写作草稿.md
+[start] 60_科研训练\研究项目\RQ01_RAG_Agent请求调度尾延迟\04_实验报告.md
+[start] 60_科研训练\研究项目\RQ01_RAG_Agent请求调度尾延迟\03_实验记录.md
+[start] 60_科研训练\研究项目\RQ01_RAG_Agent请求调度尾延迟\02_实验设计.md
+[start] 60_科研训练\研究项目\RQ01_RAG_Agent请求调度尾延迟\01_相关论文与资料.md
+[start] 60_科研训练\研究项目\RQ01_RAG_Agent请求调度尾延迟\00_研究问题.md
+[start] 60_科研训练\研究项目\RQ01_RAG_Agent请求调度尾延迟\artifacts\rq01_e2_pilot_20260711\README.md
+[start] 60_科研训练\研究问题库\研究问题候选.md
+[start] 60_科研训练\实验设计模板\00_索引.md
+[start] 60_科研训练\实验报告\00_索引.md
+[start] 60_科研训练\写作草稿\00_索引.md
+[start] 50_项目产出\项目产出总览.md
+[start] 50_项目产出\金融工程项目候选范围说明.md
+[start] 50_项目产出\项目展示素材\00_索引.md
+[start] 50_项目产出\案例参照\脱敏合规AI案例_工程参照分析.md
+[start] 50_项目产出\案例参照\合规慧眼_真实工程案例参照分析.md
+[start] 50_项目产出\P03_AI_Workload_Platform\P03_AI_Workload_Platform 项目主页.md
+[start] 50_项目产出\P03_AI_Workload_Platform\08_阶段执行说明_v0.1.md
+[start] 50_项目产出\P03_AI_Workload_Platform\07_简历表达.md
+[start] 50_项目产出\P03_AI_Workload_Platform\06_README草稿.md
+[start] 50_项目产出\P03_AI_Workload_Platform\05_问题与失败记录.md
+[start] 50_项目产出\P03_AI_Workload_Platform\03_API与数据契约.md
+[start] 50_项目产出\P03_AI_Workload_Platform\02_技术方案.md
+[start] 50_项目产出\P03_AI_Workload_Platform\01_需求与任务拆解.md
+[start] 50_项目产出\P03_AI_Workload_Platform\00_项目目标与范围.md
+[start] 50_项目产出\P03_AI_Workload_Platform\p03_service\README.md
+[start] 50_项目产出\P03_AI_Workload_Platform\p03_service\artifacts\e08_reference_smoke\README.md
+[start] 50_项目产出\P03_AI_Workload_Platform\p03_service\artifacts\e08_reference_repeated\README.md
+[start] 50_项目产出\P03_AI_Workload_Platform\p03_service\artifacts\e08_rag_reference_smoke\README.md
+[start] 50_项目产出\P03_AI_Workload_Platform\04_实验记录\00_实验索引.md
+[start] 50_项目产出\P02_RAG_Agent_Service\P02_RAG_Agent_Service 项目主页.md
+[start] 50_项目产出\P01_Mini_Scheduler\P01_Mini_Scheduler 项目主页.md
+[start] 50_项目产出\P01_Mini_Scheduler\08_阶段执行说明_v0.1.md
+[start] 50_项目产出\P01_Mini_Scheduler\07_简历表达.md
+[start] 50_项目产出\P01_Mini_Scheduler\06_README草稿.md
+[start] 50_项目产出\P01_Mini_Scheduler\05_问题与失败记录.md
+[start] 50_项目产出\P01_Mini_Scheduler\03_代码结构与接口.md
+[start] 50_项目产出\P01_Mini_Scheduler\02_技术方案.md
+[start] 50_项目产出\P01_Mini_Scheduler\01_需求与任务拆解.md
+[start] 50_项目产出\P01_Mini_Scheduler\00_项目目标与范围.md
+[start] 50_项目产出\P01_Mini_Scheduler\mini_scheduler\README.md
+[start] 50_项目产出\P01_Mini_Scheduler\mini_scheduler\artifacts\experiment_summary_tables.md
+[start] 50_项目产出\P01_Mini_Scheduler\04_实验记录\Worker数量对P95延迟的影响.md
+[start] 50_项目产出\P01_Mini_Scheduler\04_实验记录\FIFO_vs_Priority_vs_SJF.md
+[start] 50_项目产出\P01_Mini_Scheduler\04_实验记录\00_实验索引.md
+[start] 40_实验练习\实验练习总览.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF10_金融工程全阶段实验候选_索引.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF08-04 金融 ML 评测记录表.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF08-03 pricing task 的延迟和失败记录.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF08-02 回测任务进入队列.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF08-01 风险指标任务建模为 workload.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF07-05 out-of-sample 与压力测试.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF07-04 模型卡与失败样例记录.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF07-03 特征泄漏案例.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF07-02 baseline vs ML 模型.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF07-01 金融分类任务的时间切分.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF06-03 数据泄漏检查.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF06-02 加入交易成本后的回测对比.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF06-01 均线策略最小回测.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF05-03 利率曲线数据读取与说明.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF05-02 久期和凸性实验.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF05-01 债券定价和 YTM.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF04-03 Monte Carlo 定价最小实现.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF04-02 Black-Scholes 定价最小实现.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\GF04-01 欧式期权 payoff 图.md
+[start] 40_实验练习\GF10_金融工程全阶段实验候选\finance_reference\README.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF03-03 VaR 与最大回撤计算.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF03-02 多资产组合有效前沿示意.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF03-01 两资产组合风险收益曲线.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF02-02 rolling volatility 与最大回撤.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF02-01 金融时间序列清洗.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF01-02 协方差矩阵与相关性热力图.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF01-01 收益率分布与正态性观察.md
+[start] 40_实验练习\GF00_金融工程第一阶段实验\GF00_金融工程第一阶段实验_索引.md
+[start] 40_实验练习\E10_推理服务实验\E10_推理服务实验_索引.md
+[start] 40_实验练习\E10_推理服务实验\E10-03 vLLM 最小服务实验.md
+[start] 40_实验练习\E10_推理服务实验\E10-02 不同请求长度的延迟统计.md
+[start] 40_实验练习\E10_推理服务实验\E10-01 模拟推理 worker.md
+[start] 40_实验练习\E10_推理服务实验\e10_inference_reference\README.md
+[start] 40_实验练习\E09_K8s实验\E09_K8s实验_索引.md
+[start] 40_实验练习\E09_K8s实验\E09-04 Kueue 概念实验.md
+[start] 40_实验练习\E09_K8s实验\E09-03 模拟 worker pod 扩缩容.md
+[start] 40_实验练习\E09_K8s实验\E09-02 部署 FastAPI 服务.md
+[start] 40_实验练习\E09_K8s实验\E09-01 kind 本地集群.md
+[start] 40_实验练习\E09_K8s实验\kind_reference\README.md
+[start] 40_实验练习\E08_监控压测实验\E08_监控压测实验_索引.md
+[start] 40_实验练习\E08_监控压测实验\E08-03 队列长度和 worker utilization 观察实验.md
+[start] 40_实验练习\E08_监控压测实验\E08-02 记录 average_P95_P99_吞吐_错误率.md
+[start] 40_实验练习\E08_监控压测实验\E08-01 Locust 压测 RAG_API 请求.md
+[start] 40_实验练习\E07_Docker实验\E07_Docker实验_索引.md
+[start] 40_实验练习\E07_Docker实验\E07-03 worker 服务与日志排查.md
+[start] 40_实验练习\E07_Docker实验\E07-02 docker compose 串联 API + db + redis.md
+[start] 40_实验练习\E07_Docker实验\E07-01 最小 FastAPI Dockerfile.md
+[start] 40_实验练习\E06_数据库异步任务实验\E06_数据库异步任务实验_索引.md
+[start] 40_实验练习\E06_数据库异步任务实验\E06-03 embedding 与检索结果缓存实验.md
+[start] 40_实验练习\E06_数据库异步任务实验\E06-02 文档解析与 RAG 请求异步化.md
+[start] 40_实验练习\E06_数据库异步任务实验\E06-01 任务状态持久化.md
+[start] 40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference\README.md
+[start] 40_实验练习\E05_调度实验\E05_调度实验_索引.md
+[start] 40_实验练习\E05_调度实验\E05-R0-R1 学习边界与最小模型复现.md
+[start] 40_实验练习\E05_调度实验\E05-06 项目复盘与证据表达.md
+[start] 40_实验练习\E05_调度实验\E05-05 多 worker 容量与利用率.md
+[start] 40_实验练习\E05_调度实验\E05-04 成本感知调度模拟.md
+[start] 40_实验练习\E05_调度实验\E05-03 高峰负载下的 P95 延迟实验.md
+[start] 40_实验练习\E05_调度实验\E05-02 比较 FIFO 和 Priority.md
+[start] 40_实验练习\E05_调度实验\E05-01 实现 FIFO 调度.md
+[start] 40_实验练习\E04_Agent实验\E04_Agent实验_索引.md
+[start] 40_实验练习\E04_Agent实验\E04-07 异步工具与 busy state.md
+[start] 40_实验练习\E04_Agent实验\E04-06 Context 压缩与 memory 召回.md
+[start] 40_实验练习\E04_Agent实验\E04-05 Session 隔离与多轮追问.md
+[start] 40_实验练习\E04_Agent实验\E04-04 最小 Agent Runtime 实现.md
+[start] 40_实验练习\E04_Agent实验\E04-03 人工确认与失败处理实验.md
+[start] 40_实验练习\E04_Agent实验\E04-02 多步骤 Agent 状态流转实验.md
+[start] 40_实验练习\E04_Agent实验\E04-01 工具调用最小实验.md
+[start] 40_实验练习\E04_Agent实验\e04_runtime_reference\README.md
+[start] 40_实验练习\E03_RAG实验\E03_RAG实验_索引.md
+[start] 40_实验练习\E03_RAG实验\E03-03 metadata 权限过滤实验.md
+[start] 40_实验练习\E03_RAG实验\E03-02 top-k 对回答质量和延迟的影响.md
+[start] 40_实验练习\E03_RAG实验\E03-01 chunk 大小对检索效果的影响.md
+[start] 40_实验练习\E03_RAG实验\e03_rag_reference\README.md
+[start] 40_实验练习\E02_后端API实验\E02_后端API实验_索引.md
+[start] 40_实验练习\E02_后端API实验\E02-04 请求生命周期可靠性与并发契约.md
+[start] 40_实验练习\E02_后端API实验\E02-03 metrics API.md
+[start] 40_实验练习\E02_后端API实验\E02-02 查询任务状态 API.md
+[start] 40_实验练习\E02_后端API实验\E02-01 创建任务 API.md
+[start] 40_实验练习\E02_后端API实验\e02_service\README.md
+[start] 40_实验练习\E01_Python基础练习\E01_Python基础练习_索引.md
+[start] 40_实验练习\E01_Python基础练习\E01-04 并发选择与取消.md
+[start] 40_实验练习\E01_Python基础练习\E01-03 pytest 测试调度器.md
+[start] 40_实验练习\E01_Python基础练习\E01-02 Python 类实现 Task 和 Worker.md
+[start] 40_实验练习\E01_Python基础练习\E01-01 任务排序脚本.md
+[start] 40_实验练习\E01_Python基础练习\concurrency_reference\README.md
+[start] 40_实验练习\E00_工具链基础实验\E00_工具链基础实验_索引.md
+[start] 40_实验练习\E00_工具链基础实验\E00-06 进程信号权限与请求路径诊断.md
+[start] 40_实验练习\E00_工具链基础实验\E00-05 为任务排序函数写 pytest.md
+[start] 40_实验练习\E00_工具链基础实验\E00-04 写一个带日志的小脚本.md
+[start] 40_实验练习\E00_工具链基础实验\E00-03 用 httpx 请求一个 API.md
+[start] 40_实验练习\E00_工具链基础实验\E00-02 Git 保存学习进度.md
+[start] 40_实验练习\E00_工具链基础实验\E00-01 命令行创建 Python 项目.md
+[start] 40_实验练习\E00_工具链基础实验\os_network_reference\README.md
+[start] 30_知识卡片\知识卡片编写模板.md
+[start] 30_知识卡片\知识卡片总览.md
+[start] 30_知识卡片\问题与坑\00_索引.md
+[start] 30_知识卡片\调度策略\00_索引.md
+[start] 30_知识卡片\概念卡片\00_索引.md
+[start] 30_知识卡片\架构模式\00_索引.md
+[start] 30_知识卡片\指标体系\00_索引.md
+[start] 30_知识卡片\技术机制\00_索引.md
+[start] 20_资料库\资料库总览.md
+[start] 20_资料库\学习资料总索引.md
+[start] 20_资料库\课程\00_索引.md
+[start] 20_资料库\论文\00_索引.md
+[start] 20_资料库\模块资料索引\M12_金融投研AI场景_资料索引.md
+[start] 20_资料库\模块资料索引\M11_科研方法与实验设计_资料索引.md
+[start] 20_资料库\模块资料索引\M10_AI推理系统_vLLM_Triton_资料索引.md
+[start] 20_资料库\模块资料索引\M09_Kubernetes与云原生_资料索引.md
+[start] 20_资料库\模块资料索引\M08_监控压测与可观测性_资料索引.md
+[start] 20_资料库\模块资料索引\M07_Docker与容器化_资料索引.md
+[start] 20_资料库\模块资料索引\M06_数据库缓存与异步任务_资料索引.md
+[start] 20_资料库\模块资料索引\M05_任务队列与调度_资料索引.md
+[start] 20_资料库\模块资料索引\M04_Agent工作流_资料索引.md
+[start] 20_资料库\模块资料索引\M03_RAG工程_资料索引.md
+[start] 20_资料库\模块资料索引\M02_后端API与服务化_资料索引.md
+[start] 20_资料库\模块资料索引\M01_Python工程能力_资料索引.md
+[start] 20_资料库\模块资料索引\M00_工具链与计算机基础_资料索引.md
+[start] 20_资料库\模块资料索引\F08_金融工程任务与AI_Workload接口_资料索引.md
+[start] 20_资料库\模块资料索引\F07_金融机器学习与模型风险_资料索引.md
+[start] 20_资料库\模块资料索引\F06_量化研究与回测工程_资料索引.md
+[start] 20_资料库\模块资料索引\F05_固定收益与利率基础_资料索引.md
+[start] 20_资料库\模块资料索引\F04_衍生品定价与随机过程导论_资料索引.md
+[start] 20_资料库\模块资料索引\F03_投资组合与风险管理_资料索引.md
+[start] 20_资料库\模块资料索引\F02_Python金融数据与时间序列_资料索引.md
+[start] 20_资料库\模块资料索引\F01_概率统计与数学基础_资料索引.md
+[start] 20_资料库\模块资料索引\F00_金融市场与资产基础_资料索引.md
+[start] 20_资料库\技术博客\00_索引.md
+[start] 20_资料库\开源项目\00_索引.md
+[start] 20_资料库\岗位JD\00_索引.md
+[start] 20_资料库\导师与实验室资料\00_索引.md
+[start] 20_资料库\官方文档\00_索引.md
+[start] 10_学习模块\00_学习模块阅读指南.md
+[start] 10_学习模块\M12_金融投研AI场景\M12_金融投研AI场景_适配教材.md
+[start] 10_学习模块\M12_金融投研AI场景\M12_金融投研AI场景_学习地图.md
+[start] 10_学习模块\M11_科研方法与实验设计\M11_科研方法与实验设计_适配教材.md
+[start] 10_学习模块\M11_科研方法与实验设计\M11_科研方法与实验设计_学习地图.md
+[start] 10_学习模块\M10_AI推理系统_vLLM_Triton\M10_AI推理系统_vLLM_Triton_适配教材.md
+[start] 10_学习模块\M10_AI推理系统_vLLM_Triton\M10_AI推理系统_vLLM_Triton_学习地图.md
+[start] 10_学习模块\M09_Kubernetes与云原生\M09_Kubernetes与云原生_适配教材.md
+[start] 10_学习模块\M09_Kubernetes与云原生\M09_Kubernetes与云原生_学习地图.md
+[start] 10_学习模块\M08_监控压测与可观测性\M08_监控压测与可观测性_适配教材.md
+[start] 10_学习模块\M08_监控压测与可观测性\M08_监控压测与可观测性_学习地图.md
+[start] 10_学习模块\M07_Docker与容器化\M07_Docker与容器化_适配教材.md
+[start] 10_学习模块\M07_Docker与容器化\M07_Docker与容器化_学习地图.md
+[start] 10_学习模块\M06_数据库缓存与异步任务\M06_数据库缓存与异步任务_适配教材.md
+[start] 10_学习模块\M06_数据库缓存与异步任务\M06_数据库缓存与异步任务_学习地图.md
+[start] 10_学习模块\M05_任务队列与调度\M05_参考答案与结果索引.md
+[start] 10_学习模块\M05_任务队列与调度\M05_任务队列与调度_章节教材.md
+[start] 10_学习模块\M05_任务队列与调度\M05_任务队列与调度_学习地图.md
+[start] 10_学习模块\M05_任务队列与调度\M05_任务队列与调度_复现推进表.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\12_项目总结与复盘.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\11_多_worker_与资源利用率.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\10_Aging_最大等待保护.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\09_分组分析_谁被牺牲了.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\08_Cost-aware_调度.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\07_高峰负载实验.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\06_指标_average_P95_P99_utilization.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\05_SJF_和平均等待时间.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\04_Priority_和业务优先级.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\03_FIFO_baseline.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\02_Task_Worker_Queue_最小模型.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\01_为什么调度不是简单排序.md
+[start] 10_学习模块\M05_任务队列与调度\教材章节\00_这门小教材怎么学.md
+[start] 10_学习模块\M05_任务队列与调度\99_归档\M05_任务队列与调度_适配教材.md
+[start] 10_学习模块\M05_任务队列与调度\99_归档\M05_任务队列与调度_教材化改造计划.md
+[start] 10_学习模块\M04_Agent工作流\M04_Agent工作流_适配教材.md
+[start] 10_学习模块\M04_Agent工作流\M04_Agent工作流_学习地图.md
+[start] 10_学习模块\M03_RAG工程\M03_RAG工程_适配教材.md
+[start] 10_学习模块\M03_RAG工程\M03_RAG工程_学习地图.md
+[start] 10_学习模块\M02_后端API与服务化\M02_后端API与服务化_适配教材.md
+[start] 10_学习模块\M02_后端API与服务化\M02_后端API与服务化_学习地图.md
+[start] 10_学习模块\M01_Python工程能力\M01_Python工程能力_适配教材.md
+[start] 10_学习模块\M01_Python工程能力\M01_Python工程能力_学习地图.md
+[start] 10_学习模块\M00_工具链与计算机基础\M00_工具链与计算机基础_适配教材.md
+[start] 10_学习模块\M00_工具链与计算机基础\M00_工具链与计算机基础_学习地图.md
+[start] 10_学习模块\F08_金融工程任务与AI_Workload接口\F08_金融工程任务与AI_Workload接口_适配教材.md
+[start] 10_学习模块\F08_金融工程任务与AI_Workload接口\F08_金融工程任务与AI_Workload接口_学习地图.md
+[start] 10_学习模块\F07_金融机器学习与模型风险\F07_金融机器学习与模型风险_适配教材.md
+[start] 10_学习模块\F07_金融机器学习与模型风险\F07_金融机器学习与模型风险_学习地图.md
+[start] 10_学习模块\F06_量化研究与回测工程\F06_量化研究与回测工程_适配教材.md
+[start] 10_学习模块\F06_量化研究与回测工程\F06_量化研究与回测工程_学习地图.md
+[start] 10_学习模块\F05_固定收益与利率基础\F05_固定收益与利率基础_适配教材.md
+[start] 10_学习模块\F05_固定收益与利率基础\F05_固定收益与利率基础_学习地图.md
+[start] 10_学习模块\F04_衍生品定价与随机过程导论\F04_衍生品定价与随机过程导论_适配教材.md
+[start] 10_学习模块\F04_衍生品定价与随机过程导论\F04_衍生品定价与随机过程导论_学习地图.md
+[start] 10_学习模块\F03_投资组合与风险管理\F03_投资组合与风险管理_适配教材.md
+[start] 10_学习模块\F03_投资组合与风险管理\F03_投资组合与风险管理_学习地图.md
+[start] 10_学习模块\F02_Python金融数据与时间序列\F02_Python金融数据与时间序列_适配教材.md
+[start] 10_学习模块\F02_Python金融数据与时间序列\F02_Python金融数据与时间序列_学习地图.md
+[start] 10_学习模块\F01_概率统计与数学基础\F01_概率统计与数学基础_适配教材.md
+[start] 10_学习模块\F01_概率统计与数学基础\F01_概率统计与数学基础_学习地图.md
+[start] 10_学习模块\F00_金融市场与资产基础\F00_金融市场与资产基础_适配教材.md
+[start] 10_学习模块\F00_金融市场与资产基础\F00_金融市场与资产基础_学习地图.md
+[start] 00_路线总控\顾琳老师方向适配路线.md
+[start] 00_路线总控\金融工程高质量资料与路线审计.md
+[start] 00_路线总控\金融工程与量化金融支线路线.md
+[start] 00_路线总控\金融工程_AI计算机高结合领域与岗位能力地图.md
+[start] 00_路线总控\资料筛选与学习规则.md
+[start] 00_路线总控\总路线图_AI_Infra方向.md
+[start] 00_路线总控\市场岗位能力地图.md
+[start] 00_路线总控\多路线学习库结构规范.md
+[start] 00_路线总控\基础薄弱版12周执行路线.md
+[start] 00_路线总控\两个月快速上手路线.md
+[start] 00_路线总控\AI输出质量评测能力线_系统重构方案.md
+[start] 00_路线总控\Agent代码Rubric试标题目分析与学习映射.md
+[start] 00_路线总控\6-12个月科研工程路线.md
+[start] 00_路线总控\看板与索引\13_M05精准增强交接文档.md
+[start] 00_路线总控\看板与索引\12_审计接力交接文档.md
+[start] 00_路线总控\看板与索引\11_Claude审核交接文档.md
+[start] 00_路线总控\看板与索引\10_F系列第一阶段实验执行表.md
+[start] 00_路线总控\看板与索引\09_第二阶段建设优先级清单.md
+[start] 00_路线总控\看板与索引\08_学习模块建设状态表.md
+[start] 00_路线总控\看板与索引\07_库结构说明与检查清单.md
+[start] 00_路线总控\看板与索引\06_搭建计划与逐区检查.md
+[start] 00_路线总控\看板与索引\05_资料处理流水线.md
+[start] 00_路线总控\看板与索引\04_项目实验索引.md
+[start] 00_路线总控\看板与索引\03_学习模块索引.md
+[start] 00_路线总控\看板与索引\02_路线总览索引.md
+[start] 00_路线总控\看板与索引\01_当前阶段任务看板.md
+[start] 00_路线总控\看板与索引\00_主页.md
+[start] 00_路线总控\模板\项目主页模板.md
+[start] 00_路线总控\模板\资料卡模板.md
+[start] 00_路线总控\模板\论文阅读模板.md
+[start] 00_路线总控\模板\知识卡片模板.md
+[start] 00_路线总控\模板\实验记录模板.md
+[start] 00_路线总控\模板\学习模块编写规范.md
+[start] 00_路线总控\模板\学习模块模板.md
+[start] 00_路线总控\模板\周计划模板.md
+[start] 00_路线总控\审计与整改\学习路线教材与内容审计报告_2026-07-10.md
+[start] 00_路线总控\审计与整改\12_优化方案二次完整性复核与Wave0实施报告_2026-07-18.md
+[start] 00_路线总控\审计与整改\10_教材知识覆盖工程强度科研基础与讲解质量审计_2026-07-13.md
+[start] 00_路线总控\审计与整改\09_权威技术学习文档格式对标与教材内容检查_2026-07-12.md
+[start] 00_路线总控\审计与整改\08_自学教材规范符合性与首批改造报告_2026-07-12.md
+[start] 00_路线总控\审计与整改\07_教材章节质量契约.md
+[start] 00_路线总控\审计与整改\06_教材教学有效性与工具复核报告_2026-07-11.md
+[start] 00_路线总控\审计与整改\05_教材内容质量大检查报告_2026-07-11.md
+[start] 00_路线总控\审计与整改\04_变更日志.md
+[start] 00_路线总控\审计与整改\03_验证清单.md
+[start] 00_路线总控\审计与整改\02_状态与验收规则.md
+[start] 00_路线总控\审计与整改\00_整改总控.md
+[start] 00_路线总控\审计与整改\artifacts\official_docs_content_audit_2026-07-12\README.md
+[start] 00_路线总控\审计与整改\artifacts\m05_split_2026-07-11\README.md
+[start] 00_路线总控\审计与整改\artifacts\governance\README.md
+[start] 00_路线总控\审计与整改\artifacts\governance\optimization_matrix_status_audit_2026-07-19.md
+[start] 00_路线总控\审计与整改\artifacts\governance\optimization_matrix_status_audit_2026-07-18.md
+[start] 00_路线总控\审计与整改\artifacts\content_quality_audit_2026-07-11\README.md

@@ -1,0 +1,248 @@
+﻿{
+    "tool":  "@mermaid-js/mermaid-cli",
+    "version":  "11.16.0",
+    "document_count":  30,
+    "failed_document_count":  0,
+    "documents":  [
+                      {
+                          "file":  "10_学习模块/00_学习模块阅读指南.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-01.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-01.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-01.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/F02_Python金融数据与时间序列/F02_Python金融数据与时间序列_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-02.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-02.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-02.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/F06_量化研究与回测工程/F06_量化研究与回测工程_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-03.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-03.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-03.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M00_工具链与计算机基础/M00_工具链与计算机基础_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-04.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-04.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-04.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M01_Python工程能力/M01_Python工程能力_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-05.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-05.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-05.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M02_后端API与服务化/M02_后端API与服务化_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-06.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-06.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-06.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M03_RAG工程/M03_RAG工程_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-07.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-07.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-07.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M04_Agent工作流/M04_Agent工作流_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-08.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-08.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-08.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M05_任务队列与调度/99_归档/M05_任务队列与调度_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-09.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-09.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-09.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M05_任务队列与调度/教材章节/00_这门小教材怎么学.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-10.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-10.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-10.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M05_任务队列与调度/教材章节/01_为什么调度不是简单排序.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-11.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-11.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-11.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M05_任务队列与调度/教材章节/02_Task_Worker_Queue_最小模型.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-12.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-12.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-12.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M05_任务队列与调度/教材章节/07_高峰负载实验.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-13.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-13.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-13.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M05_任务队列与调度/教材章节/09_分组分析_谁被牺牲了.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-14.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-14.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-14.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M06_数据库缓存与异步任务/M06_数据库缓存与异步任务_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-15.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-15.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-15.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M08_监控压测与可观测性/M08_监控压测与可观测性_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-16.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-16.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-16.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M09_Kubernetes与云原生/M09_Kubernetes与云原生_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-17.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-17.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-17.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M10_AI推理系统_vLLM_Triton/M10_AI推理系统_vLLM_Triton_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-18.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-18.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-18.stderr.log"
+                      },
+                      {
+                          "file":  "10_学习模块/M12_金融投研AI场景/M12_金融投研AI场景_适配教材.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-19.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-19.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-19.stderr.log"
+                      },
+                      {
+                          "file":  "20_资料库/模块资料索引/M01_Python工程能力_资料索引.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-20.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-20.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-20.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E04_Agent实验/E04-01 工具调用最小实验.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-21.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-21.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-21.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E04_Agent实验/E04-02 多步骤 Agent 状态流转实验.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-22.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-22.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-22.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E04_Agent实验/E04-03 人工确认与失败处理实验.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-23.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-23.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-23.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E04_Agent实验/E04-04 最小 Agent Runtime 实现.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-24.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-24.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-24.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E04_Agent实验/E04-05 Session 隔离与多轮追问.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-25.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-25.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-25.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E04_Agent实验/E04-06 Context 压缩与 memory 召回.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-26.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-26.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-26.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E04_Agent实验/E04-07 异步工具与 busy state.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-27.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-27.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-27.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E05_调度实验/E05-R0-R1 学习边界与最小模型复现.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-28.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-28.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-28.stderr.log"
+                      },
+                      {
+                          "file":  "40_实验练习/E09_K8s实验/E09-04 Kueue 概念实验.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-29.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-29.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-29.stderr.log"
+                      },
+                      {
+                          "file":  "99_归档/旧版讲义/M00_工具链与计算机基础_完整学习讲义.md",
+                          "exit_code":  0,
+                          "attempt_count":  1,
+                          "rendered_markdown":  ".tools/content-quality/mermaid-render/11.16.0/document-30.md",
+                          "stdout":  ".tools/content-quality/mermaid-render/11.16.0/document-30.stdout.log",
+                          "stderr":  ".tools/content-quality/mermaid-render/11.16.0/document-30.stderr.log"
+                      }
+                  ]
+}

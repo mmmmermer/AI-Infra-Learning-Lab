@@ -1,0 +1,4 @@
+markdownlint-cli2 v0.23.0 (markdownlint v0.41.0)
+Finding: **/*.md !.tools/** !**/.venv/** !**/.pytest_cache/** !**/node_modules/**
+Linting: 323 file(s)
+Summary: 106 error(s)

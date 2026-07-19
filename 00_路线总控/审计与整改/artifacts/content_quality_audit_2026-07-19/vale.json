@@ -1,0 +1,631 @@
+{
+  "<repository>\\00_路线总控\\审计与整改\\00_整改总控.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        17,
+        26
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 147
+    }
+  ],
+  "<repository>\\00_路线总控\\审计与整改\\04_变更日志.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        46,
+        49
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 'TODO'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "TODO",
+      "Line": 375
+    }
+  ],
+  "<repository>\\00_路线总控\\审计与整改\\05_教材内容质量大检查报告_2026-07-11.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        6,
+        9
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 'TODO'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "TODO",
+      "Line": 45
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        11,
+        13
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 'TBD'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "TBD",
+      "Line": 45
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        15,
+        17
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 '待补充'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "待补充",
+      "Line": 45
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        3,
+        12
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 159
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        16,
+        19
+      ],
+      "Check": "AIInfra.ResearchClaims",
+      "Description": "",
+      "Link": "",
+      "Message": "科研或工程强断言 '完全正确' 需要对应实验、样本、指标和适用边界。",
+      "Severity": "warning",
+      "Match": "完全正确",
+      "Line": 161
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        4,
+        7
+      ],
+      "Check": "AIInfra.ResearchClaims",
+      "Description": "",
+      "Link": "",
+      "Message": "科研或工程强断言 '显著优于' 需要对应实验、样本、指标和适用边界。",
+      "Severity": "warning",
+      "Match": "显著优于",
+      "Line": 162
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        9,
+        12
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 'TODO'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "TODO",
+      "Line": 165
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        14,
+        16
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 'TBD'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "TBD",
+      "Line": 165
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        19,
+        21
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 '待补充'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "待补充",
+      "Line": 165
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        23,
+        25
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 '待完善'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "待完善",
+      "Line": 165
+    }
+  ],
+  "<repository>\\00_路线总控\\审计与整改\\12_优化方案二次完整性复核与Wave0实施报告_2026-07-18.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        3,
+        12
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 31
+    }
+  ],
+  "<repository>\\00_路线总控\\审计与整改\\学习路线教材与内容审计报告_2026-07-10.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        21,
+        30
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 60
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        3,
+        12
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 62
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        3,
+        12
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.9'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.9",
+      "Line": 63
+    }
+  ],
+  "<repository>\\00_路线总控\\看板与索引\\01_当前阶段任务看板.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        26,
+        35
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 97
+    }
+  ],
+  "<repository>\\00_路线总控\\看板与索引\\12_审计接力交接文档.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        36,
+        45
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 3
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        1,
+        144
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 30
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        5,
+        14
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 31
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        47,
+        56
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.9'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.9",
+      "Line": 55
+    }
+  ],
+  "<repository>\\00_路线总控\\看板与索引\\13_M05精准增强交接文档.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        5,
+        14
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 119
+    }
+  ],
+  "<repository>\\10_学习模块\\M00_工具链与计算机基础\\M00_工具链与计算机基础_适配教材.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        42,
+        51
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 34
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        44,
+        53
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 53
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        1,
+        10
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 69
+    }
+  ],
+  "<repository>\\10_学习模块\\M01_Python工程能力\\M01_Python工程能力_适配教材.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        100,
+        109
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 47
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        4,
+        7
+      ],
+      "Check": "AIInfra.Placeholders",
+      "Description": "",
+      "Link": "",
+      "Message": "正文仍含待办或占位标记 'TODO'，确认是否应补齐、降级或归档。",
+      "Severity": "suggestion",
+      "Match": "TODO",
+      "Line": 1184
+    }
+  ],
+  "<repository>\\10_学习模块\\M05_任务队列与调度\\M05_任务队列与调度_章节教材.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        58,
+        67
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 94
+    }
+  ],
+  "<repository>\\10_学习模块\\M08_监控压测与可观测性\\M08_监控压测与可观测性_适配教材.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        62,
+        71
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 620
+    }
+  ],
+  "<repository>\\40_实验练习\\E05_调度实验\\E05-R0-R1 学习边界与最小模型复现.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        25,
+        34
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 35
+    }
+  ],
+  "<repository>\\50_项目产出\\P01_Mini_Scheduler\\03_代码结构与接口.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        125,
+        134
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 44
+    }
+  ],
+  "<repository>\\50_项目产出\\P01_Mini_Scheduler\\06_README草稿.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        98,
+        107
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 345
+    }
+  ],
+  "<repository>\\50_项目产出\\P01_Mini_Scheduler\\P01_Mini_Scheduler 项目主页.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        51,
+        60
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 34
+    },
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        62,
+        71
+      ],
+      "Check": "AIInfra.DeprecatedRuntime",
+      "Description": "",
+      "Link": "",
+      "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
+      "Severity": "warning",
+      "Match": "Python 3.8",
+      "Line": 36
+    }
+  ],
+  "<repository>\\60_科研训练\\研究项目\\RQ01_RAG_Agent请求调度尾延迟\\05_写作草稿.md": [
+    {
+      "Action": {
+        "Name": "",
+        "Params": null
+      },
+      "Span": [
+        4,
+        7
+      ],
+      "Check": "AIInfra.ResearchClaims",
+      "Description": "",
+      "Link": "",
+      "Message": "科研或工程强断言 '显著优于' 需要对应实验、样本、指标和适用边界。",
+      "Severity": "warning",
+      "Match": "显著优于",
+      "Line": 47
+    }
+  ]
+}
