@@ -1,11 +1,9 @@
-lychee.exe : Hint: Encountered rate limit responses. You might be able to work around this by adding `[hosts."docs.vllm
-.ai"]` to the TOML config to adjust the `concurrency` and `request_interval` values.
+lychee.exe : Hint: Followed 42 redirects. You might want to consider replacing redirecting URLs with the resolved URLs.
+ Use verbose mode (`-v`/`-vv`) to see redirection details.
 At <repository>\00_路线总控\审计与整改\tools\content_quality\run_content_quality_audit.ps1:148 char:5
 +     & $lychee --format json --output (Join-Path $output "lychee.json" ...
 +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (Hint: Encounter...terval` values.:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (Hint: Followed ...ection details.:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
-Hint: Followed 41 redirects. You might want to consider replacing redirecting URLs with the resolved URLs. Use verbose 
-mode (`-v`/`-vv`) to see redirection details.
 Hint: You can configure accepted/rejected response codes with `-a` or `--accept`

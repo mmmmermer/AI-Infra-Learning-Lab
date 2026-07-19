@@ -107,7 +107,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "*\tools\validate_rq01_artifacts.py") {
         Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "RQ01 发布文件 SHA-256、压缩快照安全路径、成员覆盖和逐文件哈希门禁"
     } elseif ($relative -like "*\tools\run_full_validation.ps1") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "十套 Python 3.13 reference 共 386 项测试，逐项目期望数与总数由统一门禁校验，并覆盖编码、内容、Mermaid、编译和发布候选 diff"
+        Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "十套 Python 3.13 reference 共 399 项测试，逐项目期望数与总数由统一门禁校验，并覆盖编码、内容、Mermaid、编译和发布候选 diff"
     } elseif ($relative -like "*\tools\rebuild_remediation_matrix.ps1") {
         Set-Classification $row "content-reviewed" "executable" "verified" "low" "保留" "逐文件覆盖与自动分诊清单生成器已执行；未复核文件保持 unassessed/unknown"
     } elseif ($relative -like "*\tools\split_m05_textbook.ps1") {
@@ -186,7 +186,7 @@ $rows = foreach ($file in $files) {
     } elseif ($relative -like "40_实验练习\E04_Agent实验\e04_runtime_reference\*") {
         Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "确定性 Agent runtime、授权审批、fencing、versioned reducer/checkpoint、异常时序、跨租户隔离和审计，共 86 项测试通过"
     } elseif ($relative -like "40_实验练习\E06_数据库异步任务实验\e06_sqlite_reference\*") {
-        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "SQLite outbox、幂等、lease、重试退避、reconciliation 和 stale-worker fencing，共 29 项测试通过"
+        Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "E06 42 项测试覆盖 owner/ACL schema v2、FastAPI、SQLite outbox/worker fencing 和安全 cache-aside；真实 Redis 与跨进程协调仍属边界"
     } elseif ($relative -like "40_实验练习\GF10_*\finance_reference\*") {
         Set-Classification $row "content-reviewed" "executable" "verified" "medium" "保留" "金融 P0 参考实现，9 个测试通过"
     } elseif ($relative -like "40_实验练习\E09_K8s实验\kind_reference\*") {

@@ -15,7 +15,7 @@
       "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
       "Severity": "warning",
       "Match": "Python 3.8",
-      "Line": 147
+      "Line": 148
     }
   ],
   "<repository>\\00_路线总控\\审计与整改\\04_变更日志.md": [
@@ -34,7 +34,7 @@
       "Message": "正文仍含待办或占位标记 'TODO'，确认是否应补齐、降级或归档。",
       "Severity": "suggestion",
       "Match": "TODO",
-      "Line": 383
+      "Line": 392
     }
   ],
   "<repository>\\00_路线总控\\审计与整改\\05_教材内容质量大检查报告_2026-07-11.md": [
@@ -297,7 +297,7 @@
       "Message": "发现已停止支持的 Python 版本基线 'Python 3.8'；若不是历史说明，应升级或明确环境边界。",
       "Severity": "warning",
       "Match": "Python 3.8",
-      "Line": 97
+      "Line": 98
     }
   ],
   "<repository>\\00_路线总控\\看板与索引\\12_审计接力交接文档.md": [

@@ -1,6 +1,6 @@
 # E06 SQLite Reference
 
-This executable teaching reference isolates database and worker-recovery semantics before the learner adds HTTP, PostgreSQL or Redis.
+This executable teaching reference covers SQLite task/worker recovery, an owner-scoped FastAPI boundary, and deterministic safe cache-aside behavior before the learner adds PostgreSQL, a real Redis service or an external identity provider.
 
 ## What It Proves
 
@@ -16,6 +16,12 @@ This executable teaching reference isolates database and worker-recovery semanti
 - an ordered, queryable `task_events` history protected against update/delete
 - stale-owner rejection without forged success or failure events
 - deterministic SQLite connection closure, including immediate database-file deletion on Windows
+- an atomic v1-to-v2 migration that adds tenant, owner, ACL snapshot/version and owner-scoped idempotency
+- FastAPI create/query integration with server-owned bearer fixtures, forged-field rejection and hidden cross-owner `404`
+- an API -> outbox -> SQLite queue -> leased worker -> queryable result loop
+- versioned retrieval cache keys that bind owner, effective ACL, source scope and all result-affecting versions
+- bounded LRU/TTL behavior, corrupt-value recovery and fail-open-for-availability/fail-closed-for-authorization degradation
+- single-process single-flight with eight concurrent callers and one compute
 
 ## Run
 
@@ -27,7 +33,23 @@ python -m pip install -e .
 python -m pytest -q
 ```
 
-Expected result: `29 passed`.
+Expected result: `42 passed`.
+
+Run only the HTTP/worker and cache layers:
+
+```powershell
+python -m pytest -q tests/test_api_integration.py tests/test_cache.py
+```
+
+Expected result: `12 passed`.
+
+## HTTP And Cache Contract
+
+`e06_reference.api.create_app()` accepts only the `rag_retrieval` teaching envelope. The bearer token resolves to a server-owned principal; tenant, user, permission groups and ACL version are written by the service and are forbidden in both the top-level request and `input_json`. Task lookup includes tenant and user predicates and returns a hidden `404` across owners.
+
+`SafeRetrievalCache.retrieve()` always calls authorization before it reads the backend. Its key binds tenant, user, normalized permission groups, ACL version/fingerprint, actual authorized source fingerprint, collection, document/index/model/retriever versions, filters, top-k and query hash. Cached and newly computed source IDs must remain a subset of the authorized source set.
+
+`MemoryCacheBackend` and `UnavailableCacheBackend` are deterministic test adapters. They prove the cache control flow and observable outcomes, not Redis networking, persistence, eviction under real memory pressure, distributed locks, failover or multi-process request collapsing.
 
 Inspect the claim plan directly:
 
@@ -79,3 +101,5 @@ A successful local reference run against an isolated PostgreSQL 17.9 cluster is 
 - the deterministic failure and retry-storm models are controlled labs, not latency or capacity benchmarks.
 - stale or malformed unpublished outbox rows fail the whole dispatch transaction closed. This preserves terminal-state safety but can block later valid rows until an operator repairs or quarantines the poison event; a production dispatcher needs an explicit quarantine/dead-letter policy and alerting.
 - PostgreSQL isolation, deadlock victim selection, Redis Streams pending-entry recovery and external side-effect idempotency require their own integration tests.
+- bearer tokens are fixed test fixtures; signature validation, issuer/audience checks, revocation and dynamic policy lookup require a real identity integration.
+- single-flight is process-local. Multiple API/worker processes need an explicitly designed cross-process coordination mechanism and leader-failure policy.

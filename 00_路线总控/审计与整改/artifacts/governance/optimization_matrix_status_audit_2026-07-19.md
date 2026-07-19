@@ -3,8 +3,8 @@
 审计日期：2026-07-19
 
 审计对象：`11_教材内容优化任务矩阵.csv` 的 110 个任务、
-`optimization_matrix_status_evidence.csv` 的 34 条非 `planned` 状态证据，以及本轮 E03
-多格式 ingestion/lineage/generation 与 E04 reducer/checkpoint 验收候选。
+`optimization_matrix_status_evidence.csv` 的 35 条非 `planned` 状态证据，以及本轮 E03
+多格式 ingestion/lineage/generation、E04 reducer/checkpoint 与 E06 FastAPI/cache 验收候选。
 
 本报告只判定**整改任务自身**是否达到 acceptance。它不表示学习者已经完成、整个模块已
 `instructional-ready`，也不表示 reference 已在生产拓扑、真实模型、真实 OCR 或所有平台上验证。
@@ -23,13 +23,13 @@
 
 | 状态 | 数量 | 本轮变化 |
 |---|---:|---|
-| `completed` | 26 | `M03-002`、`M04-003` 从 `in-progress` 升格 |
-| `in-progress` | 6 | `M03-004` 仍保留，未被离线 evaluator 冒充为真实模型证据 |
+| `completed` | 28 | `M03-002`、`M04-003`、`M06-004`、`M06-005` 完成验收 |
+| `in-progress` | 5 | `M03-004` 仍保留，未被离线 evaluator 冒充为真实模型证据 |
 | `blocked` | 2 | 无变化 |
-| `planned` | 76 | 无变化 |
+| `planned` | 75 | `M06-004` 形成独立可执行证据后升格 |
 | `cancelled` | 0 | 无变化 |
 
-总计 110 项。非 `planned` 数仍为 34，证据表逐项一一对应，无重复 ID。
+总计 110 项。非 `planned` 数为 35，证据表逐项一一对应，无重复 ID。
 
 ## P0 结果
 
@@ -43,7 +43,7 @@ ACL、cache scope、poison/unauthorized observation、敏感日志最小化、li
 generation 输出规则；它没有可信 adapter 捕获并绑定的真实模型 raw response，不能证明真实模型
 在 generation 阶段抵抗间接注入。
 
-## 本轮升格：M03-002 与 M04-003
+## 本轮升格：M03-002、M04-003、M06-004 与 M06-005
 
 `M03-002` 的 acceptance 是：损坏、空白、重复和过期文档有确定状态，且删除后不可被检索或
 缓存命中。本轮证据已把该闭环从理想文本扩展到受控多格式 reference：
@@ -73,6 +73,20 @@ reducer/schema、最后事件 fingerprint 和状态 SHA-256。10 个新增用例
 数据库事件表、持久 checkpoint store、跨进程 crash recovery、broker delivery 或外部副作用对账，
 因此不能把 `M04-003 completed` 解读为生产 Agent Runtime 已完成。
 
+`M06-004` 要求授权范围进入 key、更新后旧值失效、并发 miss 有界，且缓存故障不绕过权限。
+E06 新增 `SafeRetrievalCache`：每次 backend 访问前执行服务端 principal 授权，key 绑定 tenant、
+owner、permission groups、ACL version/fingerprint、实际 source fingerprint、collection、文档/索引/
+模型/检索器版本、filter、top-k 和 query hash；hit 与 compute 结果均检查 source subset。测试覆盖
+version invalidation、TTL、LRU、损坏/越权 value、backend unavailable 和 8 caller single-flight。
+
+`M06-005` 要求 E06 自有 FastAPI integration 与 worker fixture。schema v2 新增 owner/ACL snapshot、
+owner-scoped idempotency 和 v1 原子迁移；FastAPI 拒绝顶层或 `input_json` 的身份字段，跨 owner/tenant
+查询隐藏为 404；集成测试贯通 POST -> task/outbox -> dispatch -> leased worker -> safe cache -> GET。
+严格 E06 回归从 29 增至 `42 collected / 42 passed`。
+
+两项完成均保留边界：bearer 为固定 fixture，cache backend 为内存/故障替身，single-flight 只覆盖
+单进程。真实 Redis 网络/集群/跨进程锁、真实身份提供方、生产 RAG/LLM 和外部副作用不是隐含结论。
+
 ## 继续进行
 
 | 任务 | 已有产物 | 仍缺条件 |
@@ -82,7 +96,6 @@ reducer/schema、最后事件 fingerprint 和状态 SHA-256。10 个新增用例
 | `PED-012` | 版本 manifest、时效阈值与校验器 | 明确 owner、Pydantic 复核及 blocked 组件处理 |
 | `M03-003` | 检索失败分类、prompt 结构、离线 citation 存在性/quote 匹配基础 | answer rubric、拒答集和逐引用 entailment 核对 artifact |
 | `M03-004` | 离线对抗 corpus、ACL/cache、lineage 删除、脱敏报告和 simulated generation evaluator | 可信真实模型输出绑定与重复对抗运行 |
-| `M06-005` | database-only 与 P03 end-to-end 范围分离，P03 有 worker fixture | E06 自有 FastAPI 集成及 `M06-004` 缓存前置 |
 
 相邻 reference 通过不会自动升格这些任务。
 
@@ -93,10 +106,10 @@ reducer/schema、最后事件 fingerprint 和状态 SHA-256。10 个新增用例
 
 E10 合成 simulator、章节说明或版本清单均不能替代真实 serving 证据。
 
-## 仍计划的 76 项
+## 仍计划的 75 项
 
-76 项 `planned` 的任务组和数量相较 2026-07-18 审计没有变化：教学一致性 9、M00 1、M01 3、
-M02 1、M04 1、M05 4、M06 2、M07 3、M08 5、M09 5、M10 4、M11/RQ01 11、金融
+75 项 `planned` 的任务组和数量为：教学一致性 9、M00 1、M01 3、
+M02 1、M04 1、M05 4、M06 1、M07 3、M08 5、M09 5、M10 4、M11/RQ01 11、金融
 F00-F08 24、金融 AI 场景 1、跨模块基础 2。
 
 它们继续以矩阵各行的 `expected_artifact` 与 `acceptance` 为准；本轮 E03 代码增加不能替代这些

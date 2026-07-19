@@ -1,11 +1,17 @@
 [project]
 name = "e06-sqlite-reference"
-version = "0.2.0"
-description = "SQLite database correctness and worker recovery reference for E06"
+version = "0.3.0"
+description = "SQLite, cache and FastAPI worker integration reference for E06"
 requires-python = ">=3.13,<3.14"
+dependencies = [
+  "fastapi==0.116.1",
+]
 
 [project.optional-dependencies]
-dev = ["pytest==8.4.2"]
+dev = [
+  "httpx==0.28.1",
+  "pytest==8.4.2",
+]
 
 [build-system]
 requires = ["setuptools>=75"]

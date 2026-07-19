@@ -1,4 +1,17 @@
 from .database import SCHEMA_VERSION, TaskDatabase, TaskStatus
+from .cache import (
+    AuthorizedScope,
+    AuthorizationInvariantError,
+    CacheBackendUnavailable,
+    CacheOutcome,
+    MemoryCacheBackend,
+    Principal,
+    RetrievalRequest,
+    RetrievalResult,
+    SafeRetrievalCache,
+    UnavailableCacheBackend,
+    make_retrieval_cache_key,
+)
 from .reliability import (
     CrashOutcome,
     CrashPoint,
@@ -9,17 +22,32 @@ from .reliability import (
     peak_retry_load,
     retry_delay_seconds,
 )
+from .worker import ReferenceWorker, TaskFailure, WorkerRun
 
 __all__ = [
     "SCHEMA_VERSION",
+    "AuthorizedScope",
+    "AuthorizationInvariantError",
+    "CacheBackendUnavailable",
+    "CacheOutcome",
     "CrashOutcome",
     "CrashPoint",
     "DeliverySemantics",
     "RetryPolicy",
+    "MemoryCacheBackend",
+    "Principal",
+    "ReferenceWorker",
+    "RetrievalRequest",
+    "RetrievalResult",
+    "SafeRetrievalCache",
+    "TaskFailure",
     "TaskDatabase",
     "TaskStatus",
+    "UnavailableCacheBackend",
+    "WorkerRun",
     "build_retry_schedule",
     "derive_crash_outcome",
     "peak_retry_load",
+    "make_retrieval_cache_key",
     "retry_delay_seconds",
 ]

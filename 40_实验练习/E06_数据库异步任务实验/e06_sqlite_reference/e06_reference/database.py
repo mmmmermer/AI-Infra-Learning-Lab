@@ -22,7 +22,7 @@ class TaskStatus(StrEnum):
     CANCELLED = "cancelled"
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 NON_RETRYABLE_ERRORS = {"collection_not_found", "invalid_input", "permission_denied"}
 
 SCHEMA_SQL = """
@@ -33,7 +33,16 @@ CREATE TABLE IF NOT EXISTS schema_migrations (
 
 CREATE TABLE IF NOT EXISTS tasks (
     task_id TEXT PRIMARY KEY,
-    idempotency_key TEXT NOT NULL UNIQUE,
+    tenant_id TEXT NOT NULL DEFAULT 'reference-tenant',
+    user_id TEXT NOT NULL DEFAULT 'reference-user',
+    allowed_permission_groups_json TEXT NOT NULL DEFAULT '["public"]'
+        CHECK (json_valid(allowed_permission_groups_json)),
+    acl_version TEXT NOT NULL DEFAULT 'reference-acl-v1',
+    task_type TEXT NOT NULL DEFAULT 'reference_task',
+    priority INTEGER NOT NULL DEFAULT 5 CHECK (priority BETWEEN 1 AND 10),
+    estimated_duration_ms INTEGER NOT NULL DEFAULT 0
+        CHECK (estimated_duration_ms >= 0),
+    idempotency_key TEXT NOT NULL,
     status TEXT NOT NULL CHECK (
         status IN ('pending', 'queued', 'running', 'succeeded', 'failed', 'retrying', 'cancelled')
     ),
@@ -49,6 +58,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     finished_at TEXT,
     version INTEGER NOT NULL DEFAULT 0 CHECK (version >= 0),
     CHECK (retry_count <= max_retries),
+    UNIQUE (tenant_id, user_id, idempotency_key),
     CHECK (
         status NOT IN ('succeeded', 'failed', 'cancelled') OR finished_at IS NOT NULL
     )
@@ -106,6 +116,8 @@ CREATE INDEX IF NOT EXISTS idx_queue_claim
     ON queue_messages(available_at, leased_until, message_id, task_id);
 CREATE INDEX IF NOT EXISTS idx_task_events_history
     ON task_events(task_id, task_version, event_id);
+CREATE INDEX IF NOT EXISTS idx_tasks_owner_lookup
+    ON tasks(tenant_id, user_id, task_id);
 
 CREATE TRIGGER IF NOT EXISTS task_events_no_update
 BEFORE UPDATE ON task_events
@@ -193,6 +205,9 @@ class TaskDatabase:
                 return
             if version == 0 and tables.intersection(legacy_tables):
                 raise RuntimeError("partial unversioned E06 schema cannot be migrated safely")
+            if version == 1:
+                self._migrate_v1_schema(connection)
+                return
             if version not in (0, SCHEMA_VERSION):
                 raise RuntimeError(
                     f"unsupported E06 schema version {version}; expected {SCHEMA_VERSION}"
@@ -205,6 +220,72 @@ class TaskDatabase:
                     (SCHEMA_VERSION, timestamp(utc_now())),
                 )
                 connection.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
+
+    def _migrate_v1_schema(self, connection: sqlite3.Connection) -> None:
+        """Upgrade the published v1 reference without losing task history."""
+        connection.execute("PRAGMA foreign_keys = OFF")
+        try:
+            connection.executescript(
+                f"""
+                BEGIN IMMEDIATE;
+                DROP TRIGGER IF EXISTS task_events_no_update;
+                DROP TRIGGER IF EXISTS task_events_no_delete;
+                DROP INDEX IF EXISTS idx_outbox_unpublished;
+                DROP INDEX IF EXISTS idx_queue_claim;
+                DROP INDEX IF EXISTS idx_task_events_history;
+
+                ALTER TABLE task_events RENAME TO task_events_v1;
+                ALTER TABLE outbox RENAME TO outbox_v1;
+                ALTER TABLE queue_messages RENAME TO queue_messages_v1;
+                ALTER TABLE tasks RENAME TO tasks_v1;
+
+                {SCHEMA_SQL}
+
+                INSERT INTO tasks (
+                    task_id, idempotency_key, status, input_json, result_json,
+                    error_type, last_error, retry_count, max_retries, created_at,
+                    queued_at, started_at, finished_at, version
+                )
+                SELECT
+                    task_id, idempotency_key, status, input_json, result_json,
+                    error_type, last_error, retry_count, max_retries, created_at,
+                    queued_at, started_at, finished_at, version
+                FROM tasks_v1;
+
+                INSERT INTO outbox (
+                    event_id, task_id, event_type, payload_json, created_at, published_at
+                )
+                SELECT event_id, task_id, event_type, payload_json, created_at, published_at
+                FROM outbox_v1;
+
+                INSERT INTO queue_messages (
+                    message_id, task_id, available_at, leased_until, worker_id, delivery_count
+                )
+                SELECT message_id, task_id, available_at, leased_until, worker_id, delivery_count
+                FROM queue_messages_v1;
+
+                INSERT INTO task_events (
+                    event_id, task_id, event_type, from_status, to_status,
+                    task_version, worker_id, retry_count, created_at
+                )
+                SELECT
+                    event_id, task_id, event_type, from_status, to_status,
+                    task_version, worker_id, retry_count, created_at
+                FROM task_events_v1;
+
+                DROP TABLE queue_messages_v1;
+                DROP TABLE outbox_v1;
+                DROP TABLE task_events_v1;
+                DROP TABLE tasks_v1;
+
+                INSERT INTO schema_migrations(version, applied_at)
+                VALUES ({SCHEMA_VERSION}, strftime('%Y-%m-%dT%H:%M:%fZ', 'now'));
+                PRAGMA user_version = {SCHEMA_VERSION};
+                COMMIT;
+                """
+            )
+        finally:
+            connection.execute("PRAGMA foreign_keys = ON")
 
     def _migrate_unversioned_schema(self, connection: sqlite3.Connection) -> None:
         connection.execute("PRAGMA foreign_keys = OFF")
@@ -308,8 +389,27 @@ class TaskDatabase:
         input_json: dict,
         max_retries: int = 2,
         now: datetime | None = None,
+        *,
+        tenant_id: str = "reference-tenant",
+        user_id: str = "reference-user",
+        allowed_permission_groups: tuple[str, ...] = ("public",),
+        acl_version: str = "reference-acl-v1",
+        task_type: str = "reference_task",
+        priority: int = 5,
+        estimated_duration_ms: int = 0,
     ) -> tuple[str, bool]:
         current = now or utc_now()
+        if not tenant_id or not user_id or not acl_version or not task_type:
+            raise ValueError(
+                "tenant_id, user_id, acl_version and task_type must be non-empty"
+            )
+        if not 1 <= priority <= 10:
+            raise ValueError("priority must be between 1 and 10")
+        if estimated_duration_ms < 0:
+            raise ValueError("estimated_duration_ms must be non-negative")
+        normalized_groups = tuple(sorted(set(allowed_permission_groups)))
+        if not normalized_groups or any(not group for group in normalized_groups):
+            raise ValueError("allowed_permission_groups must contain non-empty values")
         if not 0 <= max_retries <= self.retry_policy.max_attempts:
             raise ValueError(
                 "max_retries must be non-negative and no greater than "
@@ -318,7 +418,11 @@ class TaskDatabase:
         with self.connection() as connection:
             connection.execute("BEGIN IMMEDIATE")
             existing = connection.execute(
-                "SELECT task_id FROM tasks WHERE idempotency_key = ?", (idempotency_key,)
+                """
+                SELECT task_id FROM tasks
+                WHERE tenant_id = ? AND user_id = ? AND idempotency_key = ?
+                """,
+                (tenant_id, user_id, idempotency_key),
             ).fetchone()
             if existing is not None:
                 return str(existing["task_id"]), False
@@ -327,11 +431,20 @@ class TaskDatabase:
             connection.execute(
                 """
                 INSERT INTO tasks (
-                    task_id, idempotency_key, status, input_json, max_retries, created_at
-                ) VALUES (?, ?, ?, ?, ?, ?)
+                    task_id, tenant_id, user_id, allowed_permission_groups_json,
+                    acl_version, task_type, priority, estimated_duration_ms,
+                    idempotency_key, status, input_json, max_retries, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     task_id,
+                    tenant_id,
+                    user_id,
+                    json.dumps(normalized_groups),
+                    acl_version,
+                    task_type,
+                    priority,
+                    estimated_duration_ms,
                     idempotency_key,
                     TaskStatus.PENDING,
                     json.dumps(input_json, ensure_ascii=False, sort_keys=True),
@@ -820,14 +933,30 @@ class TaskDatabase:
             return target
 
     def get_task(
-        self, task_id: str, connection: sqlite3.Connection | None = None
+        self,
+        task_id: str,
+        connection: sqlite3.Connection | None = None,
+        *,
+        tenant_id: str | None = None,
+        user_id: str | None = None,
     ) -> dict | None:
+        if (tenant_id is None) != (user_id is None):
+            raise ValueError("tenant_id and user_id must be supplied together")
         owns_connection = connection is None
         active_connection = connection or self.connect()
         try:
-            row = active_connection.execute(
-                "SELECT * FROM tasks WHERE task_id = ?", (task_id,)
-            ).fetchone()
+            if tenant_id is None:
+                row = active_connection.execute(
+                    "SELECT * FROM tasks WHERE task_id = ?", (task_id,)
+                ).fetchone()
+            else:
+                row = active_connection.execute(
+                    """
+                    SELECT * FROM tasks
+                    WHERE task_id = ? AND tenant_id = ? AND user_id = ?
+                    """,
+                    (task_id, tenant_id, user_id),
+                ).fetchone()
             return dict(row) if row is not None else None
         finally:
             if owns_connection:

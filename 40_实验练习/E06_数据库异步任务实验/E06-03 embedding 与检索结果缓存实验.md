@@ -2,6 +2,8 @@
 
 > 安全校订：客户端只能提交 query、collection、top-k 等业务字段。tenant、user 与有效 ACL 必须来自服务端 principal；检索缓存 key 使用服务端生成的 ACL fingerprint/version，并覆盖 collection、文档/索引版本、embedding 模型、检索器、过滤条件、top-k 和 query hash。缺任一影响结果的维度都可能产生越权或陈旧结果。
 
+> Reference 状态：`e06_sqlite_reference/` 已实现可执行的安全 retrieval cache。它使用确定性内存 LRU/TTL backend、缓存不可用故障替身、单进程 single-flight 和 E06 自有 FastAPI/worker 集成测试。该证据不等于真实 Redis 网络、持久化、集群或跨进程锁验证。
+
 ## 实验目的
 
 本实验用于观察缓存如何减少重复 embedding 或重复检索的成本和延迟。
@@ -19,16 +21,31 @@
 
 它不是 Redis 大全，也不是缓存架构课。
 
-当前执行边界：`E03_RAG实验/e03_rag_reference/` 已提供内存 retrieval cache、server-owned principal、伪造身份字段拒绝和跨 tenant/ACL/version 隔离测试；本实验复用该 reference 完成安全负测，再记录如何接入 E06 异步任务。P03 v0.3.1 尚未实现检索缓存，因此不能把 P03 的 RAG workload 测试误报为缓存实验完成。
+当前执行边界：E06 自身 reference 已提供 server-owned principal、owner-scoped task API、伪造身份字段拒绝、跨 tenant/owner/ACL/version 缓存隔离、损坏值恢复、TTL/LRU、缓存不可用降级和 8 线程 single-flight。E03 仍提供更完整的 RAG corpus/ACL 检索负测；P03 v0.3.1 尚未实现检索缓存，因此不能把 E06 的内存 backend 或 P03 的 RAG workload 误报为真实 Redis 缓存完成。
 
 最小可执行入口：
 
 ```powershell
-cd "40_实验练习/E03_RAG实验/e03_rag_reference"
-.\.venv\Scripts\python.exe -m pytest -q `
-  tests/test_retrieval.py::test_request_rejects_forged_identity_and_authorization_fields `
-  tests/test_retrieval.py::test_cache_cannot_cross_tenant_acl_or_acl_version
+cd "40_实验练习/E06_数据库异步任务实验/e06_sqlite_reference"
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.lock
+.\.venv\Scripts\python.exe -m pytest -q tests/test_cache.py tests/test_api_integration.py
 ```
+
+预期局部结果为 `12 passed`；全套 E06 为 `42 passed`。
+
+## 自动化证据矩阵
+
+| 风险/主张 | 测试 | 观察值 |
+|---|---|---|
+| owner/ACL/版本隔离 | `test_cache_key_isolated_by_owner_acl_and_content_version` | context 变化产生不同 key 与 miss |
+| TTL 与有界淘汰 | `test_ttl_expiry_and_bounded_lru_eviction_are_observable` | 过期/淘汰后重新 compute |
+| 损坏或越权缓存值 | `test_corrupt_or_over_scoped_cache_value_is_deleted_and_recomputed` | invalid=true，删除并按授权 scope 重算 |
+| backend 不可用 | `test_backend_outage_falls_back_only_after_authorization` | 调用顺序为 authorize -> compute；unavailable=true |
+| compute 越权 | `test_compute_cannot_return_a_source_outside_authorized_scope` | fail closed，不写 cache |
+| 并发 miss | `test_concurrent_miss_runs_one_compute_and_shares_the_flight` | 8 callers，compute_calls=1 |
+| HTTP/owner scope | `test_api_integration.py` | forged fields 422；跨 owner/tenant 404 |
+| API -> DB -> worker -> cache | `test_fastapi_database_worker_and_safe_cache_form_an_end_to_end_loop` | 两个任务 succeeded，第二个 cache hit |
 
 ## 前置阅读
 
@@ -310,6 +327,18 @@ ttl_seconds = 60
 3. `public_v1` 填充缓存后切换到 `public_v2`；预期 cache miss，证明 ACL version 参与隔离。
 4. 删除 cache key 中的 ACL fingerprint/version，确认上述第 2 或第 3 项会失败；只把这个故障实现用于测试，不能保留在正式路径。
 
+### 步骤 9：制造并发 miss
+
+让 8 个线程通过 barrier 同时请求同一 key，并让 compute 暂停 50 ms。预期所有请求得到相同结果，`compute_calls == 1`，其余请求标记 `singleflight_shared=true`。随后改成两个不同 query，预期每个 key 各有一个 leader；不能为了防风暴把所有 key 全局串行。
+
+### 步骤 10：注入损坏或越权 value
+
+绕过正常写入方法，向同一 key 写入包含 `doc-private` 的 value，再以 public principal 读取。预期该值不算有效 hit：reference 删除它、设置 `cache_value_invalid=true`，并只用 public `AuthorizedScope` 重算。未知 schema、字段类型错误和非法 JSON 走同一恢复路径。
+
+### 步骤 11：注入 backend unavailable
+
+替换为 `UnavailableCacheBackend`。记录调用顺序必须为 `authorize -> cache error -> compute`，任务仍可成功，但 `cache_unavailable=true`。若 authorizer 拒绝请求，compute 不得执行；缓存故障不能成为扩大 source scope 的理由。
+
 ## 失败场景
 
 | 场景 | 预期处理 | error_type / metric |
@@ -319,6 +348,8 @@ ttl_seconds = 60
 | 权限过滤发生在检索/缓存命中之后 | 私有 chunk 已参与评分，必须拒绝该实现 | authorization_order_error |
 | Redis 不可用 | 回退正常计算 | cache_unavailable |
 | 缓存值格式损坏 | 删除缓存并重算 | cache_value_invalid |
+| 热门 key 同时过期 | 同 key single-flight；不同 key 可并行 | singleflight_shared / compute_calls |
+| 条目超过容量 | 按已声明策略淘汰并记录 | cache_evicted |
 | TTL 太短 | 命中率低 | cache_expired |
 | TTL 太长 | 旧结果风险 | stale_cache |
 | 未来实现取消时任务被取消 | 不继续读写缓存；当前版本不验收 | task_cancelled |
@@ -343,6 +374,9 @@ ttl_seconds = 60
 - [ ] 能证明有效权限组相同但 ACL version 改变时仍然 cache miss。
 - [ ] 能证明伪造 tenant/user/权限字段的请求返回 422，且不创建 task/outbox/cache。
 - [ ] 能模拟 Redis 不可用时的降级策略。
+- [ ] 能用 8 个并发 caller 证明同 key 只执行一次 compute，并说明该证据只覆盖单进程。
+- [ ] 能让损坏、未知 schema 或越权 source 的缓存值被拒绝并重算。
+- [ ] 能区分 TTL、version invalidation、显式 delete 和 eviction 的职责。
 - [ ] 能通过 `GET /tasks/{task_id}` 查询缓存实验任务状态。
 - [ ] 能说明 pending/queued/running/succeeded/failed/retrying 的含义，并指出 cancelled 在 P03 v0.3.1 只是预留枚举。
 - [ ] 能把缓存指标写入 `result_json.metrics`。

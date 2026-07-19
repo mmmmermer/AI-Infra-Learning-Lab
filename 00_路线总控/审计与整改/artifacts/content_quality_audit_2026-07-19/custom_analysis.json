@@ -375,10 +375,10 @@
     {
       "file": "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_适配教材.md",
       "status": "active",
-      "line_count": 2020,
-      "heading_count": 136,
-      "code_fence_pairs": 80,
-      "external_url_count": 23,
+      "line_count": 2121,
+      "heading_count": 137,
+      "code_fence_pairs": 87,
+      "external_url_count": 25,
       "split_chapter_file_count": 0,
       "features": {
         "objectives": true,
@@ -530,7 +530,7 @@
   "textbooks_without_external_urls": 0,
   "active_textbooks_missing_any_feature": 17,
   "active_textbooks_without_external_urls": 0,
-  "unique_external_url_occurrences": 809,
+  "unique_external_url_occurrences": 811,
   "top_external_domains": {
     "docs.python.org": 77,
     "docs.langchain.com": 39,
@@ -556,12 +556,12 @@
     "developers.openai.com": 10,
     "docs.ragas.io": 10,
     "kueue.sigs.k8s.io": 9,
+    "redis.io": 9,
     "www.quantlib.org": 8,
     "arxiv.org": 8,
     "cheatsheetseries.owasp.org": 8,
     "www.w3.org": 8,
-    "developers.google.com": 8,
-    "missing.csail.mit.edu": 7
+    "developers.google.com": 8
   },
   "placeholder_count": 3,
   "placeholders": [
@@ -573,7 +573,7 @@
     },
     {
       "file": "00_路线总控\\审计与整改\\04_变更日志.md",
-      "line": 383,
+      "line": 392,
       "match": "TODO",
       "text": "M05 reference 导航；高风险成品循环、成本公式和预写结论改为接口、约束与 TODO。"
     },
@@ -666,7 +666,7 @@
     },
     {
       "file": "00_路线总控\\审计与整改\\00_整改总控.md",
-      "line": 147,
+      "line": 148,
       "match": "Python 3.8",
       "likely_explanatory": true,
       "text": "- [x] 当前正式入口不再把 Python 3.8/3.9 作为可验收环境。"
@@ -701,7 +701,7 @@
     },
     {
       "file": "00_路线总控\\看板与索引\\01_当前阶段任务看板.md",
-      "line": 97,
+      "line": 98,
       "match": "Python 3.8",
       "likely_explanatory": true,
       "text": "- 默认 `python` 仍指向已 EOL 的 Python 3.8.6，未激活虚拟环境时不得用于验收。"
@@ -750,14 +750,14 @@
       "character_count": 63106
     },
     {
+      "file": "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_适配教材.md",
+      "line_count": 2121,
+      "character_count": 60582
+    },
+    {
       "file": "10_学习模块\\M04_Agent工作流\\M04_Agent工作流_适配教材.md",
       "line_count": 2047,
       "character_count": 57674
-    },
-    {
-      "file": "10_学习模块\\M06_数据库缓存与异步任务\\M06_数据库缓存与异步任务_适配教材.md",
-      "line_count": 2020,
-      "character_count": 57236
     }
   ],
   "duplicate_paragraph_group_count": 0,
